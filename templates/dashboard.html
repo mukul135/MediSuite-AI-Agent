@@ -142,14 +142,20 @@
       <h2 class="section-heading">Upcoming Modules</h2>
       <div class="modules-grid">
 
-        <div class="module-card">
-          <div class="module-icon mod-blue">📄</div>
-          <div>
-            <h3>Document Upload</h3>
-            <p>Upload medical reports for OCR extraction</p>
-          </div>
-          <span class="module-status coming">Coming Soon</span>
-        </div>
+       <div class="module-card">
+
+  <div class="module-icon mod-blue">📄</div>
+
+  <div>
+    <h3>Document Upload</h3>
+    <p>Upload medical reports, prescriptions, and bills</p>
+  </div>
+
+  <a href="{{ url_for('upload') }}" class="upload-btn">
+      Open
+  </a>
+
+</div>
 
         <div class="module-card">
           <div class="module-icon mod-purple">🔍</div>

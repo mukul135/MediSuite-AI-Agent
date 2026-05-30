@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents — MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-icon">🏥</span>
+            <span>MediSuite</span>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}" class="active">Upload</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>📂 Upload Medical Documents</h1>
+            <p>Welcome, <strong>{{ session['name'] }}</strong>. Upload your reports, prescriptions, or bills securely.</p>
+        </div>
+
+        <!-- ========== FLASH MESSAGES ========== -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {% if category == 'success' %}✅{% elif category == 'danger' %}❌{% elif category == 'warning' %}⚠️{% else %}ℹ️{% endif %}
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- ========== UPLOAD FORM ========== -->
+        <div class="upload-card">
+            <h2>Select Document to Upload</h2>
+            <p class="hint">Accepted formats: PDF, JPG, PNG, GIF, DOC, DOCX &nbsp;|&nbsp; Max size: 16 MB</p>
+
+            <!--
+                IMPORTANT:
+                - action="/upload"        → sends form to the /upload route
+                - method="POST"           → sends data securely
+                - enctype="multipart/form-data" → REQUIRED for file uploads
+            -->
+            <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+                <!-- Document Type Selector -->
+                <div class="form-group">
+                    <label for="doc_type">Document Type</label>
+                    <select name="doc_type" id="doc_type" class="form-control">
+                        <option value="">-- Select Type --</option>
+                        <option value="report">🩺 Medical Report</option>
+                        <option value="prescription">💊 Prescription</option>
+                        <option value="bill">🧾 Bill / Invoice</option>
+                    </select>
+                </div>
+
+                <!-- File Picker -->
+                <div class="form-group">
+                    <label for="document">Choose File</label>
+                    <div class="file-drop-zone" id="dropZone">
+                        <input
+                            type="file"
+                            name="document"
+                            id="document"
+                            class="file-input"
+                            accept=".pdf,.png,.jpg,.jpeg,.gif,.doc,.docx"
+                            onchange="showFileName(this)"
+                        >
+                        <div class="drop-icon">📄</div>
+                        <p class="drop-text">Click to browse or drag & drop your file here</p>
+                        <p class="file-name-display" id="fileNameDisplay"></p>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-upload">
+                    ⬆️ Upload Document
+                </button>
+
+            </form>
+        </div>
+
+        <!-- ========== PREVIOUSLY UPLOADED FILES ========== -->
+        <div class="history-card">
+            <h2>📋 Your Uploaded Documents</h2>
+
+            {% if reports %}
+                <table class="reports-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Filename</th>
+                            <th>Uploaded By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for report in reports %}
+                        <tr>
+                            <td>{{ report.id }}</td>
+                            <td>
+                                <span class="file-icon">
+                                    {% if report.filename.endswith('.pdf') %}📕
+                                    {% elif report.filename.endswith(('.png', '.jpg', '.jpeg', '.gif')) %}🖼️
+                                    {% else %}📄{% endif %}
+                                </span>
+                                {{ report.filename }}
+                            </td>
+                            <td>{{ report.uploaded_by }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="empty-state">
+                    <p>📭 No documents uploaded yet. Use the form above to upload your first document.</p>
+                </div>
+            {% endif %}
+        </div>
+
+    </div><!-- /container -->
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Show the selected filename below the file input
+        function showFileName(input) {
+            const display = document.getElementById('fileNameDisplay');
+            if (input.files && input.files[0]) {
+                display.textContent = '✅ Selected: ' + input.files[0].name;
+                display.style.color = '#2e7d32';
+            }
+        }
+
+        // Auto-hide flash messages after 4 seconds
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            });
+        }, 4000);
+    </script>
+
+</body>
+</html>
