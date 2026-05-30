@@ -143,28 +143,23 @@
       <div class="modules-grid">
 
        <div class="module-card">
+  <a href="{{ url_for('upload') }}" class="module-card">
+    <div class="module-icon mod-blue">📄</div>
 
-  <div class="module-icon mod-blue">📄</div>
+    <div>
+        <h3>Document Upload</h3>
+        <p>Upload medical reports, prescriptions, and bills</p>
+    </div>
+</a>
 
-  <div>
-    <h3>Document Upload</h3>
-    <p>Upload medical reports, prescriptions, and bills</p>
-  </div>
+<a href="{{ url_for('ocr') }}" class="module-card">
+    <div class="module-icon mod-purple">🔍</div>
 
-  <a href="{{ url_for('upload') }}" class="upload-btn">
-      Open
-  </a>
-
-</div>
-
-        <div class="module-card">
-          <div class="module-icon mod-purple">🔍</div>
-          <div>
-            <h3>OCR Extraction</h3>
-            <p>Extract text from scanned documents</p>
-          </div>
-          <span class="module-status coming">Coming Soon</span>
-        </div>
+    <div>
+        <h3>OCR Extraction</h3>
+        <p>Extract text from medical reports</p>
+    </div>
+</a>
 
         <div class="module-card">
           <div class="module-icon mod-teal">🧠</div>

@@ -1,0 +1,196 @@
+<!-- ============================================================
+     MediSuite-AI-Agent -- templates/ocr.html
+     OCR Text Extraction page
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Extraction | MediSuite</title>
+
+    <!-- Existing global stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- OCR-specific stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ocr.css') }}">
+</head>
+<body>
+
+    <!-- ── NAVBAR ──────────────────────────────────────────────────────── -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-logo">&#129657;</span>
+            MediSuite
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}" class="active">OCR</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ── PAGE HEADER ───────────────────────────────────────────────── -->
+        <div class="page-header">
+            <h1>&#128269; OCR Text Extraction</h1>
+            <p>Select an uploaded medical report to automatically extract its text.</p>
+        </div>
+
+        <!-- ── FLASH MESSAGES ────────────────────────────────────────────── -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- ── HOW IT WORKS ──────────────────────────────────────────────── -->
+        <div class="info-banner">
+            <div class="info-item">
+                <span class="info-icon">&#128196;</span>
+                <span>Upload a JPG, PNG, or PDF report</span>
+            </div>
+            <div class="info-arrow">&#8594;</div>
+            <div class="info-item">
+                <span class="info-icon">&#128270;</span>
+                <span>Select it below &amp; click Extract</span>
+            </div>
+            <div class="info-arrow">&#8594;</div>
+            <div class="info-item">
+                <span class="info-icon">&#129302;</span>
+                <span>AI reads and returns the text</span>
+            </div>
+        </div>
+
+        <!-- ── OCR FORM CARD ─────────────────────────────────────────────── -->
+        <div class="ocr-card">
+            <h2>Select Report to Process</h2>
+            <p class="hint">Supported formats: JPG, JPEG, PNG, PDF</p>
+
+            <form method="POST" action="{{ url_for('ocr') }}">
+
+                <!-- File selector dropdown — populated from user's uploads -->
+                <div class="form-group">
+                    <label for="filename">Choose from your uploaded documents</label>
+
+                    {% if reports %}
+                        <select name="filename" id="filename"
+                                class="form-control" required>
+                            <option value="">-- Select a file --</option>
+                            {% for report in reports %}
+                                <option value="{{ report.filename }}"
+                                    {% if selected_file == report.filename %}
+                                        selected
+                                    {% endif %}>
+                                    {{ report.filename }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    {% else %}
+                        <!-- No files uploaded yet — guide the user -->
+                        <div class="no-files-notice">
+                            You have no uploaded documents yet.
+                            <a href="{{ url_for('upload') }}">Upload one here</a>.
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if reports %}
+                    <button type="submit" class="btn-ocr">
+                        &#128269; Extract Text
+                    </button>
+                {% endif %}
+
+            </form>
+        </div>
+
+        <!-- ── EXTRACTED TEXT RESULT ─────────────────────────────────────── -->
+        {% if extracted %}
+        <div class="result-card">
+            <div class="result-header">
+                <h2>&#9989; Extracted Text</h2>
+                <span class="result-filename">{{ selected_file }}</span>
+                <!-- Copy to clipboard button -->
+                <button class="btn-copy" onclick="copyText()" id="copyBtn">
+                    &#128203; Copy Text
+                </button>
+            </div>
+
+            <!-- The extracted text is shown in a <pre> to preserve formatting -->
+            <pre class="ocr-output" id="ocrOutput">{{ extracted }}</pre>
+
+            <!-- Character and word count stats -->
+            <div class="text-stats">
+                <span>&#128200; {{ extracted | length }} characters</span>
+                <span>&#128221; ~{{ extracted.split() | length }} words</span>
+                <span>&#128196; {{ selected_file }}</span>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- ── PAST OCR RESULTS HISTORY ──────────────────────────────────── -->
+        <div class="history-card">
+            <h2>&#128218; Past OCR Results</h2>
+
+            {% if past_results %}
+                <table class="reports-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Filename</th>
+                            <th>Text Preview</th>
+                            <th>Date Processed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in past_results %}
+                        <tr>
+                            <td>{{ result.id }}</td>
+                            <td class="filename-cell">{{ result.filename }}</td>
+                            <!-- Show only the first 100 characters as preview -->
+                            <td class="preview-cell">
+                                {{ result.extracted_text[:100] }}...
+                            </td>
+                            <td>{{ result.created_at.strftime('%d %b %Y, %H:%M') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="no-results">No OCR results yet. Extract text from a report above.</p>
+            {% endif %}
+        </div>
+
+    </div><!-- end .container -->
+
+
+    <!-- ── JAVASCRIPT ────────────────────────────────────────────────────── -->
+    <script>
+        // ── Auto-hide flash messages after 4 seconds ────────────────────────
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(el => {
+                el.style.transition = 'opacity 0.5s';
+                el.style.opacity    = '0';
+                setTimeout(() => el.remove(), 500);
+            });
+        }, 4000);
+
+        // ── Copy extracted text to clipboard ────────────────────────────────
+        function copyText() {
+            const text = document.getElementById('ocrOutput').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => { btn.textContent = '📋 Copy Text'; }, 2000);
+            }).catch(() => {
+                alert('Could not copy — please select and copy manually.');
+            });
+        }
+    </script>
+
+</body>
+</html>

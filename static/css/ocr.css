@@ -1,0 +1,343 @@
+/* ============================================================
+   MediSuite-AI-Agent -- static/css/ocr.css
+   Styles for the /ocr page
+   ============================================================ */
+
+/* ── RESET & BASE (mirrors upload.css) ──────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────────────────── */
+.navbar {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    padding: 0 2rem;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.nav-links { display: flex; gap: 1.5rem; }
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* ── CONTAINER ───────────────────────────────────────────────────────────── */
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────────────────────── */
+.page-header { margin-bottom: 1.5rem; }
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a237e;
+}
+
+.page-header p {
+    margin-top: 0.4rem;
+    color: #546e7a;
+    font-size: 0.97rem;
+}
+
+/* ── FLASH MESSAGES ──────────────────────────────────────────────────────── */
+.alert {
+    padding: 0.85rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.alert-success { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #43a047; }
+.alert-danger  { background: #ffebee; color: #c62828; border-left: 4px solid #ef5350; }
+.alert-warning { background: #fff8e1; color: #e65100; border-left: 4px solid #ffa726; }
+
+/* ── HOW IT WORKS BANNER ─────────────────────────────────────────────────── */
+.info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+.info-icon { font-size: 1.2rem; }
+
+.info-arrow {
+    color: #90caf9;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* ── CARDS (shared base) ─────────────────────────────────────────────────── */
+.ocr-card,
+.result-card,
+.history-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.ocr-card h2,
+.result-card h2,
+.history-card h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 0.4rem;
+}
+
+.hint {
+    font-size: 0.83rem;
+    color: #78909c;
+    margin-bottom: 1.5rem;
+}
+
+/* ── FORM ────────────────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 1.3rem; }
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #37474f;
+    margin-bottom: 0.4rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #f8f9fa;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #1a73e8;
+    background: #fff;
+    outline: none;
+}
+
+/* ── NO FILES NOTICE ─────────────────────────────────────────────────────── */
+.no-files-notice {
+    padding: 1rem;
+    background: #fff8e1;
+    border: 1px dashed #ffa726;
+    border-radius: 8px;
+    color: #e65100;
+    font-size: 0.92rem;
+}
+
+.no-files-notice a {
+    color: #1a73e8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.no-files-notice a:hover { text-decoration: underline; }
+
+/* ── EXTRACT BUTTON ──────────────────────────────────────────────────────── */
+.btn-ocr {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s, transform 0.1s;
+    letter-spacing: 0.3px;
+}
+
+.btn-ocr:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-ocr:active { transform: translateY(0); }
+
+/* ── RESULT CARD ─────────────────────────────────────────────────────────── */
+.result-card {
+    border-left: 4px solid #43a047;  /* green left border = success */
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.result-filename {
+    background: #e8eaf6;
+    color: #3949ab;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+/* ── COPY BUTTON ─────────────────────────────────────────────────────────── */
+.btn-copy {
+    margin-left: auto;  /* push to right side */
+    padding: 6px 14px;
+    background: #e8eaf6;
+    color: #3949ab;
+    border: 1px solid #9fa8da;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-copy:hover { background: #c5cae9; }
+
+/* ── OCR OUTPUT PRE BLOCK ────────────────────────────────────────────────── */
+.ocr-output {
+    background: #f8f9fa;
+    border: 1.5px solid #cfd8dc;
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #263238;
+    /* Preserve line breaks + allow wrapping */
+    white-space: pre-wrap;
+    word-break: break-word;
+    /* Scrollable if text is very long */
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for the OCR output */
+.ocr-output::-webkit-scrollbar { width: 6px; }
+.ocr-output::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.ocr-output::-webkit-scrollbar-thumb { background: #90caf9; border-radius: 4px; }
+
+/* ── TEXT STATS ROW ──────────────────────────────────────────────────────── */
+.text-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.9rem;
+    font-size: 0.83rem;
+    color: #78909c;
+    flex-wrap: wrap;
+}
+
+.text-stats span::before { margin-right: 4px; }
+
+/* ── HISTORY TABLE ───────────────────────────────────────────────────────── */
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.reports-table thead tr {
+    background: #e8eaf6;
+    color: #1a237e;
+}
+
+.reports-table th,
+.reports-table td {
+    padding: 11px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eceff1;
+}
+
+.reports-table tbody tr:hover { background: #f5f7ff; }
+
+.filename-cell {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #3949ab;
+}
+
+.preview-cell {
+    color: #546e7a;
+    font-style: italic;
+    max-width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.no-results {
+    color: #78909c;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .container { padding: 1.2rem 1rem; }
+    .ocr-card, .result-card, .history-card { padding: 1.3rem; }
+    .info-banner { flex-direction: column; text-align: center; }
+    .info-arrow { transform: rotate(90deg); }
+    .result-header { flex-direction: column; align-items: flex-start; }
+    .btn-copy { margin-left: 0; }
+    .preview-cell { max-width: 140px; }
+}

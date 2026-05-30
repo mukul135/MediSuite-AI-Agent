@@ -133,6 +133,136 @@ def login():
 
     return render_template('login.html')
 
+
+# ============================================================
+#  MediSuite-AI-Agent -- app.py  (Version 3.0 -- with OCR)
+#  ADD these imports at the very top of your existing app.py
+#  below the current imports
+# ============================================================
+
+# --- NEW IMPORTS FOR OCR ---
+import pytesseract          # Python wrapper for Tesseract OCR engine
+from PIL import Image       # Pillow: open and process image files
+from pdf2image import convert_from_path  # Convert PDF pages → images for OCR
+
+# ============================================================
+#  WINDOWS ONLY: Tell pytesseract where Tesseract is installed.
+#  If you installed it in a different folder, change this path.
+#  On Linux/Mac, Tesseract is on PATH — delete this line.
+# ============================================================
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+
+# ============================================================
+#  ADD THIS ROUTE to your existing app.py
+#  Place it after your /upload route
+# ============================================================
+
+@app.route('/ocr', methods=['GET', 'POST'])
+def ocr():
+    """
+    OCR Route — GET and POST
+    GET  : Display the OCR page with the user's uploaded files and past results.
+    POST : Process the selected file, extract text, save to DB, display result.
+    """
+
+    # ── SECURITY: Redirect to login if not authenticated ─────────────────────
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    extracted_text = None   # Will hold the OCR result text
+    selected_file  = None   # Which file the user chose to process
+
+    # ── FETCH: Get all files uploaded by the current user ────────────────────
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        'SELECT id, filename FROM reports WHERE uploaded_by = %s',
+        (session['email'],)
+    )
+    reports = cursor.fetchall()  # List of dicts: [{id, filename}, ...]
+
+    # ── POST: User submitted the form — process the selected file ────────────
+    if request.method == 'POST':
+        selected_file = request.form.get('filename')  # Filename from dropdown
+
+        # Validate: make sure a file was selected
+        if not selected_file:
+            flash('Please select a file to process.', 'warning')
+            return redirect(url_for('ocr'))
+
+        # Build the full path to the file on disk
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], selected_file)
+
+        # Validate: make sure the file actually exists on disk
+        if not os.path.exists(file_path):
+            flash('File not found on disk. Please re-upload it.', 'danger')
+            return redirect(url_for('ocr'))
+
+        # Get file extension to decide how to process it
+        ext = selected_file.rsplit('.', 1)[-1].lower()
+
+        try:
+            # ── CASE 1: Image files (JPG, JPEG, PNG) ─────────────────────────
+            if ext in ['jpg', 'jpeg', 'png']:
+                img  = Image.open(file_path)          # Open image with Pillow
+                text = pytesseract.image_to_string(img)  # Run OCR
+
+            # ── CASE 2: PDF files ─────────────────────────────────────────────
+            elif ext == 'pdf':
+                # pdf2image converts each PDF page into a PIL Image object
+                # dpi=300 gives high enough resolution for accurate OCR
+                pages = convert_from_path(file_path, dpi=300)
+                text  = ''
+                for page_num, page in enumerate(pages):
+                    page_text = pytesseract.image_to_string(page)
+                    text += f'\n--- Page {page_num + 1} ---\n{page_text}'
+
+            else:
+                # File type not supported by OCR
+                flash('OCR supports JPG, PNG, and PDF files only.', 'warning')
+                return redirect(url_for('ocr'))
+
+            # ── CLEAN the extracted text ──────────────────────────────────────
+            # strip() removes leading/trailing whitespace
+            extracted_text = text.strip()
+
+            if not extracted_text:
+                flash('No text could be extracted. The image may be low quality.', 'warning')
+            else:
+                # ── SAVE result to ocr_results table ─────────────────────────
+                cursor.execute(
+                    '''INSERT INTO ocr_results (filename, extracted_text, processed_by)
+                       VALUES (%s, %s, %s)''',
+                    (selected_file, extracted_text, session['email'])
+                )
+                mysql.connection.commit()
+                flash('Text extracted successfully!', 'success')
+
+        except Exception as e:
+            # Catch ALL errors (Tesseract not found, Poppler missing, etc.)
+            # and show a human-readable message instead of crashing
+            flash(f'OCR Error: {str(e)}', 'danger')
+
+    # ── FETCH: Past OCR results for this user (newest first) ─────────────────
+    cursor.execute(
+        '''SELECT id, filename, extracted_text, created_at
+           FROM ocr_results
+           WHERE processed_by = %s
+           ORDER BY id DESC
+           LIMIT 10''',
+        (session['email'],)
+    )
+    past_results = cursor.fetchall()
+    cursor.close()
+
+    # ── RENDER: Pass everything to the template ───────────────────────────────
+    return render_template(
+        'ocr.html',
+        reports       = reports,        # dropdown options
+        extracted     = extracted_text, # freshly extracted text (or None)
+        selected_file = selected_file,  # which file was processed
+        past_results  = past_results    # history table
+    )
 # ============================================================
 #  8. DASHBOARD ROUTE  (your existing code — unchanged)
 # ============================================================
