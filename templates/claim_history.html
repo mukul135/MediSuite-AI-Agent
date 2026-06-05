@@ -1,0 +1,86 @@
+<!-- ============================================================
+     MediSuite-AI-Agent -- templates/claim_history.html
+     Phase 4: Past submitted claims
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim History | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/claim.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}" class="active">Claim</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>&#128218; Claim History</h1>
+            <p>All insurance claims submitted by you.</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="alert alert-{{ cat }}">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <a href="{{ url_for('claim') }}" class="btn-new-claim">
+            + New Claim
+        </a>
+
+        {% if claims %}
+        <div class="history-card">
+            <table class="claims-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Patient Name</th>
+                        <th>Hospital</th>
+                        <th>Disease</th>
+                        <th>Amount (₹)</th>
+                        <th>Claim Date</th>
+                        <th>Policy No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for claim in claims %}
+                    <tr>
+                        <td>{{ claim.id }}</td>
+                        <td class="name-cell">{{ claim.patient_name }}</td>
+                        <td>{{ claim.hospital_name }}</td>
+                        <td>{{ claim.disease }}</td>
+                        <td class="amount-cell">{{ claim.bill_amount }}</td>
+                        <td>{{ claim.claim_date or '—' }}</td>
+                        <td class="policy-cell">{{ claim.policy_number or '—' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">&#128203;</div>
+                <p>No claims submitted yet.</p>
+                <a href="{{ url_for('claim') }}">Submit your first claim</a>
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

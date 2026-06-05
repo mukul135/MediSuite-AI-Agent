@@ -44,7 +44,6 @@
         <div class="avatar">{{ name[0].upper() }}</div>
         <span>{{ name }}</span>
       </div>
-
       <!-- Logout link — calls the logout() function in app.py -->
       <a href="{{ url_for('logout') }}" class="btn-logout">
         <svg viewBox="0 0 20 20" fill="currentColor">
@@ -139,46 +138,67 @@
 
     <!-- UPCOMING MODULES INFO -->
     <section class="modules-section">
-      <h2 class="section-heading">Upcoming Modules</h2>
+      <div class="modules-header">
+        <h2>Explore MediSuite's AI-Powered Modules</h2>
+        <p>Click on a module to get started. More features coming soon!</p>
       <div class="modules-grid">
 
-       <div class="module-card">
-  <a href="{{ url_for('upload') }}" class="module-card">
-    <div class="module-icon mod-blue">📄</div>
+<div class="modules-grid">
 
-    <div>
-        <h3>Document Upload</h3>
-        <p>Upload medical reports, prescriptions, and bills</p>
-    </div>
-</a>
-
-<a href="{{ url_for('ocr') }}" class="module-card">
-    <div class="module-icon mod-purple">🔍</div>
-
-    <div>
-        <h3>OCR Extraction</h3>
-        <p>Extract text from medical reports</p>
-    </div>
-</a>
-
-        <div class="module-card">
-          <div class="module-icon mod-teal">🧠</div>
-          <div>
-            <h3>NLP Analysis</h3>
-            <p>AI-based medical text analysis</p>
-          </div>
-          <span class="module-status coming">Coming Soon</span>
+    <a href="{{ url_for('upload') }}" class="module-card">
+        <div class="module-icon mod-blue">📄</div>
+        <div class="module-content">
+            <div class="module-title">Document Upload</div>
+            <div class="module-desc">
+                Upload medical reports, prescriptions, and bills
+            </div>
         </div>
+    </a>
 
-        <div class="module-card">
-          <div class="module-icon mod-green">🛡️</div>
-          <div>
-            <h3>Fraud Detection</h3>
-            <p>Detect suspicious insurance claims</p>
-          </div>
-          <span class="module-status coming">Coming Soon</span>
+
+    <a href="{{ url_for('ocr') }}" class="module-card">
+        <div class="module-icon mod-purple">🔍</div>
+        <div class="module-content">
+            <div class="module-title">OCR Extraction</div>
+            <div class="module-desc">
+                Extract text from medical reports
+            </div>
         </div>
+    </a>
 
+        <a href="{{ url_for('claim') }}" class="module-card">
+        <div class="module-icon">📋</div>
+        <div class="module-content">
+            <div class="module-title">Claim Autofill</div>
+            <div class="module-desc">
+                Auto-fill insurance claim forms
+            </div>
+        </div>
+    </a>
+
+    <div class="module-card">
+        <div class="module-icon mod-teal">🧠</div>
+        <div class="module-content">
+            <div class="module-title">NLP Analysis</div>
+            <div class="module-desc">
+                AI-based medical text analysis
+            </div>
+        </div>
+        <span class="module-status coming">Coming Soon</span>
+    </div>
+
+    <div class="module-card">
+        <div class="module-icon mod-green">🛡️</div>
+        <div class="module-content">
+            <div class="module-title">Fraud Detection</div>
+            <div class="module-desc">
+                Detect suspicious insurance claims
+            </div>
+        </div>
+        <span class="module-status coming">Coming Soon</span>
+    </div>
+
+</div>
       </div>
     </section>
 

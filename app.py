@@ -11,6 +11,11 @@ import re
 import hashlib
 import os                                   # File/folder operations
 from werkzeug.utils import secure_filename  # Sanitize uploaded filenames
+from extractor.claim_extractor import extract_claim_fields
+import json
+import pytesseract          # Python wrapper for Tesseract OCR engine
+from PIL import Image       # Pillow: open and process image files
+from pdf2image import convert_from_path  # Convert PDF pages → images for OCR
 
 # ============================================================
 #  1. CREATE THE FLASK APP
@@ -140,10 +145,6 @@ def login():
 #  below the current imports
 # ============================================================
 
-# --- NEW IMPORTS FOR OCR ---
-import pytesseract          # Python wrapper for Tesseract OCR engine
-from PIL import Image       # Pillow: open and process image files
-from pdf2image import convert_from_path  # Convert PDF pages → images for OCR
 
 # ============================================================
 #  WINDOWS ONLY: Tell pytesseract where Tesseract is installed.
@@ -263,6 +264,190 @@ def ocr():
         selected_file = selected_file,  # which file was processed
         past_results  = past_results    # history table
     )
+
+
+# ============================================================
+#  MediSuite-AI-Agent -- claim_route.py
+#  Phase 4: Claim Autofill Routes
+#
+#  ADD these imports and routes to your existing app.py
+#
+#  Routes added:
+#    GET  /claim        -- show claim form + autofill from OCR results
+#    POST /claim        -- submit/save the completed claim
+#    GET  /claim/api/<id> -- return JSON extraction result for an OCR record
+# ============================================================
+
+# ── NEW IMPORTS (add at top of app.py) ───────────────────────────────────────
+# from extractor.claim_extractor import extract_claim_fields
+# import json
+
+
+# ============================================================
+#  ROUTE 1: /claim  (GET + POST)
+#  Main claim form page with autofill
+# ============================================================
+
+@app.route('/claim', methods=['GET', 'POST'])
+def claim():
+    """
+    GET:
+      - Show the insurance claim form
+      - If ?ocr_id=X is passed in the URL, auto-extract fields
+        from that OCR result and pre-fill the form
+
+    POST:
+      - Save the completed/edited claim to the claims table
+    """
+
+    # ── Security guard ────────────────────────────────────────────────────────
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    # ── Defaults (empty form) ─────────────────────────────────────────────────
+    extracted    = {}       # auto-filled values from OCR
+    confidences  = {}       # confidence scores per field
+    selected_ocr = None     # which OCR record was used
+    ocr_id       = request.args.get('ocr_id')  # from URL: /claim?ocr_id=5
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+
+    # ── GET: autofill if ocr_id was provided ──────────────────────────────────
+    if ocr_id and request.method == 'GET':
+        cursor.execute(
+            'SELECT * FROM ocr_results WHERE id = %s AND processed_by = %s',
+            (ocr_id, session['email'])
+        )
+        ocr_record = cursor.fetchone()
+
+        if ocr_record:
+            selected_ocr = ocr_record
+            # Run the extraction pipeline on the stored OCR text
+            result = extract_claim_fields(ocr_record['extracted_text'])
+            extracted   = result
+            confidences = result.get('confidence_scores', {})
+        else:
+            flash('OCR record not found or access denied.', 'danger')
+
+    # ── POST: save submitted claim ────────────────────────────────────────────
+    if request.method == 'POST':
+        # Collect form values (user may have edited autofilled values)
+        patient_name  = request.form.get('patient_name', '').strip()
+        hospital_name = request.form.get('hospital_name', '').strip()
+        disease       = request.form.get('disease', '').strip()
+        bill_amount   = request.form.get('bill_amount', '').strip()
+        claim_date    = request.form.get('claim_date', '').strip()
+        policy_number = request.form.get('policy_number', '').strip()
+        ocr_source_id = request.form.get('ocr_source_id', '').strip()
+
+        # Basic validation
+        if not patient_name or not hospital_name or not disease or not bill_amount:
+            flash('Patient Name, Hospital Name, Disease, and Bill Amount are required.', 'warning')
+            return redirect(url_for('claim'))
+
+        try:
+            # Validate bill_amount is numeric
+            clean_amount = bill_amount.replace(',', '')
+            float(clean_amount)
+        except ValueError:
+            flash('Bill Amount must be a valid number.', 'warning')
+            return redirect(url_for('claim'))
+
+        try:
+            cursor.execute(
+                '''INSERT INTO claims
+                   (patient_name, hospital_name, disease, bill_amount,
+                    claim_date, policy_number, submitted_by, ocr_source_id)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s)''',
+                (patient_name, hospital_name, disease, bill_amount,
+                 claim_date, policy_number, session['email'],
+                 ocr_source_id if ocr_source_id else None)
+            )
+            mysql.connection.commit()
+            flash('Claim submitted successfully!', 'success')
+            return redirect(url_for('claim_history'))
+        except Exception as e:
+            flash(f'Error saving claim: {str(e)}', 'danger')
+
+    # ── Fetch user's OCR results (for "autofill from OCR" dropdown) ───────────
+    cursor.execute(
+        'SELECT id, filename, created_at FROM ocr_results WHERE processed_by = %s ORDER BY id DESC',
+        (session['email'],)
+    )
+    ocr_list = cursor.fetchall()
+    cursor.close()
+
+    return render_template(
+        'claim.html',
+        extracted    = extracted,
+        confidences  = confidences,
+        selected_ocr = selected_ocr,
+        ocr_list     = ocr_list,
+        ocr_id       = ocr_id
+    )
+
+
+# ============================================================
+#  ROUTE 2: /claim/history  (GET)
+#  View all submitted claims for current user
+# ============================================================
+
+@app.route('/claim/history')
+def claim_history():
+    """Show all claims submitted by the logged-in user."""
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT * FROM claims
+           WHERE submitted_by = %s
+           ORDER BY id DESC''',
+        (session['email'],)
+    )
+    claims = cursor.fetchall()
+    cursor.close()
+
+    return render_template('claim_history.html', claims=claims)
+
+
+# ============================================================
+#  ROUTE 3: /claim/api/<int:ocr_id>  (GET — JSON API)
+#  Called by JavaScript to get autofill data without page reload
+# ============================================================
+
+@app.route('/claim/api/<int:ocr_id>')
+def claim_api(ocr_id):
+    """
+    Returns JSON with extracted claim fields for a given OCR result ID.
+    Used by the frontend for live autofill when user picks an OCR record.
+    """
+    if 'loggedin' not in session:
+        return {'error': 'Not authenticated'}, 401
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        'SELECT * FROM ocr_results WHERE id = %s AND processed_by = %s',
+        (ocr_id, session['email'])
+    )
+    ocr_record = cursor.fetchone()
+    cursor.close()
+
+    if not ocr_record:
+        return {'error': 'Not found'}, 404
+
+    # Run extraction
+    result = extract_claim_fields(ocr_record['extracted_text'])
+
+    return {
+        'success': True,
+        'patient_name':  result['patient_name'],
+        'hospital_name': result['hospital_name'],
+        'disease':       result['disease'],
+        'bill_amount':   result['bill_amount'],
+        'confidence_scores': result['confidence_scores'],
+        'extraction_details': result['extraction_details']
+    }
 # ============================================================
 #  8. DASHBOARD ROUTE  (your existing code — unchanged)
 # ============================================================

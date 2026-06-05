@@ -1,0 +1,240 @@
+/* ============================================================
+   MediSuite-AI-Agent -- static/css/claim.css
+   Phase 4: Claim Autofill page styles
+   ============================================================ */
+
+/* ── BASE ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────────────────── */
+.navbar {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    padding: 0 2rem; height: 62px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.nav-brand { color: #fff; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+.nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.2); color: #fff; }
+
+/* ── CONTAINER ───────────────────────────────────────────────────────────── */
+.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── PAGE HEADER ─────────────────────────────────────────────────────────── */
+.page-header { margin-bottom: 1.5rem; }
+.page-header h1 { font-size: 1.75rem; font-weight: 700; color: #1a237e; }
+.page-header p  { margin-top: 0.4rem; color: #546e7a; font-size: 0.97rem; }
+
+/* ── FLASH MESSAGES ──────────────────────────────────────────────────────── */
+.alert { padding: 0.85rem 1.2rem; border-radius: 8px; margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 500; }
+.alert-success { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #43a047; }
+.alert-danger  { background: #ffebee; color: #c62828; border-left: 4px solid #ef5350; }
+.alert-warning { background: #fff8e1; color: #e65100; border-left: 4px solid #ffa726; }
+
+/* ── AUTOFILL BANNER ─────────────────────────────────────────────────────── */
+.autofill-banner {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    border-radius: 14px;
+    padding: 1.4rem 1.8rem;
+    display: flex; align-items: center; gap: 1.2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.autofill-icon { font-size: 2rem; flex-shrink: 0; }
+.autofill-content { flex: 1; color: #fff; min-width: 160px; }
+.autofill-content strong { font-size: 1rem; }
+.autofill-content p { font-size: 0.85rem; opacity: 0.8; margin-top: 3px; }
+.autofill-select-wrap { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+.autofill-select-wrap .form-control {
+    min-width: 260px; background: rgba(255,255,255,0.12);
+    color: #fff; border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 8px; padding: 9px 12px; font-size: 0.92rem;
+}
+.autofill-select-wrap .form-control option { background: #1a237e; color: #fff; }
+
+/* ── AUTOFILL BUTTON ─────────────────────────────────────────────────────── */
+.btn-autofill {
+    padding: 9px 20px;
+    background: linear-gradient(135deg, #ffd54f, #ffb300);
+    color: #1a237e; font-weight: 700; font-size: 0.92rem;
+    border: none; border-radius: 8px; cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s; white-space: nowrap;
+}
+.btn-autofill:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ── LOADING BAR ─────────────────────────────────────────────────────────── */
+.loading-bar {
+    height: 4px; background: #e3f2fd; border-radius: 4px;
+    margin-bottom: 1.5rem; overflow: hidden;
+}
+.loading-fill {
+    height: 100%; width: 40%;
+    background: linear-gradient(90deg, #1a73e8, #42a5f5);
+    animation: slide 1.2s infinite ease-in-out alternate;
+}
+@keyframes slide { from { margin-left: 0%; } to { margin-left: 60%; } }
+
+/* ── FORM GRID ───────────────────────────────────────────────────────────── */
+.form-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    background: #fff; border-radius: 14px;
+    padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+}
+
+/* ── FIELD GROUP ─────────────────────────────────────────────────────────── */
+.field-group { margin-bottom: 1.4rem; }
+
+.field-group label {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.9rem; font-weight: 600; color: #37474f;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%; padding: 11px 14px;
+    border: 1.5px solid #cfd8dc; border-radius: 8px;
+    font-size: 0.95rem; background: #f8f9fa;
+    transition: border-color 0.2s, background 0.3s, box-shadow 0.2s;
+}
+.form-control:focus { border-color: #1a73e8; background: #fff; outline: none; box-shadow: 0 0 0 3px rgba(26,115,232,0.12); }
+
+/* ── AUTOFILL STATE ──────────────────────────────────────────────────────── */
+/* Green flash when value is auto-filled */
+.form-control.autofilled {
+    border-color: #43a047;
+    background: #f1fff4;
+    box-shadow: 0 0 0 3px rgba(67,160,71,0.12);
+}
+
+/* Brief yellow flash during filling animation */
+.form-control.filling {
+    border-color: #ffb300;
+    background: #fffde7;
+    animation: fillPulse 0.4s ease;
+}
+@keyframes fillPulse {
+    0%   { background: #fff8e1; }
+    50%  { background: #fffde7; }
+    100% { background: #f1fff4; }
+}
+
+/* Blue border when user manually edits a filled field */
+.form-control.manually-edited {
+    border-color: #1a73e8;
+    background: #fff;
+}
+
+/* ── CONFIDENCE BADGE ────────────────────────────────────────────────────── */
+.confidence-badge {
+    font-size: 0.73rem; font-weight: 600;
+    background: #e8eaf6; color: #3949ab;
+    padding: 2px 8px; border-radius: 20px;
+    margin-left: auto;
+}
+
+/* ── CONFIDENCE BAR ──────────────────────────────────────────────────────── */
+.confidence-bar {
+    height: 3px; background: #eceff1; border-radius: 3px;
+    margin-top: 5px; overflow: hidden;
+}
+.confidence-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, #43a047, #1b5e20);
+    transition: width 0.6s ease;
+}
+
+/* ── FORM ACTIONS ────────────────────────────────────────────────────────── */
+.form-actions {
+    display: flex; gap: 1rem; justify-content: flex-end;
+    margin-bottom: 2rem; flex-wrap: wrap;
+}
+
+.btn-submit {
+    padding: 13px 32px;
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: #fff; border: none; border-radius: 10px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+.btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.btn-history {
+    padding: 13px 24px; text-decoration: none;
+    background: #e8eaf6; color: #1a237e; border-radius: 10px;
+    font-size: 0.95rem; font-weight: 600;
+    transition: background 0.2s;
+}
+.btn-history:hover { background: #c5cae9; }
+
+/* ── DEBUG PANEL ─────────────────────────────────────────────────────────── */
+.debug-panel {
+    background: #fff; border-radius: 14px; padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07); margin-bottom: 2rem;
+}
+.debug-toggle {
+    background: none; border: 1.5px solid #cfd8dc; border-radius: 8px;
+    padding: 7px 16px; cursor: pointer; font-size: 0.88rem;
+    color: #546e7a; font-weight: 600;
+    transition: border-color 0.2s;
+}
+.debug-toggle:hover { border-color: #1a73e8; color: #1a73e8; }
+.debug-content { margin-top: 1.2rem; }
+.debug-content h3 { font-size: 0.95rem; color: #1a237e; margin-bottom: 0.8rem; }
+.debug-field { margin-bottom: 1rem; }
+.debug-field strong { font-size: 0.88rem; color: #37474f; }
+.debug-method { font-size: 0.78rem; color: #78909c; margin-left: 0.5rem; }
+.debug-field ul { list-style: none; margin-top: 0.4rem; }
+.debug-field li {
+    display: flex; gap: 0.7rem; align-items: center;
+    padding: 3px 8px; border-radius: 4px; font-size: 0.83rem;
+}
+.debug-field li:first-child { background: #e8f5e9; }
+.cand-value { font-weight: 600; color: #1a237e; }
+.cand-conf  { color: #43a047; font-weight: 700; }
+.cand-method{ color: #78909c; }
+
+/* ── CLAIM HISTORY PAGE ──────────────────────────────────────────────────── */
+.btn-new-claim {
+    display: inline-block; margin-bottom: 1.2rem;
+    padding: 9px 20px; background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: #fff; text-decoration: none; border-radius: 8px;
+    font-size: 0.92rem; font-weight: 700;
+}
+.btn-new-claim:hover { opacity: 0.9; }
+
+.history-card {
+    background: #fff; border-radius: 14px; padding: 2rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.claims-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.claims-table thead tr { background: #e8eaf6; color: #1a237e; }
+.claims-table th, .claims-table td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #eceff1; }
+.claims-table tbody tr:hover { background: #f5f7ff; }
+.name-cell   { font-weight: 600; }
+.amount-cell { font-weight: 700; color: #2e7d32; }
+.policy-cell { font-family: 'Courier New', monospace; font-size: 0.85rem; color: #3949ab; }
+
+/* ── EMPTY STATE ─────────────────────────────────────────────────────────── */
+.empty-state { text-align: center; padding: 3rem; background: #fff; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+.empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state p { color: #546e7a; margin-bottom: 1rem; }
+.empty-state a { color: #1a73e8; font-weight: 600; text-decoration: none; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .autofill-banner { flex-direction: column; }
+    .autofill-select-wrap { width: 100%; }
+    .autofill-select-wrap .form-control { min-width: unset; width: 100%; }
+    .form-actions { flex-direction: column; }
+    .btn-submit, .btn-history { width: 100%; text-align: center; }
+}

@@ -1,0 +1,334 @@
+<!-- ============================================================
+     MediSuite-AI-Agent -- templates/claim.html
+     Phase 4: Smart Insurance Claim Form with Autofill
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Autofill | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/claim.css') }}">
+</head>
+<body>
+
+    <!-- ── NAVBAR ──────────────────────────────────────────────────────── -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span>&#129657;</span> MediSuite
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}" class="active">Claim</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ── PAGE HEADER ───────────────────────────────────────────────── -->
+        <div class="page-header">
+            <h1>&#128203; Insurance Claim Autofill</h1>
+            <p>Select an OCR-processed report — the form will auto-populate with extracted data.</p>
+        </div>
+
+        <!-- ── FLASH MESSAGES ────────────────────────────────────────────── -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="alert alert-{{ cat }}">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- ── AUTOFILL SELECTOR ─────────────────────────────────────────── -->
+        <div class="autofill-banner">
+            <div class="autofill-icon">&#9889;</div>
+            <div class="autofill-content">
+                <strong>Auto-fill from OCR Report</strong>
+                <p>Pick a processed report below and we'll extract the fields automatically.</p>
+            </div>
+            <div class="autofill-select-wrap">
+                <select id="ocrSelector" class="form-control">
+                    <option value="">-- Select OCR Report --</option>
+                    {% for ocr in ocr_list %}
+                        <option value="{{ ocr.id }}"
+                            {% if ocr_id and ocr_id|int == ocr.id %}selected{% endif %}>
+                            {{ ocr.filename }} — {{ ocr.created_at.strftime('%d %b %Y') }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button class="btn-autofill" onclick="autofillForm()">
+                    &#9889; Autofill
+                </button>
+            </div>
+        </div>
+
+        <!-- ── AUTOFILL LOADING INDICATOR ───────────────────────────────── -->
+        <div id="loadingBar" class="loading-bar" style="display:none;">
+            <div class="loading-fill"></div>
+        </div>
+
+        <!-- ── MAIN CLAIM FORM ───────────────────────────────────────────── -->
+        <form method="POST" action="{{ url_for('claim') }}" id="claimForm">
+
+            <!-- Hidden field: track which OCR result was used -->
+            <input type="hidden" name="ocr_source_id" id="ocrSourceId"
+                   value="{{ ocr_id or '' }}">
+
+            <div class="form-grid">
+
+                <!-- ── LEFT COLUMN ──────────────────────────────────────── -->
+                <div class="form-col">
+
+                    <!-- Patient Name -->
+                    <div class="field-group" id="grp_patient_name">
+                        <label for="patient_name">
+                            Patient Name
+                            <span class="confidence-badge" id="conf_patient_name">
+                                {% if confidences.patient_name %}
+                                    {{ (confidences.patient_name * 100)|int }}% confidence
+                                {% endif %}
+                            </span>
+                        </label>
+                        <input type="text" name="patient_name" id="patient_name"
+                               class="form-control {% if extracted.patient_name %}autofilled{% endif %}"
+                               value="{{ extracted.patient_name or '' }}"
+                               placeholder="e.g. Mr. Rajesh Kumar" required>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="bar_patient_name"
+                                 style="width: {{ (confidences.patient_name or 0) * 100 }}%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Hospital Name -->
+                    <div class="field-group" id="grp_hospital_name">
+                        <label for="hospital_name">
+                            Hospital / Clinic Name
+                            <span class="confidence-badge" id="conf_hospital_name">
+                                {% if confidences.hospital_name %}
+                                    {{ (confidences.hospital_name * 100)|int }}% confidence
+                                {% endif %}
+                            </span>
+                        </label>
+                        <input type="text" name="hospital_name" id="hospital_name"
+                               class="form-control {% if extracted.hospital_name %}autofilled{% endif %}"
+                               value="{{ extracted.hospital_name or '' }}"
+                               placeholder="e.g. Apollo Hospitals" required>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="bar_hospital_name"
+                                 style="width: {{ (confidences.hospital_name or 0) * 100 }}%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Disease / Diagnosis -->
+                    <div class="field-group" id="grp_disease">
+                        <label for="disease">
+                            Disease / Diagnosis
+                            <span class="confidence-badge" id="conf_disease">
+                                {% if confidences.disease %}
+                                    {{ (confidences.disease * 100)|int }}% confidence
+                                {% endif %}
+                            </span>
+                        </label>
+                        <input type="text" name="disease" id="disease"
+                               class="form-control {% if extracted.disease %}autofilled{% endif %}"
+                               value="{{ extracted.disease or '' }}"
+                               placeholder="e.g. Typhoid Fever" required>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="bar_disease"
+                                 style="width: {{ (confidences.disease or 0) * 100 }}%"></div>
+                        </div>
+                    </div>
+
+                </div><!-- end left col -->
+
+                <!-- ── RIGHT COLUMN ─────────────────────────────────────── -->
+                <div class="form-col">
+
+                    <!-- Bill Amount -->
+                    <div class="field-group" id="grp_bill_amount">
+                        <label for="bill_amount">
+                            Bill Amount (₹)
+                            <span class="confidence-badge" id="conf_bill_amount">
+                                {% if confidences.bill_amount %}
+                                    {{ (confidences.bill_amount * 100)|int }}% confidence
+                                {% endif %}
+                            </span>
+                        </label>
+                        <input type="text" name="bill_amount" id="bill_amount"
+                               class="form-control {% if extracted.bill_amount %}autofilled{% endif %}"
+                               value="{{ extracted.bill_amount or '' }}"
+                               placeholder="e.g. 48150" required>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="bar_bill_amount"
+                                 style="width: {{ (confidences.bill_amount or 0) * 100 }}%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Claim Date -->
+                    <div class="field-group">
+                        <label for="claim_date">Claim Date</label>
+                        <input type="date" name="claim_date" id="claim_date"
+                               class="form-control">
+                    </div>
+
+                    <!-- Policy Number -->
+                    <div class="field-group">
+                        <label for="policy_number">Policy Number</label>
+                        <input type="text" name="policy_number" id="policy_number"
+                               class="form-control"
+                               placeholder="e.g. POL/2024/00123">
+                    </div>
+
+                </div><!-- end right col -->
+
+            </div><!-- end form-grid -->
+
+            <!-- ── SUBMIT BUTTONS ──────────────────────────────────────── -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">
+                    &#128203; Submit Claim
+                </button>
+                <a href="{{ url_for('claim_history') }}" class="btn-history">
+                    &#128218; View Past Claims
+                </a>
+            </div>
+
+        </form>
+
+        <!-- ── EXTRACTION DETAILS (collapsible debug panel) ─────────────── -->
+        {% if extracted and extracted.extraction_details %}
+        <div class="debug-panel">
+            <button class="debug-toggle" onclick="toggleDebug()">
+                &#128270; Show Extraction Details
+            </button>
+            <div class="debug-content" id="debugContent" style="display:none;">
+                <h3>Extraction Candidates</h3>
+                {% for field, details in extracted.extraction_details.items() %}
+                <div class="debug-field">
+                    <strong>{{ field.replace('_', ' ').title() }}</strong>
+                    <span class="debug-method">via {{ details.method }}</span>
+                    <ul>
+                        {% for c in details.all_candidates %}
+                        <li>
+                            <span class="cand-value">{{ c.value }}</span>
+                            <span class="cand-conf">{{ (c.confidence * 100)|int }}%</span>
+                            <span class="cand-method">{{ c.method }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div><!-- end container -->
+
+
+    <!-- ── JAVASCRIPT ────────────────────────────────────────────────────── -->
+    <script>
+
+        // ── Auto-hide flash messages ─────────────────────────────────────────
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(el => {
+                el.style.transition = 'opacity 0.5s';
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 500);
+            });
+        }, 4000);
+
+        // ── Autofill form from OCR API ────────────────────────────────────────
+        async function autofillForm() {
+            const ocrId = document.getElementById('ocrSelector').value;
+
+            if (!ocrId) {
+                alert('Please select an OCR report first.');
+                return;
+            }
+
+            // Show loading bar
+            document.getElementById('loadingBar').style.display = 'block';
+
+            try {
+                // Call the JSON API route
+                const response = await fetch(`/claim/api/${ocrId}`);
+                const data = await response.json();
+
+                if (!data.success) {
+                    alert('Failed to extract data: ' + (data.error || 'Unknown error'));
+                    return;
+                }
+
+                // Map fields: API field name → form input ID
+                const fieldMap = {
+                    'patient_name':  'patient_name',
+                    'hospital_name': 'hospital_name',
+                    'disease':       'disease',
+                    'bill_amount':   'bill_amount'
+                };
+
+                // Fill each field and update confidence bars
+                for (const [apiField, inputId] of Object.entries(fieldMap)) {
+                    const input = document.getElementById(inputId);
+                    const value = data[apiField];
+                    const conf  = data.confidence_scores[apiField] || 0;
+
+                    if (value) {
+                        // Animate the fill
+                        input.classList.add('filling');
+                        input.value = value;
+                        setTimeout(() => {
+                            input.classList.remove('filling');
+                            input.classList.add('autofilled');
+                        }, 400);
+                    }
+
+                    // Update confidence bar width
+                    const bar = document.getElementById('bar_' + apiField);
+                    if (bar) bar.style.width = (conf * 100) + '%';
+
+                    // Update confidence badge text
+                    const badge = document.getElementById('conf_' + apiField);
+                    if (badge) badge.textContent = Math.round(conf * 100) + '% confidence';
+                }
+
+                // Store which OCR was used
+                document.getElementById('ocrSourceId').value = ocrId;
+
+            } catch (err) {
+                alert('Network error: ' + err.message);
+            } finally {
+                document.getElementById('loadingBar').style.display = 'none';
+            }
+        }
+
+        // ── Toggle debug panel ────────────────────────────────────────────────
+        function toggleDebug() {
+            const panel = document.getElementById('debugContent');
+            const btn   = document.querySelector('.debug-toggle');
+            if (panel.style.display === 'none') {
+                panel.style.display = 'block';
+                btn.textContent = '🔍 Hide Extraction Details';
+            } else {
+                panel.style.display = 'none';
+                btn.textContent = '🔍 Show Extraction Details';
+            }
+        }
+
+        // ── Mark fields as manually edited (remove autofilled style) ─────────
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('input', () => {
+                input.classList.remove('autofilled');
+                input.classList.add('manually-edited');
+            });
+        });
+
+    </script>
+
+</body>
+</html>
