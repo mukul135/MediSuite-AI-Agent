@@ -30,7 +30,7 @@ app.secret_key = 'medisuite_secret_key_2024_change_this_in_production'
 # ============================================================
 app.config['MYSQL_HOST']     = 'localhost'
 app.config['MYSQL_USER']     = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'       # ← Change to your MySQL password
+app.config['MYSQL_PASSWORD'] = 'mukul@0906'       # ← Change to your MySQL password
 app.config['MYSQL_DB']       = 'medisuite'
 
 mysql = MySQL(app)
