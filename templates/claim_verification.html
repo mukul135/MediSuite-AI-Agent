@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Verification | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/claim_verification.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('upload') }}">Upload</a>
+        <a href="{{ url_for('ocr') }}">OCR</a>
+        <a href="{{ url_for('claim') }}">Claim</a>
+        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+        <a href="{{ url_for('claim_verification') }}" class="active">Verification</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>&#9989; Insurance Claim Verification</h1>
+        <p>Enter or auto-load claim details to verify eligibility before submission.</p>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                <div class="alert alert-{{ cat }}">{{ msg }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- ── RESULT PANEL (shown after POST) ─────────────────────────────── -->
+    {% if result %}
+    <div class="result-panel result-{{ result.status | lower }}">
+
+        <!-- Status Badge -->
+        <div class="result-header">
+            <div class="status-badge badge-{{ result.status | lower }}">
+                {% if result.status == 'Eligible' %}&#9989;
+                {% elif result.status == 'Incomplete' %}&#9888;
+                {% else %}&#10060;{% endif %}
+                {{ result.status }}
+            </div>
+            <div class="score-ring">
+                <svg viewBox="0 0 36 36" class="score-svg">
+                    <path class="score-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="score-fill score-{{ result.status | lower }}"
+                          stroke-dasharray="{{ result.score }}, 100"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <text x="18" y="20.35" class="score-text">{{ result.score }}%</text>
+                </svg>
+                <div class="score-label">Verification Score</div>
+            </div>
+        </div>
+
+        <p class="result-remarks">{{ result.remarks }}</p>
+
+        <div class="rules-grid">
+            <!-- Passed Rules -->
+            <div class="rules-col">
+                <h3>&#10003; Passed Rules ({{ result.passed_rules | length }})</h3>
+                <ul class="rule-list">
+                    {% for rule in result.passed_rules %}
+                        <li class="rule-pass">{{ rule }}</li>
+                    {% else %}
+                        <li class="rule-none">No rules passed</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- Failed Rules -->
+            <div class="rules-col">
+                <h3>&#10007; Failed Rules ({{ result.failed_rules | length }})</h3>
+                <ul class="rule-list">
+                    {% for rule in result.failed_rules %}
+                        <li class="rule-fail">{{ rule }}</li>
+                    {% else %}
+                        <li class="rule-none">No failed rules &#127881;</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        {% if result.missing_fields %}
+        <div class="missing-fields">
+            <strong>&#128221; Missing Fields:</strong>
+            {% for f in result.missing_fields %}
+                <span class="missing-tag">{{ f }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="result-meta">
+            Verified at: {{ result.verified_at }}
+            &nbsp;|&nbsp;
+            <a href="{{ url_for('claim_verification_history') }}">View History</a>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- ── AUTO-LOAD FROM CLAIM ──────────────────────────────────────────── -->
+    {% if claims_list %}
+    <div class="autofill-banner">
+        <div class="autofill-content">
+            <strong>&#9889; Load from Saved Claim</strong>
+            <p>Select a claim to pre-fill the form automatically</p>
+        </div>
+        <div class="autofill-controls">
+            <select id="claimSelector" class="form-control">
+                <option value="">-- Select Claim --</option>
+                {% for c in claims_list %}
+                <option value="{{ c.id }}">
+                    #{{ c.id }} — {{ c.patient_name }} — {{ c.hospital_name }} — Rs.{{ c.bill_amount }}
+                </option>
+                {% endfor %}
+            </select>
+            <a id="loadClaimBtn" href="#" class="btn-load" onclick="loadClaim()">Load</a>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- ── VERIFICATION FORM ─────────────────────────────────────────────── -->
+    <form method="POST" action="{{ url_for('claim_verification') }}" id="verifyForm">
+        <input type="hidden" name="claim_id" id="hiddenClaimId" value="{{ claim_id or '' }}">
+
+        <div class="verify-card">
+            <h2>Claim Details</h2>
+            <div class="form-grid">
+
+                <div class="field-group">
+                    <label>Patient Name <span class="req">*</span></label>
+                    <input type="text" name="patient_name" class="form-control"
+                           value="{{ prefill.patient_name or '' }}"
+                           placeholder="e.g. Mr. Rajesh Kumar">
+                </div>
+
+                <div class="field-group">
+                    <label>Hospital Name <span class="req">*</span></label>
+                    <input type="text" name="hospital_name" class="form-control"
+                           value="{{ prefill.hospital_name or '' }}"
+                           placeholder="e.g. Apollo Hospital">
+                </div>
+
+                <div class="field-group">
+                    <label>Disease / Diagnosis <span class="req">*</span></label>
+                    <input type="text" name="disease" class="form-control"
+                           value="{{ prefill.disease or '' }}"
+                           placeholder="e.g. Typhoid Fever">
+                </div>
+
+                <div class="field-group">
+                    <label>Bill Amount (Rs.) <span class="req">*</span></label>
+                    <input type="text" name="bill_amount" class="form-control"
+                           value="{{ prefill.bill_amount or '' }}"
+                           placeholder="e.g. 48150">
+                </div>
+
+                <div class="field-group">
+                    <label>Insurance ID <span class="req">*</span></label>
+                    <input type="text" name="insurance_id" class="form-control"
+                           value="{{ prefill.insurance_id or '' }}"
+                           placeholder="e.g. INS/2024/00123">
+                </div>
+
+                <div class="field-group">
+                    <label>Policy Number</label>
+                    <input type="text" name="policy_number" class="form-control"
+                           value="{{ prefill.policy_number or '' }}"
+                           placeholder="e.g. POL/2024/00456">
+                </div>
+
+                <div class="field-group">
+                    <label>Admission Date</label>
+                    <input type="text" name="admission_date" class="form-control"
+                           value="{{ prefill.admission_date or '' }}"
+                           placeholder="DD/MM/YYYY">
+                </div>
+
+                <div class="field-group">
+                    <label>Discharge Date</label>
+                    <input type="text" name="discharge_date" class="form-control"
+                           value="{{ prefill.discharge_date or '' }}"
+                           placeholder="DD/MM/YYYY">
+                </div>
+
+                <div class="field-group">
+                    <label>Doctor Name</label>
+                    <input type="text" name="doctor_name" class="form-control"
+                           value="{{ prefill.doctor_name or '' }}"
+                           placeholder="e.g. Dr. Priya Nair">
+                </div>
+
+            </div><!-- end form-grid -->
+
+            <div class="form-actions">
+                <button type="submit" class="btn-verify">
+                    &#9989; Verify Claim
+                </button>
+                <a href="{{ url_for('claim_verification') }}" class="btn-reset">
+                    &#8635; Reset
+                </a>
+                <a href="{{ url_for('claim_verification_history') }}" class="btn-history">
+                    &#128218; History
+                </a>
+            </div>
+        </div>
+    </form>
+
+</div><!-- end container -->
+
+<script>
+    // Auto-hide alerts
+    setTimeout(() => {
+        document.querySelectorAll('.alert').forEach(el => {
+            el.style.transition = 'opacity 0.5s';
+            el.style.opacity = '0';
+            setTimeout(() => el.remove(), 500);
+        });
+    }, 4000);
+
+    // Load claim from selector
+    function loadClaim() {
+        const id = document.getElementById('claimSelector').value;
+        if (!id) { alert('Select a claim first.'); return; }
+        window.location.href = '{{ url_for("claim_verification") }}?claim_id=' + id;
+    }
+</script>
+</body>
+</html>

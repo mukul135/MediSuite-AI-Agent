@@ -16,6 +16,8 @@ import json
 import pytesseract          # Python wrapper for Tesseract OCR engine
 from PIL import Image       # Pillow: open and process image files
 from pdf2image import convert_from_path  # Convert PDF pages → images for OCR
+from extractor.medical_nlp import analyze_medical_text, result_to_json
+from extractor.claim_verifier import verify_claim, build_fields_from_records
 
 # ============================================================
 #  1. CREATE THE FLASK APP
@@ -448,6 +450,334 @@ def claim_api(ocr_id):
         'confidence_scores': result['confidence_scores'],
         'extraction_details': result['extraction_details']
     }
+
+# ============================================================
+#  8.NLP Medical Analysis Routes
+# ============================================================
+
+@app.route('/medical-analysis', methods=['GET'])
+def medical_analysis_home():
+    """
+    Show list of user's OCR results so they can pick one to analyse.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        'SELECT id, filename, created_at FROM ocr_results WHERE processed_by = %s ORDER BY id DESC',
+        (session['email'],)
+    )
+    ocr_list = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template('medical_analysis_home.html', ocr_list=ocr_list)
+ 
+ 
+@app.route('/medical-analysis/<int:ocr_id>', methods=['GET'])
+def medical_analysis(ocr_id):
+    """
+    Run NLP analysis on a specific OCR result.
+ 
+    Workflow:
+    1. Load OCR text from ocr_results table
+    2. Run analyze_medical_text()
+    3. Save result to medical_analysis table (or update if exists)
+    4. Render medical_analysis.html with structured result
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+ 
+    # ── Load OCR record ───────────────────────────────────────────────────────
+    cursor.execute(
+        'SELECT * FROM ocr_results WHERE id = %s AND processed_by = %s',
+        (ocr_id, session['email'])
+    )
+    ocr_record = cursor.fetchone()
+ 
+    if not ocr_record:
+        flash('OCR record not found or access denied.', 'danger')
+        return redirect(url_for('medical_analysis_home'))
+ 
+    if not ocr_record.get('extracted_text', '').strip():
+        flash('This OCR record has no extracted text to analyse.', 'warning')
+        return redirect(url_for('medical_analysis_home'))
+ 
+    # ── Run NLP analysis ──────────────────────────────────────────────────────
+    try:
+        analysis = analyze_medical_text(ocr_record['extracted_text'])
+        analysis_json_str = result_to_json(analysis)
+    except Exception as e:
+        flash(f'NLP analysis failed: {str(e)}', 'danger')
+        return redirect(url_for('medical_analysis_home'))
+ 
+    # ── Save to medical_analysis table ────────────────────────────────────────
+    # Check if analysis already exists for this OCR record
+    cursor.execute(
+        'SELECT id FROM medical_analysis WHERE ocr_result_id = %s',
+        (ocr_id,)
+    )
+    existing = cursor.fetchone()
+ 
+    try:
+        if existing:
+            # Update existing record
+            cursor.execute(
+                '''UPDATE medical_analysis
+                   SET diseases=%s, medicines=%s, treatments=%s,
+                       symptoms=%s, tests=%s, doctors=%s, analysis_json=%s
+                   WHERE ocr_result_id=%s''',
+                (
+                    json.dumps(analysis['diseases']),
+                    json.dumps(analysis['medicines']),
+                    json.dumps(analysis['treatments']),
+                    json.dumps(analysis['symptoms']),
+                    json.dumps(analysis['tests']),
+                    json.dumps(analysis['doctors']),
+                    analysis_json_str,
+                    ocr_id
+                )
+            )
+        else:
+            # Insert new record
+            cursor.execute(
+                '''INSERT INTO medical_analysis
+                   (ocr_result_id, diseases, medicines, treatments,
+                    symptoms, tests, doctors, analysis_json)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s)''',
+                (
+                    ocr_id,
+                    json.dumps(analysis['diseases']),
+                    json.dumps(analysis['medicines']),
+                    json.dumps(analysis['treatments']),
+                    json.dumps(analysis['symptoms']),
+                    json.dumps(analysis['tests']),
+                    json.dumps(analysis['doctors']),
+                    analysis_json_str
+                )
+            )
+        mysql.connection.commit()
+    except Exception as e:
+        flash(f'Database error while saving analysis: {str(e)}', 'danger')
+ 
+    cursor.close()
+ 
+    return render_template(
+        'medical_analysis.html',
+        ocr_record = ocr_record,
+        analysis   = analysis,
+        ocr_id     = ocr_id
+    )
+ 
+ 
+@app.route('/medical-analysis/history')
+def medical_analysis_history():
+    """
+    Show all past NLP analyses for the logged-in user.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT ma.id, ma.ocr_result_id, ma.created_at,
+                  ma.diseases, ma.medicines, ma.treatments,
+                  ocr.filename
+           FROM medical_analysis ma
+           JOIN ocr_results ocr ON ma.ocr_result_id = ocr.id
+           WHERE ocr.processed_by = %s
+           ORDER BY ma.id DESC''',
+        (session['email'],)
+    )
+    analyses = cursor.fetchall()
+    cursor.close()
+ 
+    # Parse JSON strings back to lists for display
+    for row in analyses:
+        for field in ['diseases', 'medicines', 'treatments']:
+            try:
+                row[field] = json.loads(row[field]) if row[field] else []
+            except:
+                row[field] = []
+ 
+    return render_template('medical_analysis_history.html', analyses=analyses)
+
+
+# ============================================================
+#  8. CLAIM VERIFICATION ROUTES 
+# ============================================================
+
+@app.route('/claim-verification', methods=['GET', 'POST'])
+def claim_verification():
+    """
+    GET:  Show the verification form, pre-populated from a claim
+          if ?claim_id=X is passed, or blank if manual entry.
+    POST: User submits the form → run verify_claim() → save → show result.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    result        = None   # verification result dict
+    prefill       = {}     # values to pre-fill the form
+    selected_claim = None  # the claim record used (if any)
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+ 
+    # ── GET: pre-fill from a claim record if claim_id passed in URL ───────────
+    claim_id = request.args.get('claim_id')
+    if claim_id and request.method == 'GET':
+        cursor.execute(
+            'SELECT * FROM claims WHERE id = %s AND submitted_by = %s',
+            (claim_id, session['email'])
+        )
+        selected_claim = cursor.fetchone()
+        if selected_claim:
+            prefill = build_fields_from_records(claim_record=selected_claim)
+ 
+    # ── POST: run verification ────────────────────────────────────────────────
+    if request.method == 'POST':
+        # Build fields from submitted form data
+        form_data = {
+            "patient_name":   request.form.get('patient_name', '').strip(),
+            "hospital_name":  request.form.get('hospital_name', '').strip(),
+            "disease":        request.form.get('disease', '').strip(),
+            "bill_amount":    request.form.get('bill_amount', '').strip(),
+            "insurance_id":   request.form.get('insurance_id', '').strip(),
+            "policy_number":  request.form.get('policy_number', '').strip(),
+            "admission_date": request.form.get('admission_date', '').strip(),
+            "discharge_date": request.form.get('discharge_date', '').strip(),
+            "doctor_name":    request.form.get('doctor_name', '').strip(),
+        }
+        claim_id_form = request.form.get('claim_id', '').strip()
+ 
+        # If a saved claim was linked, load it too
+        claim_record = None
+        if claim_id_form:
+            cursor.execute(
+                'SELECT * FROM claims WHERE id = %s AND submitted_by = %s',
+                (claim_id_form, session['email'])
+            )
+            claim_record = cursor.fetchone()
+ 
+        fields = build_fields_from_records(
+            claim_record=claim_record,
+            form_data=form_data
+        )
+ 
+        # Run the verification engine
+        try:
+            result = verify_claim(fields)
+        except Exception as e:
+            flash(f'Verification error: {str(e)}', 'danger')
+            return redirect(url_for('claim_verification'))
+ 
+        # Save to claim_verification table
+        try:
+            # Check if a verification already exists for this claim
+            existing_id = None
+            if claim_id_form:
+                cursor.execute(
+                    'SELECT verification_id FROM claim_verification WHERE claim_id = %s AND verified_by = %s',
+                    (claim_id_form, session['email'])
+                )
+                existing = cursor.fetchone()
+                if existing:
+                    existing_id = existing['verification_id']
+ 
+            if existing_id:
+                cursor.execute(
+                    '''UPDATE claim_verification
+                       SET verification_status=%s, verification_score=%s,
+                           missing_fields=%s, failed_rules=%s,
+                           passed_rules=%s, remarks=%s,
+                           input_fields=%s, created_at=NOW()
+                       WHERE verification_id=%s''',
+                    (
+                        result['status'],
+                        result['score'],
+                        json.dumps(result['missing_fields']),
+                        json.dumps(result['failed_rules']),
+                        json.dumps(result['passed_rules']),
+                        result['remarks'],
+                        json.dumps(fields),
+                        existing_id
+                    )
+                )
+            else:
+                cursor.execute(
+                    '''INSERT INTO claim_verification
+                       (claim_id, verification_status, verification_score,
+                        missing_fields, failed_rules, passed_rules,
+                        remarks, input_fields, verified_by)
+                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)''',
+                    (
+                        int(claim_id_form) if claim_id_form else None,
+                        result['status'],
+                        result['score'],
+                        json.dumps(result['missing_fields']),
+                        json.dumps(result['failed_rules']),
+                        json.dumps(result['passed_rules']),
+                        result['remarks'],
+                        json.dumps(fields),
+                        session['email']
+                    )
+                )
+            mysql.connection.commit()
+        except Exception as e:
+            flash(f'Could not save verification result: {str(e)}', 'warning')
+ 
+        # Keep form data for re-display
+        prefill = fields
+ 
+    # ── Fetch user's past claims for the dropdown ──────────────────────────────
+    cursor.execute(
+        '''SELECT id, patient_name, hospital_name, bill_amount
+           FROM claims WHERE submitted_by = %s ORDER BY id DESC LIMIT 20''',
+        (session['email'],)
+    )
+    claims_list = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template(
+        'claim_verification.html',
+        result       = result,
+        prefill      = prefill,
+        claims_list  = claims_list,
+        claim_id     = claim_id or request.form.get('claim_id', '')
+    )
+ 
+ 
+@app.route('/claim-verification/history')
+def claim_verification_history():
+    """Show all past verifications for the logged-in user."""
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT cv.*, c.patient_name, c.hospital_name
+           FROM claim_verification cv
+           LEFT JOIN claims c ON cv.claim_id = c.id
+           WHERE cv.verified_by = %s
+           ORDER BY cv.verification_id DESC''',
+        (session['email'],)
+    )
+    verifications = cursor.fetchall()
+    cursor.close()
+ 
+    # Parse JSON columns
+    for row in verifications:
+        for col in ['missing_fields', 'failed_rules', 'passed_rules']:
+            try:
+                row[col] = json.loads(row[col]) if row[col] else []
+            except:
+                row[col] = []
+ 
+    return render_template('claim_verification_history.html', verifications=verifications)
+ 
+
 # ============================================================
 #  8. DASHBOARD ROUTE  (your existing code — unchanged)
 # ============================================================

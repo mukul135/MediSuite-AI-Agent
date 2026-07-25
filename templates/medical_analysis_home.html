@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Analysis | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nlp.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}" class="active">Analysis</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>&#129504; NLP Medical Analysis</h1>
+            <p>Select an OCR-processed report to extract diseases, medicines, treatments and more.</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="alert alert-{{ cat }}">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="nlp-card">
+            <h2>Select OCR Report to Analyse</h2>
+            {% if ocr_list %}
+                <div class="ocr-grid">
+                    {% for ocr in ocr_list %}
+                    <a href="{{ url_for('medical_analysis', ocr_id=ocr.id) }}" class="ocr-item">
+                        <div class="ocr-icon">&#128196;</div>
+                        <div class="ocr-info">
+                            <div class="ocr-filename">{{ ocr.filename }}</div>
+                            <div class="ocr-date">{{ ocr.created_at.strftime('%d %b %Y, %H:%M') }}</div>
+                        </div>
+                        <div class="ocr-arrow">&#8594;</div>
+                    </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <div class="empty-icon">&#128270;</div>
+                    <p>No OCR results found. <a href="{{ url_for('upload') }}">Upload a document</a> and <a href="{{ url_for('ocr') }}">extract text</a> first.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="action-row">
+            <a href="{{ url_for('medical_analysis_history') }}" class="btn-history">
+                &#128218; View Past Analyses
+            </a>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(el => {
+                el.style.transition = 'opacity 0.5s';
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 500);
+            });
+        }, 4000);
+    </script>
+</body>
+</html>

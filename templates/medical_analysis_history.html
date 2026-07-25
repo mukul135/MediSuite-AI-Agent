@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis History | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nlp.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}" class="active">Analysis</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="page-header">
+            <h1>&#128218; Analysis History</h1>
+            <p>All past NLP analyses run by you.</p>
+        </div>
+        <a href="{{ url_for('medical_analysis_home') }}" class="btn-action" style="display:inline-block;margin-bottom:1.2rem;">+ New Analysis</a>
+        {% if analyses %}
+        <div class="nlp-card">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>#</th><th>File</th><th>Diseases</th><th>Medicines</th><th>Treatments</th><th>Date</th><th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in analyses %}
+                    <tr>
+                        <td>{{ row.id }}</td>
+                        <td class="filename-cell">{{ row.filename }}</td>
+                        <td>{{ row.diseases[:3] | join(', ') }}{% if row.diseases | length > 3 %}...{% endif %}</td>
+                        <td>{{ row.medicines[:3] | join(', ') }}{% if row.medicines | length > 3 %}...{% endif %}</td>
+                        <td>{{ row.treatments[:2] | join(', ') }}{% if row.treatments | length > 2 %}...{% endif %}</td>
+                        <td>{{ row.created_at.strftime('%d %b %Y') }}</td>
+                        <td><a href="{{ url_for('medical_analysis', ocr_id=row.ocr_result_id) }}" class="btn-rerun">Re-run</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">&#129504;</div>
+            <p>No analyses yet. <a href="{{ url_for('medical_analysis_home') }}">Run your first analysis</a>.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

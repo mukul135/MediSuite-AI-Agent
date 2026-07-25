@@ -8,3 +8,7 @@ Jinja2==3.1.6
 MarkupSafe==3.0.3
 mysqlclient==2.2.8
 Werkzeug==3.1.8
+Pillow
+pdf2image
+pytesseract
+spacy

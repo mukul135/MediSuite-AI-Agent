@@ -19,12 +19,14 @@
             <span>&#129657;</span> MediSuite
         </div>
         <div class="nav-links">
-            <a href="{{ url_for('dashboard') }}">Dashboard</a>
-            <a href="{{ url_for('upload') }}">Upload</a>
-            <a href="{{ url_for('ocr') }}">OCR</a>
-            <a href="{{ url_for('claim') }}" class="active">Claim</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </div>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('upload') }}">Upload</a>
+    <a href="{{ url_for('ocr') }}">OCR</a>
+    <a href="{{ url_for('claim') }}">Claim</a>
+    <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
     </nav>
 
     <div class="container">
@@ -89,7 +91,7 @@
                         <label for="patient_name">
                             Patient Name
                             <span class="confidence-badge" id="conf_patient_name">
-                                {% if confidences.patient_name %}
+                                {% if confidences and confidences.patient_name %}
                                     {{ (confidences.patient_name * 100)|int }}% confidence
                                 {% endif %}
                             </span>
@@ -99,9 +101,10 @@
                                value="{{ extracted.patient_name or '' }}"
                                placeholder="e.g. Mr. Rajesh Kumar" required>
                         <div class="confidence-bar">
-                            <div class="confidence-fill" id="bar_patient_name"
-                                 style="width: {{ (confidences.patient_name or 0) * 100 }}%"></div>
-                        </div>
+                            <div class="confidence-fill"
+                                id="bar_patient_name"
+                                  style="width: {{ ((confidences.patient_name if confidences else 0) * 100) }}%">
+                            </div>
                     </div>
 
                     <!-- Hospital Name -->
@@ -119,9 +122,10 @@
                                value="{{ extracted.hospital_name or '' }}"
                                placeholder="e.g. Apollo Hospitals" required>
                         <div class="confidence-bar">
-                            <div class="confidence-fill" id="bar_hospital_name"
-                                 style="width: {{ (confidences.hospital_name or 0) * 100 }}%"></div>
-                        </div>
+                           <div class="confidence-fill"
+                                 id="bar_hospital_name"
+                                 style="width: {{ ((confidences.hospital_name if confidences else 0) * 100) }}%">
+                            </div>
                     </div>
 
                     <!-- Disease / Diagnosis -->
@@ -139,9 +143,10 @@
                                value="{{ extracted.disease or '' }}"
                                placeholder="e.g. Typhoid Fever" required>
                         <div class="confidence-bar">
-                            <div class="confidence-fill" id="bar_disease"
-                                 style="width: {{ (confidences.disease or 0) * 100 }}%"></div>
-                        </div>
+                            <div class="confidence-fill"
+                                id="bar_disease"
+                                style="width: {{ ((confidences.disease if confidences else 0) * 100) }}%">
+                            </div>
                     </div>
 
                 </div><!-- end left col -->
@@ -164,9 +169,10 @@
                                value="{{ extracted.bill_amount or '' }}"
                                placeholder="e.g. 48150" required>
                         <div class="confidence-bar">
-                            <div class="confidence-fill" id="bar_bill_amount"
-                                 style="width: {{ (confidences.bill_amount or 0) * 100 }}%"></div>
-                        </div>
+                            <div class="confidence-fill"
+                                id="bar_bill_amount"
+                                style="width: {{ ((confidences.bill_amount if confidences else 0) * 100) }}%">
+                            </div>
                     </div>
 
                     <!-- Claim Date -->
@@ -201,7 +207,7 @@
         </form>
 
         <!-- ── EXTRACTION DETAILS (collapsible debug panel) ─────────────── -->
-        {% if extracted and extracted.extraction_details %}
+{% if extracted and extracted.get('extraction_details') %}
         <div class="debug-panel">
             <button class="debug-toggle" onclick="toggleDebug()">
                 &#128270; Show Extraction Details
@@ -276,7 +282,7 @@
                 for (const [apiField, inputId] of Object.entries(fieldMap)) {
                     const input = document.getElementById(inputId);
                     const value = data[apiField];
-                    const conf  = data.confidence_scores[apiField] || 0;
+                    const conf = (data.confidence_scores && data.confidence_scores[apiField]) || 0;
 
                     if (value) {
                         // Animate the fill

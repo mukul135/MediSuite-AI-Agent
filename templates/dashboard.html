@@ -176,16 +176,12 @@
         </div>
     </a>
 
-    <div class="module-card">
-        <div class="module-icon mod-teal">🧠</div>
-        <div class="module-content">
-            <div class="module-title">NLP Analysis</div>
-            <div class="module-desc">
-                AI-based medical text analysis
-            </div>
-        </div>
-        <span class="module-status coming">Coming Soon</span>
-    </div>
+    <a href="{{ url_for('medical_analysis_home') }}" class="module-card">
+    <div class="module-icon">&#129504;</div>
+    <div class="module-title">Medical Analysis</div>
+    <div class="module-desc">NLP entity extraction from reports</div>
+</a>
+
 
     <div class="module-card">
         <div class="module-icon mod-green">🛡️</div>

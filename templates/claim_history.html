@@ -15,13 +15,15 @@
 
     <nav class="navbar">
         <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
-        <div class="nav-links">
-            <a href="{{ url_for('dashboard') }}">Dashboard</a>
-            <a href="{{ url_for('upload') }}">Upload</a>
-            <a href="{{ url_for('ocr') }}">OCR</a>
-            <a href="{{ url_for('claim') }}" class="active">Claim</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </div>
+       <div class="nav-links">
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('upload') }}">Upload</a>
+    <a href="{{ url_for('ocr') }}">OCR</a>
+    <a href="{{ url_for('claim') }}">Claim</a>
+    <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
     </nav>
 
     <div class="container">

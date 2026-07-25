@@ -1,0 +1,100 @@
+/* MediSuite-AI-Agent -- static/css/nlp.css -- Feature 5 NLP styles */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f4f8; color: #2d3748; min-height: 100vh; }
+
+.navbar { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); padding: 0 2rem; height: 62px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+.nav-brand { color: #fff; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+.nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.2); color: #fff; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 2rem 1.5rem; }
+.page-header { margin-bottom: 1.5rem; }
+.page-header h1 { font-size: 1.75rem; font-weight: 700; color: #1a237e; }
+.page-header p { margin-top: 0.4rem; color: #546e7a; font-size: 0.97rem; }
+
+.alert { padding: 0.85rem 1.2rem; border-radius: 8px; margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 500; }
+.alert-success { background:#e8f5e9; color:#2e7d32; border-left:4px solid #43a047; }
+.alert-danger  { background:#ffebee; color:#c62828; border-left:4px solid #ef5350; }
+.alert-warning { background:#fff8e1; color:#e65100; border-left:4px solid #ffa726; }
+
+/* ── NLP HOME CARD ─────────────────────────────────────────────────────────── */
+.nlp-card { background:#fff; border-radius:14px; padding:2rem; box-shadow:0 2px 16px rgba(0,0,0,0.07); margin-bottom:1.5rem; }
+.nlp-card h2 { font-size:1.15rem; font-weight:700; color:#1a237e; margin-bottom:1.2rem; }
+
+.ocr-grid { display:flex; flex-direction:column; gap:0.6rem; }
+.ocr-item { display:flex; align-items:center; gap:1rem; padding:0.9rem 1.2rem; border:1.5px solid #cfd8dc; border-radius:10px; text-decoration:none; color:#2d3748; background:#fafafa; transition:all 0.2s; }
+.ocr-item:hover { border-color:#1a73e8; background:#e8f0fe; }
+.ocr-icon { font-size:1.4rem; flex-shrink:0; }
+.ocr-info { flex:1; }
+.ocr-filename { font-weight:600; font-size:0.92rem; color:#1a237e; font-family:'Courier New',monospace; }
+.ocr-date { font-size:0.78rem; color:#78909c; margin-top:2px; }
+.ocr-arrow { font-size:1.2rem; color:#90caf9; }
+
+/* ── ENTITY GRID ───────────────────────────────────────────────────────────── */
+.entity-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1.2rem; margin-bottom:1.5rem; }
+
+.entity-card { background:#fff; border-radius:14px; padding:1.4rem; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-top:4px solid #ccc; }
+.card-red    { border-top-color:#ef5350; }
+.card-blue   { border-top-color:#1a73e8; }
+.card-green  { border-top-color:#43a047; }
+.card-orange { border-top-color:#ffa726; }
+.card-purple { border-top-color:#7e57c2; }
+.card-teal   { border-top-color:#26a69a; }
+.card-grey   { border-top-color:#78909c; }
+.card-indigo { border-top-color:#3949ab; }
+
+.entity-header { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.9rem; }
+.entity-icon   { font-size:1.2rem; }
+.entity-title  { font-size:0.9rem; font-weight:700; color:#37474f; flex:1; }
+.entity-count  { background:#e8eaf6; color:#3949ab; border-radius:20px; padding:2px 10px; font-size:0.78rem; font-weight:700; }
+
+.entity-list { list-style:none; display:flex; flex-wrap:wrap; gap:0.4rem; }
+.entity-list li { display:inline; }
+.none-found { color:#90a4ae; font-size:0.85rem; font-style:italic; }
+
+/* ── TAGS ──────────────────────────────────────────────────────────────────── */
+.tag { display:inline-block; padding:3px 10px; border-radius:20px; font-size:0.8rem; font-weight:600; }
+.tag-red    { background:#ffebee; color:#c62828; }
+.tag-blue   { background:#e3f2fd; color:#1565c0; }
+.tag-green  { background:#e8f5e9; color:#2e7d32; }
+.tag-orange { background:#fff8e1; color:#e65100; }
+.tag-purple { background:#ede7f6; color:#512da8; }
+.tag-teal   { background:#e0f2f1; color:#00695c; }
+.tag-grey   { background:#eceff1; color:#546e7a; }
+.tag-indigo { background:#e8eaf6; color:#283593; }
+
+/* ── ACTION ROW ────────────────────────────────────────────────────────────── */
+.action-row { display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1rem; }
+.btn-action { padding:11px 24px; background:linear-gradient(135deg,#1a73e8,#0d47a1); color:#fff; text-decoration:none; border-radius:10px; font-size:0.95rem; font-weight:700; }
+.btn-action:hover { opacity:0.9; }
+.btn-secondary { padding:11px 20px; background:#e8eaf6; color:#1a237e; text-decoration:none; border-radius:10px; font-size:0.92rem; font-weight:600; }
+.btn-secondary:hover { background:#c5cae9; }
+.btn-history { padding:9px 20px; background:#e8eaf6; color:#1a237e; text-decoration:none; border-radius:8px; font-size:0.9rem; font-weight:600; }
+
+/* ── NO ENTITIES ───────────────────────────────────────────────────────────── */
+.no-entities { text-align:center; padding:3rem; background:#fff; border-radius:14px; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+.no-entities-icon { font-size:3rem; margin-bottom:1rem; }
+.hint { color:#78909c; font-size:0.88rem; margin-top:0.5rem; }
+
+/* ── EMPTY STATE ───────────────────────────────────────────────────────────── */
+.empty-state { text-align:center; padding:3rem; }
+.empty-icon { font-size:3rem; margin-bottom:1rem; }
+.empty-state p { color:#546e7a; }
+.empty-state a { color:#1a73e8; font-weight:600; text-decoration:none; }
+
+/* ── HISTORY TABLE ─────────────────────────────────────────────────────────── */
+.history-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+.history-table thead tr { background:#e8eaf6; color:#1a237e; }
+.history-table th, .history-table td { padding:10px 12px; text-align:left; border-bottom:1px solid #eceff1; }
+.history-table tbody tr:hover { background:#f5f7ff; }
+.filename-cell { font-family:'Courier New',monospace; font-size:0.83rem; color:#3949ab; }
+.btn-rerun { padding:4px 12px; background:#e3f2fd; color:#1565c0; border-radius:6px; font-size:0.8rem; font-weight:600; text-decoration:none; }
+.btn-rerun:hover { background:#bbdefb; }
+
+@media (max-width:700px) {
+    .entity-grid { grid-template-columns:1fr; }
+    .action-row { flex-direction:column; }
+    .btn-action, .btn-secondary { text-align:center; }
+}
