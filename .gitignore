@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Models (optional)
+models/*.pkl
+models/*.joblib
+
+# Logs
+*.log
+
+# Windows
+Thumbs.db

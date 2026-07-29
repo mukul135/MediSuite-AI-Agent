@@ -1,0 +1,2001 @@
+patient_age,gender,hospital_type,disease,disease_severity,bill_amount,admission_days,admission_date,discharge_date,insurance_id_valid,policy_valid,verification_score,verification_status,previous_claims,fraud_flag,approved
+58,male,private,Typhoid Fever,medium,30917.97,4,12/10/2020,16/10/2020,1,1,65,Incomplete,4,0,1
+23,male,private,Fracture,low,16244.41,2,23/02/2023,25/02/2023,1,1,86,Eligible,1,0,1
+69,male,trust,Tuberculosis,medium,37116.28,6,14/11/2020,20/11/2020,1,1,65,Incomplete,3,0,1
+56,female,private,Dengue Fever,medium,49854.83,4,14/02/2022,18/02/2022,1,1,99,Eligible,2,0,1
+20,male,government,Gastritis,low,21816.99,1,09/11/2024,10/11/2024,1,1,83,Eligible,1,0,1
+60,female,government,Diabetes Mellitus,medium,56273.59,6,29/12/2022,04/01/2023,1,1,100,Eligible,5,0,1
+71,male,private,Fracture,low,20711.01,3,01/04/2022,04/04/2022,0,1,66,Incomplete,5,0,1
+49,female,private,Stroke,high,169196.07,30,20/05/2021,19/06/2021,1,1,97,Eligible,3,0,1
+41,male,private,Pneumonia,medium,47078.53,3,27/03/2024,30/03/2024,1,0,40,Incomplete,5,0,0
+42,female,private,Dengue with Thrombocytopenia,high,288101.46,7,07/02/2023,14/02/2023,1,0,64,Incomplete,2,0,1
+25,female,private,Cancer,high,254175.67,30,18/01/2024,17/02/2024,1,1,71,Incomplete,4,0,1
+37,male,government,Pneumonia,medium,64563.2,3,09/01/2023,12/01/2023,1,1,67,Incomplete,2,0,1
+33,male,government,Fracture,low,23832.89,4,24/06/2020,28/06/2020,1,1,94,Eligible,1,0,1
+78,male,private,Viral Fever,low,22193.53,2,16/05/2022,18/05/2022,1,1,72,Incomplete,5,0,1
+41,female,private,Malaria,low,5662.09,1,05/04/2021,06/04/2021,1,1,74,Incomplete,4,0,1
+63,male,government,Fracture,low,22919.24,3,26/10/2024,29/10/2024,0,1,72,Incomplete,3,0,0
+64,female,private,Fracture,low,20764.93,1,24/01/2021,25/01/2021,0,1,57,Incomplete,3,0,0
+61,male,trust,Dengue Fever,medium,62333.88,4,27/06/2024,01/07/2024,1,0,58,Incomplete,1,0,1
+47,male,private,Diabetes Mellitus,medium,67521.45,4,19/10/2024,23/10/2024,0,1,30,Incomplete,0,0,0
+28,female,private,Sepsis,high,146186.28,8,01/04/2022,09/04/2022,1,0,54,Incomplete,2,0,1
+36,female,private,Asthma,medium,25061.79,6,30/08/2021,05/09/2021,1,1,94,Eligible,0,0,1
+21,female,private,Malaria,low,6463.52,1,06/11/2022,07/11/2022,1,0,34,Incomplete,5,0,1
+25,male,government,Hepatitis B,medium,17583.21,9,16/06/2020,25/06/2020,1,1,80,Eligible,2,0,1
+33,female,private,Kidney Failure,high,352260.6,21,06/09/2021,27/09/2021,1,1,64,Incomplete,0,0,1
+24,male,private,Asthma,medium,47882.51,8,28/09/2020,06/10/2020,1,1,83,Eligible,2,0,1
+63,female,private,Dengue with Thrombocytopenia,high,53520.4,24,31/07/2024,24/08/2024,1,1,68,Incomplete,2,0,1
+65,male,private,Viral Fever,low,16306.26,3,09/01/2024,12/01/2024,1,1,76,Incomplete,4,0,1
+23,female,private,Viral Fever,low,3078.01,2,28/04/2024,30/04/2024,1,1,88,Eligible,4,0,1
+18,male,private,Diabetes Mellitus,medium,50463.37,8,05/09/2024,13/09/2024,1,0,38,Incomplete,0,0,0
+75,female,private,Appendicitis,medium,58350.67,9,25/12/2021,03/01/2022,1,1,75,Incomplete,1,0,1
+74,female,private,Typhoid Fever,medium,62876.69,9,11/11/2021,20/11/2021,1,1,75,Incomplete,2,0,1
+42,male,private,Sepsis,high,139807.77,18,31/07/2022,18/08/2022,1,1,74,Incomplete,1,1,1
+43,female,government,Viral Fever,low,24271.56,3,25/07/2021,28/07/2021,1,1,94,Eligible,2,0,1
+74,female,government,Tuberculosis,medium,77564.73,3,27/06/2021,30/06/2021,0,1,50,Incomplete,3,0,1
+25,female,private,Hepatitis B,medium,31556.96,9,22/12/2023,31/12/2023,0,1,64,Incomplete,5,0,0
+41,female,government,Diabetes Mellitus,medium,55505.1,4,20/09/2023,24/09/2023,1,1,79,Incomplete,5,0,1
+62,female,private,Asthma,medium,27469.61,9,23/09/2023,02/10/2023,1,1,99,Eligible,4,0,1
+71,male,private,Gastritis,low,7624.02,3,28/05/2024,31/05/2024,1,1,73,Incomplete,4,0,1
+60,male,private,Gastritis,low,17604.78,3,22/06/2023,25/06/2023,0,1,45,Incomplete,5,0,0
+27,male,private,Dengue Fever,medium,78955.84,4,05/06/2023,09/06/2023,1,1,96,Eligible,1,0,1
+49,female,private,Fracture,low,17433.28,1,12/01/2020,13/01/2020,1,1,93,Eligible,3,0,1
+76,male,private,Stroke,high,410637.47,23,29/09/2023,22/10/2023,1,1,88,Eligible,4,0,1
+45,female,private,Tuberculosis,medium,44254.53,6,19/03/2024,25/03/2024,1,1,93,Eligible,3,0,1
+46,male,private,Gastritis,low,8977.73,1,16/10/2021,17/10/2021,0,1,74,Incomplete,1,0,0
+44,female,private,Cardiac Arrest,high,259665.94,13,07/05/2020,20/05/2020,1,1,97,Eligible,5,1,1
+42,female,government,Typhoid Fever,medium,34409.82,9,09/03/2022,18/03/2022,1,1,98,Eligible,1,0,1
+45,female,trust,Typhoid Fever,medium,36848.42,9,22/10/2023,31/10/2023,1,1,68,Incomplete,4,0,1
+55,male,trust,Diabetes Mellitus,medium,23820.47,5,03/08/2022,08/08/2022,0,1,43,Incomplete,3,0,0
+35,female,government,Viral Fever,low,13346.75,1,14/03/2024,15/03/2024,1,1,64,Incomplete,5,1,1
+78,male,private,Appendicitis,medium,55386.82,5,03/05/2021,08/05/2021,1,0,43,Incomplete,3,0,1
+28,male,private,Tuberculosis,medium,22026.42,7,22/02/2020,29/02/2020,1,1,84,Eligible,3,0,1
+22,male,private,Hypertension,medium,70269.06,4,14/05/2023,18/05/2023,1,1,62,Incomplete,2,0,1
+22,female,trust,Typhoid Fever,medium,68451.51,9,04/08/2020,13/08/2020,1,1,89,Eligible,5,0,1
+64,female,private,Dengue with Thrombocytopenia,high,398588.65,20,10/08/2022,30/08/2022,1,1,80,Eligible,1,0,1
+35,female,private,Fracture,low,15536.69,4,30/09/2023,04/10/2023,1,1,80,Eligible,1,0,1
+69,female,private,Cardiac Arrest,high,446143.99,15,07/12/2023,22/12/2023,1,1,72,Incomplete,0,0,1
+49,male,private,Sepsis,high,251678.55,9,05/02/2020,14/02/2020,1,1,75,Incomplete,2,0,1
+48,female,private,Cancer,high,198856.08,21,10/12/2023,31/12/2023,1,1,67,Incomplete,5,0,1
+65,male,private,Appendicitis,medium,63009.3,7,20/07/2021,27/07/2021,1,1,78,Incomplete,1,0,1
+18,male,private,Viral Fever,low,24434.49,3,07/02/2023,10/02/2023,1,0,61,Incomplete,0,0,1
+36,female,private,Sepsis,high,203317.67,15,15/04/2020,30/04/2020,1,1,64,Incomplete,3,0,1
+58,male,private,Pneumonia,medium,67724.23,4,14/09/2021,18/09/2021,1,0,56,Incomplete,4,0,1
+32,female,private,Stroke,high,183808.91,20,20/04/2023,10/05/2023,1,1,99,Eligible,5,0,1
+58,male,government,Viral Fever,low,6455.26,1,21/12/2020,22/12/2020,1,1,98,Eligible,3,0,1
+36,female,government,Stroke,high,359323.21,27,25/06/2021,22/07/2021,1,1,72,Incomplete,3,0,1
+59,male,private,Viral Fever,low,4571.02,3,05/12/2020,08/12/2020,1,1,78,Incomplete,3,0,1
+62,female,private,Viral Fever,low,14879.59,1,15/06/2022,16/06/2022,1,1,80,Eligible,4,0,1
+32,male,government,Viral Fever,low,3885.1,2,28/03/2024,30/03/2024,1,1,77,Incomplete,1,0,1
+58,female,private,Diabetes Mellitus,medium,37617.47,8,13/11/2021,21/11/2021,1,1,81,Eligible,3,0,1
+60,female,private,Asthma,medium,44563.68,7,06/10/2021,13/10/2021,1,1,85,Eligible,4,0,1
+60,female,private,Cancer,high,134412.14,26,10/01/2022,05/02/2022,1,1,63,Incomplete,1,0,1
+77,female,private,Stroke,high,104641.74,26,14/07/2023,09/08/2023,1,1,79,Incomplete,4,1,1
+23,male,private,Hypertension,medium,76558.95,5,19/08/2023,24/08/2023,1,1,92,Eligible,5,0,1
+80,female,private,Fracture,low,15127.83,2,24/02/2022,26/02/2022,1,1,68,Incomplete,0,0,1
+39,female,private,Typhoid Fever,medium,62193.31,10,11/09/2024,21/09/2024,1,1,90,Eligible,2,0,1
+42,female,private,Cardiac Arrest,high,491348.58,25,04/05/2021,29/05/2021,1,1,86,Eligible,0,0,1
+63,female,private,Kidney Failure,high,272897.89,11,16/03/2020,27/03/2020,1,1,66,Incomplete,3,0,1
+18,male,private,Cancer,high,83672.71,15,19/05/2024,03/06/2024,1,1,65,Incomplete,2,0,1
+42,female,private,Sepsis,high,66154.59,14,20/05/2020,03/06/2020,1,1,74,Incomplete,5,0,1
+66,male,private,Stroke,high,362300.52,8,29/02/2020,08/03/2020,1,0,52,Incomplete,2,0,1
+51,female,private,Hepatitis B,medium,26048.94,9,10/06/2020,19/06/2020,1,1,97,Eligible,1,0,1
+34,female,private,Viral Fever,low,22775.99,3,10/08/2022,13/08/2022,1,0,58,Incomplete,2,0,1
+58,female,private,Viral Fever,low,21596.69,4,11/02/2021,15/02/2021,1,0,54,Incomplete,4,0,1
+62,female,trust,Typhoid Fever,medium,32841.22,3,05/03/2023,08/03/2023,1,1,78,Incomplete,1,0,1
+32,male,private,Dengue with Thrombocytopenia,high,354994.01,28,16/01/2024,13/02/2024,1,0,36,Incomplete,5,0,1
+68,female,government,Dengue Fever,medium,38715.98,4,26/09/2020,30/09/2020,1,1,86,Eligible,1,0,1
+74,female,private,Malaria,low,23096.71,2,27/08/2024,29/08/2024,1,1,90,Eligible,2,0,1
+69,male,government,Stroke,high,113340.66,28,07/04/2021,05/05/2021,1,1,95,Eligible,2,0,1
+18,female,government,Asthma,medium,44561.09,7,09/10/2023,16/10/2023,1,1,83,Eligible,0,0,1
+19,female,private,Dengue with Thrombocytopenia,high,341443.57,21,25/07/2023,15/08/2023,1,1,86,Eligible,0,0,1
+37,female,government,Hypertension,medium,30262.0,5,05/01/2023,10/01/2023,1,1,94,Eligible,3,0,1
+74,female,private,Hypertension,medium,55017.39,3,26/07/2021,29/07/2021,1,1,88,Eligible,1,0,1
+80,female,government,Asthma,medium,18935.76,6,19/07/2021,25/07/2021,1,1,89,Eligible,0,0,1
+58,male,government,Dengue Fever,medium,30831.98,6,14/09/2020,20/09/2020,0,1,43,Incomplete,4,0,0
+39,male,private,Dengue with Thrombocytopenia,high,174773.68,11,23/10/2020,03/11/2020,1,1,67,Incomplete,5,0,1
+18,female,government,Fracture,low,10122.97,3,22/12/2020,25/12/2020,0,1,63,Incomplete,0,0,1
+46,female,government,Malaria,low,5399.19,2,28/10/2022,30/10/2022,1,0,72,Incomplete,4,0,1
+79,male,private,Dengue Fever,medium,70074.41,4,23/05/2022,27/05/2022,1,1,64,Incomplete,0,0,1
+22,male,government,Viral Fever,low,16927.69,3,28/01/2023,31/01/2023,1,1,78,Incomplete,3,0,1
+24,male,private,Asthma,medium,42954.55,6,23/12/2024,29/12/2024,1,1,85,Eligible,3,0,1
+45,female,government,Viral Fever,low,23979.04,4,07/11/2023,11/11/2023,0,1,35,Incomplete,3,0,0
+69,male,private,Asthma,medium,53120.23,8,24/02/2023,04/03/2023,1,1,87,Eligible,5,0,1
+56,female,government,Heart Failure,high,310063.33,11,11/03/2021,22/03/2021,1,1,66,Incomplete,2,0,1
+25,female,private,Hepatitis B,medium,67469.39,3,26/09/2024,29/09/2024,1,1,77,Incomplete,0,0,1
+76,female,private,Heart Failure,high,131632.5,25,20/10/2020,14/11/2020,1,0,70,Incomplete,0,0,1
+31,female,private,Cancer,high,203403.19,16,27/01/2022,12/02/2022,1,1,96,Eligible,4,0,1
+27,male,private,Dengue with Thrombocytopenia,high,353285.92,21,11/07/2021,01/08/2021,1,1,88,Eligible,3,0,1
+25,female,government,Cancer,high,177460.91,25,21/10/2023,15/11/2023,1,1,62,Incomplete,1,0,1
+21,male,private,Appendicitis,medium,76446.07,5,20/04/2024,25/04/2024,1,1,67,Incomplete,0,0,1
+29,male,private,Kidney Failure,high,366652.07,24,21/10/2022,14/11/2022,1,1,64,Incomplete,3,0,1
+45,male,government,Stroke,high,437949.51,20,25/03/2023,14/04/2023,1,1,86,Eligible,2,0,1
+79,female,government,Tuberculosis,medium,44906.3,8,13/11/2023,21/11/2023,0,1,45,Incomplete,3,0,1
+23,female,government,Gastritis,low,7874.59,2,14/05/2024,16/05/2024,0,1,63,Incomplete,4,0,0
+40,male,government,Fracture,low,6221.77,2,08/02/2021,10/02/2021,1,1,64,Incomplete,1,0,1
+49,female,government,Hepatitis B,medium,44178.84,8,11/12/2024,19/12/2024,1,1,69,Incomplete,3,0,1
+58,female,government,Viral Fever,low,4235.79,1,05/11/2022,06/11/2022,1,1,63,Incomplete,2,0,1
+59,male,government,Dengue with Thrombocytopenia,high,278180.52,25,05/08/2022,30/08/2022,1,1,62,Incomplete,3,0,1
+59,male,government,Cardiac Arrest,high,264033.06,8,04/11/2020,12/11/2020,1,1,81,Eligible,5,0,1
+29,male,private,Fracture,low,24801.69,2,09/12/2022,11/12/2022,1,1,84,Eligible,3,0,1
+21,female,government,Diabetes Mellitus,medium,21142.89,9,21/10/2023,30/10/2023,1,1,98,Eligible,1,0,1
+60,male,private,Heart Failure,high,485463.43,28,01/12/2023,29/12/2023,1,1,65,Incomplete,2,0,1
+68,female,private,Pneumonia,medium,21074.44,9,05/10/2023,14/10/2023,1,0,49,Incomplete,1,0,1
+78,female,private,Appendicitis,medium,79998.48,4,13/11/2020,17/11/2020,1,1,92,Eligible,4,0,1
+20,female,private,Dengue with Thrombocytopenia,high,318760.9,12,11/11/2020,23/11/2020,1,1,99,Eligible,1,0,1
+44,female,private,Fracture,low,16433.1,4,20/03/2024,24/03/2024,1,1,90,Eligible,1,0,1
+46,female,trust,Gastritis,low,14063.95,2,07/05/2022,09/05/2022,1,1,68,Incomplete,2,0,1
+73,female,government,Asthma,medium,61241.06,4,22/11/2022,26/11/2022,1,1,77,Incomplete,3,0,1
+71,female,private,Diabetes Mellitus,medium,68085.71,8,16/12/2024,24/12/2024,1,1,85,Eligible,4,0,1
+23,female,private,Fracture,low,10011.07,3,21/07/2020,24/07/2020,1,0,48,Incomplete,3,0,0
+66,female,government,Stroke,high,52363.04,7,11/06/2020,18/06/2020,1,1,95,Eligible,5,0,1
+25,female,private,Fracture,low,5680.66,4,03/05/2021,07/05/2021,1,1,64,Incomplete,0,0,1
+56,male,government,Malaria,low,8322.64,3,21/10/2020,24/10/2020,1,1,75,Incomplete,4,0,1
+51,female,private,Diabetes Mellitus,medium,50365.33,3,29/05/2024,01/06/2024,1,1,100,Eligible,3,0,1
+65,male,government,Heart Failure,high,205161.12,28,10/02/2024,09/03/2024,1,1,81,Eligible,1,1,1
+39,male,private,Stroke,high,334281.13,11,19/07/2024,30/07/2024,0,1,59,Incomplete,0,0,0
+68,male,government,Dengue Fever,medium,75669.11,9,21/11/2022,30/11/2022,1,1,76,Incomplete,0,0,1
+36,female,government,Dengue Fever,medium,32759.08,8,25/06/2024,03/07/2024,1,1,88,Eligible,3,0,1
+49,female,private,Heart Failure,high,170024.31,30,18/06/2020,18/07/2020,1,1,71,Incomplete,4,0,1
+23,female,private,Gastritis,low,12810.15,4,09/01/2024,13/01/2024,1,1,88,Eligible,0,0,1
+57,female,private,Viral Fever,low,4650.91,4,29/07/2023,02/08/2023,1,1,70,Incomplete,0,0,1
+61,female,private,Dengue Fever,medium,19370.17,8,13/05/2024,21/05/2024,1,1,62,Incomplete,4,0,1
+78,female,private,Heart Failure,high,393388.01,11,21/03/2023,01/04/2023,1,1,77,Incomplete,1,0,1
+65,male,private,Sepsis,high,224144.32,10,24/02/2023,06/03/2023,1,1,88,Eligible,1,0,1
+62,female,government,Appendicitis,medium,23822.35,10,31/05/2020,10/06/2020,1,1,65,Incomplete,5,0,1
+60,female,private,Diabetes Mellitus,medium,50241.14,7,30/12/2024,06/01/2025,1,1,100,Eligible,1,0,1
+32,male,private,Appendicitis,medium,30387.85,3,08/10/2022,11/10/2022,1,1,89,Eligible,4,0,1
+22,female,private,Kidney Failure,high,286563.04,20,24/04/2024,14/05/2024,1,0,50,Incomplete,5,0,1
+61,female,private,Pneumonia,medium,56586.61,5,07/01/2021,12/01/2021,1,1,63,Incomplete,0,0,1
+28,male,private,Cardiac Arrest,high,205710.39,16,28/11/2022,14/12/2022,1,1,100,Eligible,4,0,1
+37,male,private,Malaria,low,16019.79,2,04/04/2023,06/04/2023,1,1,98,Eligible,2,0,1
+20,male,private,Diabetes Mellitus,medium,76655.55,7,28/04/2024,05/05/2024,1,1,86,Eligible,4,0,1
+74,female,private,Gastritis,low,8387.31,4,11/07/2024,15/07/2024,1,0,33,Incomplete,1,0,1
+47,male,government,Cardiac Arrest,high,114650.91,29,30/10/2024,28/11/2024,1,1,82,Eligible,3,0,1
+50,male,private,Cardiac Arrest,high,259912.66,21,01/07/2021,22/07/2021,1,0,48,Incomplete,3,0,1
+33,male,government,Cardiac Arrest,high,374507.79,12,23/01/2021,04/02/2021,1,1,91,Eligible,2,0,1
+78,female,private,Malaria,low,24267.11,3,16/03/2021,19/03/2021,0,1,68,Incomplete,5,0,0
+52,male,trust,Hypertension,medium,23705.77,8,25/06/2021,03/07/2021,1,1,85,Eligible,0,0,1
+41,female,trust,Diabetes Mellitus,medium,47776.61,7,14/04/2024,21/04/2024,1,1,99,Eligible,0,0,1
+43,female,private,Cardiac Arrest,high,472526.86,11,26/03/2024,06/04/2024,1,1,92,Eligible,0,1,1
+63,female,private,Sepsis,high,255644.85,23,26/05/2023,18/06/2023,0,1,50,Incomplete,1,0,1
+65,female,government,Hepatitis B,medium,47975.47,10,09/11/2022,19/11/2022,1,1,61,Incomplete,2,0,1
+80,female,private,Hepatitis B,medium,66789.06,3,25/01/2024,28/01/2024,1,1,97,Eligible,4,0,1
+55,female,private,Tuberculosis,medium,55886.64,9,23/06/2023,02/07/2023,0,1,32,Incomplete,4,0,0
+30,male,government,Stroke,high,238451.13,29,25/04/2022,24/05/2022,1,1,99,Eligible,3,0,1
+63,male,private,Malaria,low,15339.51,4,18/09/2023,22/09/2023,1,1,71,Incomplete,3,0,1
+52,female,government,Viral Fever,low,13651.96,3,19/05/2021,22/05/2021,1,1,79,Incomplete,2,0,1
+38,female,private,Heart Failure,high,470165.17,30,16/06/2024,16/07/2024,1,0,73,Incomplete,4,0,1
+70,female,private,Pneumonia,medium,17734.32,4,02/01/2024,06/01/2024,1,1,76,Incomplete,5,0,1
+70,female,private,Asthma,medium,23922.74,6,14/06/2023,20/06/2023,1,1,93,Eligible,1,0,1
+24,female,private,Cardiac Arrest,high,95245.21,11,27/04/2024,08/05/2024,0,1,40,Incomplete,3,0,0
+48,male,government,Gastritis,low,9279.14,1,01/05/2020,02/05/2020,1,1,62,Incomplete,1,0,1
+77,male,private,Kidney Failure,high,133840.23,16,13/03/2024,29/03/2024,1,0,66,Incomplete,4,0,1
+36,female,private,Asthma,medium,47104.31,10,01/10/2020,11/10/2020,1,1,81,Eligible,1,0,1
+34,male,government,Typhoid Fever,medium,66399.9,6,08/03/2023,14/03/2023,1,1,85,Eligible,3,0,1
+43,male,private,Tuberculosis,medium,46034.52,3,23/05/2021,26/05/2021,1,1,77,Incomplete,2,0,1
+18,female,private,Heart Failure,high,77955.95,21,30/08/2020,20/09/2020,1,1,92,Eligible,5,0,1
+58,female,government,Heart Failure,high,149382.16,22,30/09/2020,22/10/2020,1,1,98,Eligible,2,0,1
+76,female,private,Asthma,medium,64520.88,4,25/10/2023,29/10/2023,1,1,83,Eligible,0,0,1
+21,male,private,Hepatitis B,medium,24740.4,10,02/11/2021,12/11/2021,0,1,67,Incomplete,3,0,1
+46,male,private,Stroke,high,280961.53,25,24/07/2022,18/08/2022,0,1,49,Incomplete,5,1,0
+70,male,government,Appendicitis,medium,19746.92,8,17/05/2022,25/05/2022,1,1,63,Incomplete,0,0,1
+20,female,private,Cancer,high,396037.43,27,17/04/2024,14/05/2024,1,1,86,Eligible,2,0,1
+46,female,government,Kidney Failure,high,357228.66,24,17/09/2023,11/10/2023,0,1,37,Incomplete,1,0,0
+51,male,private,Fracture,low,19635.95,4,03/09/2021,07/09/2021,1,1,94,Eligible,3,0,1
+47,female,private,Pneumonia,medium,27251.23,4,27/11/2024,01/12/2024,0,1,69,Incomplete,0,0,0
+24,male,government,Stroke,high,352410.64,8,21/11/2024,29/11/2024,1,0,58,Incomplete,1,0,1
+26,female,government,Fracture,low,10015.88,3,09/05/2023,12/05/2023,1,1,93,Eligible,1,0,1
+21,male,private,Cancer,high,273029.35,27,06/12/2021,02/01/2022,1,1,80,Eligible,5,0,1
+37,female,private,Tuberculosis,medium,45778.72,6,05/10/2024,11/10/2024,1,1,89,Eligible,0,0,1
+53,male,private,Kidney Failure,high,164748.04,27,07/11/2021,04/12/2021,0,1,53,Incomplete,0,0,0
+21,female,government,Kidney Failure,high,321314.92,9,24/11/2024,03/12/2024,1,1,95,Eligible,1,0,1
+37,male,private,Appendicitis,medium,77535.04,10,28/08/2020,07/09/2020,1,1,73,Incomplete,3,0,1
+38,female,private,Kidney Failure,high,290142.56,16,05/01/2022,21/01/2022,1,1,91,Eligible,3,0,1
+66,female,government,Appendicitis,medium,35339.93,6,03/04/2020,09/04/2020,1,0,65,Incomplete,4,0,1
+36,male,government,Appendicitis,medium,29951.21,6,12/03/2023,18/03/2023,1,1,81,Eligible,2,0,1
+79,female,private,Stroke,high,379747.51,12,22/12/2021,03/01/2022,0,1,41,Incomplete,4,0,0
+51,male,private,Diabetes Mellitus,medium,64682.02,5,24/04/2022,29/04/2022,1,1,69,Incomplete,0,0,1
+41,male,government,Dengue with Thrombocytopenia,high,460738.15,22,12/09/2023,04/10/2023,0,1,56,Incomplete,0,1,0
+52,female,private,Typhoid Fever,medium,67855.22,9,12/10/2023,21/10/2023,1,1,66,Incomplete,0,0,1
+30,female,private,Heart Failure,high,407721.35,18,10/06/2020,28/06/2020,1,1,75,Incomplete,5,0,1
+59,male,trust,Diabetes Mellitus,medium,39652.16,10,05/02/2023,15/02/2023,0,0,10,Rejected,0,0,0
+59,female,government,Hepatitis B,medium,73161.43,6,28/03/2020,03/04/2020,1,1,96,Eligible,3,0,1
+61,female,government,Asthma,medium,57777.1,8,02/01/2021,10/01/2021,0,1,39,Incomplete,5,0,0
+37,male,private,Hepatitis B,medium,51835.23,9,05/10/2024,14/10/2024,1,1,84,Eligible,5,0,1
+50,female,government,Dengue Fever,medium,43410.74,4,13/09/2024,17/09/2024,1,1,98,Eligible,3,0,1
+19,female,private,Stroke,high,152662.28,19,06/02/2023,25/02/2023,1,1,84,Eligible,0,0,1
+69,male,government,Diabetes Mellitus,medium,32418.18,5,17/02/2022,22/02/2022,1,1,66,Incomplete,0,1,1
+46,female,government,Viral Fever,low,5915.15,4,18/01/2021,22/01/2021,1,1,86,Eligible,0,1,1
+53,male,government,Dengue with Thrombocytopenia,high,402997.43,19,03/11/2024,22/11/2024,0,1,35,Incomplete,5,0,0
+54,male,private,Kidney Failure,high,112478.03,15,08/09/2021,23/09/2021,1,0,57,Incomplete,2,0,1
+68,male,private,Heart Failure,high,474900.03,27,16/01/2024,12/02/2024,1,1,89,Eligible,0,0,1
+78,female,government,Cardiac Arrest,high,220950.48,17,31/10/2024,17/11/2024,1,1,98,Eligible,1,0,1
+78,male,government,Sepsis,high,129936.77,17,26/03/2022,12/04/2022,1,1,91,Eligible,4,0,1
+42,female,government,Kidney Failure,high,101249.52,13,28/02/2023,13/03/2023,1,1,95,Eligible,0,0,1
+78,male,private,Stroke,high,424076.81,20,21/05/2020,10/06/2020,1,0,49,Incomplete,1,0,1
+63,female,government,Kidney Failure,high,252080.02,22,09/05/2023,31/05/2023,1,1,86,Eligible,4,1,1
+62,male,private,Hypertension,medium,57744.11,5,28/12/2021,02/01/2022,1,0,71,Incomplete,5,0,1
+79,female,private,Hypertension,medium,21409.43,6,30/03/2021,05/04/2021,1,1,97,Eligible,5,0,1
+19,female,private,Hypertension,medium,42038.4,4,24/06/2020,28/06/2020,1,1,82,Eligible,2,0,1
+51,female,private,Heart Failure,high,93930.36,29,18/01/2024,16/02/2024,1,0,32,Incomplete,5,0,1
+59,male,private,Tuberculosis,medium,48539.6,5,04/02/2023,09/02/2023,1,1,89,Eligible,1,0,1
+29,male,trust,Cancer,high,63136.52,13,11/06/2023,24/06/2023,1,1,60,Incomplete,5,0,1
+66,male,government,Hepatitis B,medium,66967.65,5,04/01/2023,09/01/2023,1,0,37,Incomplete,2,0,1
+51,female,trust,Dengue with Thrombocytopenia,high,325088.79,10,17/04/2023,27/04/2023,1,1,99,Eligible,1,0,1
+76,male,government,Pneumonia,medium,22661.01,4,17/09/2021,21/09/2021,1,1,92,Eligible,3,0,1
+54,female,private,Cancer,high,269001.6,29,05/01/2023,03/02/2023,1,1,71,Incomplete,4,0,1
+26,male,private,Cardiac Arrest,high,328734.49,18,07/11/2024,25/11/2024,1,1,72,Incomplete,3,0,1
+59,female,private,Cancer,high,237033.7,21,16/09/2024,07/10/2024,1,0,31,Incomplete,1,0,1
+32,female,private,Tuberculosis,medium,51767.28,10,01/05/2024,11/05/2024,1,0,37,Incomplete,2,0,1
+52,male,private,Stroke,high,148343.87,10,20/05/2022,30/05/2022,1,1,75,Incomplete,2,0,1
+46,female,government,Heart Failure,high,247581.46,14,28/08/2020,11/09/2020,1,1,82,Eligible,5,0,1
+28,male,private,Appendicitis,medium,67353.63,8,13/03/2023,21/03/2023,1,1,70,Incomplete,2,0,1
+36,female,government,Malaria,low,5982.96,4,16/03/2024,20/03/2024,1,1,68,Incomplete,5,0,1
+27,female,trust,Fracture,low,13768.09,3,28/03/2023,31/03/2023,1,1,64,Incomplete,5,0,1
+43,female,private,Heart Failure,high,477614.34,25,01/11/2021,26/11/2021,0,1,35,Incomplete,5,0,1
+60,female,private,Diabetes Mellitus,medium,40851.53,6,29/05/2022,04/06/2022,1,1,78,Incomplete,2,0,1
+54,female,private,Cardiac Arrest,high,70674.32,21,06/07/2023,27/07/2023,0,1,40,Incomplete,3,0,0
+30,male,private,Gastritis,low,22237.31,3,30/11/2024,03/12/2024,0,1,35,Incomplete,2,0,1
+28,male,private,Kidney Failure,high,376694.76,14,26/03/2024,09/04/2024,1,0,36,Incomplete,0,0,0
+26,male,private,Malaria,low,3204.31,3,25/11/2023,28/11/2023,1,1,87,Eligible,5,0,1
+32,female,government,Diabetes Mellitus,medium,21708.1,7,22/01/2022,29/01/2022,0,1,38,Incomplete,5,0,0
+22,male,private,Dengue with Thrombocytopenia,high,248044.74,13,19/01/2024,01/02/2024,1,0,56,Incomplete,4,0,1
+23,male,government,Pneumonia,medium,53322.3,8,25/02/2022,05/03/2022,1,1,68,Incomplete,1,0,1
+33,female,private,Typhoid Fever,medium,28353.97,6,27/05/2023,02/06/2023,1,1,63,Incomplete,1,0,1
+33,female,government,Dengue with Thrombocytopenia,high,287728.93,18,25/01/2020,12/02/2020,1,0,66,Incomplete,3,0,1
+66,female,private,Diabetes Mellitus,medium,53178.63,7,29/01/2020,05/02/2020,1,1,85,Eligible,4,0,1
+67,female,trust,Cancer,high,87092.52,24,03/01/2023,27/01/2023,1,1,79,Incomplete,0,0,1
+80,male,government,Asthma,medium,40397.55,4,23/07/2023,27/07/2023,1,1,75,Incomplete,0,0,1
+25,female,government,Dengue with Thrombocytopenia,high,74762.88,30,26/09/2023,26/10/2023,1,0,30,Incomplete,5,0,0
+28,female,private,Heart Failure,high,282750.28,30,11/08/2024,10/09/2024,1,1,77,Incomplete,5,0,1
+39,female,private,Viral Fever,low,4405.18,1,29/12/2023,30/12/2023,1,1,63,Incomplete,3,0,1
+41,male,government,Viral Fever,low,22673.91,1,12/10/2023,13/10/2023,1,1,62,Incomplete,0,0,1
+41,female,private,Pneumonia,medium,75525.41,3,22/10/2024,25/10/2024,1,1,86,Eligible,1,0,1
+76,female,government,Viral Fever,low,15573.79,1,01/09/2020,02/09/2020,1,1,62,Incomplete,3,0,1
+73,female,government,Gastritis,low,4900.48,1,24/07/2022,25/07/2022,1,1,79,Incomplete,5,0,1
+41,female,private,Appendicitis,medium,64431.34,5,17/05/2021,22/05/2021,0,1,44,Incomplete,4,0,0
+78,female,trust,Typhoid Fever,medium,70185.39,7,29/01/2024,05/02/2024,0,1,45,Incomplete,3,0,0
+80,male,government,Viral Fever,low,3965.81,4,19/04/2021,23/04/2021,1,1,65,Incomplete,4,0,1
+58,female,government,Diabetes Mellitus,medium,51908.35,5,09/06/2022,14/06/2022,1,1,80,Eligible,3,0,1
+38,female,private,Viral Fever,low,4643.12,2,19/02/2021,21/02/2021,1,1,69,Incomplete,0,0,1
+38,female,private,Hypertension,medium,38288.68,6,26/04/2024,02/05/2024,1,1,67,Incomplete,0,0,1
+70,male,government,Appendicitis,medium,24641.05,6,27/12/2023,02/01/2024,1,1,63,Incomplete,5,0,1
+19,female,private,Stroke,high,386635.3,10,26/05/2021,05/06/2021,1,1,68,Incomplete,0,1,1
+26,male,government,Kidney Failure,high,358828.37,9,13/08/2023,22/08/2023,1,1,64,Incomplete,0,0,1
+75,female,government,Pneumonia,medium,73830.07,8,25/08/2024,02/09/2024,0,1,33,Incomplete,1,0,0
+70,female,private,Sepsis,high,222228.25,12,23/05/2022,04/06/2022,1,1,77,Incomplete,2,0,1
+20,male,private,Gastritis,low,12063.83,4,01/02/2023,05/02/2023,0,1,38,Incomplete,3,0,0
+33,male,government,Kidney Failure,high,265858.0,22,19/05/2024,10/06/2024,1,1,80,Eligible,3,0,1
+38,male,private,Typhoid Fever,medium,18808.43,8,24/08/2022,01/09/2022,1,1,70,Incomplete,0,0,1
+35,male,government,Fracture,low,21623.11,4,21/06/2024,25/06/2024,1,1,71,Incomplete,1,0,1
+69,female,private,Hepatitis B,medium,60724.44,5,21/12/2021,26/12/2021,1,0,61,Incomplete,4,0,1
+20,male,private,Dengue Fever,medium,54108.08,10,10/02/2020,20/02/2020,0,1,42,Incomplete,1,0,0
+76,female,private,Dengue Fever,medium,24601.28,5,14/12/2023,19/12/2023,1,1,83,Eligible,0,0,1
+55,male,private,Cardiac Arrest,high,195171.44,30,18/11/2020,18/12/2020,1,1,91,Eligible,5,0,1
+62,female,government,Fracture,low,20917.99,3,13/02/2022,16/02/2022,1,1,71,Incomplete,5,1,1
+43,male,government,Tuberculosis,medium,35684.1,6,14/07/2024,20/07/2024,1,0,61,Incomplete,1,0,1
+33,female,private,Cardiac Arrest,high,336284.05,29,30/06/2020,29/07/2020,1,1,81,Eligible,3,1,1
+33,male,private,Heart Failure,high,404159.0,7,15/01/2024,22/01/2024,0,1,56,Incomplete,1,0,1
+74,female,private,Heart Failure,high,218906.41,22,24/08/2024,15/09/2024,1,1,74,Incomplete,1,0,1
+36,male,private,Cardiac Arrest,high,478247.96,17,31/05/2020,17/06/2020,1,1,64,Incomplete,4,0,1
+39,female,trust,Typhoid Fever,medium,76258.75,9,03/12/2020,12/12/2020,1,0,43,Incomplete,1,0,1
+64,female,private,Gastritis,low,8226.06,4,11/04/2020,15/04/2020,1,1,69,Incomplete,0,0,1
+23,female,private,Dengue with Thrombocytopenia,high,139853.66,13,22/02/2020,06/03/2020,1,1,65,Incomplete,3,0,1
+68,female,private,Sepsis,high,452694.87,9,26/06/2021,05/07/2021,1,1,83,Eligible,3,0,1
+20,female,private,Stroke,high,168530.36,15,10/09/2024,25/09/2024,1,0,74,Incomplete,5,0,1
+69,female,private,Hepatitis B,medium,50984.12,9,17/09/2024,26/09/2024,1,1,94,Eligible,5,0,1
+54,male,private,Sepsis,high,85529.77,29,14/10/2024,12/11/2024,0,1,63,Incomplete,4,0,1
+27,male,private,Stroke,high,477077.67,13,08/12/2020,21/12/2020,1,0,57,Incomplete,0,0,1
+30,male,private,Dengue with Thrombocytopenia,high,193887.27,9,29/01/2024,07/02/2024,0,1,65,Incomplete,2,0,1
+47,male,government,Dengue with Thrombocytopenia,high,285152.9,10,09/05/2022,19/05/2022,1,0,67,Incomplete,4,0,1
+77,male,government,Hepatitis B,medium,66073.47,8,11/11/2024,19/11/2024,1,1,91,Eligible,4,0,1
+29,female,private,Kidney Failure,high,328210.02,29,26/10/2023,24/11/2023,1,1,81,Eligible,5,0,1
+76,female,private,Heart Failure,high,202039.74,16,13/06/2024,29/06/2024,1,1,66,Incomplete,1,0,1
+67,female,trust,Viral Fever,low,16309.54,2,01/07/2020,03/07/2020,1,1,86,Eligible,5,0,1
+73,female,private,Dengue Fever,medium,66446.88,7,14/05/2020,21/05/2020,1,1,93,Eligible,4,1,1
+74,male,private,Dengue Fever,medium,17149.62,8,13/04/2020,21/04/2020,1,1,89,Eligible,4,0,1
+61,male,government,Fracture,low,13753.31,2,02/07/2022,04/07/2022,1,1,95,Eligible,2,0,1
+65,male,private,Gastritis,low,11504.44,2,29/11/2020,01/12/2020,1,1,73,Incomplete,2,0,1
+19,male,private,Sepsis,high,341317.2,7,16/05/2023,23/05/2023,1,1,79,Incomplete,5,0,1
+35,female,government,Kidney Failure,high,256549.11,21,22/03/2021,12/04/2021,1,1,99,Eligible,3,0,1
+50,female,government,Asthma,medium,54588.26,4,03/09/2021,07/09/2021,1,1,77,Incomplete,5,0,1
+34,female,private,Appendicitis,medium,48624.08,3,07/05/2021,10/05/2021,1,1,98,Eligible,3,0,1
+64,male,private,Sepsis,high,166741.82,19,07/05/2022,26/05/2022,1,0,75,Incomplete,4,0,1
+64,male,private,Asthma,medium,73924.22,8,07/10/2023,15/10/2023,1,1,95,Eligible,1,0,1
+26,female,private,Asthma,medium,76550.02,4,18/11/2021,22/11/2021,1,1,79,Incomplete,3,0,1
+41,female,private,Hepatitis B,medium,45144.44,10,29/08/2020,08/09/2020,0,1,67,Incomplete,4,0,0
+50,male,private,Kidney Failure,high,184260.09,11,20/04/2020,01/05/2020,0,1,56,Incomplete,4,0,1
+27,female,government,Tuberculosis,medium,46692.75,5,16/07/2023,21/07/2023,1,0,58,Incomplete,2,0,1
+54,male,government,Sepsis,high,108232.68,27,07/06/2022,04/07/2022,1,1,90,Eligible,3,1,1
+30,female,government,Typhoid Fever,medium,64195.1,6,23/12/2022,29/12/2022,0,0,15,Rejected,1,0,0
+37,male,trust,Hypertension,medium,47716.87,5,18/09/2021,23/09/2021,0,0,18,Rejected,3,0,0
+51,female,private,Cancer,high,204229.78,18,30/09/2022,18/10/2022,1,0,55,Incomplete,0,0,1
+31,male,private,Hepatitis B,medium,25984.01,3,20/01/2022,23/01/2022,1,1,94,Eligible,4,1,1
+60,male,private,Typhoid Fever,medium,59833.73,10,03/05/2022,13/05/2022,1,1,90,Eligible,5,0,1
+18,female,government,Cancer,high,348117.33,26,06/07/2021,01/08/2021,1,0,36,Incomplete,4,0,0
+36,male,private,Hypertension,medium,27912.03,7,13/02/2021,20/02/2021,1,1,82,Eligible,5,0,1
+20,female,private,Appendicitis,medium,36489.24,3,06/01/2020,09/01/2020,1,1,96,Eligible,5,0,1
+67,male,private,Hypertension,medium,56881.89,7,24/07/2022,31/07/2022,1,0,41,Incomplete,0,0,1
+69,female,government,Cancer,high,92749.31,8,01/04/2024,09/04/2024,0,0,10,Rejected,2,0,0
+79,female,government,Diabetes Mellitus,medium,67972.68,4,09/01/2021,13/01/2021,1,1,77,Incomplete,3,0,1
+69,female,government,Tuberculosis,medium,23613.25,3,27/01/2024,30/01/2024,1,1,66,Incomplete,3,0,1
+69,female,government,Tuberculosis,medium,39683.8,3,04/01/2022,07/01/2022,1,1,68,Incomplete,3,0,1
+74,female,private,Stroke,high,78501.22,17,03/09/2023,20/09/2023,0,1,63,Incomplete,5,0,1
+32,female,private,Malaria,low,18141.32,1,20/06/2023,21/06/2023,1,1,90,Eligible,2,0,1
+42,male,government,Asthma,medium,18546.8,5,10/08/2023,15/08/2023,1,1,91,Eligible,1,0,1
+38,male,private,Cardiac Arrest,high,72657.82,24,01/04/2021,25/04/2021,1,1,75,Incomplete,0,0,1
+46,male,private,Sepsis,high,192227.69,30,15/10/2022,14/11/2022,1,0,56,Incomplete,0,0,1
+70,male,government,Dengue with Thrombocytopenia,high,336892.16,23,27/12/2024,19/01/2025,1,1,89,Eligible,2,0,1
+70,male,government,Stroke,high,302067.88,26,23/06/2023,19/07/2023,1,1,88,Eligible,0,0,1
+18,female,private,Heart Failure,high,296460.76,29,04/02/2022,05/03/2022,0,1,61,Incomplete,1,0,1
+24,female,private,Dengue with Thrombocytopenia,high,134394.53,19,11/10/2024,30/10/2024,1,1,72,Incomplete,5,0,1
+20,male,private,Stroke,high,346305.51,11,29/10/2022,09/11/2022,1,0,33,Incomplete,4,0,1
+48,male,private,Hepatitis B,medium,62482.15,4,19/09/2020,23/09/2020,1,1,80,Eligible,4,0,1
+80,male,trust,Viral Fever,low,24199.06,4,25/08/2021,29/08/2021,1,0,68,Incomplete,5,0,1
+37,female,private,Asthma,medium,28057.79,7,02/07/2023,09/07/2023,1,1,68,Incomplete,5,0,1
+50,female,government,Hypertension,medium,51548.21,9,08/04/2023,17/04/2023,1,1,94,Eligible,2,0,1
+69,male,government,Malaria,low,3555.99,1,24/10/2020,25/10/2020,1,0,40,Incomplete,2,0,1
+71,male,private,Gastritis,low,19579.07,3,07/03/2020,10/03/2020,1,0,73,Incomplete,5,0,1
+65,female,private,Fracture,low,20254.76,3,23/06/2024,26/06/2024,1,0,54,Incomplete,3,0,1
+79,male,private,Typhoid Fever,medium,28200.67,10,14/11/2024,24/11/2024,1,1,83,Eligible,4,0,1
+30,male,private,Gastritis,low,6903.37,1,30/10/2023,31/10/2023,1,0,62,Incomplete,0,0,1
+35,female,private,Pneumonia,medium,52959.09,3,06/06/2021,09/06/2021,1,1,69,Incomplete,0,0,1
+56,male,private,Dengue with Thrombocytopenia,high,270747.92,24,18/03/2023,11/04/2023,1,1,80,Eligible,4,0,1
+51,male,private,Malaria,low,12150.49,4,04/01/2023,08/01/2023,0,1,43,Incomplete,5,0,0
+36,male,private,Dengue with Thrombocytopenia,high,263685.73,27,23/02/2023,22/03/2023,0,1,58,Incomplete,1,0,1
+76,male,government,Dengue Fever,medium,39789.22,4,18/06/2024,22/06/2024,1,1,78,Incomplete,0,0,1
+50,female,private,Sepsis,high,183395.29,13,27/08/2023,09/09/2023,1,0,36,Incomplete,1,0,1
+52,male,private,Diabetes Mellitus,medium,58571.78,6,03/05/2024,09/05/2024,1,1,66,Incomplete,1,0,1
+59,male,private,Pneumonia,medium,44849.64,3,10/11/2021,13/11/2021,0,0,16,Rejected,4,0,0
+76,female,trust,Cancer,high,253006.55,20,08/04/2022,28/04/2022,1,1,67,Incomplete,4,1,1
+22,male,government,Diabetes Mellitus,medium,75323.1,7,05/08/2020,12/08/2020,1,1,65,Incomplete,2,0,1
+42,female,private,Typhoid Fever,medium,25161.03,5,26/03/2021,31/03/2021,1,1,94,Eligible,2,0,1
+37,female,private,Typhoid Fever,medium,71859.85,4,16/10/2020,20/10/2020,0,1,55,Incomplete,4,0,0
+37,male,private,Heart Failure,high,235694.52,23,15/08/2023,07/09/2023,0,0,39,Rejected,2,0,0
+60,male,private,Asthma,medium,56903.84,7,29/05/2020,05/06/2020,1,1,72,Incomplete,5,0,1
+40,male,government,Fracture,low,9273.02,2,22/05/2020,24/05/2020,1,1,99,Eligible,5,0,1
+27,female,trust,Cardiac Arrest,high,125887.78,14,03/10/2021,17/10/2021,1,1,87,Eligible,2,0,1
+61,female,private,Sepsis,high,250411.09,16,05/05/2024,21/05/2024,1,0,71,Incomplete,4,0,1
+72,male,private,Asthma,medium,32110.25,4,20/12/2024,24/12/2024,1,1,92,Eligible,5,1,1
+55,female,private,Hepatitis B,medium,73909.73,7,03/02/2023,10/02/2023,1,1,90,Eligible,5,0,1
+43,male,private,Hepatitis B,medium,23702.28,4,23/10/2022,27/10/2022,1,1,75,Incomplete,4,0,1
+26,female,private,Tuberculosis,medium,51813.22,5,04/03/2023,09/03/2023,1,1,82,Eligible,0,0,1
+32,male,government,Viral Fever,low,8148.41,2,01/10/2023,03/10/2023,1,1,84,Eligible,3,0,1
+20,female,private,Hypertension,medium,56181.85,7,14/07/2021,21/07/2021,1,1,84,Eligible,5,0,1
+59,male,private,Malaria,low,11279.23,4,01/04/2021,05/04/2021,1,1,91,Eligible,3,0,1
+50,male,private,Stroke,high,153495.84,27,19/11/2022,16/12/2022,1,0,40,Incomplete,2,0,1
+60,male,government,Cancer,high,374115.05,28,13/09/2022,11/10/2022,1,1,70,Incomplete,5,0,1
+33,male,government,Pneumonia,medium,53502.6,3,02/10/2020,05/10/2020,1,0,40,Incomplete,2,0,1
+79,female,government,Dengue with Thrombocytopenia,high,336930.22,30,04/12/2024,03/01/2025,1,1,65,Incomplete,1,0,1
+73,female,private,Tuberculosis,medium,68973.63,5,15/05/2023,20/05/2023,1,1,71,Incomplete,4,0,1
+28,female,government,Stroke,high,315768.2,19,15/04/2021,04/05/2021,1,0,42,Incomplete,4,0,1
+61,female,government,Pneumonia,medium,21259.41,3,01/09/2022,04/09/2022,1,1,67,Incomplete,0,0,1
+75,male,private,Cancer,high,239307.81,8,26/11/2024,04/12/2024,1,1,90,Eligible,3,0,1
+24,female,private,Pneumonia,medium,46014.18,4,21/04/2021,25/04/2021,1,1,86,Eligible,2,0,1
+54,male,private,Malaria,low,11250.66,3,24/02/2021,27/02/2021,1,0,57,Incomplete,5,0,1
+72,female,government,Hepatitis B,medium,54772.24,9,25/10/2023,03/11/2023,1,1,95,Eligible,3,0,1
+53,female,private,Viral Fever,low,15708.33,4,04/05/2024,08/05/2024,1,1,67,Incomplete,5,0,1
+24,male,trust,Malaria,low,20293.78,1,28/06/2024,29/06/2024,1,1,60,Incomplete,0,0,1
+77,female,government,Diabetes Mellitus,medium,32100.98,4,29/01/2022,02/02/2022,1,1,85,Eligible,4,0,1
+63,male,private,Tuberculosis,medium,43533.18,7,17/02/2021,24/02/2021,1,1,92,Eligible,4,0,1
+28,male,private,Heart Failure,high,344758.6,9,18/11/2020,27/11/2020,1,1,82,Eligible,5,0,1
+30,male,government,Diabetes Mellitus,medium,50723.52,8,27/01/2024,04/02/2024,1,1,74,Incomplete,4,0,1
+77,female,private,Hepatitis B,medium,31971.99,4,13/04/2022,17/04/2022,1,1,81,Eligible,0,0,1
+74,female,trust,Stroke,high,303425.87,14,25/04/2024,09/05/2024,1,1,89,Eligible,5,0,1
+73,male,government,Sepsis,high,166018.89,27,22/02/2022,21/03/2022,1,1,74,Incomplete,2,0,1
+51,male,private,Viral Fever,low,9320.37,3,28/03/2022,31/03/2022,0,1,60,Incomplete,2,0,1
+35,male,private,Appendicitis,medium,62912.3,6,25/04/2021,01/05/2021,1,1,72,Incomplete,1,0,1
+27,male,government,Hypertension,medium,58927.79,10,20/09/2023,30/09/2023,1,1,94,Eligible,0,0,1
+57,female,government,Sepsis,high,440945.98,12,02/10/2022,14/10/2022,1,1,77,Incomplete,3,0,1
+26,male,trust,Malaria,low,13523.04,1,12/01/2023,13/01/2023,1,1,71,Incomplete,3,0,1
+47,female,private,Typhoid Fever,medium,58816.7,4,16/02/2022,20/02/2022,1,1,76,Incomplete,1,0,1
+35,female,government,Dengue with Thrombocytopenia,high,214665.87,20,18/10/2022,07/11/2022,1,1,83,Eligible,2,0,1
+46,male,private,Hepatitis B,medium,78652.71,6,05/11/2023,11/11/2023,1,1,75,Incomplete,4,0,1
+30,male,private,Pneumonia,medium,67368.44,9,27/12/2020,05/01/2021,1,1,100,Eligible,4,0,1
+68,female,private,Gastritis,low,15367.05,1,08/03/2023,09/03/2023,1,1,63,Incomplete,1,0,1
+71,male,government,Stroke,high,166896.1,24,07/01/2022,31/01/2022,1,1,82,Eligible,0,0,1
+73,male,government,Hepatitis B,medium,57241.26,5,07/01/2023,12/01/2023,1,1,80,Eligible,5,0,1
+74,male,government,Kidney Failure,high,178935.61,11,17/07/2023,28/07/2023,1,1,81,Eligible,3,0,1
+43,male,private,Diabetes Mellitus,medium,37335.66,8,04/10/2021,12/10/2021,1,1,98,Eligible,5,0,1
+67,female,private,Hepatitis B,medium,77759.19,5,27/04/2022,02/05/2022,1,0,45,Incomplete,5,0,0
+31,male,government,Kidney Failure,high,92999.17,22,04/12/2024,26/12/2024,1,0,55,Incomplete,4,0,0
+24,female,private,Dengue with Thrombocytopenia,high,87940.07,19,18/12/2024,06/01/2025,1,1,78,Incomplete,3,0,1
+51,male,private,Typhoid Fever,medium,58130.69,8,28/10/2024,05/11/2024,1,1,94,Eligible,2,0,1
+80,male,government,Hepatitis B,medium,44675.32,9,13/03/2024,22/03/2024,1,1,79,Incomplete,2,0,1
+69,male,private,Stroke,high,214602.49,11,16/06/2021,27/06/2021,1,0,38,Incomplete,2,0,1
+18,female,private,Sepsis,high,54109.67,16,31/05/2022,16/06/2022,1,1,95,Eligible,2,0,1
+45,female,private,Fracture,low,18728.64,4,15/08/2023,19/08/2023,1,1,65,Incomplete,3,0,1
+66,female,private,Gastritis,low,20793.79,2,25/04/2022,27/04/2022,1,0,48,Incomplete,0,0,1
+46,female,private,Dengue with Thrombocytopenia,high,134505.25,11,09/02/2020,20/02/2020,0,1,41,Incomplete,0,0,0
+63,female,private,Typhoid Fever,medium,20862.8,10,31/01/2020,10/02/2020,1,1,91,Eligible,2,0,1
+39,male,private,Pneumonia,medium,32322.73,4,14/03/2022,18/03/2022,1,0,46,Incomplete,3,0,0
+80,male,private,Kidney Failure,high,161222.99,13,09/03/2020,22/03/2020,1,1,93,Eligible,5,0,1
+42,female,private,Cardiac Arrest,high,333123.91,30,27/03/2020,26/04/2020,1,1,76,Incomplete,3,0,1
+41,male,government,Appendicitis,medium,30337.78,8,08/06/2022,16/06/2022,0,1,67,Incomplete,0,0,1
+18,male,private,Hepatitis B,medium,59746.43,8,13/11/2020,21/11/2020,1,1,91,Eligible,0,0,1
+77,male,government,Dengue Fever,medium,56897.37,4,07/12/2023,11/12/2023,0,1,65,Incomplete,5,0,1
+64,male,trust,Typhoid Fever,medium,38280.89,7,02/10/2020,09/10/2020,1,1,88,Eligible,4,0,1
+30,male,government,Asthma,medium,36039.26,7,17/08/2022,24/08/2022,1,1,95,Eligible,1,0,1
+46,female,private,Viral Fever,low,11076.48,4,02/01/2020,06/01/2020,1,1,99,Eligible,2,0,1
+38,male,trust,Asthma,medium,27341.51,10,31/10/2023,10/11/2023,1,0,48,Incomplete,2,0,1
+25,male,government,Malaria,low,3963.1,2,22/09/2020,24/09/2020,1,1,91,Eligible,1,0,1
+59,female,private,Sepsis,high,330786.72,15,23/04/2023,08/05/2023,0,1,75,Incomplete,0,1,0
+59,female,private,Diabetes Mellitus,medium,67066.3,8,04/05/2020,12/05/2020,1,1,86,Eligible,2,0,1
+70,female,private,Malaria,low,19154.61,3,04/09/2024,07/09/2024,0,1,63,Incomplete,0,0,0
+52,female,private,Appendicitis,medium,49202.48,5,24/05/2021,29/05/2021,1,1,66,Incomplete,5,0,1
+62,female,private,Hypertension,medium,66510.0,9,31/01/2023,09/02/2023,1,1,94,Eligible,4,0,1
+75,female,government,Asthma,medium,69915.51,9,24/04/2022,03/05/2022,1,1,75,Incomplete,4,0,1
+67,female,private,Heart Failure,high,251374.91,7,24/03/2022,31/03/2022,1,1,98,Eligible,0,0,1
+18,female,private,Fracture,low,21825.85,3,14/02/2020,17/02/2020,1,1,96,Eligible,4,0,1
+47,female,private,Pneumonia,medium,32224.23,6,26/12/2024,01/01/2025,1,1,65,Incomplete,4,0,1
+64,male,private,Cardiac Arrest,high,127806.12,29,18/08/2024,16/09/2024,1,1,66,Incomplete,4,0,1
+64,female,private,Diabetes Mellitus,medium,74921.65,8,15/11/2021,23/11/2021,1,1,67,Incomplete,1,0,1
+77,male,private,Kidney Failure,high,187152.53,17,25/03/2020,11/04/2020,1,0,62,Incomplete,5,0,0
+61,female,government,Stroke,high,308864.68,14,03/07/2020,17/07/2020,1,1,69,Incomplete,1,0,1
+54,male,trust,Asthma,medium,32066.27,9,27/03/2022,05/04/2022,1,0,38,Incomplete,3,0,1
+43,male,government,Asthma,medium,79810.12,6,09/12/2022,15/12/2022,1,1,87,Eligible,2,0,1
+23,male,trust,Cancer,high,214370.44,17,25/01/2021,11/02/2021,1,1,79,Incomplete,1,0,1
+70,female,private,Dengue with Thrombocytopenia,high,248208.54,14,02/08/2024,16/08/2024,1,1,65,Incomplete,0,0,1
+78,male,private,Gastritis,low,10551.97,1,05/07/2024,06/07/2024,1,1,81,Eligible,1,0,1
+31,female,private,Asthma,medium,55497.73,3,16/10/2020,19/10/2020,1,1,93,Eligible,0,0,1
+36,male,private,Dengue with Thrombocytopenia,high,73888.36,7,02/09/2023,09/09/2023,0,1,72,Incomplete,5,0,0
+19,female,private,Kidney Failure,high,490906.78,29,07/11/2022,06/12/2022,0,1,68,Incomplete,4,0,0
+50,female,private,Asthma,medium,17583.91,7,20/12/2022,27/12/2022,1,1,70,Incomplete,0,0,1
+40,female,private,Fracture,low,9069.32,3,06/05/2020,09/05/2020,1,1,61,Incomplete,4,0,1
+27,female,private,Kidney Failure,high,89507.76,23,21/02/2022,16/03/2022,1,1,100,Eligible,5,0,1
+54,male,private,Cancer,high,459380.93,21,05/11/2021,26/11/2021,1,1,68,Incomplete,4,0,1
+73,male,private,Gastritis,low,23010.38,2,30/05/2022,01/06/2022,1,1,70,Incomplete,2,0,1
+78,male,government,Tuberculosis,medium,69568.96,3,25/10/2020,28/10/2020,1,1,86,Eligible,3,0,1
+77,female,private,Pneumonia,medium,21940.14,3,13/01/2021,16/01/2021,1,1,77,Incomplete,4,0,1
+56,male,private,Fracture,low,10903.75,4,10/11/2023,14/11/2023,0,1,60,Incomplete,5,0,0
+72,female,private,Sepsis,high,111880.73,14,30/01/2021,13/02/2021,0,1,30,Incomplete,2,0,0
+65,male,government,Appendicitis,medium,26510.08,10,18/06/2022,28/06/2022,1,1,75,Incomplete,3,0,1
+56,female,trust,Cardiac Arrest,high,325177.19,25,29/02/2024,25/03/2024,1,1,62,Incomplete,4,0,1
+70,male,private,Fracture,low,14833.12,1,14/02/2024,15/02/2024,1,1,100,Eligible,0,0,1
+43,female,private,Gastritis,low,6662.71,1,25/08/2021,26/08/2021,1,1,89,Eligible,5,0,1
+25,male,private,Hepatitis B,medium,23794.93,8,26/04/2022,04/05/2022,1,0,67,Incomplete,5,0,1
+23,female,private,Cardiac Arrest,high,373268.62,9,10/09/2020,19/09/2020,0,1,53,Incomplete,0,0,1
+64,male,private,Kidney Failure,high,221273.15,12,22/04/2024,04/05/2024,1,1,69,Incomplete,1,0,1
+67,male,private,Cancer,high,189283.24,21,23/04/2024,14/05/2024,1,0,38,Incomplete,1,1,0
+18,female,private,Sepsis,high,294575.52,26,12/01/2020,07/02/2020,1,1,97,Eligible,5,0,1
+46,male,government,Dengue with Thrombocytopenia,high,52957.86,24,11/12/2024,04/01/2025,1,1,73,Incomplete,0,0,1
+59,female,private,Dengue Fever,medium,70498.9,7,28/09/2023,05/10/2023,1,0,36,Incomplete,3,0,0
+61,female,government,Dengue with Thrombocytopenia,high,307527.16,12,25/02/2023,09/03/2023,1,1,83,Eligible,0,0,1
+38,female,government,Kidney Failure,high,391298.89,24,23/09/2024,17/10/2024,0,1,37,Incomplete,5,0,0
+51,female,private,Malaria,low,18308.25,1,07/06/2023,08/06/2023,0,1,70,Incomplete,4,0,1
+64,female,government,Cancer,high,431509.09,23,15/06/2021,08/07/2021,1,1,68,Incomplete,4,0,1
+64,female,private,Sepsis,high,447648.66,29,21/04/2021,20/05/2021,1,0,37,Incomplete,0,0,1
+65,male,trust,Dengue with Thrombocytopenia,high,236318.51,18,14/11/2021,02/12/2021,1,1,60,Incomplete,5,0,1
+34,male,private,Gastritis,low,14147.17,1,25/10/2021,26/10/2021,0,1,55,Incomplete,5,0,0
+71,male,government,Appendicitis,medium,69198.64,10,09/10/2023,19/10/2023,1,1,68,Incomplete,3,0,1
+75,female,trust,Stroke,high,467505.49,23,24/04/2020,17/05/2020,1,1,80,Eligible,4,0,1
+54,female,government,Heart Failure,high,486325.98,7,28/07/2021,04/08/2021,1,1,94,Eligible,1,0,1
+29,male,government,Gastritis,low,18616.48,4,10/07/2021,14/07/2021,0,1,53,Incomplete,3,0,0
+31,female,government,Tuberculosis,medium,39324.02,6,17/03/2020,23/03/2020,1,1,61,Incomplete,3,0,1
+30,female,private,Sepsis,high,189661.42,11,01/11/2021,12/11/2021,1,0,63,Incomplete,5,0,1
+64,male,trust,Stroke,high,371154.83,10,05/12/2022,15/12/2022,0,1,73,Incomplete,4,0,0
+47,male,private,Hypertension,medium,64801.71,7,06/03/2024,13/03/2024,0,1,70,Incomplete,1,0,1
+36,female,government,Asthma,medium,65231.16,4,06/10/2023,10/10/2023,1,0,37,Incomplete,0,0,1
+50,male,private,Appendicitis,medium,37770.68,7,14/10/2021,21/10/2021,0,1,48,Incomplete,4,0,0
+37,female,private,Asthma,medium,18297.2,10,29/02/2020,10/03/2020,1,0,54,Incomplete,0,0,1
+29,female,government,Dengue with Thrombocytopenia,high,190598.29,13,01/08/2024,14/08/2024,1,1,94,Eligible,0,0,1
+54,male,private,Diabetes Mellitus,medium,21322.09,10,27/09/2021,07/10/2021,1,1,69,Incomplete,4,0,1
+43,male,government,Cardiac Arrest,high,253977.38,9,02/03/2020,11/03/2020,1,1,89,Eligible,1,0,1
+56,male,government,Malaria,low,11925.09,1,02/01/2024,03/01/2024,1,1,79,Incomplete,4,0,1
+44,male,private,Dengue with Thrombocytopenia,high,296577.06,19,14/09/2022,03/10/2022,0,1,74,Incomplete,4,0,1
+54,female,private,Asthma,medium,26250.55,4,03/10/2023,07/10/2023,1,1,91,Eligible,0,0,1
+38,male,private,Stroke,high,188616.08,9,11/04/2022,20/04/2022,1,1,98,Eligible,3,0,1
+60,male,private,Diabetes Mellitus,medium,68107.18,3,22/12/2024,25/12/2024,1,1,88,Eligible,4,0,1
+54,female,private,Appendicitis,medium,59298.59,7,10/10/2021,17/10/2021,1,1,79,Incomplete,3,0,1
+23,male,private,Dengue with Thrombocytopenia,high,231888.84,16,18/09/2020,04/10/2020,0,1,33,Incomplete,0,0,0
+25,female,private,Typhoid Fever,medium,43061.51,9,23/04/2023,02/05/2023,1,1,85,Eligible,3,0,1
+60,male,private,Sepsis,high,134702.08,18,26/02/2022,16/03/2022,1,0,72,Incomplete,1,0,1
+59,male,private,Pneumonia,medium,57765.24,4,05/10/2020,09/10/2020,0,1,59,Incomplete,5,0,0
+57,male,private,Stroke,high,240856.11,21,06/08/2024,27/08/2024,1,1,87,Eligible,4,1,1
+72,male,private,Malaria,low,12038.43,3,23/01/2023,26/01/2023,0,0,30,Rejected,5,0,0
+48,male,private,Pneumonia,medium,78932.64,7,17/03/2024,24/03/2024,1,0,69,Incomplete,0,0,1
+65,male,government,Asthma,medium,35312.48,8,18/04/2020,26/04/2020,1,0,59,Incomplete,4,0,1
+64,female,government,Cancer,high,482261.59,16,22/06/2024,08/07/2024,1,0,68,Incomplete,5,0,1
+34,male,government,Sepsis,high,126085.66,28,15/04/2020,13/05/2020,1,1,99,Eligible,0,0,1
+26,male,private,Viral Fever,low,5915.85,3,29/07/2021,01/08/2021,1,0,37,Incomplete,4,0,1
+65,male,government,Stroke,high,413528.31,29,19/06/2021,18/07/2021,1,0,63,Incomplete,0,0,1
+79,male,private,Dengue with Thrombocytopenia,high,426926.4,20,21/03/2024,10/04/2024,1,1,88,Eligible,5,0,1
+54,female,private,Dengue Fever,medium,64106.46,3,25/08/2020,28/08/2020,1,1,79,Incomplete,3,0,1
+32,female,private,Kidney Failure,high,168181.32,20,22/12/2022,11/01/2023,0,1,58,Incomplete,3,0,1
+61,male,private,Hypertension,medium,56432.57,9,25/09/2024,04/10/2024,1,1,77,Incomplete,2,0,1
+34,female,private,Stroke,high,380441.06,13,20/04/2023,03/05/2023,1,1,71,Incomplete,2,0,1
+71,male,trust,Typhoid Fever,medium,21350.42,10,31/07/2020,10/08/2020,1,1,76,Incomplete,1,1,1
+23,male,private,Dengue with Thrombocytopenia,high,477720.03,10,30/07/2023,09/08/2023,1,0,68,Incomplete,1,0,1
+54,male,private,Hypertension,medium,31466.82,4,14/08/2022,18/08/2022,1,1,77,Incomplete,3,0,1
+34,male,private,Diabetes Mellitus,medium,65511.89,9,22/02/2022,03/03/2022,1,0,46,Incomplete,1,0,1
+80,male,trust,Dengue with Thrombocytopenia,high,130298.98,10,04/10/2022,14/10/2022,0,1,43,Incomplete,4,0,0
+63,female,private,Hypertension,medium,19739.77,7,16/03/2023,23/03/2023,1,0,61,Incomplete,1,0,1
+77,male,private,Kidney Failure,high,118223.36,19,06/11/2021,25/11/2021,1,1,91,Eligible,3,0,1
+52,male,trust,Typhoid Fever,medium,77020.1,10,02/08/2024,12/08/2024,0,1,52,Incomplete,2,0,1
+21,male,private,Heart Failure,high,434003.94,9,27/11/2021,06/12/2021,1,1,78,Incomplete,5,0,1
+20,female,private,Appendicitis,medium,60232.35,8,06/08/2020,14/08/2020,1,1,88,Eligible,5,0,1
+30,male,private,Hepatitis B,medium,46800.12,7,09/05/2020,16/05/2020,1,1,88,Eligible,0,1,1
+39,male,government,Kidney Failure,high,145255.18,28,01/09/2023,29/09/2023,1,1,94,Eligible,1,0,1
+77,male,private,Dengue Fever,medium,46778.16,10,09/02/2020,19/02/2020,1,1,75,Incomplete,5,0,1
+29,male,government,Gastritis,low,13036.06,1,15/12/2020,16/12/2020,1,0,61,Incomplete,4,0,1
+22,male,government,Cancer,high,415184.46,28,20/02/2024,19/03/2024,1,0,73,Incomplete,4,0,1
+71,male,government,Dengue Fever,medium,26274.1,4,09/05/2020,13/05/2020,1,1,70,Incomplete,5,0,1
+46,male,private,Hepatitis B,medium,23669.11,9,08/06/2024,17/06/2024,1,0,61,Incomplete,0,1,0
+77,male,private,Hepatitis B,medium,42054.45,10,11/07/2024,21/07/2024,1,1,100,Eligible,2,0,1
+33,male,private,Dengue with Thrombocytopenia,high,318322.39,22,08/01/2024,30/01/2024,1,0,49,Incomplete,2,0,1
+33,male,private,Hypertension,medium,78491.45,8,21/06/2023,29/06/2023,1,1,92,Eligible,1,0,1
+60,male,private,Viral Fever,low,7261.82,2,19/06/2024,21/06/2024,1,1,90,Eligible,3,0,1
+21,female,private,Gastritis,low,12562.78,4,15/11/2021,19/11/2021,0,1,64,Incomplete,1,0,0
+49,male,private,Diabetes Mellitus,medium,61891.2,8,28/04/2023,06/05/2023,1,1,80,Eligible,1,0,1
+32,male,trust,Fracture,low,22137.5,2,08/02/2022,10/02/2022,0,1,33,Incomplete,3,0,1
+47,male,government,Kidney Failure,high,111382.08,13,14/01/2024,27/01/2024,1,1,72,Incomplete,2,0,1
+21,female,government,Pneumonia,medium,70357.34,9,28/07/2022,06/08/2022,1,1,78,Incomplete,4,0,1
+78,male,private,Hepatitis B,medium,70575.26,9,26/06/2020,05/07/2020,1,1,73,Incomplete,4,0,1
+35,male,private,Cancer,high,161524.15,25,08/06/2022,03/07/2022,1,1,69,Incomplete,4,0,1
+80,male,private,Dengue Fever,medium,62675.96,3,29/10/2022,01/11/2022,1,1,66,Incomplete,3,0,1
+53,male,private,Cancer,high,109720.4,14,28/08/2021,11/09/2021,1,0,60,Incomplete,5,0,1
+72,male,private,Stroke,high,397325.75,29,25/11/2024,24/12/2024,1,1,83,Eligible,5,0,1
+18,male,government,Kidney Failure,high,288914.15,20,30/08/2021,19/09/2021,1,1,99,Eligible,4,0,1
+68,male,government,Dengue with Thrombocytopenia,high,381092.35,23,22/04/2020,15/05/2020,1,1,63,Incomplete,0,0,1
+57,male,government,Heart Failure,high,128870.33,29,18/02/2023,19/03/2023,0,1,43,Incomplete,1,0,0
+52,male,government,Sepsis,high,442009.12,13,10/12/2023,23/12/2023,1,1,80,Eligible,2,0,1
+61,female,private,Viral Fever,low,4394.12,4,08/12/2021,12/12/2021,1,1,67,Incomplete,3,0,1
+75,female,government,Stroke,high,215665.63,29,10/10/2023,08/11/2023,1,1,64,Incomplete,1,0,1
+23,male,private,Kidney Failure,high,179767.71,10,06/06/2020,16/06/2020,1,0,39,Incomplete,3,0,0
+51,male,trust,Gastritis,low,24330.64,2,13/01/2023,15/01/2023,1,1,61,Incomplete,2,0,1
+73,male,government,Malaria,low,12057.22,3,03/12/2021,06/12/2021,1,1,93,Eligible,4,0,1
+54,male,private,Gastritis,low,20363.89,4,09/04/2021,13/04/2021,1,1,63,Incomplete,1,0,1
+79,male,private,Dengue with Thrombocytopenia,high,370315.48,12,07/08/2021,19/08/2021,1,1,69,Incomplete,1,0,1
+38,male,private,Stroke,high,216352.46,24,24/02/2021,20/03/2021,1,1,82,Eligible,1,0,1
+80,male,private,Asthma,medium,22896.85,9,21/02/2020,01/03/2020,1,1,89,Eligible,2,0,1
+80,female,private,Gastritis,low,22711.5,2,24/03/2024,26/03/2024,1,1,88,Eligible,2,0,1
+75,male,private,Pneumonia,medium,22596.95,9,20/02/2020,29/02/2020,1,1,82,Eligible,0,0,1
+59,male,private,Hepatitis B,medium,29439.35,7,20/04/2024,27/04/2024,1,0,58,Incomplete,5,0,0
+80,female,private,Appendicitis,medium,35654.26,3,24/05/2023,27/05/2023,1,1,69,Incomplete,5,0,1
+42,female,private,Typhoid Fever,medium,37419.81,10,22/09/2021,02/10/2021,1,0,58,Incomplete,5,0,1
+36,male,trust,Cancer,high,112805.46,26,17/04/2023,13/05/2023,0,1,60,Incomplete,4,0,0
+77,female,private,Diabetes Mellitus,medium,41614.94,9,13/07/2021,22/07/2021,1,1,96,Eligible,1,0,1
+36,female,private,Dengue Fever,medium,69248.04,10,14/09/2021,24/09/2021,1,1,61,Incomplete,0,0,1
+79,female,private,Hypertension,medium,42115.19,6,04/10/2022,10/10/2022,0,1,61,Incomplete,0,0,1
+55,female,trust,Hepatitis B,medium,71442.48,10,10/07/2023,20/07/2023,1,1,83,Eligible,4,0,1
+72,female,government,Tuberculosis,medium,18803.18,10,16/10/2021,26/10/2021,1,0,40,Incomplete,0,0,1
+58,female,private,Dengue Fever,medium,33958.17,4,01/08/2023,05/08/2023,1,1,71,Incomplete,0,0,1
+52,female,private,Cardiac Arrest,high,172156.54,29,30/11/2023,29/12/2023,1,1,82,Eligible,1,1,1
+36,female,trust,Sepsis,high,203140.89,10,29/11/2020,09/12/2020,1,1,72,Incomplete,4,0,1
+72,male,private,Cancer,high,462214.02,11,26/08/2020,06/09/2020,1,1,79,Incomplete,5,0,1
+74,female,private,Tuberculosis,medium,16869.37,4,26/07/2024,30/07/2024,1,1,69,Incomplete,5,0,1
+31,male,trust,Diabetes Mellitus,medium,59903.18,4,24/05/2024,28/05/2024,0,1,57,Incomplete,0,0,0
+68,male,government,Sepsis,high,458838.18,9,29/03/2020,07/04/2020,1,0,36,Incomplete,0,0,1
+55,male,government,Tuberculosis,medium,16901.84,7,25/10/2020,01/11/2020,1,1,70,Incomplete,4,0,1
+33,male,government,Hypertension,medium,64610.86,6,19/12/2022,25/12/2022,1,1,70,Incomplete,4,1,1
+77,male,private,Malaria,low,11062.19,2,22/04/2023,24/04/2023,1,1,71,Incomplete,2,0,1
+31,male,government,Cancer,high,392634.25,10,05/10/2021,15/10/2021,1,1,91,Eligible,2,0,1
+64,male,government,Diabetes Mellitus,medium,47091.33,7,27/02/2022,06/03/2022,1,1,88,Eligible,1,0,1
+72,female,government,Appendicitis,medium,73159.05,10,01/07/2024,11/07/2024,1,1,60,Incomplete,5,0,1
+43,female,government,Malaria,low,5622.79,4,19/03/2022,23/03/2022,1,1,70,Incomplete,0,0,1
+39,male,trust,Dengue with Thrombocytopenia,high,105242.98,20,12/09/2024,02/10/2024,1,1,97,Eligible,4,0,1
+78,female,private,Heart Failure,high,350004.65,22,08/04/2022,30/04/2022,1,0,59,Incomplete,0,0,1
+49,male,private,Pneumonia,medium,21474.22,4,18/04/2020,22/04/2020,1,0,41,Incomplete,3,0,1
+27,female,government,Dengue with Thrombocytopenia,high,93350.13,28,05/06/2020,03/07/2020,1,1,89,Eligible,1,0,1
+49,female,government,Asthma,medium,67616.3,3,12/01/2023,15/01/2023,1,0,57,Incomplete,0,0,1
+72,female,private,Stroke,high,66191.5,24,28/12/2020,21/01/2021,1,1,70,Incomplete,3,0,1
+63,female,government,Sepsis,high,305984.85,28,01/10/2022,29/10/2022,1,1,90,Eligible,3,0,1
+50,male,private,Kidney Failure,high,272611.01,26,12/02/2022,10/03/2022,1,1,78,Incomplete,2,0,1
+20,male,government,Heart Failure,high,414299.04,7,10/04/2023,17/04/2023,1,1,84,Eligible,0,0,1
+44,female,private,Dengue Fever,medium,31094.91,7,20/08/2023,27/08/2023,1,1,64,Incomplete,2,0,1
+19,female,private,Dengue Fever,medium,57754.91,9,15/05/2022,24/05/2022,1,1,97,Eligible,0,0,1
+54,female,government,Cardiac Arrest,high,93976.55,10,27/09/2022,07/10/2022,1,1,91,Eligible,4,0,1
+28,female,trust,Heart Failure,high,140791.38,9,25/07/2023,03/08/2023,1,1,78,Incomplete,2,1,1
+43,male,government,Dengue with Thrombocytopenia,high,372968.08,10,30/03/2023,09/04/2023,1,1,96,Eligible,4,0,1
+40,male,private,Gastritis,low,20690.79,3,05/06/2022,08/06/2022,1,1,99,Eligible,4,0,1
+29,male,private,Malaria,low,15690.55,4,12/03/2021,16/03/2021,1,1,99,Eligible,3,0,1
+21,male,private,Heart Failure,high,116484.66,30,04/11/2020,04/12/2020,1,1,87,Eligible,3,0,1
+58,male,private,Cancer,high,420669.82,12,16/08/2023,28/08/2023,1,1,85,Eligible,1,0,1
+19,male,private,Gastritis,low,13678.41,4,12/06/2022,16/06/2022,1,0,40,Incomplete,2,0,1
+68,female,private,Asthma,medium,56879.1,10,27/03/2020,06/04/2020,1,0,35,Incomplete,2,0,0
+75,female,government,Heart Failure,high,228602.77,30,15/09/2024,15/10/2024,1,1,96,Eligible,5,0,1
+51,female,government,Sepsis,high,157134.58,17,07/09/2020,24/09/2020,1,1,84,Eligible,5,0,1
+31,male,private,Hypertension,medium,28917.06,10,16/07/2021,26/07/2021,1,1,63,Incomplete,3,0,1
+38,female,private,Sepsis,high,483491.9,11,06/12/2024,17/12/2024,1,1,79,Incomplete,0,0,1
+20,male,private,Fracture,low,15160.01,3,25/09/2021,28/09/2021,1,1,94,Eligible,1,0,1
+18,female,private,Viral Fever,low,4985.51,2,11/08/2024,13/08/2024,1,1,70,Incomplete,3,0,1
+44,male,government,Viral Fever,low,21110.35,4,03/10/2022,07/10/2022,1,1,81,Eligible,5,0,1
+70,male,private,Viral Fever,low,4460.08,3,11/05/2022,14/05/2022,1,0,33,Incomplete,5,0,1
+46,male,trust,Typhoid Fever,medium,28004.9,8,17/09/2021,25/09/2021,1,0,45,Incomplete,4,0,1
+66,male,trust,Dengue with Thrombocytopenia,high,406689.03,21,16/10/2021,06/11/2021,1,1,76,Incomplete,1,0,1
+69,female,government,Appendicitis,medium,41942.27,9,07/01/2021,16/01/2021,1,1,96,Eligible,1,1,1
+77,male,private,Diabetes Mellitus,medium,27887.3,5,07/12/2023,12/12/2023,0,1,68,Incomplete,2,0,1
+28,male,private,Typhoid Fever,medium,43285.32,10,18/07/2022,28/07/2022,0,1,42,Incomplete,2,0,1
+42,male,private,Cancer,high,320037.25,16,14/08/2024,30/08/2024,1,0,41,Incomplete,3,0,0
+36,female,government,Fracture,low,12921.49,3,23/05/2021,26/05/2021,1,1,65,Incomplete,0,0,1
+80,female,trust,Appendicitis,medium,61049.46,7,16/02/2024,23/02/2024,0,1,33,Incomplete,2,0,1
+76,female,government,Dengue with Thrombocytopenia,high,369304.68,8,16/07/2024,24/07/2024,0,1,54,Incomplete,2,0,1
+26,male,private,Hepatitis B,medium,31918.96,10,28/10/2022,07/11/2022,1,1,68,Incomplete,0,0,1
+45,male,government,Viral Fever,low,9891.93,4,18/09/2020,22/09/2020,1,1,83,Eligible,3,0,1
+57,female,government,Malaria,low,12587.06,3,03/12/2020,06/12/2020,1,1,69,Incomplete,4,0,1
+69,female,private,Dengue Fever,medium,24660.35,5,15/04/2021,20/04/2021,0,1,75,Incomplete,3,0,1
+20,female,private,Heart Failure,high,268339.78,10,06/10/2022,16/10/2022,1,1,67,Incomplete,2,0,1
+29,male,private,Malaria,low,15391.44,2,20/09/2023,22/09/2023,1,1,93,Eligible,4,0,1
+33,female,government,Hypertension,medium,16687.54,4,27/10/2023,31/10/2023,1,1,66,Incomplete,2,0,1
+47,female,private,Stroke,high,317391.92,17,12/01/2020,29/01/2020,1,1,88,Eligible,2,0,1
+26,male,private,Dengue Fever,medium,36006.11,4,23/04/2020,27/04/2020,1,1,65,Incomplete,3,0,1
+79,female,private,Diabetes Mellitus,medium,70402.48,9,29/11/2020,08/12/2020,1,1,69,Incomplete,0,0,1
+65,female,private,Dengue with Thrombocytopenia,high,211569.92,18,15/07/2020,02/08/2020,1,1,84,Eligible,3,0,1
+45,male,government,Cancer,high,326240.5,27,08/06/2022,05/07/2022,1,0,51,Incomplete,3,0,1
+61,male,private,Sepsis,high,333301.81,9,10/12/2022,19/12/2022,1,1,90,Eligible,2,0,1
+61,female,private,Fracture,low,12410.1,1,10/03/2023,11/03/2023,1,1,92,Eligible,0,0,1
+24,female,private,Hepatitis B,medium,38104.75,4,14/04/2023,18/04/2023,1,0,72,Incomplete,3,0,1
+71,female,government,Dengue Fever,medium,42056.35,7,13/12/2023,20/12/2023,1,1,88,Eligible,4,0,1
+79,male,private,Appendicitis,medium,20084.33,7,22/05/2023,29/05/2023,1,0,64,Incomplete,0,1,0
+18,male,private,Sepsis,high,361312.8,28,14/11/2024,12/12/2024,1,1,91,Eligible,2,0,1
+41,female,government,Gastritis,low,5751.97,2,29/01/2020,31/01/2020,0,0,12,Rejected,0,0,0
+27,male,private,Cancer,high,135911.5,21,08/09/2021,29/09/2021,0,1,37,Incomplete,1,0,1
+79,female,private,Sepsis,high,436908.4,14,13/04/2023,27/04/2023,1,1,85,Eligible,0,0,1
+58,female,private,Cancer,high,381685.24,30,05/05/2023,04/06/2023,1,1,91,Eligible,3,0,1
+64,female,private,Fracture,low,14622.79,3,14/05/2022,17/05/2022,1,1,86,Eligible,3,0,1
+78,female,trust,Stroke,high,59363.12,30,12/08/2021,11/09/2021,1,1,74,Incomplete,4,0,1
+76,female,private,Pneumonia,medium,61994.68,9,10/03/2022,19/03/2022,1,1,83,Eligible,3,0,1
+57,male,government,Gastritis,low,17675.24,2,21/09/2020,23/09/2020,1,1,66,Incomplete,3,0,1
+37,male,private,Appendicitis,medium,18058.21,8,07/02/2020,15/02/2020,1,1,70,Incomplete,1,0,1
+20,male,trust,Cardiac Arrest,high,101286.18,10,09/04/2021,19/04/2021,1,1,81,Eligible,2,0,1
+35,male,government,Malaria,low,17728.69,1,17/12/2023,18/12/2023,1,1,89,Eligible,0,0,1
+57,male,private,Asthma,medium,47974.87,4,08/12/2020,12/12/2020,1,1,70,Incomplete,5,0,1
+66,female,private,Hypertension,medium,57061.04,5,16/11/2021,21/11/2021,0,1,56,Incomplete,0,0,1
+39,female,private,Malaria,low,4875.14,4,01/02/2022,05/02/2022,1,1,69,Incomplete,4,0,1
+26,female,trust,Cancer,high,454129.37,23,11/10/2024,03/11/2024,1,1,61,Incomplete,3,0,1
+63,male,government,Diabetes Mellitus,medium,35462.3,5,30/04/2024,05/05/2024,1,1,62,Incomplete,5,0,1
+75,male,private,Malaria,low,12224.72,3,19/12/2024,22/12/2024,1,1,82,Eligible,0,0,1
+57,male,private,Kidney Failure,high,339745.71,24,22/12/2024,15/01/2025,1,1,88,Eligible,5,0,1
+43,male,government,Gastritis,low,3813.34,4,16/11/2021,20/11/2021,1,1,68,Incomplete,4,0,1
+31,male,private,Malaria,low,9869.55,2,28/11/2021,30/11/2021,0,1,64,Incomplete,4,0,0
+64,female,government,Malaria,low,19103.7,3,19/09/2024,22/09/2024,1,1,67,Incomplete,0,0,1
+46,female,private,Hepatitis B,medium,44454.57,6,28/04/2021,04/05/2021,1,1,96,Eligible,5,0,1
+51,male,government,Hypertension,medium,48569.37,8,29/01/2021,06/02/2021,1,0,57,Incomplete,3,0,0
+45,male,private,Sepsis,high,250773.84,28,26/01/2022,23/02/2022,1,1,93,Eligible,3,0,1
+49,female,private,Stroke,high,379272.63,12,03/05/2022,15/05/2022,0,0,29,Rejected,1,0,0
+73,male,private,Appendicitis,medium,45768.11,5,08/03/2024,13/03/2024,1,1,67,Incomplete,4,0,1
+25,female,private,Hepatitis B,medium,17618.34,4,09/11/2020,13/11/2020,1,1,79,Incomplete,2,0,1
+27,female,private,Dengue Fever,medium,72788.72,5,17/03/2021,22/03/2021,1,1,67,Incomplete,4,0,1
+44,female,private,Hepatitis B,medium,51774.66,9,22/11/2021,01/12/2021,1,1,98,Eligible,1,0,1
+58,female,private,Stroke,high,117042.17,17,30/01/2024,16/02/2024,0,1,69,Incomplete,3,0,1
+39,male,private,Stroke,high,340662.44,12,08/11/2024,20/11/2024,1,1,79,Incomplete,4,0,1
+53,male,government,Appendicitis,medium,50219.23,3,31/03/2024,03/04/2024,1,1,90,Eligible,4,0,1
+60,male,private,Typhoid Fever,medium,66139.21,10,17/05/2021,27/05/2021,0,1,50,Incomplete,3,0,1
+73,male,trust,Cardiac Arrest,high,131228.6,23,19/02/2020,13/03/2020,1,1,67,Incomplete,0,0,1
+27,male,government,Viral Fever,low,6393.0,2,14/04/2022,16/04/2022,0,1,41,Incomplete,0,0,0
+42,male,private,Cardiac Arrest,high,235770.27,15,25/10/2021,09/11/2021,1,1,67,Incomplete,0,0,1
+55,male,private,Sepsis,high,388575.49,10,27/02/2022,09/03/2022,1,1,95,Eligible,3,0,1
+44,male,private,Typhoid Fever,medium,51014.89,4,15/04/2023,19/04/2023,1,1,68,Incomplete,2,0,1
+23,male,government,Pneumonia,medium,50128.58,6,10/12/2020,16/12/2020,1,1,95,Eligible,3,1,1
+79,female,private,Tuberculosis,medium,18911.38,7,14/09/2022,21/09/2022,1,1,84,Eligible,2,0,1
+55,female,private,Dengue Fever,medium,63046.89,4,27/02/2023,03/03/2023,1,1,67,Incomplete,1,0,1
+74,female,government,Appendicitis,medium,47813.32,8,30/06/2024,08/07/2024,1,1,100,Eligible,2,0,1
+35,male,government,Cardiac Arrest,high,144780.75,17,12/05/2023,29/05/2023,0,1,71,Incomplete,0,0,0
+75,male,trust,Tuberculosis,medium,51126.39,10,27/11/2023,07/12/2023,1,1,64,Incomplete,4,1,1
+61,male,trust,Heart Failure,high,422360.08,19,03/01/2022,22/01/2022,1,1,60,Incomplete,0,0,1
+46,male,private,Fracture,low,19685.26,3,25/10/2023,28/10/2023,1,1,100,Eligible,2,0,1
+32,female,private,Heart Failure,high,176340.36,29,12/12/2023,10/01/2024,1,0,70,Incomplete,3,0,1
+54,female,private,Tuberculosis,medium,27595.07,5,22/02/2024,27/02/2024,0,0,4,Rejected,1,0,0
+72,male,private,Malaria,low,7220.73,1,20/10/2023,21/10/2023,1,1,94,Eligible,4,0,1
+74,female,trust,Typhoid Fever,medium,56662.81,3,24/08/2023,27/08/2023,1,1,86,Eligible,2,0,1
+47,female,private,Heart Failure,high,391559.77,30,15/12/2024,14/01/2025,1,1,86,Eligible,4,0,1
+43,male,government,Cardiac Arrest,high,446044.31,7,12/07/2024,19/07/2024,1,1,87,Eligible,0,0,1
+28,female,government,Gastritis,low,16771.88,1,17/07/2020,18/07/2020,1,1,97,Eligible,5,0,1
+33,male,private,Sepsis,high,481461.2,8,31/08/2024,08/09/2024,1,1,75,Incomplete,0,0,1
+46,male,government,Stroke,high,106171.87,8,04/05/2020,12/05/2020,1,1,64,Incomplete,1,0,1
+21,female,trust,Dengue with Thrombocytopenia,high,79605.62,8,19/10/2023,27/10/2023,1,1,84,Eligible,3,0,1
+32,male,trust,Stroke,high,258894.09,26,26/05/2022,21/06/2022,1,1,61,Incomplete,3,0,1
+30,male,private,Hypertension,medium,53686.38,6,18/05/2020,24/05/2020,1,0,62,Incomplete,2,0,1
+64,female,private,Tuberculosis,medium,23948.73,3,31/03/2020,03/04/2020,0,1,62,Incomplete,5,0,0
+55,male,private,Pneumonia,medium,35063.84,7,03/12/2021,10/12/2021,1,0,67,Incomplete,5,0,0
+33,male,government,Cancer,high,137933.21,27,14/02/2021,13/03/2021,1,1,81,Eligible,1,0,1
+56,female,government,Hepatitis B,medium,77599.22,7,15/06/2023,22/06/2023,1,0,59,Incomplete,0,0,1
+58,male,private,Fracture,low,16726.24,4,04/05/2021,08/05/2021,1,1,81,Eligible,5,0,1
+29,male,private,Heart Failure,high,83179.02,24,02/03/2020,26/03/2020,0,1,42,Incomplete,5,0,0
+20,male,private,Appendicitis,medium,33466.56,7,24/03/2021,31/03/2021,1,1,95,Eligible,1,0,1
+29,female,private,Hypertension,medium,69043.97,9,08/10/2020,17/10/2020,1,1,81,Eligible,1,0,1
+41,female,private,Tuberculosis,medium,78511.62,9,30/06/2023,09/07/2023,1,0,39,Incomplete,1,0,1
+52,female,government,Heart Failure,high,319797.12,14,26/07/2023,09/08/2023,1,1,97,Eligible,1,0,1
+68,male,private,Cardiac Arrest,high,73966.54,15,17/06/2024,02/07/2024,1,1,97,Eligible,3,0,1
+68,female,government,Dengue with Thrombocytopenia,high,125345.09,27,05/03/2022,01/04/2022,1,1,93,Eligible,3,0,1
+51,female,private,Sepsis,high,170750.96,27,01/04/2022,28/04/2022,1,1,62,Incomplete,1,0,1
+46,male,private,Kidney Failure,high,187699.57,19,25/12/2024,13/01/2025,1,1,83,Eligible,2,0,1
+66,male,private,Gastritis,low,14414.06,1,16/04/2021,17/04/2021,1,1,87,Eligible,3,0,1
+41,female,private,Cardiac Arrest,high,222066.92,21,02/01/2021,23/01/2021,1,1,82,Eligible,0,0,1
+50,male,private,Viral Fever,low,5165.0,3,26/05/2020,29/05/2020,0,1,42,Incomplete,5,0,0
+65,female,government,Appendicitis,medium,79869.72,7,17/10/2024,24/10/2024,0,1,52,Incomplete,3,0,1
+66,male,private,Sepsis,high,495173.58,19,01/11/2020,20/11/2020,1,1,73,Incomplete,3,0,1
+68,female,government,Stroke,high,406361.7,13,03/10/2021,16/10/2021,1,1,86,Eligible,1,0,1
+19,female,government,Pneumonia,medium,71793.76,3,17/09/2021,20/09/2021,1,1,82,Eligible,2,0,1
+61,female,private,Asthma,medium,36195.17,3,17/02/2020,20/02/2020,1,0,51,Incomplete,4,0,1
+76,female,private,Kidney Failure,high,476911.7,24,10/05/2020,03/06/2020,1,1,81,Eligible,4,0,1
+75,female,private,Diabetes Mellitus,medium,21780.36,5,06/02/2023,11/02/2023,0,1,61,Incomplete,0,0,0
+76,female,private,Gastritis,low,8126.87,1,12/09/2023,13/09/2023,1,1,60,Incomplete,1,0,1
+43,male,private,Hypertension,medium,49869.45,4,06/09/2022,10/09/2022,1,1,73,Incomplete,1,0,1
+45,female,government,Tuberculosis,medium,52380.94,6,27/09/2021,03/10/2021,1,1,77,Incomplete,1,1,1
+46,male,government,Kidney Failure,high,413404.62,17,12/12/2022,29/12/2022,1,1,89,Eligible,3,0,1
+36,female,private,Heart Failure,high,225990.67,12,13/08/2024,25/08/2024,1,0,69,Incomplete,5,0,1
+76,male,government,Hepatitis B,medium,40580.84,6,30/03/2020,05/04/2020,1,0,70,Incomplete,4,0,1
+62,male,trust,Sepsis,high,496575.37,10,06/02/2023,16/02/2023,1,0,36,Incomplete,4,0,1
+44,female,private,Tuberculosis,medium,28479.19,10,01/04/2020,11/04/2020,0,1,73,Incomplete,5,0,0
+65,female,trust,Appendicitis,medium,17455.35,4,28/05/2021,01/06/2021,1,0,72,Incomplete,5,0,1
+22,male,private,Asthma,medium,61382.8,5,15/06/2022,20/06/2022,1,1,70,Incomplete,1,0,1
+24,male,government,Gastritis,low,14762.38,2,11/03/2022,13/03/2022,0,1,73,Incomplete,2,0,1
+29,male,private,Dengue Fever,medium,29050.82,3,27/11/2023,30/11/2023,1,1,66,Incomplete,3,0,1
+21,male,trust,Dengue Fever,medium,64862.43,8,26/05/2021,03/06/2021,1,0,31,Incomplete,3,1,0
+39,male,private,Diabetes Mellitus,medium,77318.44,5,16/07/2020,21/07/2020,1,0,62,Incomplete,0,0,1
+53,male,private,Dengue with Thrombocytopenia,high,470447.32,20,20/03/2022,09/04/2022,0,1,52,Incomplete,2,0,1
+59,female,trust,Typhoid Fever,medium,28829.92,4,26/03/2021,30/03/2021,1,1,99,Eligible,2,1,1
+44,female,private,Dengue with Thrombocytopenia,high,492396.12,29,27/07/2020,25/08/2020,1,1,96,Eligible,1,0,1
+56,female,private,Kidney Failure,high,199420.95,29,25/07/2023,23/08/2023,1,1,90,Eligible,0,0,1
+76,female,private,Kidney Failure,high,338266.38,23,21/04/2021,14/05/2021,1,1,74,Incomplete,0,0,1
+37,male,private,Cancer,high,328894.8,11,02/05/2020,13/05/2020,1,1,69,Incomplete,3,0,1
+33,female,private,Cardiac Arrest,high,175156.9,8,11/08/2023,19/08/2023,1,1,78,Incomplete,0,0,1
+39,male,private,Appendicitis,medium,18514.81,6,23/09/2023,29/09/2023,1,1,74,Incomplete,4,0,1
+38,male,private,Stroke,high,79077.6,9,03/10/2022,12/10/2022,1,0,39,Incomplete,1,0,1
+55,male,private,Fracture,low,4719.62,4,24/01/2024,28/01/2024,1,1,75,Incomplete,3,0,1
+37,female,private,Hepatitis B,medium,77902.18,7,16/02/2021,23/02/2021,1,1,83,Eligible,3,0,1
+46,female,government,Malaria,low,19168.42,2,06/04/2024,08/04/2024,1,1,61,Incomplete,3,0,1
+66,female,private,Dengue with Thrombocytopenia,high,118759.42,12,28/01/2024,09/02/2024,1,1,89,Eligible,2,0,1
+48,male,private,Cardiac Arrest,high,371688.52,11,04/02/2021,15/02/2021,1,0,62,Incomplete,5,0,1
+43,female,government,Kidney Failure,high,222816.84,27,22/09/2021,19/10/2021,1,0,32,Incomplete,0,0,1
+28,male,private,Cancer,high,397071.67,30,19/03/2024,18/04/2024,1,1,100,Eligible,5,0,1
+59,female,private,Cancer,high,159058.79,18,11/03/2020,29/03/2020,1,1,69,Incomplete,2,0,1
+34,male,government,Dengue with Thrombocytopenia,high,478300.21,12,19/09/2024,01/10/2024,0,1,71,Incomplete,5,0,1
+63,male,private,Malaria,low,22272.14,4,05/12/2020,09/12/2020,1,1,94,Eligible,5,0,1
+37,female,government,Diabetes Mellitus,medium,56351.72,8,09/05/2024,17/05/2024,1,1,73,Incomplete,5,0,1
+18,male,private,Sepsis,high,93591.8,29,03/05/2024,01/06/2024,1,1,78,Incomplete,5,0,1
+41,male,private,Pneumonia,medium,46620.63,4,26/10/2022,30/10/2022,1,1,71,Incomplete,1,0,1
+69,male,trust,Viral Fever,low,12696.07,1,02/07/2023,03/07/2023,1,0,48,Incomplete,0,0,1
+22,female,government,Typhoid Fever,medium,30260.71,4,20/09/2022,24/09/2022,0,1,30,Incomplete,5,0,0
+24,male,private,Malaria,low,11264.65,3,01/12/2022,04/12/2022,1,1,81,Eligible,4,0,1
+61,female,private,Cardiac Arrest,high,473445.97,19,24/09/2023,13/10/2023,1,0,52,Incomplete,2,0,1
+47,female,private,Pneumonia,medium,54124.1,7,14/11/2024,21/11/2024,1,1,75,Incomplete,2,0,1
+50,female,private,Appendicitis,medium,79101.79,8,22/07/2024,30/07/2024,0,1,32,Incomplete,5,0,0
+32,female,government,Kidney Failure,high,407282.17,20,14/12/2021,03/01/2022,1,1,90,Eligible,5,0,1
+64,female,government,Gastritis,low,7291.69,1,20/10/2020,21/10/2020,0,1,49,Incomplete,5,0,0
+28,female,private,Hypertension,medium,58071.74,6,08/05/2021,14/05/2021,1,1,65,Incomplete,0,0,1
+28,female,private,Kidney Failure,high,149169.22,28,11/06/2021,09/07/2021,1,1,67,Incomplete,5,0,1
+58,female,government,Diabetes Mellitus,medium,71676.14,4,25/03/2023,29/03/2023,1,1,84,Eligible,5,0,1
+79,female,private,Fracture,low,8700.07,1,18/08/2021,19/08/2021,0,1,67,Incomplete,1,0,0
+54,female,government,Pneumonia,medium,77014.46,3,27/03/2023,30/03/2023,1,1,72,Incomplete,3,0,1
+67,female,private,Pneumonia,medium,58143.28,6,24/04/2023,30/04/2023,0,0,29,Rejected,2,0,0
+71,male,private,Sepsis,high,116341.41,11,03/08/2021,14/08/2021,1,1,62,Incomplete,4,0,1
+62,male,government,Viral Fever,low,13522.22,2,24/08/2024,26/08/2024,1,1,84,Eligible,0,0,1
+27,male,private,Fracture,low,23309.47,2,08/05/2024,10/05/2024,1,1,79,Incomplete,5,0,1
+19,female,trust,Cardiac Arrest,high,355054.41,19,14/12/2021,02/01/2022,1,1,78,Incomplete,2,0,1
+62,female,private,Hypertension,medium,36022.21,3,08/06/2024,11/06/2024,1,1,89,Eligible,5,0,1
+46,female,private,Gastritis,low,7614.86,2,05/07/2024,07/07/2024,1,0,66,Incomplete,0,0,1
+42,female,private,Tuberculosis,medium,21243.1,5,28/08/2022,02/09/2022,1,0,62,Incomplete,5,0,1
+80,male,private,Kidney Failure,high,65296.77,19,08/05/2021,27/05/2021,1,1,71,Incomplete,5,0,1
+67,female,private,Kidney Failure,high,334550.08,18,30/06/2022,18/07/2022,0,0,7,Rejected,3,0,0
+32,male,government,Hepatitis B,medium,79177.71,7,09/09/2022,16/09/2022,1,0,67,Incomplete,1,0,1
+62,female,government,Gastritis,low,5755.2,1,28/10/2021,29/10/2021,1,1,94,Eligible,1,0,1
+43,female,private,Diabetes Mellitus,medium,69414.36,4,08/01/2023,12/01/2023,1,1,67,Incomplete,1,0,1
+18,female,government,Cardiac Arrest,high,67614.42,13,23/03/2023,05/04/2023,1,0,46,Incomplete,0,0,1
+50,female,private,Heart Failure,high,127221.44,7,09/09/2023,16/09/2023,1,0,63,Incomplete,2,0,1
+26,female,private,Cardiac Arrest,high,459852.42,26,22/12/2021,17/01/2022,1,1,66,Incomplete,5,0,1
+20,male,private,Pneumonia,medium,70645.54,5,16/03/2021,21/03/2021,1,1,82,Eligible,2,0,1
+45,male,private,Asthma,medium,31943.84,5,23/08/2023,28/08/2023,1,0,46,Incomplete,5,0,0
+52,male,private,Diabetes Mellitus,medium,79698.35,6,28/11/2023,04/12/2023,1,1,92,Eligible,4,0,1
+38,female,private,Kidney Failure,high,483807.97,9,21/05/2021,30/05/2021,1,1,95,Eligible,3,0,1
+23,female,private,Cardiac Arrest,high,115848.33,14,22/06/2024,06/07/2024,1,0,44,Incomplete,3,0,0
+29,female,private,Hepatitis B,medium,21210.14,7,15/12/2021,22/12/2021,1,1,63,Incomplete,1,0,1
+29,female,private,Asthma,medium,53650.1,9,06/10/2024,15/10/2024,1,0,30,Incomplete,5,0,0
+60,male,trust,Pneumonia,medium,51891.45,3,01/07/2021,04/07/2021,1,1,83,Eligible,5,0,1
+44,female,private,Tuberculosis,medium,79106.01,10,23/06/2024,03/07/2024,1,1,87,Eligible,4,0,1
+37,male,trust,Gastritis,low,19952.72,1,27/09/2024,28/09/2024,1,0,45,Incomplete,0,0,1
+23,female,private,Asthma,medium,67542.55,9,22/01/2020,31/01/2020,1,1,68,Incomplete,3,0,1
+62,male,private,Kidney Failure,high,327328.97,30,29/08/2024,28/09/2024,0,1,64,Incomplete,5,0,1
+61,male,private,Dengue with Thrombocytopenia,high,484091.32,23,13/10/2023,05/11/2023,1,0,53,Incomplete,1,0,1
+45,female,private,Kidney Failure,high,217977.66,17,19/08/2020,05/09/2020,1,1,94,Eligible,0,0,1
+36,female,private,Appendicitis,medium,62971.67,9,10/03/2023,19/03/2023,1,1,92,Eligible,0,0,1
+72,female,government,Dengue Fever,medium,15382.92,8,31/07/2022,08/08/2022,1,0,52,Incomplete,5,0,1
+18,male,private,Cancer,high,138895.0,23,19/12/2022,11/01/2023,1,1,91,Eligible,0,0,1
+32,female,government,Kidney Failure,high,184678.23,12,27/05/2022,08/06/2022,1,1,88,Eligible,5,0,1
+26,female,private,Cancer,high,211656.54,29,17/11/2024,16/12/2024,1,0,32,Incomplete,1,0,1
+75,male,private,Tuberculosis,medium,76644.43,7,24/09/2023,01/10/2023,0,1,61,Incomplete,5,0,0
+66,female,trust,Malaria,low,5891.19,1,08/08/2020,09/08/2020,0,1,30,Incomplete,5,0,0
+45,male,private,Cancer,high,180259.98,9,22/09/2022,01/10/2022,1,1,69,Incomplete,5,0,1
+35,male,private,Viral Fever,low,17659.27,2,28/05/2022,30/05/2022,1,1,66,Incomplete,5,0,1
+29,male,private,Hepatitis B,medium,29909.97,9,27/09/2020,06/10/2020,0,1,39,Incomplete,3,1,0
+23,male,trust,Kidney Failure,high,286237.03,27,04/12/2023,31/12/2023,1,1,87,Eligible,3,0,1
+59,male,government,Gastritis,low,8923.41,3,28/07/2021,31/07/2021,1,1,63,Incomplete,1,1,1
+60,female,private,Appendicitis,medium,45683.78,4,27/05/2023,31/05/2023,1,1,91,Eligible,2,0,1
+24,male,private,Asthma,medium,36528.76,8,27/02/2024,06/03/2024,1,1,98,Eligible,2,0,1
+31,female,government,Diabetes Mellitus,medium,23481.55,4,29/02/2024,04/03/2024,0,1,71,Incomplete,1,0,1
+77,male,private,Diabetes Mellitus,medium,55235.67,10,09/09/2021,19/09/2021,1,1,69,Incomplete,0,0,1
+53,female,government,Asthma,medium,73169.35,4,07/07/2022,11/07/2022,1,0,56,Incomplete,4,0,1
+68,male,government,Tuberculosis,medium,32819.66,7,21/09/2020,28/09/2020,0,1,74,Incomplete,1,0,1
+49,male,private,Tuberculosis,medium,63797.31,9,25/02/2022,06/03/2022,1,1,71,Incomplete,0,0,1
+55,male,private,Malaria,low,14083.99,3,15/01/2024,18/01/2024,1,1,77,Incomplete,4,0,1
+20,male,private,Gastritis,low,17071.54,3,14/12/2024,17/12/2024,1,1,63,Incomplete,5,0,1
+52,male,government,Typhoid Fever,medium,56124.39,8,25/01/2022,02/02/2022,0,1,65,Incomplete,2,0,1
+75,female,private,Cardiac Arrest,high,331679.89,18,22/01/2020,09/02/2020,1,1,71,Incomplete,2,0,1
+60,male,private,Kidney Failure,high,441511.6,26,23/07/2023,18/08/2023,1,1,74,Incomplete,2,0,1
+58,female,private,Pneumonia,medium,30062.0,9,27/01/2024,05/02/2024,1,1,65,Incomplete,3,0,1
+70,male,government,Appendicitis,medium,46883.69,5,02/02/2024,07/02/2024,1,0,40,Incomplete,1,0,1
+30,male,government,Pneumonia,medium,42715.68,9,20/07/2022,29/07/2022,0,1,30,Incomplete,4,0,0
+19,male,private,Typhoid Fever,medium,23591.64,4,26/04/2024,30/04/2024,1,1,98,Eligible,0,0,1
+79,male,government,Asthma,medium,70426.81,6,23/06/2020,29/06/2020,0,1,58,Incomplete,1,0,1
+27,male,private,Dengue Fever,medium,59982.68,4,09/07/2023,13/07/2023,0,0,34,Rejected,2,0,0
+27,male,private,Fracture,low,7986.85,2,28/02/2022,02/03/2022,1,1,84,Eligible,5,0,1
+49,male,private,Hypertension,medium,21612.86,8,31/07/2021,08/08/2021,0,1,53,Incomplete,0,0,1
+27,male,private,Cancer,high,200679.83,28,06/01/2021,03/02/2021,1,1,79,Incomplete,4,0,1
+74,male,private,Viral Fever,low,17558.1,1,27/06/2021,28/06/2021,1,1,69,Incomplete,5,0,1
+42,female,government,Sepsis,high,100923.82,30,25/05/2022,24/06/2022,1,0,38,Incomplete,1,0,1
+38,female,private,Cancer,high,362039.38,26,27/04/2022,23/05/2022,1,1,75,Incomplete,3,0,1
+52,female,private,Asthma,medium,68391.27,4,26/02/2022,02/03/2022,1,1,96,Eligible,5,0,1
+62,male,government,Fracture,low,3063.05,1,08/10/2024,09/10/2024,1,1,68,Incomplete,0,0,1
+41,male,private,Gastritis,low,6171.09,4,13/10/2024,17/10/2024,1,1,63,Incomplete,5,0,1
+42,male,government,Cancer,high,74337.51,28,05/08/2020,02/09/2020,1,1,98,Eligible,1,1,1
+27,male,government,Fracture,low,3274.51,4,29/08/2024,02/09/2024,0,0,8,Rejected,5,0,0
+48,female,private,Cardiac Arrest,high,401628.61,7,24/11/2023,01/12/2023,1,0,71,Incomplete,0,0,1
+50,male,trust,Typhoid Fever,medium,69124.21,10,24/10/2023,03/11/2023,1,1,96,Eligible,4,0,1
+45,male,government,Viral Fever,low,14473.02,2,13/09/2020,15/09/2020,1,0,55,Incomplete,1,0,1
+56,male,private,Stroke,high,190935.35,19,07/08/2023,26/08/2023,1,0,53,Incomplete,5,0,1
+24,male,government,Diabetes Mellitus,medium,54207.36,8,29/09/2024,07/10/2024,0,1,64,Incomplete,0,0,1
+18,female,private,Appendicitis,medium,28112.18,6,07/03/2020,13/03/2020,1,1,96,Eligible,0,0,1
+20,male,government,Cardiac Arrest,high,474579.11,18,18/01/2020,05/02/2020,1,1,92,Eligible,1,0,1
+64,female,government,Pneumonia,medium,36535.68,4,27/02/2024,02/03/2024,1,1,61,Incomplete,4,0,1
+55,male,private,Gastritis,low,6333.83,1,06/08/2022,07/08/2022,1,0,75,Incomplete,1,0,1
+27,male,private,Malaria,low,24830.14,3,31/05/2023,03/06/2023,1,0,48,Incomplete,2,0,1
+20,female,private,Fracture,low,24934.21,1,27/05/2023,28/05/2023,1,1,91,Eligible,0,0,1
+67,female,government,Asthma,medium,47429.3,8,20/07/2022,28/07/2022,1,1,64,Incomplete,2,0,1
+23,male,private,Tuberculosis,medium,31766.37,7,27/08/2022,03/09/2022,1,1,68,Incomplete,0,0,1
+20,female,trust,Gastritis,low,11998.73,2,23/06/2023,25/06/2023,1,1,99,Eligible,2,0,1
+50,female,private,Viral Fever,low,16653.5,1,11/08/2023,12/08/2023,1,1,95,Eligible,0,0,1
+36,female,government,Tuberculosis,medium,40953.23,6,29/05/2020,04/06/2020,1,1,65,Incomplete,2,0,1
+52,female,government,Hypertension,medium,26717.77,9,09/08/2020,18/08/2020,1,0,51,Incomplete,0,0,1
+49,male,government,Sepsis,high,175268.78,24,19/03/2020,12/04/2020,1,1,100,Eligible,1,0,1
+56,female,government,Dengue Fever,medium,66321.34,6,27/08/2022,02/09/2022,0,1,73,Incomplete,3,0,1
+29,male,government,Pneumonia,medium,32803.85,7,16/06/2020,23/06/2020,1,1,86,Eligible,4,0,1
+29,male,trust,Diabetes Mellitus,medium,37231.24,7,22/03/2024,29/03/2024,1,1,86,Eligible,3,0,1
+79,female,government,Heart Failure,high,225112.09,24,21/01/2020,14/02/2020,1,1,64,Incomplete,5,0,1
+27,female,private,Cardiac Arrest,high,117727.83,11,28/07/2022,08/08/2022,1,1,86,Eligible,2,0,1
+46,male,government,Stroke,high,93850.72,30,23/03/2021,22/04/2021,1,1,94,Eligible,1,0,1
+40,male,government,Appendicitis,medium,77081.79,8,28/01/2022,05/02/2022,0,1,62,Incomplete,0,0,1
+47,female,government,Cancer,high,208495.05,20,15/01/2023,04/02/2023,1,1,67,Incomplete,1,0,1
+29,male,trust,Asthma,medium,39801.62,9,26/09/2024,05/10/2024,1,1,66,Incomplete,0,0,1
+23,male,trust,Dengue with Thrombocytopenia,high,96653.89,26,15/03/2024,10/04/2024,1,0,58,Incomplete,4,0,0
+60,female,private,Cancer,high,150295.72,24,20/07/2022,13/08/2022,1,0,60,Incomplete,0,0,1
+44,female,government,Typhoid Fever,medium,65842.74,7,05/11/2022,12/11/2022,1,1,79,Incomplete,3,0,1
+75,female,private,Dengue Fever,medium,16706.04,8,06/06/2024,14/06/2024,1,1,98,Eligible,2,0,1
+45,male,trust,Asthma,medium,27522.93,9,12/08/2023,21/08/2023,1,1,96,Eligible,3,0,1
+42,male,government,Kidney Failure,high,282774.69,14,14/06/2022,28/06/2022,0,1,62,Incomplete,0,0,1
+71,female,private,Asthma,medium,76665.52,4,21/02/2021,25/02/2021,0,1,70,Incomplete,4,0,1
+63,male,trust,Hepatitis B,medium,16643.84,5,12/02/2024,17/02/2024,1,1,82,Eligible,1,0,1
+37,male,private,Asthma,medium,62210.32,9,10/07/2024,19/07/2024,1,1,77,Incomplete,0,0,1
+19,male,private,Hypertension,medium,75267.94,4,08/09/2020,12/09/2020,0,1,41,Incomplete,0,0,0
+76,male,government,Kidney Failure,high,270966.63,20,14/02/2020,05/03/2020,0,1,34,Incomplete,1,0,0
+74,female,private,Stroke,high,130912.9,12,21/01/2020,02/02/2020,1,1,62,Incomplete,0,0,1
+48,male,private,Tuberculosis,medium,63210.29,6,06/09/2020,12/09/2020,1,1,93,Eligible,4,0,1
+73,female,private,Hypertension,medium,16917.35,6,10/10/2020,16/10/2020,0,1,38,Incomplete,2,0,0
+79,male,private,Heart Failure,high,343366.04,30,14/08/2022,13/09/2022,1,1,85,Eligible,1,0,1
+61,female,government,Kidney Failure,high,312641.71,25,18/04/2024,13/05/2024,1,1,91,Eligible,3,0,1
+56,female,government,Cardiac Arrest,high,98401.6,20,23/02/2022,15/03/2022,1,1,100,Eligible,0,0,1
+79,female,trust,Hepatitis B,medium,34075.78,8,20/08/2024,28/08/2024,1,0,50,Incomplete,3,0,1
+33,male,government,Appendicitis,medium,39177.68,8,15/05/2024,23/05/2024,0,1,30,Incomplete,5,0,0
+54,female,private,Fracture,low,4457.17,2,03/08/2021,05/08/2021,1,0,47,Incomplete,5,0,0
+54,female,government,Cancer,high,416027.51,13,09/02/2021,22/02/2021,0,1,32,Incomplete,2,0,0
+46,male,government,Dengue with Thrombocytopenia,high,316026.99,25,29/04/2021,24/05/2021,0,0,36,Rejected,0,0,0
+26,female,private,Dengue Fever,medium,74672.24,8,21/03/2020,29/03/2020,1,0,36,Incomplete,3,0,1
+38,female,government,Kidney Failure,high,300402.59,22,03/10/2021,25/10/2021,1,1,89,Eligible,3,0,1
+71,female,government,Dengue with Thrombocytopenia,high,63179.68,7,07/04/2020,14/04/2020,0,1,74,Incomplete,5,0,0
+23,male,private,Heart Failure,high,495304.26,8,10/11/2023,18/11/2023,1,1,67,Incomplete,0,0,1
+34,female,trust,Dengue with Thrombocytopenia,high,171460.42,11,14/12/2020,25/12/2020,1,0,50,Incomplete,1,0,1
+58,female,private,Hypertension,medium,49293.28,10,29/03/2023,08/04/2023,1,1,80,Eligible,5,0,1
+34,female,government,Diabetes Mellitus,medium,51303.49,6,22/11/2024,28/11/2024,1,1,73,Incomplete,5,0,1
+21,male,private,Typhoid Fever,medium,45429.78,6,27/02/2022,05/03/2022,1,1,97,Eligible,4,0,1
+66,female,private,Stroke,high,431513.14,11,04/08/2020,15/08/2020,1,1,88,Eligible,4,0,1
+30,male,trust,Viral Fever,low,6612.32,1,21/09/2021,22/09/2021,0,1,37,Incomplete,1,1,0
+29,female,private,Typhoid Fever,medium,58022.56,8,16/07/2022,24/07/2022,1,1,65,Incomplete,2,0,1
+43,female,government,Malaria,low,4169.46,3,12/07/2021,15/07/2021,0,1,57,Incomplete,1,0,1
+29,female,government,Malaria,low,13859.56,1,06/06/2022,07/06/2022,1,1,67,Incomplete,1,0,1
+54,female,government,Fracture,low,14706.9,2,18/07/2021,20/07/2021,1,1,85,Eligible,3,0,1
+64,female,private,Sepsis,high,126963.1,18,20/02/2021,10/03/2021,1,1,78,Incomplete,5,1,1
+50,female,private,Gastritis,low,6745.12,1,27/10/2023,28/10/2023,1,1,89,Eligible,1,0,1
+45,female,private,Typhoid Fever,medium,78334.11,4,09/12/2024,13/12/2024,1,1,60,Incomplete,4,0,1
+55,male,private,Sepsis,high,262655.71,7,02/04/2020,09/04/2020,1,1,74,Incomplete,4,0,1
+67,male,private,Hypertension,medium,67253.02,10,18/11/2021,28/11/2021,1,1,94,Eligible,2,0,1
+41,female,government,Typhoid Fever,medium,34573.71,10,14/11/2021,24/11/2021,0,1,70,Incomplete,0,0,1
+72,male,government,Pneumonia,medium,47359.1,9,15/05/2021,24/05/2021,1,1,72,Incomplete,3,0,1
+74,female,private,Malaria,low,8836.81,3,22/10/2023,25/10/2023,1,1,86,Eligible,2,0,1
+55,female,government,Dengue with Thrombocytopenia,high,245056.83,25,20/07/2022,14/08/2022,1,1,78,Incomplete,0,0,1
+77,male,private,Stroke,high,285433.78,26,16/08/2021,11/09/2021,1,0,61,Incomplete,2,0,1
+18,female,private,Dengue Fever,medium,33396.12,4,29/04/2023,03/05/2023,0,1,57,Incomplete,2,0,0
+21,female,government,Pneumonia,medium,72116.94,5,27/05/2024,01/06/2024,1,1,69,Incomplete,5,0,1
+76,male,private,Gastritis,low,3707.01,2,27/12/2021,29/12/2021,1,1,87,Eligible,3,0,1
+75,female,government,Gastritis,low,9836.19,4,28/02/2023,04/03/2023,1,1,97,Eligible,1,0,1
+34,male,private,Cancer,high,139785.43,9,16/09/2021,25/09/2021,1,1,89,Eligible,4,0,1
+24,male,private,Malaria,low,18270.93,3,28/10/2022,31/10/2022,1,1,86,Eligible,3,0,1
+19,female,private,Diabetes Mellitus,medium,54988.56,6,11/09/2021,17/09/2021,1,1,99,Eligible,4,0,1
+21,female,trust,Pneumonia,medium,58555.15,10,05/08/2022,15/08/2022,1,0,47,Incomplete,5,0,1
+24,female,private,Hepatitis B,medium,59888.54,3,05/11/2024,08/11/2024,0,1,62,Incomplete,5,0,0
+51,male,private,Asthma,medium,23866.18,5,15/10/2023,20/10/2023,1,1,60,Incomplete,3,0,1
+25,male,private,Typhoid Fever,medium,54246.39,4,04/09/2020,08/09/2020,1,0,31,Incomplete,4,0,0
+77,male,trust,Gastritis,low,13641.83,2,11/01/2021,13/01/2021,1,1,99,Eligible,5,0,1
+25,female,private,Pneumonia,medium,27012.51,6,03/08/2024,09/08/2024,1,1,94,Eligible,1,0,1
+36,male,private,Hepatitis B,medium,38877.06,9,17/07/2021,26/07/2021,1,1,89,Eligible,3,0,1
+19,female,government,Stroke,high,303894.09,25,23/01/2020,17/02/2020,1,1,99,Eligible,3,1,1
+79,male,private,Stroke,high,174606.82,18,20/11/2020,08/12/2020,1,1,73,Incomplete,2,0,1
+42,male,private,Tuberculosis,medium,37871.36,8,12/01/2024,20/01/2024,1,1,68,Incomplete,2,0,1
+77,female,private,Diabetes Mellitus,medium,39473.98,5,24/08/2022,29/08/2022,1,1,93,Eligible,2,0,1
+55,female,government,Hepatitis B,medium,68942.61,3,18/05/2020,21/05/2020,0,1,44,Incomplete,0,0,1
+77,female,private,Cardiac Arrest,high,491597.78,30,13/07/2024,12/08/2024,1,0,41,Incomplete,5,0,1
+77,male,government,Dengue Fever,medium,31281.45,4,17/03/2020,21/03/2020,1,1,100,Eligible,0,0,1
+24,female,private,Kidney Failure,high,494991.89,24,21/03/2023,14/04/2023,1,1,88,Eligible,5,0,1
+65,male,private,Cancer,high,413902.5,9,28/01/2021,06/02/2021,1,1,66,Incomplete,1,1,1
+75,male,trust,Heart Failure,high,305732.76,9,05/11/2024,14/11/2024,1,1,93,Eligible,3,0,1
+54,female,government,Malaria,low,10842.67,2,18/02/2023,20/02/2023,1,1,100,Eligible,3,0,1
+23,male,private,Malaria,low,5220.09,2,18/10/2022,20/10/2022,0,1,31,Incomplete,1,0,0
+77,female,government,Kidney Failure,high,80578.77,12,19/11/2024,01/12/2024,1,0,66,Incomplete,1,0,1
+50,female,government,Kidney Failure,high,75491.69,10,29/11/2023,09/12/2023,1,1,76,Incomplete,5,1,1
+44,female,government,Appendicitis,medium,72721.82,5,01/05/2020,06/05/2020,1,1,81,Eligible,5,0,1
+33,female,government,Diabetes Mellitus,medium,73781.05,3,10/12/2023,13/12/2023,1,0,56,Incomplete,4,0,0
+74,female,private,Pneumonia,medium,62016.44,3,01/08/2020,04/08/2020,1,1,82,Eligible,3,0,1
+19,male,private,Typhoid Fever,medium,49722.08,9,27/10/2024,05/11/2024,1,1,95,Eligible,3,0,1
+62,male,trust,Cancer,high,297295.22,21,24/08/2020,14/09/2020,0,1,53,Incomplete,2,0,1
+76,male,private,Fracture,low,5023.8,2,21/01/2020,23/01/2020,1,1,94,Eligible,4,1,1
+73,male,government,Dengue Fever,medium,18682.55,5,17/06/2022,22/06/2022,1,1,98,Eligible,5,0,1
+26,female,government,Sepsis,high,345465.63,15,05/06/2020,20/06/2020,1,1,82,Eligible,1,0,1
+78,female,private,Asthma,medium,71483.11,7,15/05/2021,22/05/2021,1,1,66,Incomplete,0,0,1
+63,female,government,Viral Fever,low,7478.21,2,07/10/2020,09/10/2020,1,1,67,Incomplete,2,0,1
+20,male,private,Stroke,high,478870.24,22,13/02/2020,06/03/2020,1,1,97,Eligible,3,0,1
+21,female,trust,Dengue with Thrombocytopenia,high,272910.87,19,01/11/2024,20/11/2024,1,0,43,Incomplete,3,0,1
+52,male,private,Gastritis,low,14914.08,1,13/12/2021,14/12/2021,1,1,81,Eligible,2,0,1
+31,male,government,Cardiac Arrest,high,245334.2,30,25/05/2022,24/06/2022,1,1,66,Incomplete,4,0,1
+72,female,government,Cancer,high,373649.09,23,23/04/2024,16/05/2024,1,1,89,Eligible,5,0,1
+26,male,private,Viral Fever,low,4881.81,3,26/05/2021,29/05/2021,1,1,99,Eligible,2,0,1
+68,male,private,Hypertension,medium,51948.67,7,19/10/2021,26/10/2021,1,1,61,Incomplete,3,1,1
+79,female,private,Sepsis,high,148029.12,25,29/04/2020,24/05/2020,1,1,99,Eligible,4,0,1
+46,male,private,Viral Fever,low,8709.9,2,10/10/2022,12/10/2022,1,0,69,Incomplete,5,1,0
+59,male,private,Tuberculosis,medium,70937.07,8,02/04/2023,10/04/2023,0,1,33,Incomplete,5,0,0
+19,female,private,Asthma,medium,54037.62,4,17/12/2021,21/12/2021,0,1,62,Incomplete,0,0,1
+54,female,government,Cancer,high,338849.16,16,28/11/2024,14/12/2024,0,1,53,Incomplete,2,0,1
+41,female,government,Gastritis,low,3685.46,1,24/01/2022,25/01/2022,1,0,67,Incomplete,0,0,1
+69,female,private,Malaria,low,20236.28,3,30/12/2023,02/01/2024,1,1,97,Eligible,0,0,1
+42,male,private,Diabetes Mellitus,medium,51751.16,9,22/03/2023,31/03/2023,1,0,63,Incomplete,0,0,1
+51,female,private,Cardiac Arrest,high,137760.62,16,24/03/2023,09/04/2023,1,1,83,Eligible,1,0,1
+62,male,trust,Stroke,high,212846.52,24,21/12/2021,14/01/2022,1,1,90,Eligible,4,0,1
+32,male,private,Asthma,medium,65469.14,5,14/04/2022,19/04/2022,1,1,81,Eligible,2,0,1
+44,male,private,Hepatitis B,medium,56120.93,6,01/05/2024,07/05/2024,1,1,60,Incomplete,1,0,1
+66,female,private,Hypertension,medium,71514.82,9,03/09/2024,12/09/2024,0,0,4,Rejected,1,0,0
+76,female,government,Cancer,high,107353.84,24,28/11/2023,22/12/2023,1,1,81,Eligible,2,0,1
+24,male,government,Diabetes Mellitus,medium,76744.74,10,17/04/2022,27/04/2022,1,1,90,Eligible,5,0,1
+64,male,private,Pneumonia,medium,53580.96,10,27/01/2022,06/02/2022,1,1,92,Eligible,5,0,1
+32,female,government,Sepsis,high,71729.58,23,26/11/2022,19/12/2022,1,1,87,Eligible,2,0,1
+66,male,private,Pneumonia,medium,67909.17,6,13/02/2024,19/02/2024,1,1,99,Eligible,2,0,1
+28,male,private,Gastritis,low,13705.99,2,03/04/2021,05/04/2021,1,1,98,Eligible,0,0,1
+27,male,private,Appendicitis,medium,69521.35,5,25/03/2024,30/03/2024,0,1,64,Incomplete,4,0,0
+49,male,private,Heart Failure,high,176826.89,20,15/03/2023,04/04/2023,1,1,89,Eligible,2,0,1
+46,female,private,Sepsis,high,89088.72,15,07/10/2020,22/10/2020,1,0,52,Incomplete,0,0,1
+64,male,private,Cardiac Arrest,high,278177.08,21,19/07/2021,09/08/2021,1,1,64,Incomplete,5,0,1
+45,male,government,Malaria,low,7188.77,1,17/02/2023,18/02/2023,1,1,75,Incomplete,1,0,1
+61,male,private,Viral Fever,low,6331.53,2,24/07/2024,26/07/2024,1,1,72,Incomplete,5,0,1
+72,male,trust,Typhoid Fever,medium,19371.98,6,16/02/2023,22/02/2023,1,0,74,Incomplete,2,0,1
+55,male,private,Heart Failure,high,288707.51,16,03/01/2021,19/01/2021,1,1,91,Eligible,3,0,1
+56,female,private,Asthma,medium,34202.12,4,24/03/2021,28/03/2021,1,1,78,Incomplete,3,0,1
+33,female,private,Hypertension,medium,45207.84,4,15/10/2021,19/10/2021,1,1,68,Incomplete,3,0,1
+56,female,private,Fracture,low,9400.47,2,05/11/2022,07/11/2022,1,1,63,Incomplete,4,0,1
+61,female,trust,Cancer,high,414063.74,19,20/05/2022,08/06/2022,1,0,61,Incomplete,5,0,1
+70,male,private,Gastritis,low,12015.85,2,18/03/2023,20/03/2023,1,1,67,Incomplete,4,0,1
+56,male,trust,Typhoid Fever,medium,20866.43,8,14/12/2023,22/12/2023,1,1,95,Eligible,0,0,1
+31,female,private,Asthma,medium,79039.12,9,12/09/2024,21/09/2024,1,1,70,Incomplete,2,0,1
+53,male,private,Typhoid Fever,medium,69956.33,4,26/03/2024,30/03/2024,1,1,62,Incomplete,1,0,1
+32,male,private,Dengue Fever,medium,63744.5,9,23/07/2024,01/08/2024,1,0,47,Incomplete,0,0,1
+64,female,private,Typhoid Fever,medium,63272.38,5,14/01/2023,19/01/2023,0,1,55,Incomplete,1,0,1
+68,female,private,Cancer,high,384567.51,15,10/09/2021,25/09/2021,1,0,71,Incomplete,4,0,1
+45,male,trust,Fracture,low,15341.92,3,16/09/2022,19/09/2022,1,1,75,Incomplete,3,1,1
+64,female,private,Heart Failure,high,371560.43,14,15/07/2022,29/07/2022,1,0,44,Incomplete,3,0,1
+24,female,private,Cardiac Arrest,high,414356.35,10,20/06/2020,30/06/2020,1,1,91,Eligible,4,0,1
+43,female,government,Malaria,low,19732.8,4,30/04/2020,04/05/2020,1,1,81,Eligible,1,1,1
+56,female,private,Typhoid Fever,medium,59875.83,10,26/03/2024,05/04/2024,1,1,75,Incomplete,2,0,1
+50,male,trust,Hypertension,medium,60451.61,5,08/02/2022,13/02/2022,1,0,37,Incomplete,1,0,1
+20,female,private,Sepsis,high,331774.21,22,10/12/2022,01/01/2023,0,1,56,Incomplete,3,1,0
+45,female,private,Viral Fever,low,10092.5,3,26/12/2024,29/12/2024,1,0,48,Incomplete,4,0,1
+78,female,government,Malaria,low,8527.27,2,05/08/2022,07/08/2022,1,1,68,Incomplete,1,0,1
+18,female,private,Cancer,high,117657.08,7,17/05/2020,24/05/2020,1,0,74,Incomplete,0,0,1
+24,male,private,Dengue with Thrombocytopenia,high,317504.51,18,16/05/2020,03/06/2020,1,1,82,Eligible,5,1,1
+35,female,government,Cancer,high,378195.4,26,22/01/2022,17/02/2022,1,1,95,Eligible,4,0,1
+22,male,private,Hypertension,medium,33199.06,4,22/06/2021,26/06/2021,0,1,71,Incomplete,3,0,1
+56,female,private,Dengue with Thrombocytopenia,high,144188.02,14,06/01/2020,20/01/2020,1,0,69,Incomplete,1,0,1
+73,male,government,Cardiac Arrest,high,453179.0,11,16/04/2020,27/04/2020,1,1,90,Eligible,2,0,1
+33,female,trust,Kidney Failure,high,367810.07,16,28/12/2021,13/01/2022,1,1,65,Incomplete,4,0,1
+78,female,trust,Pneumonia,medium,51431.58,7,30/09/2022,07/10/2022,1,1,87,Eligible,5,0,1
+73,female,government,Stroke,high,377821.18,26,13/03/2021,08/04/2021,1,1,72,Incomplete,3,0,1
+30,female,private,Heart Failure,high,137699.87,16,15/04/2023,01/05/2023,1,1,76,Incomplete,4,0,1
+35,male,private,Viral Fever,low,11762.47,3,25/11/2023,28/11/2023,1,0,66,Incomplete,0,0,1
+56,female,private,Sepsis,high,263051.79,27,26/11/2024,23/12/2024,1,1,62,Incomplete,2,1,1
+63,male,government,Pneumonia,medium,42272.22,4,28/09/2024,02/10/2024,0,1,33,Incomplete,2,0,1
+35,male,private,Dengue with Thrombocytopenia,high,199699.24,17,08/10/2023,25/10/2023,1,0,67,Incomplete,5,0,1
+18,female,private,Cancer,high,79229.71,23,16/08/2024,08/09/2024,0,1,41,Incomplete,3,1,0
+30,female,private,Tuberculosis,medium,35225.69,8,22/02/2023,02/03/2023,0,1,74,Incomplete,0,0,1
+23,male,private,Diabetes Mellitus,medium,62420.77,8,15/01/2021,23/01/2021,1,1,70,Incomplete,0,0,1
+47,male,private,Fracture,low,21420.78,2,08/08/2023,10/08/2023,1,1,79,Incomplete,0,0,1
+29,female,government,Pneumonia,medium,35510.16,6,07/04/2021,13/04/2021,1,0,48,Incomplete,2,0,1
+23,female,government,Heart Failure,high,213625.94,27,30/04/2024,27/05/2024,1,1,70,Incomplete,0,0,1
+42,male,government,Asthma,medium,28693.08,9,09/12/2023,18/12/2023,1,1,78,Incomplete,1,0,1
+53,female,private,Diabetes Mellitus,medium,65271.58,6,12/06/2021,18/06/2021,1,0,37,Incomplete,4,0,0
+48,male,government,Stroke,high,195345.93,19,28/02/2023,19/03/2023,1,1,80,Eligible,5,0,1
+73,male,trust,Tuberculosis,medium,45907.23,4,20/11/2021,24/11/2021,1,1,70,Incomplete,3,0,1
+46,female,government,Hepatitis B,medium,60142.4,9,05/02/2024,14/02/2024,1,1,83,Eligible,4,0,1
+37,male,private,Fracture,low,5372.82,3,22/05/2022,25/05/2022,1,1,61,Incomplete,1,0,1
+74,male,private,Hepatitis B,medium,23442.9,3,13/11/2021,16/11/2021,1,1,69,Incomplete,2,0,1
+47,male,private,Pneumonia,medium,72392.06,7,09/09/2021,16/09/2021,0,1,43,Incomplete,3,0,0
+27,female,private,Typhoid Fever,medium,25356.44,10,23/07/2020,02/08/2020,1,1,73,Incomplete,3,0,1
+63,male,trust,Hypertension,medium,23352.66,5,11/04/2024,16/04/2024,1,1,78,Incomplete,5,0,1
+56,female,government,Asthma,medium,37546.37,3,03/10/2023,06/10/2023,1,1,75,Incomplete,2,0,1
+70,male,government,Dengue with Thrombocytopenia,high,388258.01,27,07/06/2020,04/07/2020,1,1,62,Incomplete,1,0,1
+39,female,trust,Tuberculosis,medium,24798.59,9,29/09/2021,08/10/2021,1,1,76,Incomplete,3,0,1
+61,male,government,Stroke,high,205829.09,10,09/02/2024,19/02/2024,1,1,60,Incomplete,1,0,1
+50,female,private,Stroke,high,268762.72,19,04/10/2023,23/10/2023,1,0,57,Incomplete,2,0,1
+56,female,government,Malaria,low,20182.08,3,29/12/2023,01/01/2024,1,1,67,Incomplete,1,0,1
+66,female,private,Diabetes Mellitus,medium,15452.19,7,20/12/2023,27/12/2023,1,1,89,Eligible,3,1,1
+20,male,private,Sepsis,high,215196.85,26,26/12/2024,21/01/2025,1,1,81,Eligible,5,0,1
+52,female,private,Tuberculosis,medium,38197.55,10,05/02/2020,15/02/2020,1,1,98,Eligible,0,0,1
+52,female,private,Fracture,low,4849.03,2,12/07/2020,14/07/2020,1,1,87,Eligible,2,0,1
+62,male,government,Malaria,low,13085.23,3,05/06/2020,08/06/2020,1,0,70,Incomplete,0,0,1
+39,female,trust,Cancer,high,60072.56,15,09/03/2024,24/03/2024,1,1,65,Incomplete,3,0,1
+54,female,government,Gastritis,low,14308.87,2,15/10/2024,17/10/2024,1,0,66,Incomplete,3,0,1
+35,male,private,Viral Fever,low,17771.67,4,23/05/2023,27/05/2023,1,1,77,Incomplete,0,0,1
+68,female,private,Pneumonia,medium,32358.46,8,11/05/2023,19/05/2023,0,1,75,Incomplete,2,0,1
+36,female,trust,Hepatitis B,medium,56260.22,9,04/11/2021,13/11/2021,1,1,81,Eligible,2,0,1
+27,female,private,Sepsis,high,289508.16,28,14/12/2020,11/01/2021,1,1,96,Eligible,0,0,1
+40,male,private,Appendicitis,medium,38997.44,8,20/08/2021,28/08/2021,1,1,69,Incomplete,4,0,1
+40,female,private,Cancer,high,388124.78,24,04/08/2021,28/08/2021,1,1,84,Eligible,4,0,1
+78,male,trust,Hypertension,medium,29189.85,7,14/08/2020,21/08/2020,1,0,55,Incomplete,4,0,1
+44,female,government,Cardiac Arrest,high,333624.05,28,22/09/2023,20/10/2023,1,1,80,Eligible,4,0,1
+32,female,private,Sepsis,high,178827.54,12,09/07/2022,21/07/2022,1,0,48,Incomplete,0,0,1
+66,female,government,Tuberculosis,medium,39917.97,9,30/08/2023,08/09/2023,1,1,100,Eligible,0,0,1
+57,male,government,Dengue with Thrombocytopenia,high,379466.6,17,16/02/2020,04/03/2020,1,0,70,Incomplete,3,0,1
+19,female,private,Asthma,medium,71123.49,5,07/10/2024,12/10/2024,1,1,75,Incomplete,1,0,1
+38,male,government,Gastritis,low,22677.8,4,27/02/2021,03/03/2021,1,1,88,Eligible,1,0,1
+50,male,government,Dengue with Thrombocytopenia,high,442438.46,14,22/11/2020,06/12/2020,1,1,60,Incomplete,5,1,1
+73,female,government,Kidney Failure,high,402369.23,29,16/06/2021,15/07/2021,1,1,98,Eligible,5,0,1
+46,female,private,Dengue Fever,medium,67758.06,3,23/08/2024,26/08/2024,1,1,92,Eligible,5,0,1
+68,male,private,Hypertension,medium,70059.57,4,01/04/2024,05/04/2024,1,1,81,Eligible,1,0,1
+31,female,government,Hypertension,medium,56732.31,10,31/05/2020,10/06/2020,1,1,75,Incomplete,2,0,1
+39,female,government,Viral Fever,low,9056.58,2,14/03/2020,16/03/2020,0,1,44,Incomplete,2,0,0
+37,male,private,Hepatitis B,medium,45893.51,7,19/06/2022,26/06/2022,1,1,68,Incomplete,1,0,1
+34,male,private,Typhoid Fever,medium,52909.97,3,30/10/2020,02/11/2020,1,1,93,Eligible,3,0,1
+80,female,government,Pneumonia,medium,70419.68,8,05/10/2021,13/10/2021,1,1,70,Incomplete,4,0,1
+75,female,government,Typhoid Fever,medium,37253.85,6,25/09/2021,01/10/2021,1,1,67,Incomplete,5,0,1
+47,male,private,Malaria,low,19310.31,1,14/01/2022,15/01/2022,1,0,51,Incomplete,4,0,1
+79,male,private,Dengue Fever,medium,51835.64,6,22/05/2021,28/05/2021,1,1,75,Incomplete,1,0,1
+29,male,private,Dengue with Thrombocytopenia,high,298389.04,30,06/07/2020,05/08/2020,1,1,64,Incomplete,1,0,1
+31,male,government,Fracture,low,19756.97,4,04/09/2022,08/09/2022,0,1,33,Incomplete,2,0,0
+30,female,private,Hypertension,medium,20420.1,4,08/02/2021,12/02/2021,1,1,91,Eligible,2,0,1
+45,male,private,Stroke,high,315021.89,26,24/07/2023,19/08/2023,1,1,76,Incomplete,3,0,1
+58,male,private,Cardiac Arrest,high,267475.85,27,04/08/2021,31/08/2021,1,1,75,Incomplete,2,0,1
+50,female,government,Stroke,high,489753.05,22,08/01/2021,30/01/2021,0,1,62,Incomplete,3,0,0
+22,female,government,Gastritis,low,23356.5,3,26/06/2022,29/06/2022,1,1,71,Incomplete,1,0,1
+31,female,private,Malaria,low,10040.35,4,22/12/2022,26/12/2022,0,1,69,Incomplete,1,0,0
+38,male,trust,Appendicitis,medium,66077.72,5,11/10/2024,16/10/2024,1,0,63,Incomplete,3,0,1
+67,female,private,Fracture,low,13383.6,3,19/10/2024,22/10/2024,1,1,82,Eligible,5,0,1
+45,female,private,Cancer,high,393000.23,8,07/04/2022,15/04/2022,1,1,68,Incomplete,3,0,1
+70,male,private,Appendicitis,medium,34161.8,3,03/02/2022,06/02/2022,1,1,80,Eligible,4,0,1
+69,male,private,Dengue with Thrombocytopenia,high,248046.42,10,15/07/2021,25/07/2021,0,0,30,Rejected,5,0,0
+67,female,private,Sepsis,high,176064.18,25,27/05/2023,21/06/2023,1,0,70,Incomplete,2,0,1
+46,female,private,Hypertension,medium,23728.51,4,15/03/2024,19/03/2024,1,1,86,Eligible,1,0,1
+37,male,government,Asthma,medium,43486.98,7,02/11/2021,09/11/2021,1,1,61,Incomplete,1,0,1
+73,female,private,Heart Failure,high,386272.94,12,15/03/2021,27/03/2021,1,1,83,Eligible,2,0,1
+34,male,government,Pneumonia,medium,56745.62,9,25/05/2022,03/06/2022,1,1,93,Eligible,0,0,1
+41,male,trust,Hepatitis B,medium,79717.54,8,29/10/2022,06/11/2022,1,1,96,Eligible,2,0,1
+54,male,government,Asthma,medium,49564.56,4,23/06/2024,27/06/2024,1,1,72,Incomplete,0,0,1
+70,female,private,Stroke,high,450210.1,11,22/02/2024,04/03/2024,1,0,71,Incomplete,4,0,1
+67,female,trust,Typhoid Fever,medium,52357.96,9,14/01/2020,23/01/2020,0,1,57,Incomplete,1,0,0
+55,female,private,Asthma,medium,57484.83,8,14/02/2021,22/02/2021,1,1,96,Eligible,1,0,1
+31,female,government,Tuberculosis,medium,16704.59,3,17/05/2023,20/05/2023,1,1,64,Incomplete,2,0,1
+60,male,private,Appendicitis,medium,25613.78,6,09/07/2021,15/07/2021,1,1,82,Eligible,0,0,1
+25,female,private,Typhoid Fever,medium,71389.63,6,15/10/2024,21/10/2024,1,1,85,Eligible,1,0,1
+55,male,private,Diabetes Mellitus,medium,47935.72,4,30/03/2023,03/04/2023,1,1,91,Eligible,5,0,1
+44,male,government,Appendicitis,medium,66986.43,10,06/01/2022,16/01/2022,1,0,59,Incomplete,0,1,1
+43,male,government,Heart Failure,high,475579.3,9,09/09/2024,18/09/2024,1,1,79,Incomplete,1,0,1
+59,female,private,Sepsis,high,478089.11,30,16/07/2021,15/08/2021,1,1,69,Incomplete,1,0,1
+26,male,private,Pneumonia,medium,64548.71,6,05/05/2020,11/05/2020,1,1,83,Eligible,4,0,1
+44,male,private,Tuberculosis,medium,77744.51,5,28/02/2024,04/03/2024,1,1,70,Incomplete,0,0,1
+43,female,government,Viral Fever,low,10063.6,1,23/05/2024,24/05/2024,1,1,62,Incomplete,5,0,1
+20,female,private,Dengue with Thrombocytopenia,high,126383.1,7,24/07/2020,31/07/2020,1,1,86,Eligible,0,0,1
+47,female,private,Asthma,medium,23736.35,3,20/05/2023,23/05/2023,1,1,76,Incomplete,1,0,1
+41,male,private,Sepsis,high,386923.51,25,10/10/2024,04/11/2024,1,1,68,Incomplete,1,0,1
+65,male,private,Kidney Failure,high,449113.07,14,03/08/2020,17/08/2020,1,0,72,Incomplete,2,0,1
+60,female,government,Pneumonia,medium,42431.36,5,16/09/2023,21/09/2023,1,1,62,Incomplete,5,0,1
+58,male,private,Appendicitis,medium,15930.91,3,23/07/2023,26/07/2023,1,1,85,Eligible,2,1,1
+48,female,government,Appendicitis,medium,41367.7,10,15/03/2021,25/03/2021,1,1,67,Incomplete,5,0,1
+77,female,private,Cardiac Arrest,high,164877.99,22,10/07/2024,01/08/2024,1,1,66,Incomplete,5,0,1
+34,male,trust,Heart Failure,high,339031.71,11,17/01/2023,28/01/2023,0,1,37,Incomplete,0,0,0
+26,female,private,Gastritis,low,12595.61,2,18/06/2020,20/06/2020,1,1,92,Eligible,1,0,1
+67,male,government,Appendicitis,medium,49162.35,5,16/05/2024,21/05/2024,1,1,63,Incomplete,4,0,1
+62,male,private,Heart Failure,high,95062.13,27,05/12/2020,01/01/2021,1,1,69,Incomplete,4,0,1
+45,male,private,Viral Fever,low,24099.25,3,31/03/2022,03/04/2022,1,1,86,Eligible,3,0,1
+64,female,government,Typhoid Fever,medium,31336.4,7,12/02/2023,19/02/2023,1,1,98,Eligible,0,0,1
+26,male,private,Sepsis,high,394066.82,14,10/07/2024,24/07/2024,1,0,56,Incomplete,3,0,1
+71,female,private,Diabetes Mellitus,medium,77618.23,5,19/07/2021,24/07/2021,1,0,67,Incomplete,5,0,1
+27,female,private,Cardiac Arrest,high,336540.47,16,02/12/2022,18/12/2022,1,1,98,Eligible,3,0,1
+37,male,government,Asthma,medium,44533.88,8,24/05/2020,01/06/2020,1,1,62,Incomplete,3,0,1
+25,female,government,Cancer,high,125805.2,29,24/12/2023,22/01/2024,1,1,78,Incomplete,1,0,1
+64,female,private,Fracture,low,21407.6,4,04/06/2022,08/06/2022,0,0,17,Rejected,5,0,0
+58,female,private,Cancer,high,492388.97,7,19/06/2020,26/06/2020,0,1,45,Incomplete,4,0,1
+45,female,private,Hypertension,medium,51443.6,9,11/09/2024,20/09/2024,1,1,84,Eligible,0,0,1
+71,male,government,Hepatitis B,medium,22635.77,6,13/04/2024,19/04/2024,1,1,98,Eligible,3,0,1
+40,female,government,Stroke,high,438535.07,19,17/03/2020,05/04/2020,1,1,87,Eligible,5,0,1
+54,male,government,Typhoid Fever,medium,21422.27,3,24/04/2022,27/04/2022,1,1,76,Incomplete,2,0,1
+40,male,private,Viral Fever,low,20241.62,4,26/10/2021,30/10/2021,1,1,70,Incomplete,1,0,1
+59,female,government,Kidney Failure,high,401435.7,22,18/12/2020,09/01/2021,1,1,99,Eligible,4,0,1
+38,female,government,Hypertension,medium,56564.36,10,02/10/2021,12/10/2021,1,1,72,Incomplete,2,0,1
+40,female,government,Stroke,high,389646.88,17,11/12/2020,28/12/2020,0,0,19,Rejected,4,0,0
+36,male,government,Kidney Failure,high,363036.24,9,10/02/2021,19/02/2021,0,1,72,Incomplete,3,0,0
+63,female,government,Asthma,medium,40789.19,4,27/02/2022,03/03/2022,1,1,78,Incomplete,4,0,1
+38,male,private,Stroke,high,160656.62,28,13/11/2020,11/12/2020,1,0,44,Incomplete,5,0,1
+74,male,private,Stroke,high,115419.51,14,30/08/2021,13/09/2021,1,1,90,Eligible,3,0,1
+54,male,private,Cancer,high,431557.15,19,04/04/2023,23/04/2023,1,1,84,Eligible,5,0,1
+69,female,government,Cancer,high,214031.54,17,25/04/2021,12/05/2021,1,0,74,Incomplete,1,0,1
+68,male,private,Hypertension,medium,61043.0,8,01/01/2023,09/01/2023,0,1,44,Incomplete,5,0,1
+80,male,private,Stroke,high,308416.62,21,18/04/2020,09/05/2020,1,1,87,Eligible,0,0,1
+19,female,private,Asthma,medium,73229.71,5,03/09/2022,08/09/2022,0,1,47,Incomplete,4,0,0
+63,female,private,Cancer,high,493792.97,28,16/03/2021,13/04/2021,1,1,79,Incomplete,2,0,1
+78,female,private,Pneumonia,medium,78711.61,8,16/04/2023,24/04/2023,1,1,63,Incomplete,5,0,1
+25,male,government,Dengue with Thrombocytopenia,high,288397.39,12,04/02/2024,16/02/2024,1,1,98,Eligible,1,0,1
+59,female,government,Hypertension,medium,20791.87,9,06/04/2022,15/04/2022,1,1,90,Eligible,1,0,1
+24,female,private,Heart Failure,high,368268.33,15,05/12/2024,20/12/2024,1,0,55,Incomplete,1,0,1
+58,male,private,Cardiac Arrest,high,388316.92,15,08/12/2022,23/12/2022,0,1,65,Incomplete,0,0,0
+28,male,private,Malaria,low,3102.54,3,26/02/2022,01/03/2022,0,1,66,Incomplete,2,0,0
+30,female,private,Tuberculosis,medium,29194.3,4,08/12/2021,12/12/2021,1,1,98,Eligible,2,0,1
+63,male,private,Malaria,low,20915.95,1,30/06/2022,01/07/2022,1,1,67,Incomplete,2,0,1
+40,male,private,Hepatitis B,medium,25880.05,10,23/07/2020,02/08/2020,1,0,69,Incomplete,2,0,1
+71,female,government,Stroke,high,350917.29,17,14/05/2020,31/05/2020,1,0,61,Incomplete,1,0,1
+40,male,government,Sepsis,high,94451.17,9,30/11/2022,09/12/2022,1,1,93,Eligible,4,0,1
+51,female,private,Asthma,medium,33366.5,10,04/10/2020,14/10/2020,1,1,100,Eligible,3,0,1
+23,female,private,Typhoid Fever,medium,21780.7,10,23/02/2023,05/03/2023,1,1,78,Incomplete,5,0,1
+71,male,government,Appendicitis,medium,34962.79,5,18/04/2023,23/04/2023,1,1,94,Eligible,0,1,1
+42,male,private,Heart Failure,high,73595.86,28,17/08/2024,14/09/2024,1,1,93,Eligible,1,0,1
+76,male,private,Hypertension,medium,76747.68,8,29/03/2021,06/04/2021,0,1,43,Incomplete,4,0,0
+20,female,government,Appendicitis,medium,75080.3,6,10/01/2020,16/01/2020,1,1,81,Eligible,1,0,1
+41,female,private,Dengue Fever,medium,24208.51,7,19/05/2021,26/05/2021,1,1,96,Eligible,5,0,1
+37,male,trust,Viral Fever,low,18186.19,4,01/05/2022,05/05/2022,1,1,72,Incomplete,3,0,1
+58,female,private,Dengue Fever,medium,23377.74,6,13/11/2023,19/11/2023,0,0,10,Rejected,3,0,0
+38,male,trust,Viral Fever,low,9265.75,3,09/08/2021,12/08/2021,1,1,67,Incomplete,3,0,1
+78,male,private,Asthma,medium,28051.23,3,27/11/2022,30/11/2022,1,0,44,Incomplete,0,0,1
+23,male,trust,Fracture,low,16537.06,2,16/06/2022,18/06/2022,1,1,92,Eligible,1,0,1
+20,male,government,Pneumonia,medium,70866.69,5,28/05/2021,02/06/2021,1,1,63,Incomplete,3,0,1
+50,male,private,Fracture,low,16798.7,4,18/11/2021,22/11/2021,0,1,45,Incomplete,4,0,1
+28,male,government,Asthma,medium,18686.35,4,03/11/2023,07/11/2023,1,1,99,Eligible,5,0,1
+41,male,government,Pneumonia,medium,59480.58,9,13/01/2020,22/01/2020,0,0,24,Rejected,4,0,0
+66,male,private,Hepatitis B,medium,19805.06,10,21/08/2023,31/08/2023,1,1,78,Incomplete,5,0,1
+76,male,government,Sepsis,high,162519.04,21,27/07/2023,17/08/2023,1,1,89,Eligible,4,0,1
+27,female,trust,Tuberculosis,medium,79944.13,5,11/12/2024,16/12/2024,1,0,49,Incomplete,1,1,1
+63,male,private,Kidney Failure,high,428060.91,13,23/12/2021,05/01/2022,1,1,86,Eligible,3,0,1
+78,female,government,Stroke,high,202010.6,19,24/09/2023,13/10/2023,0,1,45,Incomplete,1,0,1
+30,female,private,Stroke,high,438097.41,20,10/06/2024,30/06/2024,1,1,85,Eligible,1,0,1
+59,female,government,Gastritis,low,12066.59,2,12/02/2021,14/02/2021,1,1,84,Eligible,4,0,1
+19,male,government,Kidney Failure,high,350147.09,30,13/07/2021,12/08/2021,1,1,85,Eligible,4,0,1
+27,female,private,Cardiac Arrest,high,160564.32,11,21/02/2024,03/03/2024,1,1,99,Eligible,4,0,1
+74,male,government,Hypertension,medium,20573.75,3,18/01/2020,21/01/2020,1,0,52,Incomplete,1,0,1
+37,male,government,Heart Failure,high,459160.52,21,09/04/2023,30/04/2023,1,1,78,Incomplete,2,0,1
+28,male,trust,Tuberculosis,medium,22698.63,9,20/06/2023,29/06/2023,1,1,90,Eligible,5,0,1
+80,male,private,Pneumonia,medium,21309.48,5,21/03/2020,26/03/2020,1,1,90,Eligible,1,0,1
+62,female,government,Stroke,high,307359.61,7,05/07/2022,12/07/2022,1,1,96,Eligible,2,0,1
+74,female,private,Diabetes Mellitus,medium,23771.32,9,06/09/2021,15/09/2021,1,0,72,Incomplete,1,0,1
+36,male,government,Heart Failure,high,492606.91,7,10/10/2022,17/10/2022,1,1,70,Incomplete,2,0,1
+50,female,private,Malaria,low,13771.4,1,07/12/2020,08/12/2020,1,1,76,Incomplete,3,0,1
+20,female,government,Stroke,high,199813.49,11,05/03/2020,16/03/2020,1,1,60,Incomplete,5,0,1
+42,male,trust,Sepsis,high,224778.71,28,24/11/2023,22/12/2023,1,1,83,Eligible,4,0,1
+44,female,government,Pneumonia,medium,61742.61,6,05/02/2023,11/02/2023,1,1,88,Eligible,5,0,1
+73,male,private,Typhoid Fever,medium,67404.73,6,07/08/2020,13/08/2020,0,1,39,Incomplete,4,0,0
+73,male,private,Typhoid Fever,medium,62872.73,4,29/11/2021,03/12/2021,1,1,89,Eligible,5,0,1
+57,male,private,Dengue Fever,medium,27968.89,4,07/03/2024,11/03/2024,1,1,65,Incomplete,0,0,1
+31,male,trust,Diabetes Mellitus,medium,35826.32,6,20/12/2022,26/12/2022,1,0,61,Incomplete,4,0,1
+36,male,private,Stroke,high,278412.98,12,11/06/2020,23/06/2020,1,1,94,Eligible,4,0,1
+62,male,private,Appendicitis,medium,70160.06,6,28/03/2024,03/04/2024,1,1,97,Eligible,2,0,1
+58,female,trust,Appendicitis,medium,31311.74,6,07/12/2021,13/12/2021,1,1,76,Incomplete,2,0,1
+21,male,government,Sepsis,high,456212.06,26,03/05/2020,29/05/2020,1,1,88,Eligible,0,0,1
+38,female,government,Dengue with Thrombocytopenia,high,306140.51,17,29/01/2024,15/02/2024,1,1,90,Eligible,2,0,1
+38,male,government,Fracture,low,6752.16,3,15/11/2023,18/11/2023,1,1,80,Eligible,3,0,1
+46,male,trust,Pneumonia,medium,42273.82,5,20/02/2020,25/02/2020,1,1,100,Eligible,1,0,1
+45,male,government,Pneumonia,medium,76492.79,4,20/03/2021,24/03/2021,0,1,47,Incomplete,2,0,1
+43,male,private,Gastritis,low,9108.73,4,24/01/2021,28/01/2021,1,1,87,Eligible,1,0,1
+40,male,government,Diabetes Mellitus,medium,60891.57,7,29/05/2023,05/06/2023,0,1,61,Incomplete,1,0,0
+79,female,government,Tuberculosis,medium,55979.84,9,01/11/2023,10/11/2023,1,1,93,Eligible,2,0,1
+69,male,government,Heart Failure,high,486693.82,7,09/05/2020,16/05/2020,1,1,73,Incomplete,2,0,1
+58,female,private,Viral Fever,low,10496.66,3,13/06/2024,16/06/2024,1,1,80,Eligible,5,0,1
+63,male,private,Fracture,low,15392.56,1,28/12/2024,29/12/2024,1,1,84,Eligible,1,0,1
+51,female,government,Stroke,high,455193.74,15,30/01/2024,14/02/2024,0,1,42,Incomplete,2,0,0
+72,male,private,Sepsis,high,150499.99,17,07/01/2020,24/01/2020,1,1,95,Eligible,1,0,1
+49,female,private,Dengue with Thrombocytopenia,high,140026.25,27,18/07/2024,14/08/2024,1,1,98,Eligible,0,0,1
+65,male,private,Malaria,low,9214.04,4,07/06/2024,11/06/2024,1,1,60,Incomplete,2,0,1
+36,male,trust,Typhoid Fever,medium,20116.13,5,10/08/2022,15/08/2022,1,1,70,Incomplete,4,0,1
+24,female,private,Stroke,high,139001.31,21,27/05/2023,17/06/2023,1,1,80,Eligible,0,0,1
+53,female,private,Heart Failure,high,191870.93,19,15/01/2024,03/02/2024,1,1,80,Eligible,3,0,1
+71,male,government,Gastritis,low,15443.57,1,10/03/2023,11/03/2023,1,0,75,Incomplete,5,0,1
+77,male,private,Pneumonia,medium,21646.46,6,30/11/2020,06/12/2020,0,1,52,Incomplete,2,0,1
+66,male,trust,Sepsis,high,295300.12,20,10/12/2022,30/12/2022,1,1,69,Incomplete,4,0,1
+46,male,private,Hypertension,medium,29780.75,3,25/04/2020,28/04/2020,0,1,44,Incomplete,3,1,0
+66,male,private,Pneumonia,medium,47537.95,9,23/10/2021,01/11/2021,1,1,61,Incomplete,4,0,1
+19,female,government,Asthma,medium,17608.45,3,22/04/2023,25/04/2023,1,1,60,Incomplete,2,0,1
+74,female,private,Malaria,low,11737.99,1,07/11/2020,08/11/2020,1,1,78,Incomplete,2,0,1
+42,male,government,Appendicitis,medium,31658.08,8,04/02/2021,12/02/2021,1,1,78,Incomplete,3,1,1
+79,female,private,Appendicitis,medium,22325.08,4,04/03/2022,08/03/2022,1,1,72,Incomplete,4,0,1
+71,male,private,Hepatitis B,medium,38460.99,6,21/04/2020,27/04/2020,1,1,76,Incomplete,1,0,1
+18,male,government,Tuberculosis,medium,28412.93,9,14/01/2024,23/01/2024,1,1,85,Eligible,4,0,1
+48,female,government,Fracture,low,16560.15,1,16/12/2024,17/12/2024,1,1,60,Incomplete,2,0,1
+46,female,private,Hepatitis B,medium,21320.12,6,23/01/2022,29/01/2022,1,1,83,Eligible,0,0,1
+19,female,government,Dengue Fever,medium,34633.26,10,22/06/2021,02/07/2021,1,1,73,Incomplete,0,0,1
+74,female,private,Tuberculosis,medium,22318.14,6,24/01/2024,30/01/2024,1,1,95,Eligible,2,0,1
+48,male,private,Pneumonia,medium,19235.25,9,20/10/2023,29/10/2023,0,1,59,Incomplete,3,0,0
+54,male,private,Diabetes Mellitus,medium,61143.61,10,12/01/2024,22/01/2024,1,1,77,Incomplete,1,0,1
+69,male,government,Dengue Fever,medium,69300.51,10,10/06/2022,20/06/2022,1,1,63,Incomplete,2,0,1
+41,female,private,Sepsis,high,123752.62,18,10/09/2023,28/09/2023,1,1,80,Eligible,5,0,1
+29,female,private,Heart Failure,high,492580.76,16,20/04/2024,06/05/2024,0,1,61,Incomplete,5,0,0
+79,female,government,Diabetes Mellitus,medium,31458.02,8,08/10/2020,16/10/2020,1,1,88,Eligible,4,0,1
+74,male,private,Cardiac Arrest,high,463234.41,11,04/07/2023,15/07/2023,1,1,70,Incomplete,4,0,1
+70,female,trust,Diabetes Mellitus,medium,72247.0,3,23/10/2022,26/10/2022,1,1,76,Incomplete,4,0,1
+65,male,private,Cardiac Arrest,high,102614.61,18,07/02/2024,25/02/2024,1,1,85,Eligible,1,0,1
+62,male,private,Fracture,low,6425.43,2,22/11/2023,24/11/2023,1,1,92,Eligible,0,0,1
+62,female,trust,Fracture,low,9662.87,1,04/03/2021,05/03/2021,1,0,31,Incomplete,0,0,1
+29,male,private,Diabetes Mellitus,medium,44418.96,9,31/08/2020,09/09/2020,1,1,60,Incomplete,5,0,1
+42,female,private,Appendicitis,medium,42854.05,10,22/04/2023,02/05/2023,1,1,91,Eligible,0,0,1
+19,female,trust,Sepsis,high,388813.08,10,25/04/2024,05/05/2024,1,1,82,Eligible,5,0,1
+42,male,government,Sepsis,high,263692.3,9,18/01/2023,27/01/2023,0,1,75,Incomplete,5,0,1
+42,female,government,Fracture,low,24648.01,3,11/03/2020,14/03/2020,1,1,88,Eligible,1,0,1
+18,male,private,Hepatitis B,medium,75809.98,4,29/06/2022,03/07/2022,1,1,96,Eligible,3,0,1
+59,male,government,Viral Fever,low,5588.71,4,24/11/2022,28/11/2022,1,1,70,Incomplete,0,0,1
+45,male,government,Pneumonia,medium,27943.0,6,22/09/2022,28/09/2022,0,1,71,Incomplete,1,0,0
+37,male,government,Fracture,low,22042.44,4,10/04/2023,14/04/2023,1,1,67,Incomplete,0,0,1
+65,male,private,Stroke,high,215004.04,20,02/12/2023,22/12/2023,0,1,74,Incomplete,2,0,0
+44,female,private,Dengue Fever,medium,43358.92,9,08/12/2023,17/12/2023,0,0,22,Rejected,3,0,0
+76,male,private,Hypertension,medium,25529.7,5,14/03/2023,19/03/2023,1,1,94,Eligible,2,0,1
+22,male,trust,Hepatitis B,medium,22530.24,6,22/03/2020,28/03/2020,1,1,85,Eligible,0,0,1
+68,male,private,Hypertension,medium,58284.23,3,14/04/2023,17/04/2023,1,1,80,Eligible,1,0,1
+30,female,private,Sepsis,high,146355.12,19,19/12/2020,07/01/2021,1,1,64,Incomplete,1,0,1
+27,male,private,Sepsis,high,495440.12,25,28/05/2020,22/06/2020,1,1,86,Eligible,5,0,1
+70,female,private,Cancer,high,388566.93,17,28/03/2020,14/04/2020,1,0,72,Incomplete,5,0,1
+46,male,private,Pneumonia,medium,54968.23,9,06/06/2024,15/06/2024,1,1,70,Incomplete,1,0,1
+49,male,government,Cancer,high,63911.31,24,15/05/2020,08/06/2020,0,1,39,Incomplete,5,1,0
+43,female,government,Stroke,high,186573.6,26,01/01/2023,27/01/2023,1,1,90,Eligible,4,0,1
+62,male,government,Sepsis,high,90944.46,17,29/09/2022,16/10/2022,1,1,64,Incomplete,2,0,1
+73,female,private,Dengue with Thrombocytopenia,high,152529.0,14,25/10/2021,08/11/2021,1,1,79,Incomplete,1,0,1
+61,female,private,Viral Fever,low,16150.73,2,03/10/2023,05/10/2023,1,1,68,Incomplete,5,0,1
+63,female,private,Appendicitis,medium,52813.69,4,21/12/2020,25/12/2020,1,1,100,Eligible,1,0,1
+71,female,private,Tuberculosis,medium,39374.91,10,13/03/2022,23/03/2022,1,1,89,Eligible,4,0,1
+56,male,government,Viral Fever,low,24263.3,4,23/07/2024,27/07/2024,0,0,16,Rejected,3,0,0
+55,female,government,Malaria,low,12250.85,1,28/06/2021,29/06/2021,1,1,91,Eligible,4,0,1
+42,female,private,Hypertension,medium,26771.81,3,10/01/2022,13/01/2022,0,0,6,Rejected,4,0,0
+68,male,private,Cancer,high,67971.82,25,14/09/2023,09/10/2023,0,0,39,Rejected,5,0,0
+33,male,government,Fracture,low,16280.55,3,19/03/2024,22/03/2024,1,1,75,Incomplete,1,1,1
+38,male,trust,Tuberculosis,medium,28204.18,3,16/06/2023,19/06/2023,1,0,69,Incomplete,2,0,1
+24,male,private,Cancer,high,158911.03,12,02/06/2023,14/06/2023,1,1,77,Incomplete,0,1,1
+45,female,private,Stroke,high,154481.33,9,01/10/2024,10/10/2024,1,1,69,Incomplete,5,0,1
+66,female,private,Typhoid Fever,medium,64728.63,10,24/02/2021,06/03/2021,1,1,81,Eligible,2,1,1
+57,female,government,Stroke,high,142461.31,29,22/10/2020,20/11/2020,0,1,73,Incomplete,3,0,1
+31,male,government,Cardiac Arrest,high,232296.03,29,24/05/2021,22/06/2021,1,1,98,Eligible,3,0,1
+33,male,private,Stroke,high,224991.45,18,07/12/2021,25/12/2021,1,1,88,Eligible,3,0,1
+40,male,government,Viral Fever,low,23055.17,4,16/06/2021,20/06/2021,1,1,97,Eligible,5,0,1
+69,male,trust,Dengue Fever,medium,38697.17,6,06/04/2024,12/04/2024,0,1,35,Incomplete,4,0,0
+34,male,private,Malaria,low,12968.22,2,23/08/2021,25/08/2021,1,1,71,Incomplete,1,0,1
+51,male,government,Fracture,low,16660.78,2,18/03/2023,20/03/2023,1,1,87,Eligible,1,0,1
+56,male,government,Diabetes Mellitus,medium,32487.87,5,22/05/2024,27/05/2024,1,1,95,Eligible,2,0,1
+52,male,private,Fracture,low,10160.51,3,17/12/2020,20/12/2020,1,0,62,Incomplete,0,0,1
+21,female,private,Pneumonia,medium,30725.16,8,01/06/2023,09/06/2023,1,1,75,Incomplete,3,0,1
+63,male,government,Tuberculosis,medium,64043.38,9,17/05/2020,26/05/2020,0,1,63,Incomplete,3,0,0
+53,female,private,Malaria,low,24166.31,3,30/11/2022,03/12/2022,1,1,85,Eligible,2,0,1
+28,female,private,Pneumonia,medium,28448.05,8,13/05/2023,21/05/2023,1,0,56,Incomplete,3,0,1
+19,female,private,Sepsis,high,387640.12,20,17/03/2021,06/04/2021,1,1,88,Eligible,4,0,1
+59,female,private,Kidney Failure,high,114041.9,21,10/04/2021,01/05/2021,1,1,89,Eligible,2,0,1
+26,female,private,Dengue Fever,medium,76602.15,4,03/08/2023,07/08/2023,1,0,59,Incomplete,3,0,1
+22,female,private,Heart Failure,high,298223.03,22,23/03/2020,14/04/2020,0,1,49,Incomplete,4,0,0
+27,female,private,Dengue Fever,medium,48117.94,8,15/07/2023,23/07/2023,0,1,69,Incomplete,3,0,0
+36,female,private,Dengue Fever,medium,53065.38,10,14/12/2024,24/12/2024,1,1,92,Eligible,0,0,1
+64,male,trust,Pneumonia,medium,36459.88,10,02/01/2024,12/01/2024,1,1,69,Incomplete,1,0,1
+23,female,trust,Viral Fever,low,7845.23,3,31/03/2020,03/04/2020,0,0,26,Rejected,4,0,0
+45,female,private,Appendicitis,medium,79416.72,3,30/11/2020,03/12/2020,1,1,64,Incomplete,1,0,1
+77,female,government,Hypertension,medium,58512.11,8,20/07/2024,28/07/2024,1,1,90,Eligible,2,0,1
+74,female,private,Cardiac Arrest,high,120019.25,29,28/10/2023,26/11/2023,1,1,98,Eligible,1,0,1
+45,female,government,Viral Fever,low,23678.68,4,07/09/2021,11/09/2021,1,1,63,Incomplete,4,0,1
+24,male,private,Asthma,medium,69891.73,6,24/03/2021,30/03/2021,1,0,36,Incomplete,5,0,1
+44,female,government,Cancer,high,199045.91,14,15/06/2020,29/06/2020,1,1,64,Incomplete,2,0,1
+45,female,private,Cancer,high,236400.3,17,03/03/2020,20/03/2020,1,0,45,Incomplete,3,0,1
+77,female,private,Hepatitis B,medium,41345.65,6,05/10/2024,11/10/2024,1,1,70,Incomplete,2,0,1
+55,female,government,Diabetes Mellitus,medium,20336.17,3,18/06/2024,21/06/2024,1,1,65,Incomplete,5,0,1
+18,female,private,Tuberculosis,medium,23676.41,8,23/09/2024,01/10/2024,1,1,82,Eligible,5,0,1
+28,female,government,Cardiac Arrest,high,67524.01,9,08/04/2023,17/04/2023,1,1,72,Incomplete,1,0,1
+24,female,private,Hepatitis B,medium,55003.28,4,13/12/2022,17/12/2022,1,1,64,Incomplete,3,0,1
+28,male,government,Sepsis,high,150706.36,8,04/08/2021,12/08/2021,1,1,70,Incomplete,5,0,1
+40,female,trust,Gastritis,low,12195.33,3,26/04/2021,29/04/2021,1,1,89,Eligible,1,0,1
+23,male,government,Hepatitis B,medium,24599.2,5,08/07/2022,13/07/2022,0,0,21,Rejected,5,0,0
+63,female,trust,Cancer,high,105178.33,28,12/08/2023,09/09/2023,1,1,97,Eligible,2,0,1
+75,female,government,Dengue Fever,medium,25174.51,8,27/01/2021,04/02/2021,0,0,16,Rejected,3,0,0
+47,female,private,Cardiac Arrest,high,109806.46,30,31/10/2021,30/11/2021,1,1,80,Eligible,4,0,1
+18,male,trust,Viral Fever,low,5050.76,3,28/11/2024,01/12/2024,0,1,45,Incomplete,4,0,0
+76,male,trust,Tuberculosis,medium,17499.19,8,19/01/2020,27/01/2020,1,1,83,Eligible,2,1,1
+67,male,private,Appendicitis,medium,36613.66,7,10/09/2023,17/09/2023,1,1,97,Eligible,4,0,1
+45,male,government,Stroke,high,296205.43,21,08/01/2023,29/01/2023,0,1,56,Incomplete,4,0,0
+48,female,government,Stroke,high,307353.94,25,07/10/2021,01/11/2021,1,1,62,Incomplete,1,0,1
+34,female,private,Viral Fever,low,14676.34,2,24/03/2020,26/03/2020,1,1,85,Eligible,0,0,1
+69,female,private,Asthma,medium,76094.6,7,03/02/2020,10/02/2020,1,1,91,Eligible,4,0,1
+36,male,trust,Fracture,low,15336.6,2,03/11/2021,05/11/2021,1,1,87,Eligible,0,0,1
+78,female,government,Typhoid Fever,medium,23442.04,7,14/03/2024,21/03/2024,1,1,76,Incomplete,3,0,1
+31,male,government,Heart Failure,high,394291.72,16,14/08/2021,30/08/2021,1,1,100,Eligible,0,0,1
+73,male,private,Typhoid Fever,medium,19288.85,7,26/04/2024,03/05/2024,1,0,58,Incomplete,2,0,1
+47,male,government,Sepsis,high,175235.26,18,19/06/2020,07/07/2020,1,1,84,Eligible,1,0,1
+64,male,government,Dengue with Thrombocytopenia,high,496455.34,11,28/11/2020,09/12/2020,1,1,94,Eligible,1,0,1
+40,male,trust,Cardiac Arrest,high,406699.39,10,04/06/2022,14/06/2022,1,1,85,Eligible,1,0,1
+58,female,government,Hepatitis B,medium,78448.92,6,05/03/2024,11/03/2024,1,1,91,Eligible,4,0,1
+38,female,private,Appendicitis,medium,17364.67,3,20/01/2021,23/01/2021,1,0,72,Incomplete,2,0,1
+65,male,private,Cardiac Arrest,high,88351.37,10,22/09/2024,02/10/2024,1,1,67,Incomplete,4,0,1
+53,female,government,Hypertension,medium,67703.9,8,29/05/2024,06/06/2024,1,1,87,Eligible,2,1,1
+21,female,private,Pneumonia,medium,68020.07,7,09/11/2020,16/11/2020,1,1,64,Incomplete,4,0,1
+37,female,private,Cancer,high,61766.5,17,06/08/2021,23/08/2021,1,0,38,Incomplete,4,0,0
+41,male,private,Hypertension,medium,64919.92,4,13/10/2021,17/10/2021,1,1,65,Incomplete,1,1,1
+71,male,government,Asthma,medium,71569.53,7,23/01/2023,30/01/2023,1,1,66,Incomplete,3,0,1
+37,female,government,Diabetes Mellitus,medium,32488.13,5,16/04/2020,21/04/2020,0,1,67,Incomplete,0,0,1
+20,female,trust,Heart Failure,high,293883.99,12,25/06/2021,07/07/2021,1,1,75,Incomplete,0,0,1
+59,male,private,Typhoid Fever,medium,29197.16,5,21/12/2023,26/12/2023,1,1,92,Eligible,1,0,1
+61,female,private,Hepatitis B,medium,47022.43,3,02/05/2021,05/05/2021,1,1,84,Eligible,1,0,1
+40,male,government,Kidney Failure,high,235194.36,16,30/03/2023,15/04/2023,1,1,67,Incomplete,5,0,1
+56,female,government,Typhoid Fever,medium,41360.42,7,26/01/2021,02/02/2021,1,1,97,Eligible,0,0,1
+26,male,private,Fracture,low,19387.36,1,06/02/2024,07/02/2024,1,0,43,Incomplete,2,0,1
+18,male,private,Hypertension,medium,41868.13,6,30/11/2021,06/12/2021,1,0,71,Incomplete,0,0,1
+80,female,private,Kidney Failure,high,356141.54,28,27/06/2022,25/07/2022,1,1,73,Incomplete,3,0,1
+49,female,trust,Viral Fever,low,4076.54,4,07/01/2020,11/01/2020,1,0,33,Incomplete,5,0,1
+31,female,private,Hypertension,medium,24145.36,5,26/07/2021,31/07/2021,1,0,63,Incomplete,0,0,1
+37,male,private,Stroke,high,359793.91,22,18/07/2021,09/08/2021,1,1,90,Eligible,1,0,1
+19,male,trust,Sepsis,high,148492.8,23,03/02/2023,26/02/2023,1,0,47,Incomplete,5,0,1
+62,male,private,Viral Fever,low,20588.15,4,08/03/2024,12/03/2024,0,1,36,Incomplete,1,0,0
+69,male,government,Asthma,medium,52336.89,5,21/12/2022,26/12/2022,1,1,60,Incomplete,1,0,1
+67,female,government,Hepatitis B,medium,15094.93,5,31/01/2021,05/02/2021,0,1,57,Incomplete,2,0,0
+55,male,government,Kidney Failure,high,304347.05,10,31/12/2021,10/01/2022,1,1,75,Incomplete,2,1,1
+40,female,private,Fracture,low,10335.44,4,11/04/2021,15/04/2021,1,0,34,Incomplete,0,0,1
+32,female,private,Dengue Fever,medium,45360.39,4,31/12/2022,04/01/2023,0,1,65,Incomplete,3,0,0
+65,male,government,Appendicitis,medium,21295.65,3,09/06/2021,12/06/2021,1,1,77,Incomplete,5,0,1
+75,male,government,Diabetes Mellitus,medium,75031.87,4,06/06/2023,10/06/2023,0,1,68,Incomplete,4,0,0
+20,female,private,Viral Fever,low,6674.83,1,31/03/2024,01/04/2024,1,1,73,Incomplete,3,0,1
+23,male,private,Hepatitis B,medium,15006.04,8,27/11/2023,05/12/2023,1,1,95,Eligible,5,0,1
+80,male,private,Viral Fever,low,6785.5,2,17/11/2020,19/11/2020,1,1,72,Incomplete,1,0,1
+47,male,private,Stroke,high,328390.8,10,05/03/2020,15/03/2020,1,1,83,Eligible,5,0,1
+71,female,government,Pneumonia,medium,69185.28,10,21/11/2020,01/12/2020,1,0,32,Incomplete,4,0,1
+24,male,private,Tuberculosis,medium,19758.85,4,30/04/2022,04/05/2022,1,1,70,Incomplete,2,0,1
+74,female,private,Stroke,high,422948.99,24,02/05/2023,26/05/2023,1,1,88,Eligible,3,0,1
+35,female,government,Viral Fever,low,7711.24,1,11/02/2024,12/02/2024,1,1,94,Eligible,3,0,1
+25,male,private,Dengue Fever,medium,62905.23,4,28/12/2022,01/01/2023,1,1,97,Eligible,5,0,1
+21,male,private,Asthma,medium,66931.29,3,07/05/2021,10/05/2021,1,1,64,Incomplete,1,0,1
+39,male,private,Viral Fever,low,10305.67,2,05/10/2020,07/10/2020,0,1,43,Incomplete,1,0,0
+62,male,private,Malaria,low,16746.48,4,26/05/2020,30/05/2020,1,1,80,Eligible,3,0,1
+72,female,private,Typhoid Fever,medium,64756.16,3,16/05/2024,19/05/2024,1,1,61,Incomplete,0,0,1
+55,male,private,Diabetes Mellitus,medium,46250.69,4,07/07/2024,11/07/2024,1,1,83,Eligible,0,0,1
+19,male,government,Heart Failure,high,220570.28,23,23/08/2020,15/09/2020,1,1,76,Incomplete,1,0,1
+56,female,private,Gastritis,low,14488.89,1,21/04/2024,22/04/2024,1,1,78,Incomplete,4,0,1
+38,female,private,Sepsis,high,278214.66,7,15/08/2022,22/08/2022,0,0,16,Rejected,1,0,0
+39,male,private,Heart Failure,high,173785.69,19,03/11/2020,22/11/2020,1,0,56,Incomplete,1,0,1
+32,female,private,Heart Failure,high,214794.79,12,09/08/2024,21/08/2024,1,1,62,Incomplete,4,0,1
+48,male,private,Cancer,high,158175.44,26,18/05/2023,13/06/2023,1,1,61,Incomplete,4,0,1
+29,male,private,Diabetes Mellitus,medium,32407.69,4,06/04/2020,10/04/2020,1,1,93,Eligible,0,0,1
+65,male,private,Viral Fever,low,24167.35,2,11/08/2023,13/08/2023,1,1,75,Incomplete,4,0,1
+51,male,private,Kidney Failure,high,159002.24,9,10/10/2023,19/10/2023,0,1,73,Incomplete,2,0,1
+54,female,private,Cancer,high,121366.79,20,12/05/2021,01/06/2021,1,0,63,Incomplete,3,0,1
+79,female,private,Diabetes Mellitus,medium,71773.87,9,10/08/2024,19/08/2024,1,1,84,Eligible,1,0,1
+66,female,private,Dengue Fever,medium,41213.15,8,14/04/2021,22/04/2021,1,1,78,Incomplete,1,0,1
+60,male,trust,Sepsis,high,188478.26,15,10/06/2024,25/06/2024,1,1,93,Eligible,4,0,1
+67,male,government,Hypertension,medium,30693.82,5,29/11/2023,04/12/2023,1,1,68,Incomplete,3,0,1
+61,female,private,Dengue Fever,medium,59643.78,7,27/04/2020,04/05/2020,1,1,73,Incomplete,2,0,1
+34,female,trust,Hypertension,medium,62349.32,5,10/07/2024,15/07/2024,1,0,75,Incomplete,4,0,1
+64,male,private,Asthma,medium,54419.67,6,10/02/2021,16/02/2021,1,1,72,Incomplete,3,0,1
+59,female,private,Fracture,low,22412.42,1,16/10/2024,17/10/2024,1,1,99,Eligible,4,0,1
+42,male,private,Stroke,high,436270.31,24,14/05/2024,07/06/2024,1,1,60,Incomplete,0,0,1
+70,male,government,Typhoid Fever,medium,21938.48,9,13/05/2024,22/05/2024,0,0,38,Rejected,4,0,0
+62,female,private,Cardiac Arrest,high,336575.05,15,15/10/2022,30/10/2022,1,1,98,Eligible,0,0,1
+76,male,private,Dengue with Thrombocytopenia,high,226292.63,18,02/06/2023,20/06/2023,0,0,19,Rejected,4,0,0
+73,female,private,Hypertension,medium,33995.83,9,18/04/2021,27/04/2021,1,1,61,Incomplete,4,0,1
+30,male,private,Tuberculosis,medium,54426.94,5,01/11/2022,06/11/2022,0,1,51,Incomplete,2,0,0
+34,male,private,Gastritis,low,14432.97,1,14/04/2022,15/04/2022,1,1,81,Eligible,1,0,1
+45,female,private,Dengue Fever,medium,60089.61,5,26/08/2020,31/08/2020,1,1,62,Incomplete,1,0,1
+51,male,trust,Heart Failure,high,229023.64,9,29/05/2023,07/06/2023,1,1,84,Eligible,1,0,1
+38,male,private,Hypertension,medium,64893.65,8,04/06/2021,12/06/2021,1,1,92,Eligible,4,0,1
+24,female,trust,Sepsis,high,393373.39,11,12/08/2023,23/08/2023,1,1,76,Incomplete,2,0,1
+25,male,private,Gastritis,low,3109.1,4,16/12/2022,20/12/2022,1,1,75,Incomplete,3,0,1
+65,male,private,Cancer,high,145382.34,18,14/08/2023,01/09/2023,1,0,36,Incomplete,5,0,0
+56,male,government,Malaria,low,24850.19,1,04/04/2023,05/04/2023,1,1,71,Incomplete,0,0,1
+34,male,government,Kidney Failure,high,367772.74,27,01/07/2023,28/07/2023,1,1,84,Eligible,5,0,1
+59,female,private,Diabetes Mellitus,medium,34210.59,8,01/01/2023,09/01/2023,1,1,96,Eligible,1,0,1
+24,female,private,Typhoid Fever,medium,72677.0,6,12/03/2023,18/03/2023,1,1,66,Incomplete,1,0,1
+36,male,trust,Cancer,high,303761.81,20,22/04/2020,12/05/2020,1,0,65,Incomplete,3,0,1
+25,female,private,Cancer,high,338871.18,30,22/12/2020,21/01/2021,1,1,74,Incomplete,4,0,1
+60,female,private,Fracture,low,6047.51,1,23/02/2023,24/02/2023,1,1,60,Incomplete,2,0,1
+80,male,government,Hepatitis B,medium,43219.63,5,02/03/2020,07/03/2020,1,1,94,Eligible,5,0,1
+23,female,trust,Hepatitis B,medium,37406.63,4,14/07/2023,18/07/2023,1,1,95,Eligible,3,0,1
+61,male,private,Appendicitis,medium,35390.15,4,20/11/2021,24/11/2021,1,0,47,Incomplete,3,0,1
+55,female,private,Malaria,low,16772.91,1,24/03/2020,25/03/2020,1,0,44,Incomplete,0,1,1
+45,female,government,Kidney Failure,high,499299.57,19,27/08/2020,15/09/2020,1,0,72,Incomplete,1,0,1
+70,male,government,Dengue Fever,medium,39387.44,7,24/04/2020,01/05/2020,0,1,34,Incomplete,5,0,0
+44,male,private,Malaria,low,22180.49,4,26/06/2022,30/06/2022,1,0,53,Incomplete,1,0,1
+19,female,private,Stroke,high,319476.07,12,11/03/2022,23/03/2022,0,1,38,Incomplete,5,0,0
+60,male,private,Dengue with Thrombocytopenia,high,205047.72,9,11/02/2023,20/02/2023,1,1,100,Eligible,3,0,1
+80,male,government,Hepatitis B,medium,19341.62,7,11/05/2024,18/05/2024,0,1,73,Incomplete,4,0,0
+30,male,private,Stroke,high,90134.08,17,28/09/2020,15/10/2020,1,1,72,Incomplete,2,0,1
+24,female,government,Asthma,medium,45176.58,5,23/02/2021,28/02/2021,1,0,40,Incomplete,0,0,1
+66,female,private,Fracture,low,24549.97,2,12/10/2021,14/10/2021,1,1,82,Eligible,3,0,1
+46,male,private,Asthma,medium,34961.39,3,28/04/2023,01/05/2023,1,0,67,Incomplete,2,1,1
+36,male,trust,Hypertension,medium,32900.47,6,18/04/2020,24/04/2020,1,1,66,Incomplete,3,0,1
+77,male,private,Stroke,high,350274.36,12,14/12/2020,26/12/2020,0,1,70,Incomplete,0,0,1
+52,male,private,Hypertension,medium,31971.39,5,09/05/2022,14/05/2022,1,1,91,Eligible,5,0,1
+32,female,private,Fracture,low,8346.65,2,23/08/2020,25/08/2020,1,1,86,Eligible,0,0,1
+66,female,private,Typhoid Fever,medium,66064.5,9,20/04/2023,29/04/2023,1,1,67,Incomplete,3,0,1
+43,female,trust,Fracture,low,14402.1,2,11/07/2024,13/07/2024,1,0,30,Incomplete,3,0,0
+60,male,private,Tuberculosis,medium,55896.37,5,02/11/2021,07/11/2021,0,1,72,Incomplete,2,1,0
+52,female,private,Hypertension,medium,41320.75,4,03/11/2020,07/11/2020,1,1,71,Incomplete,0,0,1
+38,female,government,Stroke,high,479701.05,25,15/02/2023,12/03/2023,1,1,75,Incomplete,3,0,1
+36,male,private,Tuberculosis,medium,72991.48,8,18/03/2020,26/03/2020,1,1,74,Incomplete,5,0,1
+80,female,private,Malaria,low,17264.15,3,02/09/2021,05/09/2021,1,1,95,Eligible,5,0,1
+36,female,private,Stroke,high,278390.71,8,17/07/2024,25/07/2024,1,1,82,Eligible,1,0,1
+43,female,private,Kidney Failure,high,138194.94,28,24/04/2024,22/05/2024,1,1,88,Eligible,2,0,1
+79,male,private,Stroke,high,324694.37,19,05/10/2022,24/10/2022,1,1,96,Eligible,3,0,1
+71,male,private,Cardiac Arrest,high,309561.92,30,08/10/2022,07/11/2022,0,1,50,Incomplete,5,0,0
+59,male,government,Fracture,low,4141.18,1,05/07/2021,06/07/2021,1,1,84,Eligible,3,0,1
+61,female,private,Hepatitis B,medium,16991.22,5,12/09/2020,17/09/2020,1,1,81,Eligible,2,0,1
+77,female,government,Stroke,high,227330.15,18,14/10/2020,01/11/2020,1,1,71,Incomplete,5,0,1
+61,female,private,Kidney Failure,high,439831.46,24,02/02/2021,26/02/2021,1,1,66,Incomplete,2,0,1
+23,female,private,Tuberculosis,medium,64497.38,10,19/01/2024,29/01/2024,1,1,84,Eligible,1,0,1
+43,male,government,Fracture,low,14654.3,3,19/05/2024,22/05/2024,0,1,62,Incomplete,0,0,1
+41,female,private,Typhoid Fever,medium,48730.77,8,02/03/2022,10/03/2022,0,1,61,Incomplete,5,0,0
+32,male,private,Appendicitis,medium,55828.3,4,02/09/2020,06/09/2020,1,0,60,Incomplete,4,0,0
+30,female,private,Hepatitis B,medium,32493.7,4,18/03/2020,22/03/2020,1,1,79,Incomplete,0,0,1
+24,female,private,Cardiac Arrest,high,98250.0,12,01/02/2024,13/02/2024,1,1,86,Eligible,3,0,1
+24,male,private,Cancer,high,433201.7,7,03/04/2020,10/04/2020,1,1,69,Incomplete,5,0,1
+36,male,government,Dengue Fever,medium,26526.11,4,23/02/2022,27/02/2022,1,1,95,Eligible,0,0,1
+66,female,private,Typhoid Fever,medium,38464.13,8,26/04/2021,04/05/2021,1,1,81,Eligible,4,0,1
+44,male,government,Cardiac Arrest,high,277897.75,21,10/06/2024,01/07/2024,1,1,70,Incomplete,1,0,1
+50,female,private,Viral Fever,low,16907.79,4,09/02/2024,13/02/2024,1,1,80,Eligible,5,0,1
+29,male,government,Gastritis,low,23030.71,4,18/06/2020,22/06/2020,1,0,30,Incomplete,0,1,0
+41,male,private,Hepatitis B,medium,19728.63,5,29/04/2021,04/05/2021,1,1,67,Incomplete,2,0,1
+31,male,government,Cardiac Arrest,high,266238.14,13,04/12/2022,17/12/2022,1,1,71,Incomplete,5,0,1
+36,female,government,Kidney Failure,high,328983.02,22,07/01/2024,29/01/2024,0,1,74,Incomplete,1,0,1
+68,female,trust,Gastritis,low,6293.5,2,14/01/2020,16/01/2020,1,1,70,Incomplete,2,0,1
+51,male,private,Tuberculosis,medium,67502.39,5,04/08/2020,09/08/2020,1,0,42,Incomplete,4,0,1
+18,female,government,Dengue with Thrombocytopenia,high,76543.02,7,21/02/2024,28/02/2024,1,1,86,Eligible,2,0,1
+63,female,private,Heart Failure,high,289630.9,22,19/04/2024,11/05/2024,1,1,89,Eligible,1,0,1
+48,female,private,Cardiac Arrest,high,386071.97,24,13/01/2022,06/02/2022,1,1,84,Eligible,1,0,1
+38,male,government,Dengue with Thrombocytopenia,high,279917.68,28,07/05/2024,04/06/2024,1,1,95,Eligible,1,0,1
+21,male,government,Stroke,high,340439.14,9,25/12/2020,03/01/2021,1,1,88,Eligible,5,0,1
+59,male,government,Typhoid Fever,medium,26816.3,6,13/11/2020,19/11/2020,1,1,66,Incomplete,5,0,1
+60,male,private,Gastritis,low,15169.0,2,21/10/2020,23/10/2020,1,1,83,Eligible,5,0,1
+72,male,private,Cardiac Arrest,high,472863.26,20,30/06/2021,20/07/2021,0,1,59,Incomplete,5,0,1
+32,male,private,Kidney Failure,high,161210.89,25,10/02/2020,06/03/2020,1,1,96,Eligible,3,0,1
+29,female,government,Dengue with Thrombocytopenia,high,247458.2,25,17/01/2021,11/02/2021,1,0,33,Incomplete,2,0,1
+47,female,private,Hypertension,medium,46871.29,8,01/08/2024,09/08/2024,0,1,63,Incomplete,1,0,0
+69,male,government,Pneumonia,medium,40813.56,3,07/06/2024,10/06/2024,1,0,32,Incomplete,2,0,1
+56,female,private,Malaria,low,14130.14,4,11/03/2023,15/03/2023,1,1,83,Eligible,5,0,1
+33,female,private,Dengue Fever,medium,28129.69,7,23/07/2021,30/07/2021,1,1,65,Incomplete,4,0,1
+38,male,government,Stroke,high,206099.36,12,20/11/2024,02/12/2024,1,1,96,Eligible,0,1,1
+59,male,government,Hepatitis B,medium,58160.54,7,08/07/2020,15/07/2020,1,1,92,Eligible,1,0,1
+76,male,trust,Hepatitis B,medium,79491.6,6,18/06/2020,24/06/2020,1,1,98,Eligible,0,0,1
+58,male,government,Pneumonia,medium,28470.97,10,29/08/2020,08/09/2020,1,1,68,Incomplete,0,0,1
+25,male,trust,Kidney Failure,high,97027.49,8,05/01/2021,13/01/2021,0,1,58,Incomplete,1,0,1
+66,female,private,Fracture,low,23360.63,2,09/03/2024,11/03/2024,0,1,57,Incomplete,3,0,1
+18,male,private,Stroke,high,399491.94,11,31/07/2020,11/08/2020,1,1,66,Incomplete,0,0,1
+61,female,private,Malaria,low,23282.44,1,26/10/2024,27/10/2024,1,1,68,Incomplete,1,0,1
+26,male,private,Hepatitis B,medium,60540.67,8,21/01/2022,29/01/2022,1,1,64,Incomplete,5,0,1
+69,male,government,Hepatitis B,medium,37440.52,10,14/05/2024,24/05/2024,1,1,74,Incomplete,3,0,1
+30,female,private,Heart Failure,high,196987.52,19,20/01/2022,08/02/2022,1,1,73,Incomplete,0,0,1
+74,male,private,Typhoid Fever,medium,79356.5,9,20/04/2020,29/04/2020,0,1,60,Incomplete,1,0,1
+21,male,government,Dengue with Thrombocytopenia,high,77683.35,30,12/01/2024,11/02/2024,1,1,97,Eligible,0,0,1
+26,female,government,Malaria,low,10532.59,2,18/06/2021,20/06/2021,1,1,60,Incomplete,1,0,1
+20,male,government,Dengue Fever,medium,16095.91,9,13/01/2022,22/01/2022,1,1,100,Eligible,3,0,1
+57,male,private,Heart Failure,high,315555.3,18,13/05/2024,31/05/2024,1,1,71,Incomplete,1,0,1
+26,female,trust,Stroke,high,51229.41,24,31/03/2020,24/04/2020,0,0,32,Rejected,0,1,0
+69,female,private,Asthma,medium,21524.52,7,27/03/2022,03/04/2022,1,0,40,Incomplete,3,0,1
+18,male,private,Heart Failure,high,98330.97,7,28/04/2023,05/05/2023,1,0,51,Incomplete,5,0,0
+30,male,private,Cancer,high,95749.9,21,20/04/2020,11/05/2020,1,1,63,Incomplete,2,0,1
+79,female,private,Sepsis,high,139772.54,12,31/03/2022,12/04/2022,0,0,1,Rejected,4,0,0
+52,female,trust,Stroke,high,366533.49,15,05/05/2023,20/05/2023,1,1,95,Eligible,0,0,1
+56,female,private,Tuberculosis,medium,74928.0,9,12/09/2024,21/09/2024,1,1,69,Incomplete,0,0,1
+51,male,private,Pneumonia,medium,16233.74,7,27/04/2020,04/05/2020,1,1,79,Incomplete,2,0,1
+66,male,private,Hypertension,medium,44050.54,10,21/09/2022,01/10/2022,0,1,31,Incomplete,5,0,0
+33,male,private,Hepatitis B,medium,52320.98,6,07/10/2021,13/10/2021,1,1,80,Eligible,1,1,1
+56,male,private,Hepatitis B,medium,57027.96,10,09/05/2023,19/05/2023,1,1,98,Eligible,4,0,1
+32,male,private,Appendicitis,medium,53370.62,4,04/11/2023,08/11/2023,1,1,95,Eligible,5,0,1
+76,female,private,Hypertension,medium,29058.43,3,10/08/2021,13/08/2021,1,1,75,Incomplete,1,0,1
+45,male,private,Appendicitis,medium,58532.55,7,03/05/2023,10/05/2023,1,1,99,Eligible,3,0,1
+63,female,trust,Tuberculosis,medium,70127.9,5,14/09/2023,19/09/2023,0,1,62,Incomplete,3,0,1
+72,male,government,Hypertension,medium,41698.22,5,18/09/2024,23/09/2024,1,1,100,Eligible,5,0,1
+72,male,government,Fracture,low,18055.62,4,17/03/2024,21/03/2024,1,1,65,Incomplete,3,0,1
+50,female,private,Malaria,low,20937.02,1,09/10/2024,10/10/2024,1,1,76,Incomplete,2,0,1
+66,male,government,Stroke,high,284875.83,14,19/02/2024,04/03/2024,1,1,92,Eligible,2,0,1
+52,male,private,Dengue Fever,medium,31867.54,9,05/04/2020,14/04/2020,1,1,65,Incomplete,1,0,1
+54,male,government,Gastritis,low,11871.05,1,14/04/2024,15/04/2024,1,1,91,Eligible,5,0,1
+68,male,trust,Dengue with Thrombocytopenia,high,301860.01,11,30/10/2022,10/11/2022,1,1,97,Eligible,5,0,1
+60,male,private,Viral Fever,low,15954.52,1,14/04/2021,15/04/2021,1,1,97,Eligible,3,0,1
+20,female,private,Asthma,medium,26506.9,6,04/08/2021,10/08/2021,1,1,66,Incomplete,3,0,1
+43,male,private,Gastritis,low,22464.88,3,13/05/2022,16/05/2022,1,1,94,Eligible,1,0,1
+45,male,private,Viral Fever,low,14257.41,1,06/11/2020,07/11/2020,1,0,51,Incomplete,0,0,1
+80,female,private,Hepatitis B,medium,68658.79,7,12/04/2022,19/04/2022,1,0,62,Incomplete,4,0,1
+35,female,private,Asthma,medium,29816.88,9,25/03/2020,03/04/2020,0,1,60,Incomplete,1,0,1
+46,male,private,Cancer,high,330457.58,9,09/05/2020,18/05/2020,1,1,67,Incomplete,4,0,1
+40,male,trust,Appendicitis,medium,22017.43,10,12/03/2021,22/03/2021,1,1,81,Eligible,1,0,1
+76,female,private,Cardiac Arrest,high,279969.6,17,31/03/2022,17/04/2022,1,1,70,Incomplete,2,0,1
+66,female,private,Sepsis,high,167982.23,10,16/06/2023,26/06/2023,1,1,72,Incomplete,5,0,1
+68,female,government,Kidney Failure,high,261520.8,22,25/02/2024,18/03/2024,1,1,64,Incomplete,4,0,1
+56,male,private,Asthma,medium,77167.7,3,02/02/2024,05/02/2024,1,1,95,Eligible,1,0,1
+46,female,private,Cancer,high,431505.91,14,02/08/2020,16/08/2020,1,1,85,Eligible,5,0,1
+52,female,private,Dengue with Thrombocytopenia,high,327833.0,29,24/05/2021,22/06/2021,1,1,99,Eligible,4,0,1
+42,female,government,Diabetes Mellitus,medium,37118.52,8,18/06/2021,26/06/2021,1,0,37,Incomplete,4,0,1
+61,male,private,Dengue Fever,medium,79654.46,9,19/05/2021,28/05/2021,1,0,37,Incomplete,0,0,1
+61,male,government,Fracture,low,14831.98,4,28/04/2024,02/05/2024,1,1,86,Eligible,5,0,1
+50,female,government,Cardiac Arrest,high,319772.23,22,15/02/2022,09/03/2022,0,0,36,Rejected,2,0,0
+51,female,private,Tuberculosis,medium,34065.63,9,09/02/2022,18/02/2022,1,1,95,Eligible,4,0,1
+44,male,trust,Cardiac Arrest,high,167958.86,16,30/01/2020,15/02/2020,1,1,91,Eligible,3,0,1
+54,female,government,Gastritis,low,24224.67,1,28/01/2021,29/01/2021,1,1,83,Eligible,2,0,1
+68,male,trust,Tuberculosis,medium,36872.98,3,15/08/2021,18/08/2021,0,1,68,Incomplete,4,0,0
+18,female,private,Tuberculosis,medium,22696.93,7,07/11/2020,14/11/2020,1,1,88,Eligible,3,0,1
+62,female,trust,Gastritis,low,5955.4,1,09/10/2021,10/10/2021,1,0,41,Incomplete,2,0,1
+23,female,private,Malaria,low,14735.0,4,24/11/2022,28/11/2022,1,0,64,Incomplete,0,0,1
+51,female,private,Sepsis,high,496236.63,13,18/09/2020,01/10/2020,1,0,68,Incomplete,2,0,1
+77,female,private,Stroke,high,497397.21,15,16/04/2022,01/05/2022,1,1,87,Eligible,0,0,1
+76,male,private,Dengue Fever,medium,49369.52,10,13/04/2021,23/04/2021,1,1,97,Eligible,5,0,1
+21,female,government,Asthma,medium,78290.69,5,25/07/2023,30/07/2023,1,1,92,Eligible,1,0,1
+60,male,government,Malaria,low,22330.3,3,11/01/2022,14/01/2022,0,1,57,Incomplete,2,0,1
+36,female,private,Cardiac Arrest,high,441441.65,9,27/09/2024,06/10/2024,0,1,39,Incomplete,5,0,0
+67,female,government,Dengue with Thrombocytopenia,high,252837.55,19,03/05/2024,22/05/2024,1,1,78,Incomplete,5,0,1
+49,male,private,Typhoid Fever,medium,71394.64,9,10/02/2023,19/02/2023,1,1,90,Eligible,2,0,1
+52,male,government,Diabetes Mellitus,medium,65962.48,3,20/05/2021,23/05/2021,1,1,72,Incomplete,0,0,1
+38,male,government,Viral Fever,low,22663.47,2,08/11/2021,10/11/2021,1,0,74,Incomplete,5,0,1
+22,female,private,Stroke,high,277320.42,9,19/11/2022,28/11/2022,1,1,71,Incomplete,2,0,1
+34,female,private,Cancer,high,421633.33,24,06/03/2021,30/03/2021,1,1,90,Eligible,4,0,1
+63,male,government,Typhoid Fever,medium,30660.03,4,05/05/2023,09/05/2023,0,1,62,Incomplete,4,0,1
+65,female,government,Dengue with Thrombocytopenia,high,310675.88,23,15/04/2023,08/05/2023,1,0,74,Incomplete,4,0,1
+48,male,government,Sepsis,high,173408.38,28,09/07/2022,06/08/2022,0,1,32,Incomplete,0,0,1
+52,female,private,Viral Fever,low,8891.59,2,21/02/2021,23/02/2021,1,0,45,Incomplete,1,0,1
+27,male,private,Asthma,medium,16955.43,5,31/07/2024,05/08/2024,1,1,71,Incomplete,4,0,1
+63,male,private,Tuberculosis,medium,22873.23,4,29/07/2024,02/08/2024,0,1,30,Incomplete,0,0,1
+42,female,trust,Cancer,high,101576.45,23,02/03/2020,25/03/2020,1,1,95,Eligible,5,0,1
+25,male,government,Asthma,medium,68158.94,8,22/01/2021,30/01/2021,1,0,33,Incomplete,5,0,1
+36,female,government,Fracture,low,15971.92,1,26/03/2024,27/03/2024,1,1,95,Eligible,5,0,1
+37,female,government,Hepatitis B,medium,69083.74,4,06/06/2024,10/06/2024,0,0,1,Rejected,3,0,0
+76,male,government,Typhoid Fever,medium,68129.03,8,25/07/2021,02/08/2021,1,1,88,Eligible,0,0,1
+45,female,trust,Kidney Failure,high,170902.65,7,31/05/2020,07/06/2020,1,1,83,Eligible,2,0,1
+63,male,private,Gastritis,low,20770.78,3,14/01/2023,17/01/2023,0,1,67,Incomplete,2,0,1
+20,male,private,Heart Failure,high,392093.95,20,30/05/2022,19/06/2022,1,1,69,Incomplete,3,0,1
+54,female,trust,Tuberculosis,medium,54450.66,3,26/05/2024,29/05/2024,1,1,95,Eligible,4,0,1
+54,male,private,Sepsis,high,497752.93,27,14/09/2023,11/10/2023,1,1,83,Eligible,0,0,1
+45,male,private,Heart Failure,high,429751.83,21,12/03/2023,02/04/2023,1,0,68,Incomplete,1,0,1
+26,female,private,Heart Failure,high,432171.56,23,16/07/2023,08/08/2023,1,1,71,Incomplete,3,1,1
+53,male,government,Hepatitis B,medium,75744.08,10,29/05/2020,08/06/2020,1,1,67,Incomplete,3,0,1
+63,male,private,Pneumonia,medium,34291.86,5,18/05/2023,23/05/2023,1,0,73,Incomplete,5,0,1
+23,female,trust,Pneumonia,medium,32307.62,5,29/11/2020,04/12/2020,1,1,92,Eligible,4,0,1
+69,female,private,Heart Failure,high,462311.52,24,03/08/2020,27/08/2020,1,1,91,Eligible,0,0,1
+26,male,private,Hepatitis B,medium,23211.35,8,16/11/2024,24/11/2024,1,0,66,Incomplete,0,0,1
+22,female,government,Fracture,low,12020.19,4,18/04/2020,22/04/2020,1,1,77,Incomplete,3,0,1
+28,female,private,Viral Fever,low,4285.04,2,21/09/2022,23/09/2022,1,1,88,Eligible,1,0,1
+22,female,government,Asthma,medium,15406.05,3,14/05/2020,17/05/2020,1,1,63,Incomplete,0,0,1
+80,male,private,Dengue with Thrombocytopenia,high,429728.23,10,19/12/2024,29/12/2024,1,1,80,Eligible,1,0,1
+65,female,private,Fracture,low,4171.28,2,12/03/2023,14/03/2023,1,0,34,Incomplete,3,0,0
+18,female,government,Viral Fever,low,22299.64,3,21/03/2023,24/03/2023,1,1,78,Incomplete,1,0,1
+69,female,government,Cancer,high,299899.81,20,12/03/2021,01/04/2021,1,1,77,Incomplete,3,0,1
+71,male,private,Dengue with Thrombocytopenia,high,466562.96,13,29/08/2022,11/09/2022,1,1,65,Incomplete,1,0,1
+20,female,private,Cardiac Arrest,high,119178.08,24,05/05/2024,29/05/2024,1,1,71,Incomplete,0,0,1
+31,female,private,Stroke,high,285808.06,14,09/12/2024,23/12/2024,1,1,86,Eligible,4,0,1
+80,female,trust,Dengue Fever,medium,44107.3,6,19/04/2023,25/04/2023,1,1,79,Incomplete,4,0,1
+37,male,private,Cardiac Arrest,high,222181.29,27,21/06/2024,18/07/2024,1,1,68,Incomplete,4,1,1
+21,female,private,Stroke,high,367109.57,18,16/03/2022,03/04/2022,1,1,65,Incomplete,2,0,1
+31,male,government,Typhoid Fever,medium,17210.93,8,13/11/2021,21/11/2021,0,1,74,Incomplete,2,0,1
+24,male,government,Hypertension,medium,79790.79,9,05/08/2022,14/08/2022,0,1,31,Incomplete,1,0,0
+63,female,private,Kidney Failure,high,359031.93,12,28/12/2020,09/01/2021,1,1,99,Eligible,2,0,1
+70,female,private,Diabetes Mellitus,medium,79883.71,5,18/06/2020,23/06/2020,1,1,96,Eligible,2,0,1
+18,male,private,Cancer,high,85522.96,17,15/08/2020,01/09/2020,1,1,71,Incomplete,2,0,1
+61,female,government,Stroke,high,202902.93,16,16/06/2022,02/07/2022,0,1,36,Incomplete,3,0,0
+47,male,government,Heart Failure,high,353332.13,7,11/08/2023,18/08/2023,1,1,64,Incomplete,0,1,1
+36,male,private,Gastritis,low,7471.8,1,31/03/2023,01/04/2023,0,1,32,Incomplete,1,0,1
+57,female,government,Diabetes Mellitus,medium,50279.47,4,07/07/2023,11/07/2023,1,1,81,Eligible,4,0,1
+79,female,private,Heart Failure,high,459186.15,25,05/11/2023,30/11/2023,1,0,54,Incomplete,0,1,1
+79,female,government,Hepatitis B,medium,15848.13,9,09/02/2020,18/02/2020,1,1,95,Eligible,0,0,1
+63,female,private,Sepsis,high,69839.97,14,25/11/2023,09/12/2023,1,1,68,Incomplete,5,0,1
+60,male,private,Hepatitis B,medium,34939.19,8,02/12/2023,10/12/2023,1,0,55,Incomplete,3,0,1
+39,female,private,Typhoid Fever,medium,25444.21,3,13/12/2021,16/12/2021,0,1,54,Incomplete,2,0,1
+29,female,private,Hypertension,medium,49920.53,3,11/01/2021,14/01/2021,1,1,96,Eligible,5,0,1
+68,male,government,Gastritis,low,21832.25,1,22/05/2020,23/05/2020,1,0,32,Incomplete,5,0,1
+71,male,private,Heart Failure,high,52528.37,24,14/04/2024,08/05/2024,1,1,76,Incomplete,1,1,1
+23,female,private,Kidney Failure,high,148974.82,26,05/10/2020,31/10/2020,1,1,81,Eligible,3,0,1
+53,female,government,Cardiac Arrest,high,437316.69,12,28/06/2020,10/07/2020,1,1,87,Eligible,2,0,1
+32,male,private,Cancer,high,408802.78,29,16/12/2024,14/01/2025,0,1,63,Incomplete,1,0,1
+80,female,government,Typhoid Fever,medium,23195.35,4,30/06/2022,04/07/2022,0,1,40,Incomplete,1,0,1
+18,male,trust,Appendicitis,medium,60527.56,4,10/12/2020,14/12/2020,1,1,70,Incomplete,0,0,1
+68,male,government,Malaria,low,23016.94,1,20/01/2024,21/01/2024,1,1,87,Eligible,0,0,1
+45,male,government,Asthma,medium,36600.52,4,01/02/2023,05/02/2023,1,1,96,Eligible,5,0,1
+28,male,private,Kidney Failure,high,282543.81,8,22/12/2023,30/12/2023,1,1,75,Incomplete,3,0,1
+72,male,private,Diabetes Mellitus,medium,78640.81,5,31/05/2023,05/06/2023,1,1,71,Incomplete,4,0,1
+73,male,private,Hypertension,medium,23976.64,10,19/01/2024,29/01/2024,1,0,65,Incomplete,1,0,1
+26,male,private,Pneumonia,medium,18845.37,7,30/06/2020,07/07/2020,1,1,73,Incomplete,5,0,1
+65,male,trust,Diabetes Mellitus,medium,78305.98,6,07/01/2022,13/01/2022,1,1,100,Eligible,5,1,1
+58,male,private,Dengue Fever,medium,75911.8,5,26/11/2023,01/12/2023,1,0,75,Incomplete,3,0,1
+62,male,government,Fracture,low,18792.75,2,25/03/2020,27/03/2020,1,1,63,Incomplete,3,0,1
+18,male,government,Heart Failure,high,153864.1,21,23/08/2024,13/09/2024,1,1,97,Eligible,0,0,1
+26,male,private,Typhoid Fever,medium,79393.44,9,02/07/2020,11/07/2020,1,1,64,Incomplete,3,0,1
+20,male,private,Hepatitis B,medium,29181.03,3,27/05/2024,30/05/2024,1,1,94,Eligible,2,0,1
+43,male,government,Pneumonia,medium,20275.39,6,13/11/2024,19/11/2024,1,1,60,Incomplete,4,0,1
+53,female,trust,Cancer,high,257227.06,8,22/03/2024,30/03/2024,1,1,69,Incomplete,0,0,1
+41,female,private,Dengue Fever,medium,52778.88,7,13/05/2024,20/05/2024,1,0,57,Incomplete,3,0,1
+56,male,government,Fracture,low,12170.31,3,18/01/2020,21/01/2020,1,1,89,Eligible,1,0,1
+42,male,government,Cancer,high,89806.84,15,27/10/2020,11/11/2020,1,1,68,Incomplete,5,0,1
+53,female,private,Viral Fever,low,5231.06,1,20/11/2022,21/11/2022,1,1,98,Eligible,5,0,1
+77,female,private,Pneumonia,medium,62083.07,4,07/08/2024,11/08/2024,1,1,84,Eligible,2,0,1
+39,male,private,Pneumonia,medium,76570.26,8,17/01/2021,25/01/2021,1,1,75,Incomplete,1,0,1
+78,male,government,Fracture,low,4731.08,3,04/09/2024,07/09/2024,1,1,85,Eligible,0,0,1
+41,female,government,Kidney Failure,high,353812.78,17,19/10/2022,05/11/2022,1,1,77,Incomplete,5,0,1
+39,male,private,Heart Failure,high,246463.76,22,01/03/2023,23/03/2023,1,1,84,Eligible,5,0,1
+42,male,private,Cancer,high,457675.15,9,16/09/2020,25/09/2020,1,1,61,Incomplete,4,0,1
+54,female,private,Dengue with Thrombocytopenia,high,278620.51,17,26/07/2024,12/08/2024,1,1,69,Incomplete,2,0,1
+54,female,private,Kidney Failure,high,429907.77,10,07/01/2021,17/01/2021,1,1,89,Eligible,2,0,1
+67,male,private,Viral Fever,low,11465.73,3,24/07/2024,27/07/2024,0,1,46,Incomplete,5,0,0
+33,male,government,Cancer,high,185448.84,16,10/10/2021,26/10/2021,1,1,88,Eligible,4,0,1
+32,male,private,Typhoid Fever,medium,49720.26,4,06/11/2023,10/11/2023,1,1,82,Eligible,1,0,1
+23,female,private,Asthma,medium,21004.58,7,14/02/2023,21/02/2023,1,1,77,Incomplete,5,0,1
+74,female,private,Viral Fever,low,21571.11,4,25/08/2023,29/08/2023,0,1,71,Incomplete,1,0,0
+62,female,private,Cardiac Arrest,high,150153.98,21,29/06/2022,20/07/2022,1,1,85,Eligible,5,0,1
+30,female,government,Typhoid Fever,medium,33112.73,3,06/05/2020,09/05/2020,1,1,82,Eligible,1,0,1
+22,male,government,Heart Failure,high,342084.72,8,10/09/2023,18/09/2023,0,1,60,Incomplete,5,0,0
+22,female,government,Tuberculosis,medium,45102.46,6,30/09/2024,06/10/2024,0,0,19,Rejected,1,0,0
+67,male,private,Kidney Failure,high,412755.34,9,22/11/2023,01/12/2023,1,0,32,Incomplete,1,0,1
+57,female,private,Heart Failure,high,283143.86,12,11/03/2022,23/03/2022,1,0,71,Incomplete,1,0,1
+72,female,government,Fracture,low,5812.05,3,03/02/2022,06/02/2022,1,1,73,Incomplete,1,0,1
+58,female,government,Fracture,low,7182.29,2,05/12/2022,07/12/2022,0,1,60,Incomplete,5,0,0
+68,female,private,Fracture,low,7986.02,1,24/05/2022,25/05/2022,1,1,90,Eligible,3,0,1
+53,female,private,Dengue Fever,medium,27183.44,10,28/05/2023,07/06/2023,1,0,62,Incomplete,1,0,1
+42,male,private,Hypertension,medium,46940.49,9,15/11/2020,24/11/2020,0,1,65,Incomplete,1,0,1
+61,male,private,Diabetes Mellitus,medium,58304.34,9,20/09/2024,29/09/2024,1,1,94,Eligible,2,0,1
+30,female,private,Stroke,high,108960.86,13,05/03/2021,18/03/2021,1,1,69,Incomplete,1,0,1
+19,male,private,Dengue with Thrombocytopenia,high,164190.34,18,11/11/2020,29/11/2020,1,1,96,Eligible,1,0,1
+73,male,government,Tuberculosis,medium,41326.78,5,11/02/2022,16/02/2022,1,1,81,Eligible,1,0,1
+75,female,private,Fracture,low,22018.85,1,16/05/2021,17/05/2021,1,0,33,Incomplete,2,0,1
+35,male,private,Fracture,low,13682.47,2,07/10/2021,09/10/2021,1,1,67,Incomplete,5,0,1
+18,male,trust,Fracture,low,6839.33,1,15/09/2023,16/09/2023,1,1,85,Eligible,1,0,1
+60,female,government,Kidney Failure,high,191223.94,22,20/07/2021,11/08/2021,0,1,66,Incomplete,0,0,1
+60,male,government,Heart Failure,high,242653.58,15,15/01/2024,30/01/2024,0,1,73,Incomplete,2,0,1
+19,male,trust,Hepatitis B,medium,53507.63,8,09/03/2021,17/03/2021,1,1,71,Incomplete,0,0,1
+69,male,private,Typhoid Fever,medium,25967.27,3,20/11/2020,23/11/2020,0,1,61,Incomplete,0,0,0
+27,female,private,Diabetes Mellitus,medium,52152.29,9,19/03/2024,28/03/2024,1,1,89,Eligible,4,0,1
+43,male,private,Hepatitis B,medium,45846.82,5,31/05/2020,05/06/2020,1,1,74,Incomplete,0,0,1
+26,female,private,Kidney Failure,high,257172.02,29,25/11/2021,24/12/2021,1,1,99,Eligible,3,0,1
+40,male,government,Appendicitis,medium,73507.1,7,01/12/2023,08/12/2023,1,1,100,Eligible,3,0,1
+19,female,private,Tuberculosis,medium,23104.8,5,03/04/2020,08/04/2020,0,0,1,Rejected,2,0,0
+35,female,private,Hepatitis B,medium,66970.16,10,04/08/2021,14/08/2021,0,0,8,Rejected,3,0,0
+43,female,private,Gastritis,low,17638.39,4,10/06/2022,14/06/2022,1,1,97,Eligible,3,0,1
+44,male,government,Kidney Failure,high,241983.69,15,10/03/2020,25/03/2020,1,0,56,Incomplete,1,0,1
+48,male,government,Dengue Fever,medium,63042.46,9,11/07/2021,20/07/2021,1,1,88,Eligible,0,0,1
+54,female,government,Pneumonia,medium,60236.45,8,01/04/2021,09/04/2021,1,1,97,Eligible,3,0,1
+41,female,private,Hypertension,medium,49386.05,9,05/08/2022,14/08/2022,1,1,75,Incomplete,0,0,1
+36,female,trust,Dengue with Thrombocytopenia,high,206906.42,20,30/07/2021,19/08/2021,1,1,81,Eligible,2,0,1
+65,male,private,Gastritis,low,20282.42,3,09/06/2024,12/06/2024,1,1,98,Eligible,4,0,1
+33,female,government,Viral Fever,low,12919.59,3,08/04/2021,11/04/2021,1,1,93,Eligible,5,0,1
+28,male,private,Fracture,low,16053.06,4,22/10/2022,26/10/2022,0,1,43,Incomplete,4,0,1
+59,female,private,Hypertension,medium,25250.07,10,17/01/2020,27/01/2020,0,1,37,Incomplete,3,0,0
+38,female,government,Malaria,low,7239.76,4,14/07/2023,18/07/2023,1,1,97,Eligible,1,0,1
+20,male,private,Typhoid Fever,medium,34615.13,9,06/03/2023,15/03/2023,1,1,64,Incomplete,1,0,1
+54,male,private,Typhoid Fever,medium,73320.53,8,26/11/2024,04/12/2024,0,1,43,Incomplete,5,0,0
+72,female,private,Heart Failure,high,368140.45,13,13/03/2022,26/03/2022,1,1,90,Eligible,0,0,1
+80,male,government,Hepatitis B,medium,29196.06,7,20/05/2020,27/05/2020,1,1,72,Incomplete,2,0,1
+42,male,government,Diabetes Mellitus,medium,29483.45,8,15/01/2023,23/01/2023,0,1,41,Incomplete,1,0,0
+77,male,private,Dengue Fever,medium,27668.68,7,25/07/2022,01/08/2022,1,1,66,Incomplete,0,0,1
+63,female,trust,Malaria,low,20191.48,1,11/01/2023,12/01/2023,0,1,71,Incomplete,2,0,0
+54,female,government,Kidney Failure,high,481668.48,27,09/11/2020,06/12/2020,0,1,61,Incomplete,3,0,0
+47,female,private,Appendicitis,medium,34636.37,8,19/09/2024,27/09/2024,0,1,53,Incomplete,0,0,1
+57,female,trust,Cancer,high,202253.2,17,07/07/2022,24/07/2022,1,1,70,Incomplete,1,0,1
+27,male,private,Typhoid Fever,medium,16055.71,9,07/11/2021,16/11/2021,1,0,43,Incomplete,0,0,1
+30,female,private,Cancer,high,248437.94,29,12/02/2024,12/03/2024,0,1,59,Incomplete,2,0,0
+46,female,private,Pneumonia,medium,54628.71,8,12/12/2021,20/12/2021,1,1,71,Incomplete,2,0,1
+21,male,private,Tuberculosis,medium,62756.55,7,12/02/2023,19/02/2023,1,0,31,Incomplete,1,0,1
+20,male,private,Asthma,medium,44799.42,3,25/06/2024,28/06/2024,0,1,40,Incomplete,5,0,0
+21,female,private,Dengue Fever,medium,67931.07,9,19/01/2024,28/01/2024,1,1,94,Eligible,3,0,1
+71,female,government,Sepsis,high,421178.12,10,27/04/2022,07/05/2022,1,1,71,Incomplete,2,0,1
+58,male,private,Asthma,medium,25015.6,10,19/10/2023,29/10/2023,1,1,64,Incomplete,1,0,1
+20,female,trust,Kidney Failure,high,391212.25,29,31/07/2021,29/08/2021,1,1,69,Incomplete,1,0,1
+30,female,government,Hepatitis B,medium,66637.9,5,23/07/2020,28/07/2020,0,1,37,Incomplete,4,0,0
+20,male,private,Heart Failure,high,237167.9,26,01/03/2024,27/03/2024,0,1,34,Incomplete,3,0,0
+36,male,government,Fracture,low,6323.11,3,31/07/2020,03/08/2020,1,0,50,Incomplete,5,0,0
+49,male,private,Tuberculosis,medium,24236.82,9,05/10/2022,14/10/2022,1,1,95,Eligible,3,0,1
+41,female,private,Pneumonia,medium,22344.15,9,26/12/2020,04/01/2021,1,1,76,Incomplete,4,0,1
+72,male,private,Appendicitis,medium,60003.14,6,30/07/2024,05/08/2024,1,1,79,Incomplete,3,0,1
+37,female,government,Malaria,low,15762.43,1,08/11/2021,09/11/2021,1,0,40,Incomplete,0,0,1
+61,female,government,Malaria,low,4570.17,3,17/04/2024,20/04/2024,1,1,91,Eligible,2,0,1
+43,female,private,Appendicitis,medium,76595.86,8,09/05/2023,17/05/2023,1,1,88,Eligible,3,0,1
+28,female,private,Hepatitis B,medium,16139.9,9,13/06/2020,22/06/2020,1,0,68,Incomplete,1,1,1
+54,male,government,Pneumonia,medium,33579.44,8,26/05/2020,03/06/2020,1,1,86,Eligible,1,1,1
+38,female,trust,Hepatitis B,medium,30118.44,10,15/05/2021,25/05/2021,1,1,86,Eligible,1,0,1
+60,male,trust,Dengue Fever,medium,39503.91,7,17/11/2021,24/11/2021,1,0,72,Incomplete,4,0,1
+31,male,private,Fracture,low,19726.23,1,23/03/2020,24/03/2020,1,1,74,Incomplete,5,0,1
+70,male,private,Tuberculosis,medium,21133.48,5,24/08/2024,29/08/2024,1,1,78,Incomplete,4,0,1
+63,female,private,Asthma,medium,71532.46,9,17/01/2023,26/01/2023,1,1,79,Incomplete,0,0,1
+25,female,private,Viral Fever,low,14819.14,3,08/03/2022,11/03/2022,1,1,60,Incomplete,0,0,1
+54,female,private,Stroke,high,266198.69,17,30/08/2024,16/09/2024,1,1,84,Eligible,5,0,1
+65,female,government,Hypertension,medium,43297.39,6,21/09/2020,27/09/2020,1,0,69,Incomplete,1,0,1
+69,male,government,Tuberculosis,medium,27565.02,7,05/02/2020,12/02/2020,1,0,40,Incomplete,4,0,0
+68,male,private,Gastritis,low,23628.54,1,07/12/2024,08/12/2024,0,1,58,Incomplete,1,0,1
+55,female,private,Hepatitis B,medium,21274.78,6,25/11/2020,01/12/2020,0,1,33,Incomplete,1,0,0
+44,male,private,Tuberculosis,medium,19055.22,6,13/12/2021,19/12/2021,1,1,72,Incomplete,4,0,1
+18,female,government,Dengue Fever,medium,67624.85,6,07/07/2021,13/07/2021,1,1,95,Eligible,5,1,1
+53,male,government,Cancer,high,126912.24,25,13/05/2024,07/06/2024,1,0,58,Incomplete,3,0,1
+28,female,private,Cancer,high,436007.56,24,29/12/2020,22/01/2021,1,1,92,Eligible,4,0,1
+31,female,government,Cancer,high,277546.18,10,24/07/2023,03/08/2023,1,1,85,Eligible,1,0,1
+33,female,private,Asthma,medium,77733.6,3,10/08/2020,13/08/2020,1,0,72,Incomplete,4,0,1
+75,male,private,Dengue with Thrombocytopenia,high,94617.21,23,12/01/2023,04/02/2023,1,1,71,Incomplete,3,0,1
+51,female,private,Cardiac Arrest,high,232727.28,22,14/09/2022,06/10/2022,1,1,87,Eligible,5,0,1
+28,male,private,Asthma,medium,21529.33,7,01/09/2023,08/09/2023,1,0,38,Incomplete,3,0,1
+25,female,government,Malaria,low,10751.55,4,30/04/2023,04/05/2023,1,1,75,Incomplete,4,0,1
+60,female,private,Tuberculosis,medium,79393.92,5,10/08/2024,15/08/2024,1,1,85,Eligible,4,0,1
+57,female,government,Hepatitis B,medium,23993.78,6,06/07/2022,12/07/2022,1,1,96,Eligible,1,0,1
+56,female,private,Cancer,high,393798.32,16,20/02/2024,07/03/2024,1,1,98,Eligible,0,0,1
+48,male,trust,Dengue with Thrombocytopenia,high,240373.11,9,15/09/2021,24/09/2021,1,1,85,Eligible,3,1,1
+53,female,private,Gastritis,low,8608.02,3,21/12/2021,24/12/2021,1,0,62,Incomplete,1,0,1
+72,female,trust,Hypertension,medium,45032.82,10,14/08/2021,24/08/2021,1,1,73,Incomplete,3,0,1
+69,male,private,Kidney Failure,high,399382.58,7,29/12/2022,05/01/2023,1,1,98,Eligible,1,0,1
+69,female,government,Typhoid Fever,medium,77715.42,3,30/08/2020,02/09/2020,1,0,59,Incomplete,0,0,1
+53,male,private,Typhoid Fever,medium,26644.2,7,30/12/2022,06/01/2023,1,0,44,Incomplete,0,0,1
+54,male,government,Dengue Fever,medium,46360.39,6,27/09/2023,03/10/2023,1,1,76,Incomplete,5,0,1
+40,female,private,Fracture,low,6286.3,3,04/07/2022,07/07/2022,1,0,43,Incomplete,0,0,1
+66,female,government,Hypertension,medium,72759.29,8,13/05/2024,21/05/2024,1,0,52,Incomplete,3,0,1
+34,male,private,Stroke,high,349234.9,20,25/08/2021,14/09/2021,1,0,60,Incomplete,5,0,1
+25,female,trust,Tuberculosis,medium,72082.15,3,03/07/2024,06/07/2024,0,1,43,Incomplete,3,0,0
+21,male,private,Viral Fever,low,9666.35,2,31/05/2021,02/06/2021,1,1,85,Eligible,3,0,1
+79,female,trust,Asthma,medium,68202.51,5,05/02/2022,10/02/2022,1,0,39,Incomplete,1,0,1
+57,female,private,Sepsis,high,191941.87,12,21/05/2022,02/06/2022,1,1,67,Incomplete,4,1,1
+31,female,private,Stroke,high,166378.91,22,21/09/2021,13/10/2021,1,1,78,Incomplete,5,0,1
+56,male,trust,Dengue with Thrombocytopenia,high,196815.91,14,16/07/2020,30/07/2020,1,1,91,Eligible,0,0,1
+39,female,government,Appendicitis,medium,25804.57,3,24/08/2024,27/08/2024,0,1,38,Incomplete,5,0,0
+77,male,private,Sepsis,high,465411.07,11,03/08/2023,14/08/2023,1,1,70,Incomplete,3,0,1
+59,male,government,Dengue with Thrombocytopenia,high,300058.27,28,29/12/2023,26/01/2024,1,1,71,Incomplete,4,0,1
+61,female,government,Pneumonia,medium,21591.2,8,24/08/2020,01/09/2020,1,1,88,Eligible,0,0,1
+51,male,private,Heart Failure,high,319678.85,21,13/06/2021,04/07/2021,1,1,74,Incomplete,2,0,1
+67,male,private,Gastritis,low,22224.59,3,07/02/2024,10/02/2024,0,1,59,Incomplete,0,0,1
+62,female,private,Appendicitis,medium,33810.02,6,20/05/2023,26/05/2023,0,1,62,Incomplete,4,1,0
+25,male,government,Cancer,high,443231.12,29,20/05/2020,18/06/2020,1,1,93,Eligible,4,0,1
+77,male,private,Malaria,low,14132.61,2,26/12/2024,28/12/2024,1,1,82,Eligible,1,0,1
+30,male,private,Gastritis,low,12565.49,1,09/10/2021,10/10/2021,1,0,74,Incomplete,2,0,1
+77,female,private,Fracture,low,20867.69,1,25/05/2024,26/05/2024,0,1,36,Incomplete,2,0,1
+30,female,trust,Viral Fever,low,13924.41,4,14/02/2024,18/02/2024,1,1,70,Incomplete,4,0,1
+77,male,private,Gastritis,low,7617.8,2,22/03/2022,24/03/2022,1,1,84,Eligible,5,0,1
+80,female,government,Dengue Fever,medium,53190.23,3,14/04/2023,17/04/2023,1,0,64,Incomplete,4,0,1
+32,male,private,Asthma,medium,69122.92,8,01/11/2023,09/11/2023,1,1,94,Eligible,4,0,1
+36,female,private,Tuberculosis,medium,40341.06,7,16/02/2024,23/02/2024,1,1,99,Eligible,5,0,1
+46,male,government,Asthma,medium,68552.54,10,27/12/2024,06/01/2025,1,1,82,Eligible,4,0,1
+65,male,private,Hepatitis B,medium,26644.76,10,26/05/2020,05/06/2020,1,1,94,Eligible,4,0,1
+71,male,private,Pneumonia,medium,49373.06,10,19/01/2021,29/01/2021,1,1,81,Eligible,4,0,1
+77,female,private,Hypertension,medium,66662.33,9,26/02/2021,07/03/2021,1,1,93,Eligible,3,0,1
+23,male,private,Appendicitis,medium,28644.8,8,26/10/2022,03/11/2022,1,1,67,Incomplete,0,0,1
+49,male,government,Viral Fever,low,15681.63,1,22/12/2024,23/12/2024,1,1,96,Eligible,5,0,1
+46,female,private,Hepatitis B,medium,39076.42,9,29/10/2020,07/11/2020,1,1,74,Incomplete,2,0,1
+65,male,private,Stroke,high,395960.99,17,01/10/2023,18/10/2023,1,1,61,Incomplete,5,0,1
+54,male,government,Hepatitis B,medium,15678.29,5,22/10/2024,27/10/2024,1,1,79,Incomplete,1,0,1
+40,male,trust,Fracture,low,3929.78,3,30/04/2020,03/05/2020,1,1,92,Eligible,5,0,1
+38,male,private,Pneumonia,medium,28791.53,6,02/08/2022,08/08/2022,1,1,93,Eligible,3,0,1
+26,female,private,Diabetes Mellitus,medium,59863.46,9,09/11/2022,18/11/2022,1,1,75,Incomplete,4,0,1
+58,female,government,Asthma,medium,78402.8,9,18/03/2024,27/03/2024,0,1,48,Incomplete,3,0,0
+59,female,trust,Kidney Failure,high,157733.95,25,25/09/2022,20/10/2022,1,1,67,Incomplete,0,0,1
+43,male,private,Pneumonia,medium,74215.88,10,23/08/2022,02/09/2022,1,0,40,Incomplete,4,0,1
+42,female,government,Typhoid Fever,medium,74417.32,5,27/08/2021,01/09/2021,1,1,76,Incomplete,2,0,1
+22,male,government,Hypertension,medium,79946.44,8,03/08/2022,11/08/2022,1,1,94,Eligible,5,0,1
+71,female,government,Dengue Fever,medium,77616.75,6,17/03/2020,23/03/2020,1,1,68,Incomplete,3,0,1
+34,male,trust,Sepsis,high,143838.78,23,02/10/2020,25/10/2020,1,1,76,Incomplete,5,0,1
+51,male,government,Hepatitis B,medium,66626.05,9,14/02/2020,23/02/2020,1,0,61,Incomplete,3,0,1
+58,male,private,Hepatitis B,medium,26253.66,7,03/01/2023,10/01/2023,1,1,77,Incomplete,2,0,1
+25,male,private,Cardiac Arrest,high,386877.47,11,18/07/2022,29/07/2022,1,0,47,Incomplete,1,1,1
+69,male,trust,Hypertension,medium,69544.34,7,07/08/2024,14/08/2024,1,1,62,Incomplete,1,0,1
+55,male,private,Malaria,low,7522.02,4,20/08/2022,24/08/2022,1,1,92,Eligible,1,0,1
+43,female,private,Sepsis,high,56266.05,10,29/05/2021,08/06/2021,1,0,30,Incomplete,4,0,1
+30,female,private,Typhoid Fever,medium,50421.82,5,21/03/2022,26/03/2022,1,1,62,Incomplete,2,0,1
+73,male,government,Diabetes Mellitus,medium,17265.26,8,29/08/2023,06/09/2023,1,0,47,Incomplete,2,0,1
+63,female,private,Hepatitis B,medium,21480.81,5,16/03/2021,21/03/2021,1,1,75,Incomplete,4,0,1
+57,female,private,Dengue with Thrombocytopenia,high,94455.81,11,23/07/2023,03/08/2023,0,1,59,Incomplete,0,0,1
+48,male,private,Kidney Failure,high,439497.57,20,22/03/2023,11/04/2023,1,0,35,Incomplete,3,0,0
+29,female,private,Typhoid Fever,medium,69104.81,6,22/11/2023,28/11/2023,1,0,64,Incomplete,4,0,1
+37,female,trust,Malaria,low,5182.77,2,20/02/2022,22/02/2022,0,0,34,Rejected,3,0,0
+28,male,private,Pneumonia,medium,17066.84,6,17/11/2021,23/11/2021,1,1,68,Incomplete,0,0,1
+44,male,government,Typhoid Fever,medium,45215.01,8,23/05/2023,31/05/2023,0,0,15,Rejected,1,0,0
+79,male,private,Typhoid Fever,medium,29052.21,4,03/08/2022,07/08/2022,1,1,88,Eligible,1,0,1
+31,female,private,Hepatitis B,medium,63310.89,4,25/08/2022,29/08/2022,1,1,71,Incomplete,0,1,1
+38,female,government,Cancer,high,499457.13,25,15/08/2020,09/09/2020,1,1,64,Incomplete,3,0,1
+34,female,trust,Fracture,low,4183.46,2,23/10/2020,25/10/2020,1,1,68,Incomplete,1,0,1
+59,female,private,Typhoid Fever,medium,37250.88,7,15/03/2021,22/03/2021,1,0,72,Incomplete,5,1,0
+37,female,private,Sepsis,high,219122.43,13,16/02/2020,29/02/2020,1,1,100,Eligible,2,0,1
+77,male,trust,Sepsis,high,85506.26,26,11/08/2022,06/09/2022,1,1,61,Incomplete,5,0,1
+70,female,private,Hepatitis B,medium,37799.11,3,21/02/2022,24/02/2022,0,0,7,Rejected,2,0,0
+55,male,trust,Tuberculosis,medium,50132.02,7,08/04/2022,15/04/2022,1,1,86,Eligible,2,0,1
+68,female,private,Pneumonia,medium,45134.58,3,30/04/2020,03/05/2020,1,1,89,Eligible,2,1,1
+46,male,government,Hepatitis B,medium,52172.66,7,01/10/2022,08/10/2022,1,1,65,Incomplete,3,0,1
+43,male,government,Kidney Failure,high,482876.49,11,04/07/2023,15/07/2023,1,1,74,Incomplete,2,0,1
+45,female,private,Stroke,high,276876.36,14,28/08/2020,11/09/2020,1,1,80,Eligible,2,0,1
+63,male,government,Tuberculosis,medium,79861.62,10,12/02/2021,22/02/2021,1,1,60,Incomplete,2,0,1
+74,male,private,Appendicitis,medium,18962.37,9,07/02/2020,16/02/2020,1,1,85,Eligible,3,0,1
+57,male,private,Typhoid Fever,medium,48871.0,4,22/04/2024,26/04/2024,0,0,0,Rejected,0,0,0
+42,male,private,Fracture,low,18081.24,4,16/02/2021,20/02/2021,1,1,94,Eligible,4,0,1
+20,female,private,Typhoid Fever,medium,66685.19,7,20/11/2021,27/11/2021,1,1,65,Incomplete,4,0,1
+42,male,private,Dengue Fever,medium,16498.75,7,07/05/2023,14/05/2023,1,1,67,Incomplete,0,0,1
+78,female,government,Diabetes Mellitus,medium,49020.44,8,23/06/2020,01/07/2020,0,1,71,Incomplete,2,0,1
+50,male,private,Hepatitis B,medium,24755.28,6,07/02/2020,13/02/2020,1,1,60,Incomplete,0,0,1
+66,male,trust,Viral Fever,low,12044.55,3,03/07/2022,06/07/2022,1,1,98,Eligible,2,0,1
+73,female,private,Cancer,high,116721.43,10,19/04/2020,29/04/2020,0,0,1,Rejected,1,0,0
+76,male,private,Malaria,low,23254.31,2,29/08/2023,31/08/2023,1,1,78,Incomplete,0,0,1
+27,male,government,Malaria,low,14017.54,4,23/05/2020,27/05/2020,1,1,68,Incomplete,3,0,1
+58,male,private,Cancer,high,121896.24,18,31/03/2021,18/04/2021,1,0,48,Incomplete,0,0,1
+67,male,government,Asthma,medium,21966.89,9,25/08/2020,03/09/2020,1,1,100,Eligible,2,0,1
+36,female,private,Hypertension,medium,18954.1,5,17/05/2023,22/05/2023,1,1,86,Eligible,0,0,1
+53,male,private,Malaria,low,13082.19,1,01/03/2020,02/03/2020,1,1,71,Incomplete,1,0,1
+54,female,government,Diabetes Mellitus,medium,20822.13,7,01/03/2020,08/03/2020,1,1,60,Incomplete,3,0,1
+66,female,private,Fracture,low,9865.24,1,25/01/2024,26/01/2024,1,1,71,Incomplete,1,0,1
+32,female,private,Kidney Failure,high,98181.92,17,29/06/2020,16/07/2020,1,1,100,Eligible,1,0,1
+49,male,private,Viral Fever,low,10693.89,1,13/05/2022,14/05/2022,1,1,70,Incomplete,1,0,1
+65,male,private,Stroke,high,227408.49,23,08/01/2020,31/01/2020,1,1,84,Eligible,2,0,1
+78,male,private,Pneumonia,medium,78931.73,10,26/06/2023,06/07/2023,1,1,94,Eligible,3,0,1
+68,female,private,Sepsis,high,423441.2,12,18/09/2023,30/09/2023,1,1,83,Eligible,0,1,1
+69,female,government,Malaria,low,13634.2,2,09/09/2021,11/09/2021,0,1,47,Incomplete,1,0,0
+64,female,private,Kidney Failure,high,118562.17,11,14/08/2020,25/08/2020,0,1,57,Incomplete,2,0,1
+28,female,government,Viral Fever,low,20284.4,4,05/02/2020,09/02/2020,1,1,78,Incomplete,5,0,1
+24,female,private,Appendicitis,medium,50778.03,5,23/12/2022,28/12/2022,1,0,72,Incomplete,3,0,1
+39,female,private,Malaria,low,20738.41,1,22/01/2024,23/01/2024,1,1,86,Eligible,4,1,1
+43,female,government,Typhoid Fever,medium,70038.25,4,30/07/2024,03/08/2024,1,0,40,Incomplete,2,0,1
+23,male,private,Fracture,low,5606.21,1,02/04/2022,03/04/2022,1,1,93,Eligible,3,1,1
+49,male,private,Hypertension,medium,40028.29,6,29/04/2020,05/05/2020,1,1,72,Incomplete,0,0,1
+70,male,government,Diabetes Mellitus,medium,67493.2,3,07/03/2020,10/03/2020,1,1,90,Eligible,0,0,1
+65,male,private,Hepatitis B,medium,64525.29,9,10/02/2023,19/02/2023,0,1,70,Incomplete,3,0,0
+66,female,private,Dengue with Thrombocytopenia,high,374791.34,10,13/06/2021,23/06/2021,1,1,100,Eligible,3,0,1
+73,female,government,Typhoid Fever,medium,20007.69,8,15/06/2022,23/06/2022,1,1,67,Incomplete,0,0,1
+53,female,private,Malaria,low,13376.82,4,15/05/2024,19/05/2024,1,0,44,Incomplete,3,0,1
+24,female,private,Typhoid Fever,medium,59866.86,10,15/08/2020,25/08/2020,1,0,42,Incomplete,5,0,1
+58,female,private,Viral Fever,low,13789.02,2,04/09/2020,06/09/2020,1,1,62,Incomplete,3,0,1
+73,male,private,Typhoid Fever,medium,66887.48,3,25/01/2023,28/01/2023,1,1,83,Eligible,2,0,1
+20,male,private,Tuberculosis,medium,58493.43,6,23/08/2021,29/08/2021,1,0,55,Incomplete,1,0,1
+43,male,government,Kidney Failure,high,351000.35,24,22/02/2022,18/03/2022,1,1,85,Eligible,5,0,1
+69,female,government,Heart Failure,high,246618.8,10,14/11/2023,24/11/2023,1,1,83,Eligible,5,0,1
+23,female,government,Dengue Fever,medium,69517.42,5,02/09/2021,07/09/2021,1,0,30,Incomplete,1,0,0
+80,female,private,Tuberculosis,medium,70154.75,4,10/12/2023,14/12/2023,1,1,96,Eligible,1,0,1
+50,male,private,Fracture,low,3224.82,4,07/08/2020,11/08/2020,1,1,60,Incomplete,2,0,1
+27,male,government,Heart Failure,high,219675.65,18,13/01/2024,31/01/2024,1,1,84,Eligible,5,0,1
+32,female,private,Fracture,low,15098.91,1,10/07/2020,11/07/2020,1,1,77,Incomplete,3,0,1
+49,female,government,Hypertension,medium,45709.81,8,04/02/2023,12/02/2023,1,1,67,Incomplete,1,0,1
+75,female,government,Sepsis,high,413231.0,14,01/10/2020,15/10/2020,1,1,91,Eligible,4,0,1
+34,male,private,Kidney Failure,high,393092.25,26,21/07/2024,16/08/2024,1,1,84,Eligible,0,0,1
+45,female,trust,Viral Fever,low,20009.61,2,17/08/2022,19/08/2022,0,0,6,Rejected,0,0,0
+70,female,government,Hypertension,medium,39977.82,10,23/06/2021,03/07/2021,1,1,74,Incomplete,3,0,1
+31,male,government,Sepsis,high,188103.03,23,12/04/2021,05/05/2021,0,0,28,Rejected,2,0,0
+50,female,private,Stroke,high,222495.19,25,27/11/2020,22/12/2020,1,1,85,Eligible,5,0,1
+75,female,private,Tuberculosis,medium,48552.64,3,06/09/2021,09/09/2021,1,1,68,Incomplete,0,0,1
+61,male,private,Pneumonia,medium,76463.7,6,26/10/2024,01/11/2024,1,1,95,Eligible,3,0,1
+40,male,private,Appendicitis,medium,43030.43,10,29/10/2022,08/11/2022,1,1,61,Incomplete,2,0,1
+43,male,private,Tuberculosis,medium,60104.91,8,16/05/2024,24/05/2024,1,1,82,Eligible,0,0,1
+67,male,private,Sepsis,high,309969.73,9,29/02/2024,09/03/2024,1,1,88,Eligible,3,0,1
+38,male,trust,Cardiac Arrest,high,252604.33,22,17/02/2024,10/03/2024,1,1,91,Eligible,5,0,1
+28,female,government,Diabetes Mellitus,medium,60790.14,6,26/02/2020,03/03/2020,1,1,69,Incomplete,1,0,1
+65,male,private,Stroke,high,131118.07,12,17/12/2023,29/12/2023,1,1,90,Eligible,0,0,1
+71,female,private,Heart Failure,high,241666.87,22,04/09/2020,26/09/2020,0,0,18,Rejected,1,0,0
+41,male,private,Gastritis,low,21417.29,2,07/04/2022,09/04/2022,0,0,6,Rejected,3,0,0
+31,male,private,Tuberculosis,medium,73401.77,9,09/03/2024,18/03/2024,1,1,95,Eligible,0,0,1
+29,female,private,Viral Fever,low,21234.16,4,04/05/2020,08/05/2020,1,1,88,Eligible,3,0,1
+76,male,trust,Diabetes Mellitus,medium,75050.31,3,01/07/2022,04/07/2022,1,1,62,Incomplete,2,0,1
+29,female,private,Stroke,high,164212.33,19,26/07/2021,14/08/2021,1,1,88,Eligible,1,0,1
+45,male,private,Asthma,medium,50095.53,3,26/02/2023,01/03/2023,1,1,80,Eligible,2,0,1
+57,female,government,Hypertension,medium,29233.95,6,23/05/2023,29/05/2023,0,1,61,Incomplete,1,0,0
+28,male,private,Kidney Failure,high,206627.76,16,07/04/2020,23/04/2020,1,1,87,Eligible,0,0,1
+63,female,trust,Stroke,high,340646.74,12,14/08/2024,26/08/2024,1,0,71,Incomplete,2,0,1
+55,female,government,Viral Fever,low,19476.21,3,15/04/2023,18/04/2023,0,1,62,Incomplete,4,0,0
+44,female,trust,Heart Failure,high,430919.39,12,14/02/2020,26/02/2020,0,0,6,Rejected,4,0,0
+56,male,private,Tuberculosis,medium,65157.07,7,30/01/2022,06/02/2022,1,1,62,Incomplete,2,0,1
+76,male,private,Hepatitis B,medium,26267.93,8,17/11/2020,25/11/2020,1,1,71,Incomplete,0,0,1
+40,male,private,Dengue Fever,medium,67623.19,8,28/08/2023,05/09/2023,1,1,67,Incomplete,4,0,1
+39,female,private,Cardiac Arrest,high,151716.35,25,09/04/2022,04/05/2022,1,1,95,Eligible,2,0,1
+57,male,private,Fracture,low,22253.23,2,26/08/2021,28/08/2021,1,0,57,Incomplete,1,1,1
+19,female,private,Hepatitis B,medium,79988.38,4,17/04/2021,21/04/2021,0,1,47,Incomplete,2,0,1
+21,female,government,Cardiac Arrest,high,226769.81,26,26/11/2024,22/12/2024,1,0,33,Incomplete,0,0,1
+43,male,private,Diabetes Mellitus,medium,44886.07,8,19/04/2023,27/04/2023,1,0,30,Incomplete,3,0,0
+59,male,private,Hepatitis B,medium,73609.66,4,01/12/2021,05/12/2021,1,0,58,Incomplete,0,0,1
+48,female,trust,Fracture,low,5818.39,3,17/05/2022,20/05/2022,1,0,62,Incomplete,5,0,1
+42,male,private,Pneumonia,medium,72873.16,4,21/05/2022,25/05/2022,1,1,61,Incomplete,0,0,1
+60,female,private,Cardiac Arrest,high,171716.95,12,26/01/2021,07/02/2021,1,0,74,Incomplete,1,0,1
+18,female,private,Hypertension,medium,28642.44,5,29/04/2024,04/05/2024,0,1,49,Incomplete,1,0,0
+51,female,government,Sepsis,high,257447.97,15,13/10/2020,28/10/2020,1,1,83,Eligible,5,0,1
+27,male,private,Malaria,low,8197.87,3,03/08/2024,06/08/2024,1,1,94,Eligible,0,0,1
+37,female,private,Sepsis,high,244139.93,19,22/07/2023,10/08/2023,1,0,43,Incomplete,1,0,1
+55,female,government,Heart Failure,high,211085.8,8,18/06/2023,26/06/2023,1,1,94,Eligible,5,0,1
+35,male,government,Malaria,low,17003.88,3,27/05/2024,30/05/2024,1,1,94,Eligible,1,0,1
+62,female,private,Sepsis,high,232038.86,7,18/12/2020,25/12/2020,1,1,90,Eligible,1,0,1
+41,female,government,Appendicitis,medium,62912.4,9,13/06/2020,22/06/2020,1,0,41,Incomplete,2,1,0
+52,male,trust,Heart Failure,high,125601.19,16,13/12/2024,29/12/2024,1,1,72,Incomplete,4,0,1
+59,male,private,Diabetes Mellitus,medium,66539.73,7,18/05/2021,25/05/2021,0,1,41,Incomplete,4,1,0
+56,female,private,Kidney Failure,high,424163.88,8,27/06/2022,05/07/2022,0,1,46,Incomplete,2,0,0
+79,female,private,Cancer,high,133300.2,16,04/09/2022,20/09/2022,1,0,44,Incomplete,4,0,0
+54,male,government,Fracture,low,19786.34,2,08/01/2023,10/01/2023,0,1,59,Incomplete,0,0,1
+32,female,private,Typhoid Fever,medium,42291.68,5,13/02/2020,18/02/2020,1,1,80,Eligible,3,0,1
+77,female,private,Dengue Fever,medium,78415.07,5,17/11/2024,22/11/2024,1,1,93,Eligible,5,0,1
+18,female,private,Fracture,low,6816.21,4,09/07/2021,13/07/2021,0,1,72,Incomplete,1,0,0
+31,male,government,Cancer,high,55593.86,26,11/06/2024,07/07/2024,1,1,87,Eligible,2,0,1
+63,male,government,Kidney Failure,high,174209.8,16,31/07/2024,16/08/2024,0,1,59,Incomplete,1,0,1
+51,female,trust,Sepsis,high,452433.02,8,20/03/2024,28/03/2024,1,1,76,Incomplete,4,0,1
+80,male,trust,Viral Fever,low,20794.74,3,27/08/2022,30/08/2022,1,0,65,Incomplete,3,1,0
+71,female,government,Dengue with Thrombocytopenia,high,304084.37,16,19/12/2020,04/01/2021,1,0,40,Incomplete,2,0,1
+37,female,government,Viral Fever,low,19908.81,2,10/12/2020,12/12/2020,1,1,81,Eligible,1,0,1
+54,female,government,Stroke,high,392384.97,12,23/01/2020,04/02/2020,1,1,94,Eligible,2,0,1
+71,male,private,Cancer,high,305518.99,29,29/07/2021,27/08/2021,1,0,57,Incomplete,5,0,0
+59,male,government,Typhoid Fever,medium,37028.73,8,22/10/2022,30/10/2022,1,1,77,Incomplete,1,0,1
+33,female,government,Hepatitis B,medium,16040.22,3,22/06/2024,25/06/2024,1,1,94,Eligible,0,0,1
+21,female,trust,Sepsis,high,381667.64,14,24/08/2021,07/09/2021,1,1,93,Eligible,2,0,1
+21,female,government,Kidney Failure,high,294004.49,27,13/07/2022,09/08/2022,1,1,86,Eligible,2,0,1
+26,female,trust,Fracture,low,15175.96,1,15/07/2024,16/07/2024,1,1,65,Incomplete,4,0,1
+65,male,private,Dengue Fever,medium,44432.75,5,25/11/2023,30/11/2023,1,0,63,Incomplete,2,0,1
+59,female,private,Typhoid Fever,medium,78459.04,9,14/01/2022,23/01/2022,1,1,81,Eligible,0,0,1
+46,female,government,Cancer,high,279138.22,7,08/03/2021,15/03/2021,1,1,73,Incomplete,0,0,1
+62,male,private,Asthma,medium,26897.37,9,10/01/2021,19/01/2021,1,1,96,Eligible,5,0,1
+57,male,private,Malaria,low,14177.88,4,04/11/2022,08/11/2022,1,1,81,Eligible,5,0,1
+42,female,government,Appendicitis,medium,41956.15,5,15/09/2021,20/09/2021,1,1,92,Eligible,3,0,1
+65,female,private,Cardiac Arrest,high,429729.13,16,28/07/2023,13/08/2023,1,0,37,Incomplete,5,0,1
+59,female,private,Diabetes Mellitus,medium,71180.71,10,30/10/2023,09/11/2023,0,1,41,Incomplete,0,0,1
+66,male,private,Hepatitis B,medium,45846.83,5,16/07/2024,21/07/2024,1,1,99,Eligible,0,0,1
+70,male,government,Sepsis,high,302833.53,29,07/05/2022,05/06/2022,1,1,73,Incomplete,1,0,1
+65,male,trust,Asthma,medium,68453.3,7,22/09/2021,29/09/2021,1,1,70,Incomplete,0,0,1
+52,male,private,Diabetes Mellitus,medium,77246.68,3,11/09/2021,14/09/2021,0,1,66,Incomplete,4,0,1
+19,female,private,Dengue with Thrombocytopenia,high,78579.23,24,27/11/2021,21/12/2021,1,0,46,Incomplete,4,0,1
+32,female,private,Fracture,low,18342.24,1,22/05/2024,23/05/2024,1,1,86,Eligible,3,0,1
+42,female,private,Viral Fever,low,17911.62,1,04/12/2021,05/12/2021,0,1,46,Incomplete,4,0,0
+75,male,private,Cardiac Arrest,high,139870.92,8,08/07/2022,16/07/2022,0,0,38,Rejected,1,0,0
+20,female,private,Dengue Fever,medium,17020.71,3,12/07/2023,15/07/2023,1,1,64,Incomplete,3,0,1
+51,male,trust,Dengue with Thrombocytopenia,high,297620.5,16,26/08/2023,11/09/2023,1,1,80,Eligible,0,0,1
+47,male,private,Malaria,low,17514.96,2,25/11/2021,27/11/2021,1,1,77,Incomplete,0,0,1
+18,female,government,Hepatitis B,medium,61750.1,9,16/12/2024,25/12/2024,1,0,60,Incomplete,3,0,0
+53,male,private,Malaria,low,21494.78,1,06/05/2021,07/05/2021,1,1,71,Incomplete,3,0,1
+35,female,government,Appendicitis,medium,67199.46,5,20/02/2022,25/02/2022,1,1,93,Eligible,5,0,1
+75,male,private,Diabetes Mellitus,medium,15711.88,7,08/03/2024,15/03/2024,1,1,69,Incomplete,2,0,1
+31,female,private,Dengue with Thrombocytopenia,high,313505.1,14,15/11/2020,29/11/2020,1,1,71,Incomplete,4,0,1
+46,female,private,Dengue Fever,medium,54652.92,10,22/08/2023,01/09/2023,0,1,48,Incomplete,1,0,0
+72,female,government,Dengue Fever,medium,38065.89,9,01/12/2023,10/12/2023,1,1,94,Eligible,3,0,1
+61,male,trust,Fracture,low,21195.52,2,11/07/2021,13/07/2021,0,1,66,Incomplete,3,0,0
+51,female,trust,Viral Fever,low,12044.51,2,08/02/2021,10/02/2021,1,0,55,Incomplete,3,0,1
+80,female,government,Gastritis,low,4621.18,3,02/02/2022,05/02/2022,1,1,71,Incomplete,1,0,1
+29,female,private,Tuberculosis,medium,77480.99,5,28/02/2023,05/03/2023,0,1,34,Incomplete,3,0,0
+55,female,private,Tuberculosis,medium,73015.12,5,11/02/2022,16/02/2022,1,1,95,Eligible,1,0,1
+65,female,private,Kidney Failure,high,281645.55,22,25/12/2023,16/01/2024,1,0,57,Incomplete,0,0,1
+34,male,private,Dengue Fever,medium,76589.26,7,11/07/2024,18/07/2024,1,1,66,Incomplete,2,0,1
+65,male,government,Dengue with Thrombocytopenia,high,119641.05,19,15/09/2020,04/10/2020,0,0,4,Rejected,2,0,0
+80,female,private,Kidney Failure,high,428034.1,30,23/01/2024,22/02/2024,1,1,79,Incomplete,5,0,1
+72,male,government,Gastritis,low,4555.77,1,07/09/2021,08/09/2021,0,1,66,Incomplete,3,0,1
+71,female,private,Pneumonia,medium,53443.39,9,11/01/2023,20/01/2023,1,1,84,Eligible,2,0,1
+36,male,government,Cardiac Arrest,high,486329.45,11,22/08/2023,02/09/2023,0,0,21,Rejected,1,1,0
+45,female,government,Dengue with Thrombocytopenia,high,330073.37,24,18/06/2021,12/07/2021,1,1,96,Eligible,4,0,1
+59,female,private,Kidney Failure,high,109268.87,9,09/01/2020,18/01/2020,1,1,100,Eligible,0,0,1
+44,male,trust,Malaria,low,15581.16,2,10/09/2022,12/09/2022,1,1,78,Incomplete,0,0,1
+49,female,private,Hypertension,medium,35669.2,6,28/05/2020,03/06/2020,1,1,85,Eligible,0,1,1
+49,female,private,Appendicitis,medium,19762.85,3,17/12/2021,20/12/2021,1,0,66,Incomplete,5,0,0
+27,female,government,Dengue with Thrombocytopenia,high,318929.1,25,25/05/2020,19/06/2020,1,1,73,Incomplete,3,1,1
+64,male,private,Gastritis,low,9051.36,3,07/07/2022,10/07/2022,1,0,47,Incomplete,3,0,1
+65,female,private,Pneumonia,medium,35488.86,3,14/05/2020,17/05/2020,1,1,80,Eligible,0,0,1
+22,female,private,Dengue Fever,medium,70466.59,4,01/01/2022,05/01/2022,1,1,70,Incomplete,4,0,1
+35,female,private,Kidney Failure,high,487220.24,26,16/03/2020,11/04/2020,1,1,82,Eligible,4,1,1
+52,male,government,Hypertension,medium,73187.84,7,14/07/2022,21/07/2022,1,1,85,Eligible,5,0,1
+60,male,private,Kidney Failure,high,340975.61,22,08/08/2024,30/08/2024,0,1,67,Incomplete,1,0,0
+63,female,private,Cardiac Arrest,high,102753.35,7,19/07/2021,26/07/2021,1,1,94,Eligible,1,0,1
+19,male,trust,Hepatitis B,medium,40587.66,3,24/11/2020,27/11/2020,1,1,94,Eligible,4,0,1
+58,male,private,Stroke,high,293218.2,19,06/11/2020,25/11/2020,1,1,81,Eligible,0,0,1
+36,female,private,Dengue with Thrombocytopenia,high,440128.24,14,19/01/2024,02/02/2024,1,1,72,Incomplete,0,0,1
+47,female,private,Viral Fever,low,14069.03,1,04/11/2022,05/11/2022,1,1,91,Eligible,0,0,1
+53,female,government,Dengue Fever,medium,25932.19,4,23/10/2023,27/10/2023,1,1,94,Eligible,5,0,1
+74,female,government,Fracture,low,5021.26,2,26/10/2023,28/10/2023,1,1,66,Incomplete,2,0,1
+39,male,private,Cardiac Arrest,high,410154.12,12,08/05/2021,20/05/2021,1,0,71,Incomplete,3,1,1
+69,male,private,Pneumonia,medium,35380.06,10,15/05/2023,25/05/2023,1,1,77,Incomplete,2,0,1
+48,male,private,Asthma,medium,74704.7,4,06/02/2021,10/02/2021,1,0,54,Incomplete,5,0,1
+54,female,government,Fracture,low,8990.58,4,29/11/2024,03/12/2024,1,1,68,Incomplete,3,0,1
+62,female,government,Typhoid Fever,medium,30085.8,5,28/01/2020,02/02/2020,1,0,64,Incomplete,2,1,1
+49,female,private,Typhoid Fever,medium,73945.22,9,24/11/2022,03/12/2022,0,1,33,Incomplete,3,0,0
+43,male,private,Cancer,high,216934.06,30,21/09/2020,21/10/2020,1,1,100,Eligible,3,0,1
+57,male,private,Typhoid Fever,medium,53131.71,4,28/04/2023,02/05/2023,1,0,45,Incomplete,5,1,0
+26,male,private,Dengue with Thrombocytopenia,high,202534.89,13,11/11/2023,24/11/2023,1,1,83,Eligible,4,0,1
+41,male,government,Hypertension,medium,57202.37,9,17/01/2021,26/01/2021,0,1,64,Incomplete,3,1,0
+40,female,government,Gastritis,low,8671.37,2,13/07/2021,15/07/2021,0,1,65,Incomplete,4,0,0
+77,female,private,Fracture,low,4992.38,1,15/02/2023,16/02/2023,1,0,65,Incomplete,4,0,1
+40,male,private,Gastritis,low,19765.96,4,26/03/2022,30/03/2022,1,0,73,Incomplete,2,0,1
+57,female,government,Dengue Fever,medium,60461.74,3,17/02/2022,20/02/2022,1,1,66,Incomplete,3,0,1
+52,female,private,Typhoid Fever,medium,15681.53,5,08/07/2022,13/07/2022,1,1,85,Eligible,0,0,1
+69,male,private,Heart Failure,high,214324.67,18,25/05/2020,12/06/2020,1,1,64,Incomplete,3,0,1
+78,male,private,Cancer,high,414033.49,20,09/10/2021,29/10/2021,0,1,66,Incomplete,0,0,0
+34,female,private,Diabetes Mellitus,medium,30944.17,7,30/10/2021,06/11/2021,1,1,84,Eligible,2,0,1
+31,male,private,Cardiac Arrest,high,312586.09,30,15/10/2021,14/11/2021,1,1,65,Incomplete,5,0,1
+54,female,private,Cancer,high,431425.58,25,08/04/2022,03/05/2022,1,1,67,Incomplete,4,0,1
+63,female,private,Viral Fever,low,13120.13,1,25/01/2023,26/01/2023,1,1,71,Incomplete,1,0,1
+72,female,private,Diabetes Mellitus,medium,32248.35,3,18/10/2024,21/10/2024,1,0,41,Incomplete,1,1,0
+45,female,private,Fracture,low,7172.38,2,31/07/2024,02/08/2024,1,1,90,Eligible,1,0,1
+31,female,private,Gastritis,low,3878.2,2,13/11/2024,15/11/2024,1,1,85,Eligible,3,0,1
+59,male,private,Viral Fever,low,12664.51,2,29/04/2021,01/05/2021,1,1,81,Eligible,5,0,1

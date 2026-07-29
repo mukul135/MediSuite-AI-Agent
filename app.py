@@ -18,6 +18,9 @@ from PIL import Image       # Pillow: open and process image files
 from pdf2image import convert_from_path  # Convert PDF pages → images for OCR
 from extractor.medical_nlp import analyze_medical_text, result_to_json
 from extractor.claim_verifier import verify_claim, build_fields_from_records
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ml.predict_claim import predict, is_model_ready, get_model_metrics
 
 # ============================================================
 #  1. CREATE THE FLASK APP
@@ -777,6 +780,206 @@ def claim_verification_history():
  
     return render_template('claim_verification_history.html', verifications=verifications)
  
+# ============================================================
+#  8. AI Claim Approval Prediction Routes
+# ============================================================
+
+
+@app.route('/claim-prediction', methods=['GET', 'POST'])
+def claim_prediction():
+    """
+    GET:  Show prediction form. If ?claim_id=X, pre-fill from saved claim
+          and also load latest verification result for that claim.
+    POST: Run prediction with submitted form data.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    result         = None
+    prefill        = {}
+    model_ready    = is_model_ready()
+    model_metrics  = get_model_metrics()
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+ 
+    claim_id = request.args.get('claim_id', '')
+ 
+    # ── GET: pre-fill from claim + verification record ─────────────────────────
+    if claim_id and request.method == 'GET':
+        # Load claim
+        cursor.execute(
+            'SELECT * FROM claims WHERE id = %s AND submitted_by = %s',
+            (claim_id, session['email'])
+        )
+        claim_rec = cursor.fetchone()
+        if claim_rec:
+            prefill.update({
+                "patient_name":   claim_rec.get("patient_name", ""),
+                "hospital_name":  claim_rec.get("hospital_name", ""),
+                "disease":        claim_rec.get("disease", ""),
+                "bill_amount":    claim_rec.get("bill_amount", ""),
+                "policy_number":  claim_rec.get("policy_number", ""),
+            })
+ 
+        # Load latest verification for this claim
+        cursor.execute(
+            '''SELECT verification_score, verification_status
+               FROM claim_verification
+               WHERE claim_id = %s
+               ORDER BY verification_id DESC LIMIT 1''',
+            (claim_id,)
+        )
+        ver_rec = cursor.fetchone()
+        if ver_rec:
+            prefill["verification_score"]  = ver_rec.get("verification_score", 50)
+            prefill["verification_status"] = ver_rec.get("verification_status", "")
+ 
+    # ── POST: run prediction ───────────────────────────────────────────────────
+    if request.method == 'POST':
+        if not model_ready:
+            flash('AI model not trained yet. Run: python ml/train_model.py', 'danger')
+            return redirect(url_for('claim_prediction'))
+ 
+        claim_id = request.form.get('claim_id', '').strip()
+ 
+        # Collect form data
+        claim_data = {
+            "patient_age":        request.form.get('patient_age', '35').strip(),
+            "gender":             request.form.get('gender', 'male').strip(),
+            "hospital_type":      request.form.get('hospital_type', 'private').strip(),
+            "disease":            request.form.get('disease', '').strip(),
+            "bill_amount":        request.form.get('bill_amount', '0').strip(),
+            "admission_date":     request.form.get('admission_date', '').strip(),
+            "discharge_date":     request.form.get('discharge_date', '').strip(),
+            "insurance_id":       request.form.get('insurance_id', '').strip(),
+            "policy_number":      request.form.get('policy_number', '').strip(),
+            "verification_score": request.form.get('verification_score', '50').strip(),
+            "verification_status":request.form.get('verification_status', '').strip(),
+            "previous_claims":    request.form.get('previous_claims', '0').strip(),
+            "fraud_flag":         request.form.get('fraud_flag', '0').strip(),
+        }
+        prefill = claim_data
+ 
+        # Run prediction
+        try:
+            result = predict(claim_data)
+        except FileNotFoundError as e:
+            flash(str(e), 'danger')
+            return redirect(url_for('claim_prediction'))
+        except Exception as e:
+            flash(f'Prediction error: {str(e)}', 'danger')
+            return redirect(url_for('claim_prediction'))
+ 
+        # Get verification_id if claim is linked
+        ver_id = None
+        if claim_id:
+            try:
+                cursor.execute(
+                    'SELECT verification_id FROM claim_verification WHERE claim_id=%s ORDER BY verification_id DESC LIMIT 1',
+                    (claim_id,)
+                )
+                vr = cursor.fetchone()
+                if vr:
+                    ver_id = vr['verification_id']
+            except:
+                pass
+ 
+        # Save prediction to DB
+        try:
+            # Avoid duplicates: update if exists for same claim
+            existing_pred_id = None
+            if claim_id:
+                cursor.execute(
+                    'SELECT prediction_id FROM claim_prediction WHERE claim_id=%s AND predicted_by=%s',
+                    (claim_id, session['email'])
+                )
+                ep = cursor.fetchone()
+                if ep:
+                    existing_pred_id = ep['prediction_id']
+ 
+            if existing_pred_id:
+                cursor.execute(
+                    '''UPDATE claim_prediction
+                       SET prediction=%s, approval_probability=%s,
+                           rejection_probability=%s, confidence=%s,
+                           model_name=%s, input_features=%s,
+                           verification_id=%s, created_at=NOW()
+                       WHERE prediction_id=%s''',
+                    (
+                        result['prediction'],
+                        result['approval_probability'],
+                        result['rejection_probability'],
+                        result['confidence'],
+                        result['model_name'],
+                        json.dumps(claim_data),
+                        ver_id,
+                        existing_pred_id
+                    )
+                )
+            else:
+                cursor.execute(
+                    '''INSERT INTO claim_prediction
+                       (claim_id, verification_id, prediction,
+                        approval_probability, rejection_probability,
+                        confidence, model_name, input_features, predicted_by)
+                       VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
+                    (
+                        int(claim_id) if claim_id else None,
+                        ver_id,
+                        result['prediction'],
+                        result['approval_probability'],
+                        result['rejection_probability'],
+                        result['confidence'],
+                        result['model_name'],
+                        json.dumps(claim_data),
+                        session['email']
+                    )
+                )
+            mysql.connection.commit()
+        except Exception as e:
+            flash(f'Could not save prediction: {str(e)}', 'warning')
+ 
+    # ── Load claims list for dropdown ──────────────────────────────────────────
+    cursor.execute(
+        '''SELECT id, patient_name, hospital_name, bill_amount
+           FROM claims WHERE submitted_by = %s ORDER BY id DESC LIMIT 20''',
+        (session['email'],)
+    )
+    claims_list = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template(
+        'claim_prediction.html',
+        result        = result,
+        prefill       = prefill,
+        claims_list   = claims_list,
+        claim_id      = claim_id,
+        model_ready   = model_ready,
+        model_metrics = model_metrics,
+    )
+ 
+ 
+@app.route('/claim-prediction/history')
+def claim_prediction_history():
+    """Show all past predictions for the logged-in user."""
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT cp.*, c.patient_name, c.hospital_name, c.disease
+           FROM claim_prediction cp
+           LEFT JOIN claims c ON cp.claim_id = c.id
+           WHERE cp.predicted_by = %s
+           ORDER BY cp.prediction_id DESC''',
+        (session['email'],)
+    )
+    predictions = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template('claim_prediction_history.html', predictions=predictions)
+ 
+
 
 # ============================================================
 #  8. DASHBOARD ROUTE  (your existing code — unchanged)
