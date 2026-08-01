@@ -1,0 +1,17 @@
+{
+  "model_name": "Isolation Forest",
+  "n_estimators": 200,
+  "contamination": 0.18,
+  "mean_bill": 67604.187635,
+  "std_bill": 88975.73492238432,
+  "confusion_matrix": [
+    [
+      1592,
+      48
+    ],
+    [
+      48,
+      312
+    ]
+  ]
+}

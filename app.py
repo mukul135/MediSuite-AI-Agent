@@ -21,6 +21,7 @@ from extractor.claim_verifier import verify_claim, build_fields_from_records
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ml.predict_claim import predict, is_model_ready, get_model_metrics
+from ml.detect_fraud import detect_fraud, is_fraud_model_ready, get_fraud_model_stats
 
 # ============================================================
 #  1. CREATE THE FLASK APP
@@ -979,6 +980,221 @@ def claim_prediction_history():
  
     return render_template('claim_prediction_history.html', predictions=predictions)
  
+
+# ============================================================
+#  8. FRAUD DETECTION
+# ============================================================
+
+@app.route('/claim-fraud', methods=['GET', 'POST'])
+def claim_fraud():
+    """
+    GET:  Show form. If ?claim_id=X, pre-fill from saved claim
+          + load verification and prediction data automatically.
+    POST: Run fraud detection. Save result to DB.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    result       = None
+    prefill      = {}
+    model_ready  = is_fraud_model_ready()
+    model_stats  = get_fraud_model_stats()
+    claim_id     = request.args.get('claim_id', '')
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+ 
+    # ── GET: load from saved claim + verification + prediction ─────────────────
+    if claim_id and request.method == 'GET':
+        cursor.execute(
+            'SELECT * FROM claims WHERE id=%s AND submitted_by=%s',
+            (claim_id, session['email'])
+        )
+        claim_rec = cursor.fetchone()
+        if claim_rec:
+            prefill.update({
+                "patient_name":  claim_rec.get("patient_name", ""),
+                "hospital_name": claim_rec.get("hospital_name", ""),
+                "disease":       claim_rec.get("disease", ""),
+                "bill_amount":   claim_rec.get("bill_amount", ""),
+                "policy_number": claim_rec.get("policy_number", ""),
+            })
+ 
+        # Load verification score and status
+        cursor.execute(
+            '''SELECT verification_score, verification_status
+               FROM claim_verification WHERE claim_id=%s
+               ORDER BY verification_id DESC LIMIT 1''',
+            (claim_id,))
+        ver = cursor.fetchone()
+        if ver:
+            prefill["verification_score"]  = ver.get("verification_score", 50)
+            prefill["verification_status"] = ver.get("verification_status", "")
+ 
+        # Load AI prediction probability
+        cursor.execute(
+            '''SELECT approval_probability FROM claim_prediction
+               WHERE claim_id=%s ORDER BY prediction_id DESC LIMIT 1''',
+            (claim_id,))
+        pred = cursor.fetchone()
+        if pred:
+            prefill["approval_probability"] = pred.get("approval_probability", 50)
+ 
+        # Load past claims for duplicate check (FIXED QUERY)
+        cursor.execute(
+            '''SELECT id, bill_amount
+               FROM claims
+               WHERE submitted_by = %s AND id != %s''',
+            (session['email'], claim_id))
+        prefill["past_claims_summary"] = cursor.fetchall() or []
+ 
+        # Claim frequency in last 7 days
+        cursor.execute(
+            '''SELECT COUNT(*) AS cnt FROM claims
+               WHERE submitted_by=%s
+               AND submitted_at >= NOW() - INTERVAL 7 DAY''',
+            (session['email'],))
+        freq_row = cursor.fetchone()
+        prefill["claim_frequency_7d"] = freq_row['cnt'] if freq_row else 0
+ 
+    # ── POST: run fraud detection ──────────────────────────────────────────────
+    if request.method == 'POST':
+        claim_id = request.form.get('claim_id', '').strip()
+ 
+        claim_data = {
+            "bill_amount":          request.form.get('bill_amount', '0').strip(),
+            "admission_date":       request.form.get('admission_date', '').strip(),
+            "discharge_date":       request.form.get('discharge_date', '').strip(),
+            "insurance_id":         request.form.get('insurance_id', '').strip(),
+            "policy_number":        request.form.get('policy_number', '').strip(),
+            "doctor_name":          request.form.get('doctor_name', '').strip(),
+            "disease":              request.form.get('disease', '').strip(),
+            "verification_score":   request.form.get('verification_score', '50').strip(),
+            "verification_status":  request.form.get('verification_status', '').strip(),
+            "approval_probability": request.form.get('approval_probability', '50').strip(),
+            "previous_claims":      request.form.get('previous_claims', '0').strip(),
+            "claim_frequency_7d":   request.form.get('claim_frequency_7d', '0').strip(),
+        }
+        prefill = claim_data
+ 
+        try:
+            result = detect_fraud(claim_data)
+        except Exception as e:
+            flash(f'Fraud detection error: {str(e)}', 'danger')
+            return redirect(url_for('claim_fraud'))
+ 
+        # Get linked IDs from previous features
+        ver_id = pred_id = None
+        if claim_id:
+            try:
+                cursor.execute(
+                    '''SELECT verification_id FROM claim_verification
+                       WHERE claim_id=%s ORDER BY verification_id DESC LIMIT 1''',
+                    (claim_id,))
+                vr = cursor.fetchone()
+                if vr:
+                    ver_id = vr['verification_id']
+ 
+                cursor.execute(
+                    '''SELECT prediction_id FROM claim_prediction
+                       WHERE claim_id=%s ORDER BY prediction_id DESC LIMIT 1''',
+                    (claim_id,))
+                pr = cursor.fetchone()
+                if pr:
+                    pred_id = pr['prediction_id']
+            except:
+                pass
+ 
+        # Save to DB (upsert — update if exists, insert if new)
+        try:
+            existing_id = None
+            if claim_id:
+                cursor.execute(
+                    '''SELECT fraud_id FROM fraud_detection
+                       WHERE claim_id=%s AND detected_by=%s''',
+                    (claim_id, session['email']))
+                ex = cursor.fetchone()
+                if ex:
+                    existing_id = ex['fraud_id']
+ 
+            if existing_id:
+                cursor.execute(
+                    '''UPDATE fraud_detection
+                       SET fraud_status=%s, fraud_score=%s,
+                           fraud_probability=%s, detected_rules=%s,
+                           anomaly_detected=%s, recommendation=%s,
+                           model_name=%s, created_at=NOW()
+                       WHERE fraud_id=%s''',
+                    (result['fraud_status'], result['fraud_score'],
+                     result['fraud_probability'],
+                     json.dumps(result['detected_rules']),
+                     int(result['anomaly_detected']),
+                     result['recommendation'], result['model_name'],
+                     existing_id))
+            else:
+                cursor.execute(
+                    '''INSERT INTO fraud_detection
+                       (claim_id, verification_id, prediction_id,
+                        fraud_status, fraud_score, fraud_probability,
+                        detected_rules, anomaly_detected,
+                        recommendation, model_name, detected_by)
+                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''',
+                    (int(claim_id) if claim_id else None,
+                     ver_id, pred_id,
+                     result['fraud_status'], result['fraud_score'],
+                     result['fraud_probability'],
+                     json.dumps(result['detected_rules']),
+                     int(result['anomaly_detected']),
+                     result['recommendation'], result['model_name'],
+                     session['email']))
+            mysql.connection.commit()
+ 
+        except Exception as e:
+            flash(f'Could not save fraud result: {str(e)}', 'warning')
+ 
+    # Fetch claims list for dropdown
+    cursor.execute(
+        '''SELECT id, patient_name, hospital_name, bill_amount
+           FROM claims WHERE submitted_by=%s ORDER BY id DESC LIMIT 20''',
+        (session['email'],))
+    claims_list = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template(
+        'fraud_detection.html',
+        result      = result,
+        prefill     = prefill,
+        claims_list = claims_list,
+        claim_id    = claim_id,
+        model_ready = model_ready,
+        model_stats = model_stats,
+    )
+ 
+ 
+@app.route('/claim-fraud/history')
+def claim_fraud_history():
+    """Show all past fraud analyses for logged-in user."""
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT fd.*, c.patient_name, c.hospital_name, c.disease
+           FROM fraud_detection fd
+           LEFT JOIN claims c ON fd.claim_id = c.id
+           WHERE fd.detected_by=%s
+           ORDER BY fd.fraud_id DESC''',
+        (session['email'],))
+    records = cursor.fetchall()
+    cursor.close()
+ 
+    for r in records:
+        try:
+            r['detected_rules'] = json.loads(r['detected_rules']) if r.get('detected_rules') else []
+        except:
+            r['detected_rules'] = []
+ 
+    return render_template('fraud_history.html', records=records)
+
 
 
 # ============================================================

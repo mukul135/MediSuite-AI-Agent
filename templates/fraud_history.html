@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud History | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fraud_detection.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('upload') }}">Upload</a>
+        <a href="{{ url_for('ocr') }}">OCR</a>
+        <a href="{{ url_for('claim') }}">Claim</a>
+        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+        <a href="{{ url_for('claim_verification') }}">Verification</a>
+        <a href="{{ url_for('claim_prediction') }}">AI Predict</a>
+        <a href="{{ url_for('claim_fraud') }}" class="active">Fraud</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <div class="page-header"><h1>&#128218; Fraud Analysis History</h1><p>All past fraud detection reports.</p></div>
+    <a href="{{ url_for('claim_fraud') }}" class="btn-detect" style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">+ New Analysis</a>
+    {% if records %}
+    <div class="fraud-card" style="padding:0;">
+        <table class="hist-table">
+            <thead><tr><th>#</th><th>Patient</th><th>Disease</th><th>Status</th><th>Score</th><th>Prob %</th><th>Indicators</th><th>Date</th><th>Action</th></tr></thead>
+            <tbody>
+                {% for r in records %}
+                <tr>
+                    <td>{{ r.fraud_id }}</td>
+                    <td>{{ r.patient_name or '—' }}</td>
+                    <td>{{ r.disease or '—' }}</td>
+                    <td><span class="status-pill pill-{{ r.fraud_status | lower | replace(' ','_') }}">{{ r.fraud_status }}</span></td>
+                    <td class="score-cell">{{ r.fraud_score }}</td>
+                    <td>{{ r.fraud_probability }}%</td>
+                    <td class="rules-cell">{{ r.detected_rules | length }} rule(s)</td>
+                    <td>{{ r.created_at.strftime('%d %b %Y') }}</td>
+                    <td>{% if r.claim_id %}<a href="{{ url_for('claim_fraud') }}?claim_id={{ r.claim_id }}" class="btn-rerun">Re-run</a>{% else %}—{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-state"><div class="empty-icon">&#128270;</div><p>No fraud analyses yet. <a href="{{ url_for('claim_fraud') }}">Run your first analysis</a>.</p></div>
+    {% endif %}
+</div>
+</body>
+</html>
