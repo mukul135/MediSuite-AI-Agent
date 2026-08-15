@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary History | MediSuite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/medical_summary.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('upload') }}">Upload</a>
+        <a href="{{ url_for('ocr') }}">OCR</a>
+        <a href="{{ url_for('claim') }}">Claim</a>
+        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+        <a href="{{ url_for('claim_verification') }}">Verify</a>
+        <a href="{{ url_for('claim_prediction') }}">AI Predict</a>
+        <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+        <a href="{{ url_for('medical_summary') }}" class="active">Summary</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>&#128218; Summary History</h1>
+        <p>All AI-generated medical report summaries.</p>
+    </div>
+
+    <a href="{{ url_for('medical_summary') }}"
+       class="btn-summarize"
+       style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">
+        + New Summary
+    </a>
+
+    {% if summaries %}
+    <div class="summary-card" style="padding:0;overflow:hidden;">
+        <table class="hist-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>File</th>
+                    <th>Type</th>
+                    <th>Summary Preview</th>
+                    <th>Words</th>
+                    <th>Ratio</th>
+                    <th>Model</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in summaries %}
+                <tr>
+                    <td>{{ s.summary_id }}</td>
+                    <td class="file-cell">{{ s.filename or 'Manual Input' }}</td>
+                    <td><span class="type-pill">{{ s.summary_type }}</span></td>
+                    <td class="preview-cell">{{ s.generated_summary[:100] }}...</td>
+                    <td>{{ s.summary_length }}</td>
+                    <td>{{ (s.compression_ratio * 100)|round(1) }}%</td>
+                    <td class="model-cell">{{ s.model_used[:25] }}{% if s.model_used|length > 25 %}...{% endif %}</td>
+                    <td>{{ s.created_at.strftime('%d %b %Y') }}</td>
+                    <td>
+                        {% if s.ocr_result_id %}
+                        <a href="{{ url_for('medical_summary') }}?ocr_id={{ s.ocr_result_id }}"
+                           class="btn-rerun">Re-run</a>
+                        {% else %}
+                        <span style="color:#90a4ae;font-size:0.8rem;">—</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon">&#129302;</div>
+        <p>No summaries yet.
+           <a href="{{ url_for('medical_summary') }}">Generate your first summary</a>.
+        </p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

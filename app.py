@@ -22,6 +22,8 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ml.predict_claim import predict, is_model_ready, get_model_metrics
 from ml.detect_fraud import detect_fraud, is_fraud_model_ready, get_fraud_model_stats
+from ai.medical_summarizer import summarize
+from ai.model_loader import is_model_loaded, get_model_name
 
 # ============================================================
 #  1. CREATE THE FLASK APP
@@ -1195,6 +1197,166 @@ def claim_fraud_history():
  
     return render_template('fraud_history.html', records=records)
 
+# ============================================================
+#  SUMMARY ROUTE
+# ============================================================
+
+@app.route('/medical-summary', methods=['GET', 'POST'])
+def medical_summary():
+    """
+    GET:  Show summary home. If ?ocr_id=X, pre-load OCR text.
+    POST: Generate summary from selected OCR result or manual text.
+    """
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    result        = None
+    ocr_text_used = ""
+    ocr_id        = request.args.get('ocr_id', '')
+    selected_ocr  = None
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+ 
+    # ── GET: pre-load OCR text if ocr_id in URL ───────────────────────────────
+    if ocr_id and request.method == 'GET':
+        cursor.execute(
+            'SELECT * FROM ocr_results WHERE id=%s AND processed_by=%s',
+            (ocr_id, session['email'])
+        )
+        selected_ocr = cursor.fetchone()
+        if selected_ocr:
+            ocr_text_used = selected_ocr.get('extracted_text', '')
+ 
+    # ── POST: generate summary ────────────────────────────────────────────────
+    if request.method == 'POST':
+        ocr_id        = request.form.get('ocr_id', '').strip()
+        summary_type  = request.form.get('summary_type', 'medium').strip()
+        manual_text   = request.form.get('manual_text', '').strip()
+        claim_id_form = request.form.get('claim_id', '').strip()
+ 
+        # Priority: OCR result > manual text
+        if ocr_id:
+            cursor.execute(
+                'SELECT * FROM ocr_results WHERE id=%s AND processed_by=%s',
+                (ocr_id, session['email'])
+            )
+            selected_ocr = cursor.fetchone()
+            if selected_ocr:
+                ocr_text_used = selected_ocr.get('extracted_text', '')
+ 
+        if not ocr_text_used and manual_text:
+            ocr_text_used = manual_text
+ 
+        if not ocr_text_used:
+            flash('No text to summarize. Select an OCR result or paste text manually.', 'warning')
+            return redirect(url_for('medical_summary'))
+ 
+        # Run summarization
+        try:
+            result = summarize(
+                ocr_text=ocr_text_used,
+                summary_type=summary_type,
+                ocr_result_id=int(ocr_id) if ocr_id else None,
+                claim_id=int(claim_id_form) if claim_id_form else None,
+            )
+        except Exception as e:
+            flash(f'Summarization error: {str(e)}', 'danger')
+            return redirect(url_for('medical_summary'))
+ 
+        if result.get('error') and not result.get('summary'):
+            flash(result['error'], 'warning')
+ 
+        # Save to DB (upsert — update if same OCR + type exists)
+        if result and result.get('summary'):
+            try:
+                existing_id = None
+                if ocr_id:
+                    cursor.execute(
+                        '''SELECT summary_id FROM medical_summary
+                           WHERE ocr_result_id=%s AND summary_type=%s AND created_by=%s''',
+                        (ocr_id, result['summary_type'], session['email'])
+                    )
+                    ex = cursor.fetchone()
+                    if ex:
+                        existing_id = ex['summary_id']
+ 
+                if existing_id:
+                    cursor.execute(
+                        '''UPDATE medical_summary
+                           SET generated_summary=%s, original_text_length=%s,
+                               summary_length=%s, compression_ratio=%s,
+                               model_used=%s, created_at=NOW()
+                           WHERE summary_id=%s''',
+                        (result['summary'],
+                         result['original_word_count'],
+                         result['word_count'],
+                         result['compression_ratio'],
+                         result['model_used'],
+                         existing_id))
+                else:
+                    cursor.execute(
+                        '''INSERT INTO medical_summary
+                           (claim_id, ocr_result_id, summary_type, generated_summary,
+                            original_text_length, summary_length, compression_ratio,
+                            model_used, created_by)
+                           VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
+                        (int(claim_id_form) if claim_id_form else None,
+                         int(ocr_id) if ocr_id else None,
+                         result['summary_type'],
+                         result['summary'],
+                         result['original_word_count'],
+                         result['word_count'],
+                         result['compression_ratio'],
+                         result['model_used'],
+                         session['email']))
+                mysql.connection.commit()
+            except Exception as e:
+                flash(f'Could not save summary: {str(e)}', 'warning')
+ 
+    # ── Fetch OCR list for dropdown ───────────────────────────────────────────
+    cursor.execute(
+        'SELECT id, filename, created_at FROM ocr_results WHERE processed_by=%s ORDER BY id DESC',
+        (session['email'],))
+    ocr_list = cursor.fetchall()
+ 
+    # ── Fetch claims for optional linking ─────────────────────────────────────
+    cursor.execute(
+        'SELECT id, patient_name FROM claims WHERE submitted_by=%s ORDER BY id DESC LIMIT 10',
+        (session['email'],))
+    claims_list = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template(
+        'medical_summary.html',
+        result        = result,
+        ocr_list      = ocr_list,
+        ocr_id        = ocr_id,
+        selected_ocr  = selected_ocr,
+        ocr_text_used = ocr_text_used,
+        claims_list   = claims_list,
+        model_name    = get_model_name(),
+        model_loaded  = is_model_loaded(),
+    )
+ 
+ 
+@app.route('/medical-summary/history')
+def medical_summary_history():
+    """Show all past summaries for the logged-in user."""
+    if 'loggedin' not in session:
+        return redirect(url_for('login'))
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+        '''SELECT ms.*, ocr.filename
+           FROM medical_summary ms
+           LEFT JOIN ocr_results ocr ON ms.ocr_result_id = ocr.id
+           WHERE ms.created_by=%s
+           ORDER BY ms.summary_id DESC''',
+        (session['email'],))
+    summaries = cursor.fetchall()
+    cursor.close()
+ 
+    return render_template('medical_summary_history.html', summaries=summaries)
 
 
 # ============================================================
