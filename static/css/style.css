@@ -975,6 +975,40 @@ body.dashboard-body { background: var(--ms-bg) !important; }
 .module-title { color: var(--ms-text) !important; font-size: 1rem !important; }
 .module-desc { color: var(--ms-muted) !important; font-size: .82rem !important; }
 
+/* ── FIX: module cards without a .module-content wrapper ──────────
+   Medical Analysis / Claim Verification / AI Claim Prediction /
+   Report Summarizer / Fraud Detection put icon + title + desc as
+   direct children of .module-card instead of wrapping title+desc in
+   .module-content. Left as plain flex-row children this can squeeze
+   the text into almost no width. Force icon-left, title/desc-stacked
+   layout for these cards specifically. */
+.modules-grid .module-card:not(:has(.module-content)) {
+  display: grid !important;
+  grid-template-columns: 52px 1fr !important;
+  align-items: center !important;
+  column-gap: 16px !important;
+  row-gap: 4px !important;
+}
+.modules-grid .module-card:not(:has(.module-content)) .module-icon {
+  grid-row: 1 / span 2 !important;
+}
+.modules-grid .module-card:not(:has(.module-content)) .module-title {
+  align-self: end !important;
+  margin-bottom: 2px !important;
+}
+.modules-grid .module-card:not(:has(.module-content)) .module-desc {
+  align-self: start !important;
+}
+
+/* ── FIX: Fraud Detection's extra wrapping <div class="module-card">
+   around its <a class="module-card">. The wrapper breaks grid sizing
+   for its whole row (causing the huge blank cards next to it).
+   display:contents removes the wrapper's own box so the real card
+   inside becomes the direct grid item, like every other module. ── */
+.modules-grid > .module-card:has(> .module-card) {
+  display: contents !important;
+}
+
 /* ========================= COMMON CARDS ========================= */
 .form-grid,
 .history-card,
