@@ -9,13 +9,53 @@
   <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" />
 </p>
 
----
 
-## 🌐 Live Demo
+```markdown
+## 📸 Screenshots
 
-🔗 [Click here to view the live project](#) <!-- replace # with your live link -->
+### 🔐 Login
 
----
+![Login Page](screenshots/login.png)
+
+### 📝 Registration
+
+![Registration Page](screenshots/register.png)
+
+### 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### 📤 Document Upload
+
+![Document Upload](screenshots/upload.png)
+
+### 🔍 OCR Text Extraction
+
+![OCR Text Extraction](screenshots/ocr.png)
+
+### 🧾 Claim Autofill
+
+![Claim Autofill](screenshots/claim-autofill.png)
+
+### 🧠 NLP Medical Analysis
+
+![NLP Medical Analysis](screenshots/nlp.png)
+
+### ✅ Claim Verification
+
+![Claim Verification](screenshots/verification.png)
+
+### 📈 Claim Approval Prediction
+
+![Claim Approval Prediction](screenshots/prediction.png)
+
+### 🚨 Fraud Detection
+
+![Fraud Detection](screenshots/fraud.png)
+
+### 📝 Medical Report Summarizer
+
+![Medical Report Summarizer](screenshots/summary.png)
 
 ## 🚀 Overview
 
@@ -340,22 +380,7 @@ http://127.0.0.1:5000
 9. **Summarize the report** — generate a short AI summary of the full medical report.
 10. **Review history** — revisit past OCR, claims, verifications, predictions, fraud checks, and summaries from their respective history pages.
 
----
 
-## 📸 Screenshots
-
-| Page | Preview |
-|---|---|
-| Dashboard | `uploads/Screenshot_2026-07-25_104805.png` |
-| Feature Page | `uploads/Screenshot_2026-07-25_104840.png` |
-| Feature Page | `uploads/Screenshot_2026-07-25_104848.png` |
-
-```markdown
-<!-- Move these into a /screenshots folder before publishing, then embed: -->
-![Dashboard](screenshots/dashboard.png)
-```
-
----
 
 ## 🧪 Testing
 
