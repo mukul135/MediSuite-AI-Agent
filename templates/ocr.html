@@ -24,18 +24,17 @@
             MediSuite
         </div>
         <div class="nav-links">
-    <a href="{{ url_for('dashboard') }}">Dashboard</a>
-    <a href="{{ url_for('upload') }}">Upload</a>
-    <a href="{{ url_for('ocr') }}">OCR</a>
-    <a href="{{ url_for('claim') }}">Claim</a>
-    <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-    <a href="{{ url_for('claim_verification') }}">Verification</a>
-    <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
-    <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-    <a href="{{ url_for('medical_summary') }}">Summary</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-</div>
-
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}" class="active">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}">Verification</a>
+            <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -85,14 +84,11 @@
                     <label for="filename">Choose from your uploaded documents</label>
 
                     {% if reports %}
-                        <select name="filename" id="filename"
-                                class="form-control" required>
+                        <select name="filename" id="filename" class="form-control" required>
                             <option value="">-- Select a file --</option>
                             {% for report in reports %}
                                 <option value="{{ report.filename }}"
-                                    {% if selected_file == report.filename %}
-                                        selected
-                                    {% endif %}>
+                                    {% if selected_file == report.filename %}selected{% endif %}>
                                     {{ report.filename }}
                                 </option>
                             {% endfor %}
@@ -117,26 +113,26 @@
 
         <!-- ── EXTRACTED TEXT RESULT ─────────────────────────────────────── -->
         {% if extracted %}
-        <div class="result-card">
-            <div class="result-header">
-                <h2>&#9989; Extracted Text</h2>
-                <span class="result-filename">{{ selected_file }}</span>
-                <!-- Copy to clipboard button -->
-                <button class="btn-copy" onclick="copyText()" id="copyBtn">
-                    &#128203; Copy Text
-                </button>
-            </div>
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>&#9989; Extracted Text</h2>
+                    <span class="result-filename">{{ selected_file }}</span>
+                    <!-- Copy to clipboard button -->
+                    <button class="btn-copy" onclick="copyText()" id="copyBtn">
+                        &#128203; Copy Text
+                    </button>
+                </div>
 
-            <!-- The extracted text is shown in a <pre> to preserve formatting -->
-            <pre class="ocr-output" id="ocrOutput">{{ extracted }}</pre>
+                <!-- The extracted text is shown in a <pre> to preserve formatting -->
+                <pre class="ocr-output" id="ocrOutput">{{ extracted }}</pre>
 
-            <!-- Character and word count stats -->
-            <div class="text-stats">
-                <span>&#128200; {{ extracted | length }} characters</span>
-                <span>&#128221; ~{{ extracted.split() | length }} words</span>
-                <span>&#128196; {{ selected_file }}</span>
+                <!-- Character and word count stats -->
+                <div class="text-stats">
+                    <span>&#128200; {{ extracted | length }} characters</span>
+                    <span>&#128221; ~{{ extracted.split() | length }} words</span>
+                    <span>&#128196; {{ selected_file }}</span>
+                </div>
             </div>
-        </div>
         {% endif %}
 
         <!-- ── PAST OCR RESULTS HISTORY ──────────────────────────────────── -->
@@ -155,15 +151,15 @@
                     </thead>
                     <tbody>
                         {% for result in past_results %}
-                        <tr>
-                            <td>{{ result.id }}</td>
-                            <td class="filename-cell">{{ result.filename }}</td>
-                            <!-- Show only the first 100 characters as preview -->
-                            <td class="preview-cell">
-                                {{ result.extracted_text[:100] }}...
-                            </td>
-                            <td>{{ result.created_at.strftime('%d %b %Y, %H:%M') }}</td>
-                        </tr>
+                            <tr>
+                                <td>{{ result.id }}</td>
+                                <td class="filename-cell">{{ result.filename }}</td>
+                                <!-- Show only the first 100 characters as preview -->
+                                <td class="preview-cell">
+                                    {{ result.extracted_text[:100] }}...
+                                </td>
+                                <td>{{ result.created_at.strftime('%d %b %Y, %H:%M') }}</td>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>
@@ -174,19 +170,18 @@
 
     </div><!-- end .container -->
 
-
     <!-- ── JAVASCRIPT ────────────────────────────────────────────────────── -->
     <script>
-        // ── Auto-hide flash messages after 4 seconds ────────────────────────
+        // Auto-hide flash messages after 4 seconds
         setTimeout(() => {
             document.querySelectorAll('.alert').forEach(el => {
                 el.style.transition = 'opacity 0.5s';
-                el.style.opacity    = '0';
+                el.style.opacity = '0';
                 setTimeout(() => el.remove(), 500);
             });
         }, 4000);
 
-        // ── Copy extracted text to clipboard ────────────────────────────────
+        // Copy extracted text to clipboard
         function copyText() {
             const text = document.getElementById('ocrOutput').innerText;
             navigator.clipboard.writeText(text).then(() => {

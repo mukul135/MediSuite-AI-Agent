@@ -3,64 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Prediction History | MediSuite</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/claim_prediction.css') }}">
 </head>
+
 <body>
-<nav class="navbar">
-    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
-    <div class="nav-links">
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('upload') }}">Upload</a>
-        <a href="{{ url_for('ocr') }}">OCR</a>
-        <a href="{{ url_for('claim') }}">Claim</a>
-        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-        <a href="{{ url_for('claim_verification') }}">Verification</a>
-        <a href="{{ url_for('claim_prediction') }}" class="active">AI Prediction</a>
-        <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-        <a href="{{ url_for('medical_summary') }}">Summary</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span>&#129657;</span> MediSuite
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}">Verification</a>
+            <a href="{{ url_for('claim_prediction') }}" class="active">AI Prediction</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>&#128218; Prediction History</h1>
+            <p>All AI claim approval predictions run by you.</p>
+        </div>
+
+        <a href="{{ url_for('claim_prediction') }}"
+           class="btn-predict"
+           style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">
+            + New Prediction
+        </a>
+
+        {% if predictions %}
+
+            <div class="pred-card" style="padding:0;">
+
+                <table class="history-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Patient</th>
+                            <th>Disease</th>
+                            <th>Prediction</th>
+                            <th>Approval %</th>
+                            <th>Confidence</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for p in predictions %}
+
+                            <tr>
+                                <td>{{ p.prediction_id }}</td>
+
+                                <td>
+                                    {{ p.patient_name or '—' }}
+                                </td>
+
+                                <td>
+                                    {{ p.disease or '—' }}
+                                </td>
+
+                                <td>
+                                    <span class="pred-pill pill-{{ p.prediction | lower }}">
+                                        {{ p.prediction }}
+                                    </span>
+                                </td>
+
+                                <td class="prob-cell">
+                                    {{ p.approval_probability }}%
+                                </td>
+
+                                <td>
+                                    <span class="conf-pill conf-{{ p.confidence | lower }}">
+                                        {{ p.confidence }}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    {{ p.created_at.strftime('%d %b %Y') }}
+                                </td>
+
+                                <td>
+                                    {% if p.claim_id %}
+                                        <a href="{{ url_for('claim_prediction') }}?claim_id={{ p.claim_id }}"
+                                           class="btn-rerun">
+                                            Re-run
+                                        </a>
+                                    {% else %}
+                                        <span style="color:#90a4ae;font-size:0.8rem;">
+                                            —
+                                        </span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+                <div class="empty-icon">&#129302;</div>
+
+                <p>
+                    No predictions yet.
+                    <a href="{{ url_for('claim_prediction') }}">
+                        Run your first prediction
+                    </a>.
+                </p>
+            </div>
+
+        {% endif %}
+
     </div>
-</nav>
-<div class="container">
-    <div class="page-header">
-        <h1>&#128218; Prediction History</h1>
-        <p>All AI claim approval predictions run by you.</p>
-    </div>
-    <a href="{{ url_for('claim_prediction') }}" class="btn-predict" style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">+ New Prediction</a>
-    {% if predictions %}
-    <div class="pred-card" style="padding:0;">
-        <table class="history-table">
-            <thead>
-                <tr><th>#</th><th>Patient</th><th>Disease</th><th>Prediction</th><th>Approval %</th><th>Confidence</th><th>Date</th><th>Action</th></tr>
-            </thead>
-            <tbody>
-                {% for p in predictions %}
-                <tr>
-                    <td>{{ p.prediction_id }}</td>
-                    <td>{{ p.patient_name or '—' }}</td>
-                    <td>{{ p.disease or '—' }}</td>
-                    <td><span class="pred-pill pill-{{ p.prediction | lower }}">{{ p.prediction }}</span></td>
-                    <td class="prob-cell">{{ p.approval_probability }}%</td>
-                    <td><span class="conf-pill conf-{{ p.confidence | lower }}">{{ p.confidence }}</span></td>
-                    <td>{{ p.created_at.strftime('%d %b %Y') }}</td>
-                    <td>
-                        {% if p.claim_id %}
-                        <a href="{{ url_for('claim_prediction') }}?claim_id={{ p.claim_id }}" class="btn-rerun">Re-run</a>
-                        {% else %}<span style="color:#90a4ae;font-size:0.8rem;">—</span>{% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% else %}
-    <div class="empty-state">
-        <div class="empty-icon">&#129302;</div>
-        <p>No predictions yet. <a href="{{ url_for('claim_prediction') }}">Run your first prediction</a>.</p>
-    </div>
-    {% endif %}
-</div>
+
 </body>
 </html>

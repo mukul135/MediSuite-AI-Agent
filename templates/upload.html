@@ -14,18 +14,18 @@
             <span class="nav-icon">🏥</span>
             <span>MediSuite</span>
         </div>
-       <div class="nav-links">
-    <a href="{{ url_for('dashboard') }}">Dashboard</a>
-    <a href="{{ url_for('upload') }}">Upload</a>
-    <a href="{{ url_for('ocr') }}">OCR</a>
-    <a href="{{ url_for('claim') }}">Claim</a>
-    <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-    <a href="{{ url_for('claim_verification') }}">Verification</a>
-    <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
-    <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-    <a href="{{ url_for('medical_summary') }}">Summary</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}" class="active">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}">Verification</a>
+            <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
     </nav>
 
     <!-- ========== MAIN CONTENT ========== -->
@@ -56,18 +56,12 @@
             <h2>Select Document to Upload</h2>
             <p class="hint">Accepted formats: PDF, JPG, PNG, GIF, DOC, DOCX &nbsp;|&nbsp; Max size: 16 MB</p>
 
-            <!--
-                IMPORTANT:
-                - action="/upload"        → sends form to the /upload route
-                - method="POST"           → sends data securely
-                - enctype="multipart/form-data" → REQUIRED for file uploads
-            -->
             <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
 
                 <!-- Document Type Selector -->
                 <div class="form-group">
                     <label for="doc_type">Document Type</label>
-                    <select name="doc_type" id="doc_type" class="form-control">
+                    <select name="doc_type" id="doc_type" class="form-control" required>
                         <option value="">-- Select Type --</option>
                         <option value="report">🩺 Medical Report</option>
                         <option value="prescription">💊 Prescription</option>
@@ -86,6 +80,7 @@
                             class="file-input"
                             accept=".pdf,.png,.jpg,.jpeg,.gif,.doc,.docx"
                             onchange="showFileName(this)"
+                            required
                         >
                         <div class="drop-icon">📄</div>
                         <p class="drop-text">Click to browse or drag & drop your file here</p>

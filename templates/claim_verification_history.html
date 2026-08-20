@@ -3,75 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Verification History | MediSuite</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/claim_verification.css') }}">
 </head>
+
 <body>
-<nav class="navbar">
-    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
-    <div class="nav-links">
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('upload') }}">Upload</a>
-        <a href="{{ url_for('ocr') }}">OCR</a>
-        <a href="{{ url_for('claim') }}">Claim</a>
-        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-        <a href="{{ url_for('claim_verification') }}" class="active">Verification</a>
-        <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
-        <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-        <a href="{{ url_for('medical_summary') }}">Summary</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    </div>
-</nav>
-<div class="container">
-    <div class="page-header">
-        <h1>&#128218; Verification History</h1>
-        <p>All past insurance claim verifications.</p>
+
+    <nav class="navbar">
+
+        <div class="nav-brand">
+            <span>&#129657;</span> MediSuite
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}" class="active">Verification</a>
+            <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>&#128218; Verification History</h1>
+            <p>All past insurance claim verifications.</p>
+        </div>
+
+        <a href="{{ url_for('claim_verification') }}"
+           class="btn-verify"
+           style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">
+            + New Verification
+        </a>
+
+        {% if verifications %}
+
+            <div class="verify-card" style="padding:0;">
+
+                <table class="history-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Patient</th>
+                            <th>Hospital</th>
+                            <th>Status</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for v in verifications %}
+
+                            <tr>
+                                <td>{{ v.verification_id }}</td>
+
+                                <td>
+                                    {{ v.patient_name or '—' }}
+                                </td>
+
+                                <td>
+                                    {{ v.hospital_name or '—' }}
+                                </td>
+
+                                <td>
+                                    <span class="status-pill pill-{{ v.verification_status | lower }}">
+                                        {{ v.verification_status }}
+                                    </span>
+                                </td>
+
+                                <td class="score-cell">
+                                    {{ v.verification_score }}%
+                                </td>
+
+                                <td>
+                                    {{ v.created_at.strftime('%d %b %Y') }}
+                                </td>
+
+                                <td>
+                                    {% if v.claim_id %}
+
+                                        <a href="{{ url_for('claim_verification') }}?claim_id={{ v.claim_id }}"
+                                           class="btn-rerun">
+                                            Re-run
+                                        </a>
+
+                                    {% else %}
+
+                                        <span style="color:#90a4ae;font-size:0.8rem;">
+                                            No claim linked
+                                        </span>
+
+                                    {% endif %}
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <div class="empty-icon">&#9989;</div>
+
+                <p>
+                    No verifications yet.
+                    <a href="{{ url_for('claim_verification') }}">
+                        Run your first verification
+                    </a>.
+                </p>
+
+            </div>
+
+        {% endif %}
+
     </div>
 
-    <a href="{{ url_for('claim_verification') }}" class="btn-verify" style="display:inline-block;margin-bottom:1.2rem;text-decoration:none;">+ New Verification</a>
-
-    {% if verifications %}
-    <div class="verify-card" style="padding:0;">
-        <table class="history-table">
-            <thead>
-                <tr>
-                    <th>#</th><th>Patient</th><th>Hospital</th>
-                    <th>Status</th><th>Score</th><th>Date</th><th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for v in verifications %}
-                <tr>
-                    <td>{{ v.verification_id }}</td>
-                    <td>{{ v.patient_name or '—' }}</td>
-                    <td>{{ v.hospital_name or '—' }}</td>
-                    <td>
-                        <span class="status-pill pill-{{ v.verification_status | lower }}">
-                            {{ v.verification_status }}
-                        </span>
-                    </td>
-                    <td class="score-cell">{{ v.verification_score }}%</td>
-                    <td>{{ v.created_at.strftime('%d %b %Y') }}</td>
-                    <td>
-                        {% if v.claim_id %}
-                        <a href="{{ url_for('claim_verification') }}?claim_id={{ v.claim_id }}"
-                           class="btn-rerun">Re-run</a>
-                        {% else %}
-                        <span style="color:#90a4ae;font-size:0.8rem;">No claim linked</span>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% else %}
-    <div class="empty-state">
-        <div class="empty-icon">&#9989;</div>
-        <p>No verifications yet. <a href="{{ url_for('claim_verification') }}">Run your first verification</a>.</p>
-    </div>
-    {% endif %}
-</div>
 </body>
 </html>

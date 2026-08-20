@@ -9,230 +9,234 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
-    <div class="nav-links">
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('upload') }}">Upload</a>
-        <a href="{{ url_for('ocr') }}">OCR</a>
-        <a href="{{ url_for('claim') }}">Claim</a>
-        <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-        <a href="{{ url_for('claim_verification') }}">Verify</a>
-        <a href="{{ url_for('claim_prediction') }}">AI Predict</a>
-        <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-        <a href="{{ url_for('medical_summary') }}" class="active">Summary</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    </div>
-</nav>
-
-<div class="container">
-
-    <div class="page-header">
-        <h1>&#129302; Medical Report Summarizer</h1>
-        <p>AI-powered summaries of OCR-extracted medical reports in seconds.</p>
-    </div>
-
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}{% for cat,msg in messages %}
-        <div class="alert alert-{{ cat }}">{{ msg }}</div>
-        {% endfor %}{% endif %}
-    {% endwith %}
-
-    <!-- Model info strip -->
-    <div class="model-strip">
-        <div class="model-item">
-            <span class="mi-label">Engine</span>
-            <span class="mi-val">{% if model_loaded %}{{ model_name }}{% else %}Rule-Based Extractive{% endif %}</span>
+    <nav class="navbar">
+        <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}">Verify</a>
+            <a href="{{ url_for('claim_prediction') }}">AI Predict</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}" class="active">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
         </div>
-        <div class="model-item">
-            <span class="mi-label">Status</span>
-            <span class="mi-val {% if model_loaded %}status-ready{% else %}status-fallback{% endif %}">
-                {% if model_loaded %}&#9989; AI Model Ready{% else %}&#9888; Fallback Mode{% endif %}
-            </span>
-        </div>
-        <div class="model-item">
-            <span class="mi-label">Modes</span>
-            <span class="mi-val">Short &middot; Medium &middot; Detailed</span>
-        </div>
-        <div class="model-item">
-            <span class="mi-label">Input</span>
-            <span class="mi-val">OCR Text / Manual Paste</span>
-        </div>
-    </div>
+    </nav>
 
-    <!-- ── SUMMARY RESULT ─────────────────────────────────────────────────── -->
-    {% if result %}
-    <div class="summary-result">
+    <div class="container">
 
-        <div class="summary-header">
-            <div class="summary-type-badge">{{ result.summary_type }} Summary</div>
-            <div class="summary-stats">
-                <span>&#128196; {{ result.original_word_count }} words in</span>
-                <span class="arrow-sep">&#8594;</span>
-                <span>&#9989; {{ result.word_count }} words out</span>
-                <span class="ratio-badge">{{ (result.compression_ratio * 100)|round(1) }}% of original</span>
-            </div>
+        <div class="page-header">
+            <h1>&#129302; Medical Report Summarizer</h1>
+            <p>AI-powered summaries of OCR-extracted medical reports in seconds.</p>
         </div>
 
-        <!-- Main summary text -->
-        <div class="summary-text">{{ result.summary }}</div>
-
-        <!-- Key sections (structured extraction) -->
-        {% if result.key_sections %}
-        <div class="key-sections">
-            <h3>&#128270; Key Information Extracted</h3>
-            <div class="sections-grid">
-                {% if result.key_sections.diagnosis %}
-                <div class="section-item">
-                    <span class="section-label">&#129440; Diagnosis</span>
-                    <span class="section-val">{{ result.key_sections.diagnosis }}</span>
-                </div>
-                {% endif %}
-                {% if result.key_sections.treatment %}
-                <div class="section-item">
-                    <span class="section-label">&#127973; Treatment</span>
-                    <span class="section-val">{{ result.key_sections.treatment }}</span>
-                </div>
-                {% endif %}
-                {% if result.key_sections.medicines %}
-                <div class="section-item">
-                    <span class="section-label">&#128138; Medicines</span>
-                    <span class="section-val">{{ result.key_sections.medicines }}</span>
-                </div>
-                {% endif %}
-                {% if result.key_sections.tests %}
-                <div class="section-item">
-                    <span class="section-label">&#129514; Tests</span>
-                    <span class="section-val">{{ result.key_sections.tests }}</span>
-                </div>
-                {% endif %}
-                {% if result.key_sections.followup %}
-                <div class="section-item">
-                    <span class="section-label">&#128197; Follow-up</span>
-                    <span class="section-val">{{ result.key_sections.followup }}</span>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-        {% endif %}
-
-        <!-- Meta info -->
-        <div class="summary-meta">
-            Model: <strong>{{ result.model_used }}</strong>
-            &nbsp;|&nbsp; Generated: {{ result.generated_at }}
-            &nbsp;|&nbsp; <a href="{{ url_for('medical_summary_history') }}">View History</a>
-        </div>
-
-        {% if result.error %}
-        <div class="alert alert-warning" style="margin-top:0.8rem;">{{ result.error }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    <!-- ── MAIN FORM ──────────────────────────────────────────────────────── -->
-    <form method="POST" action="{{ url_for('medical_summary') }}">
-
-        <div class="summary-card">
-            <h2>Generate Summary</h2>
-
-            <div class="form-row-top">
-
-                <!-- OCR Result Selector -->
-                <div class="field-group field-wide">
-                    <label>Select OCR Report</label>
-                    {% if ocr_list %}
-                    <select name="ocr_id" class="form-control">
-                        <option value="">-- Select an OCR Result --</option>
-                        {% for ocr in ocr_list %}
-                        <option value="{{ ocr.id }}"
-                            {% if ocr_id|string == ocr.id|string %}selected{% endif %}>
-                            {{ ocr.filename }} &mdash; {{ ocr.created_at.strftime('%d %b %Y') }}
-                        </option>
-                        {% endfor %}
-                    </select>
-                    {% else %}
-                    <div class="no-data-notice">
-                        No OCR results yet.
-                        <a href="{{ url_for('upload') }}">Upload a report</a> and
-                        <a href="{{ url_for('ocr') }}">extract text</a> first.
-                    </div>
-                    {% endif %}
-                </div>
-
-                <!-- Summary type -->
-                <div class="field-group field-narrow">
-                    <label>Summary Length</label>
-                    <select name="summary_type" class="form-control">
-                        <option value="short">&#9679; Short</option>
-                        <option value="medium" selected>&#9679;&#9679; Medium</option>
-                        <option value="detailed">&#9679;&#9679;&#9679; Detailed</option>
-                    </select>
-                </div>
-
-            </div>
-
-            <!-- Manual text paste -->
-            <div class="field-group" style="margin-top:1rem;">
-                <label>
-                    Or Paste Medical Text Manually
-                    <span class="optional">(used if no OCR result selected above)</span>
-                </label>
-                <textarea name="manual_text" class="form-control textarea-input"
-                          placeholder="Paste discharge summary, prescription, lab report, or clinical notes here...">{{ ocr_text_used if not result else '' }}</textarea>
-            </div>
-
-            <!-- Optional claim link -->
-            {% if claims_list %}
-            <div class="field-group" style="margin-top:0.8rem;">
-                <label>
-                    Link to Claim
-                    <span class="optional">(optional — for record keeping)</span>
-                </label>
-                <select name="claim_id" class="form-control">
-                    <option value="">-- No claim linked --</option>
-                    {% for c in claims_list %}
-                    <option value="{{ c.id }}">#{{ c.id }} &mdash; {{ c.patient_name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="alert alert-{{ cat }}">{{ msg }}</div>
+                {% endfor %}
             {% endif %}
+        {% endwith %}
 
-            <div class="form-actions">
-                <button type="submit" class="btn-summarize">
-                    &#129302; Generate Summary
-                </button>
-                <a href="{{ url_for('medical_summary') }}" class="btn-reset">&#8635; Reset</a>
-                <a href="{{ url_for('medical_summary_history') }}" class="btn-hist">&#128218; History</a>
+        <!-- Model info strip -->
+        <div class="model-strip">
+            <div class="model-item">
+                <span class="mi-label">Engine</span>
+                <span class="mi-val">
+                    {% if model_loaded %}{{ model_name }}{% else %}Rule-Based Extractive{% endif %}
+                </span>
+            </div>
+            <div class="model-item">
+                <span class="mi-label">Status</span>
+                <span class="mi-val {% if model_loaded %}status-ready{% else %}status-fallback{% endif %}">
+                    {% if model_loaded %}&#9989; AI Model Ready{% else %}&#9888; Fallback Mode{% endif %}
+                </span>
+            </div>
+            <div class="model-item">
+                <span class="mi-label">Modes</span>
+                <span class="mi-val">Short &middot; Medium &middot; Detailed</span>
+            </div>
+            <div class="model-item">
+                <span class="mi-label">Input</span>
+                <span class="mi-val">OCR Text / Manual Paste</span>
             </div>
         </div>
-    </form>
 
-    <!-- OCR TEXT PREVIEW (shown when OCR is loaded but no result yet) -->
-    {% if ocr_text_used and not result %}
-    <div class="ocr-preview-card">
-        <h3>OCR Text Preview</h3>
-        <pre class="ocr-preview">{{ ocr_text_used[:600] }}{% if ocr_text_used|length > 600 %}
+        <!-- ── SUMMARY RESULT ─────────────────────────────────────────────────── -->
+        {% if result %}
+            <div class="summary-result">
+
+                <div class="summary-header">
+                    <div class="summary-type-badge">{{ result.summary_type }} Summary</div>
+                    <div class="summary-stats">
+                        <span>&#128196; {{ result.original_word_count }} words in</span>
+                        <span class="arrow-sep">&#8594;</span>
+                        <span>&#9989; {{ result.word_count }} words out</span>
+                        <span class="ratio-badge">{{ (result.compression_ratio * 100)|round(1) }}% of original</span>
+                    </div>
+                </div>
+
+                <!-- Main summary text -->
+                <div class="summary-text">{{ result.summary }}</div>
+
+                <!-- Key sections (structured extraction) -->
+                {% if result.key_sections %}
+                    <div class="key-sections">
+                        <h3>&#128270; Key Information Extracted</h3>
+                        <div class="sections-grid">
+                            {% if result.key_sections.diagnosis %}
+                                <div class="section-item">
+                                    <span class="section-label">&#129440; Diagnosis</span>
+                                    <span class="section-val">{{ result.key_sections.diagnosis }}</span>
+                                </div>
+                            {% endif %}
+                            {% if result.key_sections.treatment %}
+                                <div class="section-item">
+                                    <span class="section-label">&#127973; Treatment</span>
+                                    <span class="section-val">{{ result.key_sections.treatment }}</span>
+                                </div>
+                            {% endif %}
+                            {% if result.key_sections.medicines %}
+                                <div class="section-item">
+                                    <span class="section-label">&#128138; Medicines</span>
+                                    <span class="section-val">{{ result.key_sections.medicines }}</span>
+                                </div>
+                            {% endif %}
+                            {% if result.key_sections.tests %}
+                                <div class="section-item">
+                                    <span class="section-label">&#129514; Tests</span>
+                                    <span class="section-val">{{ result.key_sections.tests }}</span>
+                                </div>
+                            {% endif %}
+                            {% if result.key_sections.followup %}
+                                <div class="section-item">
+                                    <span class="section-label">&#128197; Follow-up</span>
+                                    <span class="section-val">{{ result.key_sections.followup }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Meta info -->
+                <div class="summary-meta">
+                    Model: <strong>{{ result.model_used }}</strong>
+                    &nbsp;|&nbsp; Generated: {{ result.generated_at }}
+                    &nbsp;|&nbsp; <a href="{{ url_for('medical_summary_history') }}">View History</a>
+                </div>
+
+                {% if result.error %}
+                    <div class="alert alert-warning" style="margin-top:0.8rem;">{{ result.error }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <!-- ── MAIN FORM ──────────────────────────────────────────────────────── -->
+        <form method="POST" action="{{ url_for('medical_summary') }}">
+
+            <div class="summary-card">
+                <h2>Generate Summary</h2>
+
+                <div class="form-row-top">
+
+                    <!-- OCR Result Selector -->
+                    <div class="field-group field-wide">
+                        <label>Select OCR Report</label>
+                        {% if ocr_list %}
+                            <select name="ocr_id" class="form-control">
+                                <option value="">-- Select an OCR Result --</option>
+                                {% for ocr in ocr_list %}
+                                    <option value="{{ ocr.id }}"
+                                        {% if ocr_id|string == ocr.id|string %}selected{% endif %}>
+                                        {{ ocr.filename }} &mdash; {{ ocr.created_at.strftime('%d %b %Y') }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <div class="no-data-notice">
+                                No OCR results yet.
+                                <a href="{{ url_for('upload') }}">Upload a report</a> and
+                                <a href="{{ url_for('ocr') }}">extract text</a> first.
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Summary type -->
+                    <div class="field-group field-narrow">
+                        <label>Summary Length</label>
+                        <select name="summary_type" class="form-control">
+                            <option value="short">&#9679; Short</option>
+                            <option value="medium" selected>&#9679;&#9679; Medium</option>
+                            <option value="detailed">&#9679;&#9679;&#9679; Detailed</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Manual text paste -->
+                <div class="field-group" style="margin-top:1rem;">
+                    <label>
+                        Or Paste Medical Text Manually
+                        <span class="optional">(used if no OCR result selected above)</span>
+                    </label>
+                    <textarea name="manual_text" class="form-control textarea-input"
+                              placeholder="Paste discharge summary, prescription, lab report, or clinical notes here...">{{ ocr_text_used if not result else '' }}</textarea>
+                </div>
+
+                <!-- Optional claim link -->
+                {% if claims_list %}
+                    <div class="field-group" style="margin-top:0.8rem;">
+                        <label>
+                            Link to Claim
+                            <span class="optional">(optional — for record keeping)</span>
+                        </label>
+                        <select name="claim_id" class="form-control">
+                            <option value="">-- No claim linked --</option>
+                            {% for c in claims_list %}
+                                <option value="{{ c.id }}">#{{ c.id }} &mdash; {{ c.patient_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                {% endif %}
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-summarize">
+                        &#129302; Generate Summary
+                    </button>
+                    <a href="{{ url_for('medical_summary') }}" class="btn-reset">&#8635; Reset</a>
+                    <a href="{{ url_for('medical_summary_history') }}" class="btn-hist">&#128218; History</a>
+                </div>
+            </div>
+        </form>
+
+        <!-- OCR TEXT PREVIEW (shown when OCR is loaded but no result yet) -->
+        {% if ocr_text_used and not result %}
+            <div class="ocr-preview-card">
+                <h3>OCR Text Preview</h3>
+                <pre class="ocr-preview">{{ ocr_text_used[:600] }}{% if ocr_text_used|length > 600 %}
 
 ... ({{ ocr_text_used|length }} total characters){% endif %}</pre>
-        <p class="hint">
-            {{ ocr_text_used|length }} characters
-            &nbsp;&middot;&nbsp;
-            ~{{ ocr_text_used.split()|length }} words
-        </p>
-    </div>
-    {% endif %}
+                <p class="hint">
+                    {{ ocr_text_used|length }} characters
+                    &nbsp;&middot;&nbsp;
+                    ~{{ ocr_text_used.split()|length }} words
+                </p>
+            </div>
+        {% endif %}
 
-</div><!-- end container -->
+    </div><!-- end container -->
 
-<script>
-    setTimeout(()=>{
-        document.querySelectorAll('.alert').forEach(el=>{
-            el.style.transition='opacity 0.5s';
-            el.style.opacity='0';
-            setTimeout(()=>el.remove(),500);
-        });
-    }, 4000);
-</script>
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(el => {
+                el.style.transition = 'opacity 0.5s';
+                el.style.opacity = '0';
+                setTimeout(() => el.remove(), 500);
+            });
+        }, 4000);
+    </script>
 
 </body>
 </html>

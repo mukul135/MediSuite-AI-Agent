@@ -43,14 +43,14 @@
             {% if ocr_list %}
                 <div class="ocr-grid">
                     {% for ocr in ocr_list %}
-                    <a href="{{ url_for('medical_analysis', ocr_id=ocr.id) }}" class="ocr-item">
-                        <div class="ocr-icon">&#128196;</div>
-                        <div class="ocr-info">
-                            <div class="ocr-filename">{{ ocr.filename }}</div>
-                            <div class="ocr-date">{{ ocr.created_at.strftime('%d %b %Y, %H:%M') }}</div>
-                        </div>
-                        <div class="ocr-arrow">&#8594;</div>
-                    </a>
+                        <a href="{{ url_for('medical_analysis', ocr_id=ocr.id) }}" class="ocr-item">
+                            <div class="ocr-icon">&#128196;</div>
+                            <div class="ocr-info">
+                                <div class="ocr-filename">{{ ocr.filename }}</div>
+                                <div class="ocr-date">{{ ocr.created_at.strftime('%d %b %Y, %H:%M') }}</div>
+                            </div>
+                            <div class="ocr-arrow">&#8594;</div>
+                        </a>
                     {% endfor %}
                 </div>
             {% else %}

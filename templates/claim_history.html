@@ -2,32 +2,37 @@
      MediSuite-AI-Agent -- templates/claim_history.html
      Phase 4: Past submitted claims
      ============================================================ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claim History | MediSuite</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/claim.css') }}">
 </head>
+
 <body>
 
     <nav class="navbar">
-        <div class="nav-brand"><span>&#129657;</span> MediSuite</div>
-       <div class="nav-links">
-    <a href="{{ url_for('dashboard') }}">Dashboard</a>
-    <a href="{{ url_for('upload') }}">Upload</a>
-    <a href="{{ url_for('ocr') }}">OCR</a>
-    <a href="{{ url_for('claim') }}">Claim</a>
-    <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
-    <a href="{{ url_for('claim_verification') }}">Verification</a>
-    <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
-    <a href="{{ url_for('claim_fraud') }}">Fraud</a>
-    <a href="{{ url_for('medical_summary') }}">Summary</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-</div>
+        <div class="nav-brand">
+            <span>&#129657;</span> MediSuite
+        </div>
 
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('ocr') }}">OCR</a>
+            <a href="{{ url_for('claim') }}">Claim</a>
+            <a href="{{ url_for('medical_analysis_home') }}">Analysis</a>
+            <a href="{{ url_for('claim_verification') }}">Verification</a>
+            <a href="{{ url_for('claim_prediction') }}">AI Prediction</a>
+            <a href="{{ url_for('claim_fraud') }}">Fraud</a>
+            <a href="{{ url_for('medical_summary') }}">Summary</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -50,34 +55,36 @@
         </a>
 
         {% if claims %}
-        <div class="history-card">
-            <table class="claims-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Patient Name</th>
-                        <th>Hospital</th>
-                        <th>Disease</th>
-                        <th>Amount (₹)</th>
-                        <th>Claim Date</th>
-                        <th>Policy No.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for claim in claims %}
-                    <tr>
-                        <td>{{ claim.id }}</td>
-                        <td class="name-cell">{{ claim.patient_name }}</td>
-                        <td>{{ claim.hospital_name }}</td>
-                        <td>{{ claim.disease }}</td>
-                        <td class="amount-cell">{{ claim.bill_amount }}</td>
-                        <td>{{ claim.claim_date or '—' }}</td>
-                        <td class="policy-cell">{{ claim.policy_number or '—' }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+            <div class="history-card">
+                <table class="claims-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Patient Name</th>
+                            <th>Hospital</th>
+                            <th>Disease</th>
+                            <th>Amount (₹)</th>
+                            <th>Claim Date</th>
+                            <th>Policy No.</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for claim in claims %}
+                            <tr>
+                                <td>{{ claim.id }}</td>
+                                <td class="name-cell">{{ claim.patient_name }}</td>
+                                <td>{{ claim.hospital_name }}</td>
+                                <td>{{ claim.disease }}</td>
+                                <td class="amount-cell">{{ claim.bill_amount }}</td>
+                                <td>{{ claim.claim_date or '—' }}</td>
+                                <td class="policy-cell">{{ claim.policy_number or '—' }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
         {% else %}
             <div class="empty-state">
                 <div class="empty-icon">&#128203;</div>
