@@ -10,6 +10,7 @@
 </p>
 
 
+
 ```markdown
 ## 📸 Screenshots
 
@@ -56,7 +57,6 @@
 ### 📝 Medical Report Summarizer
 
 ![Medical Report Summarizer](screenshots/summary.png)
-```
 
 ## 🚀 Overview
 
